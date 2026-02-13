@@ -1,33 +1,22 @@
-# Global GPT Knowledge File Policies (meta/kf-policies.md)
+# Global Knowledge File Policies (Meta Knowledge File)
 
 ## File Header
 
-### Domain
-GPT.KNOWLEDGE.FILE.POLICIES
+**Version**
+2026-02-13 22:34 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com) in [ifllm-behavior-ontology](https://github.com/LHHegland/ifllm-behavior-ontology)
 
-### Version
-2026-02-06 00:00 UTC
+**Last Reviewed**
+2026-02-13 22:34 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-### Author
+**Owner**
 [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-### Purpose
-Identify **relevant context (knowledge)** entries for **GPT knowledge file policies**, a commonly used GPT domain topic. **Domain context entries** in knowledge files give a GPT structured, authoritative background about a commonly used domain topic (a knowledge field) so it can reason *as if it understands the domain’s rules, language, and priorities*. Subsequently, the GPT can offer results that are intentionally more accurate, relevant, specific, clear, practical, fair, and efficient.
+**Changelog**
+- 2026-02 — [Lance Hegland](mailto:lance.hegland@gmail.com): initial document creation
+- 2026-02-13 20:56 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): update for repo name and description changes
 
-### Features
-TBD
-
-### Scope
-TBD
-
-### Out of Scope
-TBD
-
-### Use Cases
-TBD
-
-### Policies
-See [[KF_POLICIES:ROOT]].
+**Purpose**
+Identify **knowledge file policies**. **Knowledge file entries** give instruction-following large language models (LLMs) structured, authoritative information about configuration details (e.g., meta (policies), configurations, tasks, domains, experts, structures, personas, examples).  Subsequently, results are more accurate, reliable, relevant, specific, clear, practical, fair, and efficient.
 
 
 ## Index
@@ -56,29 +45,31 @@ Bulleted list of common human topic references mapped to canonical handles (i.e.
 - Schema Templates (Copyable/Pasteable) → KF_POLICIES.SCHEMA.TEMPLATES → [[KF_POLICIES:SCHEMA_TEMPLATES]]
 
 
-## Knowledge Entries (Relevant Context)
-The sections below identify **relevant context (knowledge)** entries for a commonly used GPT domain topic. **Domain context entries** in knowledge files, like this one, give GPT structured, authoritative background about a specific knowledge field (domain) so it can reason *as if it understands the domain’s rules, language, and priorities*. These entries help improve results as follows:
-- **Accuracy**: They anchor responses to **domain-approved facts, definitions, constraints, and assumptions**, reducing hallucinations and factual drift.
-- **Relevance**: They define **what matters in the domain** (goals, stakeholders, common problems), so GPT filters out generic or irrelevant information.
-- **Specificity**: They supply **domain terminology, edge cases, workflows, and examples**, enabling precise answers instead of high-level generalities.
-- **Clarity**: They establish **shared context and vocabulary**, allowing GPT to explain concepts at the right abstraction level without over- or under-explaining.
-- **Practicality**: They encode **real-world constraints, best practices, and decision criteria**, guiding GPT toward actionable, usable outputs.
-- **Fairness**: They surface **domain norms, ethical considerations, regulatory boundaries, and stakeholder perspectives**, helping avoid biased or one-sided responses.
-- **Efficiency**: They reduce the need for back-and-forth clarification by **pre-answering contextual questions**, enabling faster, more direct responses.
-
-**In short:** Domain context entries function like a *professional briefing* for GPT—aligning its reasoning with how experts in that domain actually think and work.
-
-
-### Global Knowledge File Policies
+## Global Knowledge File Policies
 **ID:** KF_POLICIES
 **Tag:** [[KF_POLICIES:ROOT]]
 
-**Global knowledge file policies** are identified within the following sections. This domain is a subdomain of GPT.KNOWLEDGE.FILE.POLICIES
+**Global knowledge file policies** are identified within the following sections.
+
+
+## Knowledge Entries (Relevant Context)
+**ID:** KF_POLICIES.ENTRIES.PURPOSE
+**Tag:** [[KF_POLICIES:ENTRY_PURPOSE]]
+
+**Knowledge file entries** provide structured, authoritative configuration guidance to instruction-following large language models (LLMs) that improves outcomes across the listed quality dimensions, as follows:
+- **Accuracy:** Knowledge file entries supply explicit definitions, constraints, and authoritative policies (e.g., meta rules, domain boundaries, task success criteria), reducing guesswork and preventing unsupported inference or hallucination.
+- **Reliability:** By externalizing configuration details into stable, reusable entries, knowledge files ensure consistent behavior across runs, prompts, and contexts, minimizing variability caused by implicit or ad-hoc instructions.
+- **Relevance:** Task scopes, domain boundaries, and in-scope/out-of-scope definitions focus the model’s attention on what matters for the current objective, suppressing tangential or unnecessary content.
+- **Specificity:** Structured fields (objectives, constraints, required sections, personas) narrow degrees of freedom, enabling the model to produce outputs that are precisely tailored to the intended task and audience.
+- **Clarity:** Human-readable organization, explicit structure definitions, and examples clarify expectations for both the model and human operators, improving interpretability and reducing ambiguity in outputs.
+- **Practicality:** Knowledge entries encode actionable workflows, acceptable outputs, and real-world constraints, steering the model toward solutions that are usable, implementable, and aligned with operational needs.
+- **Fairness:** Explicit policies, domain exclusions, and reasoning frameworks surface normative constraints and bias considerations, enabling consistent application of fairness rules rather than implicit or inconsistent judgment.
+- **Efficiency:** Predefined configurations and reusable scaffolding reduce prompt complexity, reasoning overhead, and corrective iteration, allowing the model to converge on acceptable results with fewer steps.
 
 
 #### Knowledge File Type Policies
-**ID:** KF_POLICIES.TYPES
-**Tag:** [[KF_POLICIES:TYPES]]
+**ID:** KF_POLICIES.ENTRIES.TYPES
+**Tag:** [[KF_POLICIES:ENTRY_TYPES]]
 
 **Knowledge File Type Policies** are identified within the following sections. Use distinct knowledge file types to separate concerns, improve accuracy, and enable reuse. Each file type has a specific purpose, appropriate use cases, and minimal required sections.
 
