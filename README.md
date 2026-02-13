@@ -1,10 +1,9 @@
-# gpt-ontology
+# Instruction-Following Large Language Models (LLMs) Behavioral Ontology (IFLLMBO) *[ifllm-behavior-ontology](https://github.com/LHHegland/ifllm-behavior-ontology)*
 
-**NAMESPACE:** me.hegland-lance.gpt.ontology
+**NAMESPACE:** me.hegland-lance.ifllm-behavior-ontology
 
-**PURPOSE:** A lightweight, LLM-legible semantic scaffolding system for organizing knowledge files that guide AI tools (such as custom GPTs and ChatGPT) toward accurate, relevant, specific, clear, practical, fair, and efficient responses.
-
-It prioritizes human-readable structure, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent reasoning and behavior across AI-assisted workflows.
+**PURPOSE**
+**Instruction-Following LLM Behavioral Ontology (IFLLMBO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
 
 .
 
@@ -31,13 +30,16 @@ TODO
 
 ## **Background**
 
-My goal is to build LLM-legible semantic scaffolding; not to build OWL-perfect ontologies. The scaffolding must help guide tools so the tools are able to offer accurate, relevant, specific, clear, practical, fair, and efficient results for users. Processing must prioritize accuracy, relevance, specificity, clarity, practicality, fairness, and efficiency, in that order. The scaffolding must help organize knowledge files for use by LLM tools. ChatGPT recommended the following scaffolding:
-- **ontology**: the root for *everything* the AI treats as “semantic constitution”: canonical definitions, relationships, and behavior guidance.
-  - **meta**: “about the ontology itself” and other *cross-cutting scaffolding* that applies everywhere (i.e., rules about rules). Put knowledge files here if it’s a naming rule, modeling convention, global decision policy, glossary of meta-terms, ontology versioning, or core primitives reused across domains.
-  - **domains**: subject-matter “topic areas” (the *what*). Put knowledge files here if it’s a field/area of knowledge to browse, learn, or answer questions about.
-  - **roles**: actors, personas, stakeholder types, or viewpoints (the *who*). Put knowledge files here if it describes an agent that performs work, has responsibilities, or provides a perspective.
-  - **capabilities**: skills/functions/competencies that roles (or systems) can do (the *how*). Put knowledge files here if it’s something to *perform*, *assess*, *improve*, or *request* as a behavior.
-  - **values**: norms, priorities, constraints, and evaluation criteria (the *why / should*). Put knowledge files here if it expresses what “good” looks like, what to optimize for, or what to avoid.
+The goal is to build a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following LLMs toward high-priority results (i.e., accurate, reliable, relevant, specific, clear, practical, fair, and efficient). The scaffolding and LLM processing must align with these priorities. It must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies. The scaffolding must help organize instruction-following LLM behavioral configurations in knowledge files. The scaffolding so far is as follows:
+- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
+  - **meta:** *provides cross-cutting rules and scaffolding about the ontology itself.* Meta captures naming rules, modeling conventions, global decision policies, ontology versioning, glossaries of meta-terms, and core primitives reused across domains.
+  - **tasks:** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+  - **domains:** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+  - **experts:** *shape how the model reasons about the task.* Experts encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+  - **structures:** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+  - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+  - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+  - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
 
 .
 
@@ -51,15 +53,16 @@ TODO
 
 TODO
 
-1. Familiarity and access to [ChatGPT](https://chatgpt.com/)
+1. Familiarity and access to instruction-following LLM like [ChatGPT](https://chatgpt.com/)
 1. Familiarity and access to [GitHub](https://github.com/)
 1. Agree to the [Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0)](LICENSE.txt)
+1. Review [README](README.md)
 
 .
 
 ## **Installation**
 
-1. Review [README.md](README.md).
+1. Review [README](README.md).
 1. Perform the necessary actions to satisfy [minimum requirements](#requirements).
 1. From your local projects directory, copy the entire remote GitHub repository into your local project directory.
 
@@ -81,7 +84,7 @@ TODO
 TODO
 
 
-**TIPS:** Refer to the following documentation and tools to efficiently develop prompts delivering relevant, specific, accurate, clear, practical, and fair results for your users:
+**TIPS:** Refer to the following documentation and tools to efficiently develop prompts delivering accurate, reliable, relevant, specific, clear, practical, fair, and efficient results for your users:
 - [ChatGPT Prompt Engineering Best Practices](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt)
 - [How do I create a good prompt for an AI model?](https://help.openai.com/en/articles/4936848-how-do-i-create-a-good-prompt-for-an-ai-model)
 - [OpenAI Prompting Guide](https://platform.openai.com/docs/guides/prompting)
