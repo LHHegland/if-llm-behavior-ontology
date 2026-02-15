@@ -22,6 +22,7 @@ Identify **knowledge file policies**. **Knowledge file entries** give instructio
 ## Index
 Bulleted list of common human topic references mapped to canonical handles (i.e., IDs and namespaced tags). Use canonical tags (not tag aliases) in prompts (e.g., [[KF_POLICIES:NAMING_TAGS]]).
 - Global Knowledge File Policies → KF_POLICIES → [[KF_POLICIES:ROOT]]
+- Versioning → KF_POLICIES.VERSION → [[KF_POLICIES:VERSION]]
 - Knowledge File Type Policies → KF_POLICIES.TYPES → [[KF_POLICIES:TYPES]]
 - General Knowledge File Type Rules → KF_POLICIES.TYPES.RULES → [[KF_POLICIES:TYPE_RULES]]
 - Meta Knowledge Files → KF_POLICIES.TYPES.META → [[KF_POLICIES:META_TYPES]]
@@ -50,6 +51,19 @@ Bulleted list of common human topic references mapped to canonical handles (i.e.
 **Tag:** [[KF_POLICIES:ROOT]]
 
 **Global knowledge file policies** are identified within the following sections.
+
+
+## Versioning
+**ID:** KF_POLICIES.VERSION  
+**Tag:** [[KF_POLICIES:VERSION]]
+
+Each revision of any knowledge file must include:
+- Version identifier
+- Date of revision
+- Summary of material changes
+
+Silent changes are prohibited.
+
 
 
 ## Knowledge Entries (Relevant Context)
