@@ -3,7 +3,7 @@
 ## File Header
 
 **Version**
-2026-02-13 22:34 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com) in [ifllm-behavior-ontology](https://github.com/LHHegland/ifllm-behavior-ontology)
+2026-02-15 09:54 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com) in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed**
 2026-02-13 22:34 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com)
@@ -14,6 +14,7 @@
 **Changelog**
 - 2026-02 — [Lance Hegland](mailto:lance.hegland@gmail.com): initial document creation
 - 2026-02-13 20:56 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): update for repo name and description changes
+- 2026-02-15 09:54 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): added knowledge file versioning policy
 
 **Purpose**
 Identify **knowledge file policies**. **Knowledge file entries** give instruction-following large language models (LLMs) structured, authoritative information about configuration details (e.g., meta (policies), configurations, tasks, domains, experts, structures, personas, examples).  Subsequently, results are more accurate, reliable, relevant, specific, clear, practical, fair, and efficient.
