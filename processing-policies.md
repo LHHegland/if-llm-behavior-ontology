@@ -1,22 +1,25 @@
-# Processing Policies (Meta Knowledge File)
+# Instruction-Following Large Language Model (IF-LLM) Processing Policies (*processing-policies.md*)
+
+Collection of processing policy knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
 ## File Header
 
 **Version**
-2026-02-13 20:56 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com) in [ifllm-behavior-ontology](https://github.com/LHHegland/ifllm-behavior-ontology)
+2026-02-16 06:04 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com) in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed**
-2026-02-13 20:56 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com)
+2026-02-16 06:04 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Owner**
 [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
-- 2026-02-12 09:04 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): initial document creation
+- 2026-02-16 06:04 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): update for repo reorganization, update file header to standardize
 - 2026-02-13 20:56 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): update for repo name and description changes
+- 2026-02-12 09:04 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): initial document creation
 
 **Purpose**  
-Define global, enforceable processing policies governing instruction-following large language model (LLM) behavior.
+Define global, enforceable processing policies governing instruction-following large language models (LLMs).
 
 **Scope**  
 These policies govern identity, priorities, instruction precedence, knowledge hierarchy, ambiguity handling, tool usage, safety, reasoning, hallucination prevention, output structure, and quality standards.
