@@ -16,6 +16,7 @@
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
+- [User Notes](#user-notes)
 - [Authors](#authors)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -96,14 +97,142 @@ TODO
 
 .
 
-## IF-LLM Behavioral Ontology User Notes
-The following sections contain user notes related to this instruction-following large language model (IF-LLM) behavior ontology. This ontology helps to most efficiently organize and maintain the frequently- or commonly-used IF-LLM behavioral configurations.
+## User Notes
+The following sections contain user notes related to this instruction-following large language model (IF-LLM) behavior ontology. This ontology helps to most efficiently organize and maintain the frequently- or commonly-used IF-LLM behavior instructions.
 
-### Purpose
+### Foundations
+The following sections contain the foundations that guide this instruction-following large language model (IF-LLM) behavior ontology.
+
+#### Assumptions
+This project assumes the following:
+- Instruction-following large language models (IF-LLMs) use instructions to influence processing behavior to generate more desirable results.
+- Some priorities are more commonly used to guide IF-LLMs toward desirable results. (critical thinking priorities)
+- Instructions may be provided by developers or users via prompt or API in addition to knowledge entries of various types.
+- Knowledge entries are often organized into files by entry type.
+- More specialized knowledge may be organized in subject matter collections and organized into files by entry type.
+
+#### Objectives
+- Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
+
+It must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies. The scaffolding must help organize instruction-following LLM behavioral configurations in knowledge files. 
+
+
+#### Purpose
 As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
 
-### Objectives
-TODO: Outline objectives
+#### Priorities
+TODO: Briefly define each of the following priorities and their value / significance for IF-LLM responses.
+1. Accuracy  
+2. Reliability  
+3. Relevance  
+4. Specificity  
+5. Clarity  
+6. Practicality  
+7. Fairness  
+8. Efficiency  
+
+TODO: Briefly define each of the following priorities and their value / significance for IF-LLM responses.
+
+#### Instruction and Knowledge Authority Hierarchy
+
+TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authority as outlined below, including how instructions are granted authority, critical phrases used to grant/assign authority, plus 3 to 5 examplesto help users understand the value of this hierarchy.
+1. System (Global) Policies (e.g., knowledge entries with the highest authority (i.e., meta knowledge entries))
+2. Developer Instructions (e.g., knowledge entries with the second-highest authority, developer implemented knowledge entries)
+3. User Instructions (i.e., the current conversation via chat or API, which could reference existing knowledge entries)
+4. Knowledge Files (and their collection of entries)
+5. User-Uploaded Files (e.g., user-uploaded files, which are considered user knowledge files containing user knowledge injuries)
+6. Tool Outputs
+7. General Model Knowledge
+
+
+IF-LLMs receive instructions through either user prompts (e.g., chat interfaces or APIs) or developer instructions. Users and developers can store reusable instructions and context in knowledge entries of various types. Knowledge interests can be organized into knowledge files.
+
+interfacesknowledge files that
+
+
+
+### Instruction Elements (Scaffolding)
+
+The scaffolding so far is as follows:
+- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
+  - **meta:** *provides cross-cutting rules and scaffolding about the ontology itself.* Meta captures naming rules, modeling conventions, global decision policies, ontology versioning, glossaries of meta-terms, and core primitives reused across domains.
+  - **tasks:** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+  - **domains:** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+  - **experts:** *shape how the model reasons about the task.* Experts encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+  - **structures:** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+  - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+  - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+  - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+
+### Knowledge Entry Anatomy
+
+- Common Human Reference
+- Canonical Handles
+  - IDs
+  - Namespaced Tags
+- Alias Tags
+- Definition Summary / Purpose
+- Content Specific Fields
+
+### Knowledge File Anatomy
+
+#### File Header
+
+#### Indexes
+- Canonical Handles Index
+- Aliases Index
+
+#### Knowledge Header
+
+##### Knowledge Entries
+
+
+
+### Knowledge Entry Types
+
+#### Meta Entries
+
+## Processing Policies
+### Enforcement & Degradation Handling
+### Instruction Precedence
+### Safety, Privacy, and Refusals
+### Context
+#### Context & Ambiguity Handling
+#### Knowledge & Information Hierarchy
+### Hallucination & Fabrication
+### Defaults
+#### Tasks
+##### Priorities
+##### Identity
+##### Audience
+##### Success Criteria (Quality Bar)
+#### Domains
+##### Deterministic Defaults (US)
+#### Experts
+##### Reasoning & Uncertainty
+#### Tools
+##### Tool Usage
+##### Tool Constraints (Negative Rules)
+#### Structures
+##### Output Structure Sections
+##### Output Structure Flexibility
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Priorities
 TODO: Outline priorities
