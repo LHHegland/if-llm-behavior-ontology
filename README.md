@@ -111,6 +111,123 @@ This project assumes the following:
 - Knowledge entries are often organized into files by entry type.
 - More specialized knowledge may be organized in subject matter collections and organized into files by entry type.
 
+### Quality Standards
+criteria, quality attributes, or evaluative standards
+
+When you look at **accuracy, reliability, relevance, specificity, clarity, practicality, fairness, and efficiency** as a group, they are most commonly discussed in research, education, or design contexts as **criteria, quality attributes, or evaluative standards**. In other words, these terms aren’t random — they belong to a well-recognized class of concepts used to assess the *quality* or *effectiveness* of something (e.g., information, systems, decisions, or outputs). ([researchguides.library.brocku.ca][1])
+
+Here are the **most likely and most widely used umbrella terms** for this collection of attributes:
+
+
+
+
+Please identify MLA works cited injuries for each of the 3 to 5 of the most reliable and most frequently referenced (i.e., most authoritative) sources for evaluation criteria, often referred to as follows:
+- Evaluation Criteria
+- Quality Attributes
+- Quality Criteria
+- Standards of Evaluation
+- Standards of Intellectual Evaluation
+- Information Quality Dimensions
+- dimensions of information quality
+- Criteria for Effective Communication
+- Criteria for Effective Decision-Making
+```
+```
+
+Here are **MLA works-cited entries** for **reliable and frequently referenced academic sources** that define broadly used concepts such as *evaluation criteria*, *quality attributes*, and *dimensions of information quality*. These are high-authority sources used in research and practice:
+
+---
+
+### **1. Wang & Strong — Foundational Source for Information/Data Quality Dimensions**
+
+> Wang, Richard Y., and Diane M. Strong. “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–34. *Taylor & Francis Online*. ([Taylor & Francis Online][1])
+
+This article introduced the widely adopted framework for *data quality dimensions* (accuracy, relevance, timeliness, etc.), which later underpins *information quality dimensions* discussions. ([PMC][2])
+
+---
+
+### **2. Research on Evaluation Criteria for Information Quality Research**
+
+> Woodall, Philip, Alexander Borek, and Ajith Parlikad. *Evaluation Criteria for Information Quality Research*. Institute for Manufacturing, University of Cambridge, 2018. *ResearchGate*. ([ResearchGate][3])
+
+This paper synthesizes *evaluation criteria* used across information systems, software products, and conceptual model research, focusing on how criteria are selected and applied. ([ResearchGate][3])
+
+---
+
+### **3. Data Quality Dimensions Overview (Data Management Literature)**
+
+> “Data Quality Dimensions.” *DATAVERSITY*, 15 Feb. 2022, [https://www.dataversity.net/articles/data-quality-dimensions/](https://www.dataversity.net/articles/data-quality-dimensions/). ([Dataversity][4])
+
+This overview explains the *data quality dimensions framework* originally developed by Wang and Strong and how modern practice interprets core dimensions like accuracy and relevance. ([Dataversity][4])
+
+---
+
+### **4. Information Quality (Wikipedia Summary of Dimensions)**
+
+> “Information Quality.” *Wikipedia: The Free Encyclopedia*, last updated 2025, [https://en.wikipedia.org/wiki/Information_quality](https://en.wikipedia.org/wiki/Information_quality). ([Wikipedia][5])
+
+An authoritative overview of how *information quality* and its dimensions (accuracy, timeliness, completeness, etc.) are conceptualized in academic literature. ([Wikipedia][5])
+
+---
+
+### **5. Research on Data Quality as Fitness for Use**
+
+> Cai, Lejun. “The Challenges of Data Quality and Data Quality Assessment.” *Data Science Journal*, 2015. ([Data Science Journal][6])
+
+This article reviews *data quality* definitions (fitness for use vs. conformance to requirements), situating quality dimensions in the broader evaluation context. ([Data Science Journal][6])
+
+---
+
+## **Notes on Selection**
+
+* The **Wang & Strong (1996)** article is *seminal* and extensively cited in information quality research. ([JSTOR][7])
+* The **Cambridge report** by Woodall et al. treats *evaluation criteria* broadly across domains. ([ResearchGate][3])
+* The **dataversity source** provides a practical summary of quality dimensions used in management and industry. ([Dataversity][4])
+* The **Wikipedia entry** aggregates multiple scholarly sources and is kept updated with literature references, making it useful for contextual definitions. ([Wikipedia][5])
+* The **Cai (2015)** review situates quality dimensions in terms of broader definitions (context and use). ([Data Science Journal][6])
+
+---
+
+If you want, I can also provide MLA citations for *specific frameworks* like **CRAAP test** (source evaluation), **FURPS** (software quality attributes), or *DeLone & McLean’s Information Systems Success Model* (system evaluation dimensions).
+
+[1]: https://www.tandfonline.com/doi/abs/10.1080/07421222.1996.11518099?utm_source=chatgpt.com "Beyond Accuracy: What Data Quality Means to Data ..."
+[2]: https://pmc.ncbi.nlm.nih.gov/articles/PMC9912223/?utm_source=chatgpt.com "Overview of ﻿Data Quality﻿: Examining the Dimensions ... - PMC"
+[3]: https://www.researchgate.net/publication/291337488_Evaluation_Criteria_for_Information_Quality_Research?utm_source=chatgpt.com "(PDF) Evaluation Criteria for Information Quality Research"
+[4]: https://www.dataversity.net/articles/data-quality-dimensions/?utm_source=chatgpt.com "Data Quality Dimensions"
+[5]: https://en.wikipedia.org/wiki/Information_quality?utm_source=chatgpt.com "Information quality"
+[6]: https://datascience.codata.org/articles/dsj-2015-002?utm_source=chatgpt.com "The Challenges of Data Quality and Data Quality Assessment ..."
+[7]: https://www.jstor.org/stable/40398176?utm_source=chatgpt.com "What Data Quality - Beyond Accuracy"
+
+
+3. Most Reliable Sources on Critical Thinking Pillars
+
+The following sources are widely cited, academically grounded, and considered authoritative:
+
+
+Sources:
+- Paul, Richard, and Linda Elder. Critical Thinking: Tools for Taking Charge of Your Learning and Your Life. Foundation for Critical Thinking, 2006.
+- The Foundation for Critical Thinking. “Defining Critical Thinking.” CriticalThinking.org, 2019, [https://www.criticalthinking.org/pages/defining-critical-thinking/766](https://www.criticalthinking.org/pages/defining-critical-thinking/766). Accessed 17 Feb. 2026.
+
+
+Stanford Encyclopedia of Philosophy Critical Thinking
+
+Philosophical grounding of reasoning, justification, and argument evaluation.
+
+American Philosophical Association (Delphi Report, 1990)
+
+Consensus definition of critical thinking skills and dispositions.
+
+Still the most cited formal definition.
+
+OECD – PISA Creative & Critical Thinking Frameworks
+
+Modern, applied interpretation used in international education benchmarks.
+
+Bloom’s Taxonomy (Revised by Anderson & Krathwohl)
+
+While not exclusive to critical thinking, it underpins analytical and evaluative reasoning stages.
+
+
 #### Objectives
 - Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
 
