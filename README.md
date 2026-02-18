@@ -111,121 +111,215 @@ This project assumes the following:
 - Knowledge entries are often organized into files by entry type.
 - More specialized knowledge may be organized in subject matter collections and organized into files by entry type.
 
-### Quality Standards
-criteria, quality attributes, or evaluative standards
 
-When you look at **accuracy, reliability, relevance, specificity, clarity, practicality, fairness, and efficiency** as a group, they are most commonly discussed in research, education, or design contexts as **criteria, quality attributes, or evaluative standards**. In other words, these terms aren’t random — they belong to a well-recognized class of concepts used to assess the *quality* or *effectiveness* of something (e.g., information, systems, decisions, or outputs). ([researchguides.library.brocku.ca][1])
+#### Priorities for IF-LLM Behavior and Results
 
-Here are the **most likely and most widely used umbrella terms** for this collection of attributes:
+TODO: rewrite to reflect overall priorities of IF-LLM-BO, not simply processing priorities or policy priorities.
+
+Instruction-Following Large Language Models (IF-LLM) behavior and results must demonstrate the criteria in the order shown in this section (i.e., IF-LLM-BO's processing priorities) to be considered "good" or "desirable" for fulfilling a request, answering a question, or making a decision.
+
+This section identifies the priorities and **plain-language, community-accessible definitions** for each **information-quality dimension**. The criteria and definitions have been carefully **synthesized from cited authoritative sources** but written so they can be understood and used by **people across diverse communities in the United States today**. Each definition answers: *“What does this mean in everyday decision-making?”*
 
 
+##### Accuracy
 
+**Accuracy means the information is correct and matches reality.** Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
 
-Please identify MLA works cited injuries for each of the 3 to 5 of the most reliable and most frequently referenced (i.e., most authoritative) sources for evaluation criteria, often referred to as follows:
-- Evaluation Criteria
-- Quality Attributes
-- Quality Criteria
-- Standards of Evaluation
-- Standards of Intellectual Evaluation
-- Information Quality Dimensions
-- dimensions of information quality
-- Criteria for Effective Communication
-- Criteria for Effective Decision-Making
-```
-```
+It's related to *accuracy* in the following authoritative publications:
+  - Wang & Strong (1996) [^1]
+  - Eppler (2006) [^2]
+  - Paul & Elder (2008) [^3]
+  - ISO 25012 (2008) [^4]
+  - O’Brien & Marakas (2011) [^5]
+  
+---
 
-Here are **MLA works-cited entries** for **reliable and frequently referenced academic sources** that define broadly used concepts such as *evaluation criteria*, *quality attributes*, and *dimensions of information quality*. These are high-authority sources used in research and practice:
+##### Reliability
+
+**Reliability means information can be trusted to be dependable, honest, and consistent over time.** Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again. If information is reliable, you can count on it. It doesn’t change its story, exaggerate, or quietly push someone’s agenda.
+
+It's related to the following terms in the following authoritative publications:
+  - *Objectivity*, *Believability*, and *Reputation* in Wang & Strong (1996) [^1]
+  - *Reliability* in Eppler (2006) [^2]
+  - *Fairness* in Paul & Elder (2008) [^3]
+  - *Credibility* in ISO 25012 (2008) [^4]
+  - *Reliability* in O’Brien & Marakas (2011) [^5]
 
 ---
 
-### **1. Wang & Strong — Foundational Source for Information/Data Quality Dimensions**
+##### Relevance
 
-> Wang, Richard Y., and Diane M. Strong. “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–34. *Taylor & Francis Online*. ([Taylor & Francis Online][1])
+**Relevance means the information matters for the decision being made and helps improve that decision.** It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
 
-This article introduced the widely adopted framework for *data quality dimensions* (accuracy, relevance, timeliness, etc.), which later underpins *information quality dimensions* discussions. ([PMC][2])
-
----
-
-### **2. Research on Evaluation Criteria for Information Quality Research**
-
-> Woodall, Philip, Alexander Borek, and Ajith Parlikad. *Evaluation Criteria for Information Quality Research*. Institute for Manufacturing, University of Cambridge, 2018. *ResearchGate*. ([ResearchGate][3])
-
-This paper synthesizes *evaluation criteria* used across information systems, software products, and conceptual model research, focusing on how criteria are selected and applied. ([ResearchGate][3])
+It's related to the following terms in the following authoritative publications:
+  - *Relevance* and *Value-added* in Wang & Strong (1996) [^1]
+  - *Relevance* in Eppler (2006) [^2]
+  - *Relevance* and *Significance* in Paul & Elder (2008) [^3]
+  - *Relevance* and *Value* in O’Brien & Marakas (2011) [^5]
 
 ---
 
-### **3. Data Quality Dimensions Overview (Data Management Literature)**
+##### Timeliness
 
-> “Data Quality Dimensions.” *DATAVERSITY*, 15 Feb. 2022, [https://www.dataversity.net/articles/data-quality-dimensions/](https://www.dataversity.net/articles/data-quality-dimensions/). ([Dataversity][4])
+**Timeliness means the information is up to date and available when it is needed.** Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
 
-This overview explains the *data quality dimensions framework* originally developed by Wang and Strong and how modern practice interprets core dimensions like accuracy and relevance. ([Dataversity][4])
-
----
-
-### **4. Information Quality (Wikipedia Summary of Dimensions)**
-
-> “Information Quality.” *Wikipedia: The Free Encyclopedia*, last updated 2025, [https://en.wikipedia.org/wiki/Information_quality](https://en.wikipedia.org/wiki/Information_quality). ([Wikipedia][5])
-
-An authoritative overview of how *information quality* and its dimensions (accuracy, timeliness, completeness, etc.) are conceptualized in academic literature. ([Wikipedia][5])
+It's related to the following terms in the following authoritative publications:
+  - *Timeliness* in Wang & Strong (1996) [^1]
+  - *Timeliness*, *Up-to-dateness*, and *Frequency* in Eppler (2006) [^2]
+  - *Currentness* in ISO 25012 (2008) [^4]
+  - *Timeliness* in O’Brien & Marakas (2011) [^5]
 
 ---
 
-### **5. Research on Data Quality as Fitness for Use**
+##### Sufficiency
 
-> Cai, Lejun. “The Challenges of Data Quality and Data Quality Assessment.” *Data Science Journal*, 2015. ([Data Science Journal][6])
+**Sufficiency means there is enough information—no important pieces are missing, and there is not unnecessary overload.** The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
 
-This article reviews *data quality* definitions (fitness for use vs. conformance to requirements), situating quality dimensions in the broader evaluation context. ([Data Science Journal][6])
-
----
-
-## **Notes on Selection**
-
-* The **Wang & Strong (1996)** article is *seminal* and extensively cited in information quality research. ([JSTOR][7])
-* The **Cambridge report** by Woodall et al. treats *evaluation criteria* broadly across domains. ([ResearchGate][3])
-* The **dataversity source** provides a practical summary of quality dimensions used in management and industry. ([Dataversity][4])
-* The **Wikipedia entry** aggregates multiple scholarly sources and is kept updated with literature references, making it useful for contextual definitions. ([Wikipedia][5])
-* The **Cai (2015)** review situates quality dimensions in terms of broader definitions (context and use). ([Data Science Journal][6])
+It's related to the following terms in the following authoritative publications:
+  - *Completeness* and *Appropriate Amount* in Wang & Strong (1996) [^1]
+  - *Completeness*, *Conciseness*, and *Level of Detail* in Eppler (2006) [^2]
+  - *Depth*, *Significance*, and *Precision* in Paul & Elder (2008) [^3]
+  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
+  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
 
 ---
 
-If you want, I can also provide MLA citations for *specific frameworks* like **CRAAP test** (source evaluation), **FURPS** (software quality attributes), or *DeLone & McLean’s Information Systems Success Model* (system evaluation dimensions).
+##### Clarity
 
-[1]: https://www.tandfonline.com/doi/abs/10.1080/07421222.1996.11518099?utm_source=chatgpt.com "Beyond Accuracy: What Data Quality Means to Data ..."
-[2]: https://pmc.ncbi.nlm.nih.gov/articles/PMC9912223/?utm_source=chatgpt.com "Overview of ﻿Data Quality﻿: Examining the Dimensions ... - PMC"
-[3]: https://www.researchgate.net/publication/291337488_Evaluation_Criteria_for_Information_Quality_Research?utm_source=chatgpt.com "(PDF) Evaluation Criteria for Information Quality Research"
-[4]: https://www.dataversity.net/articles/data-quality-dimensions/?utm_source=chatgpt.com "Data Quality Dimensions"
-[5]: https://en.wikipedia.org/wiki/Information_quality?utm_source=chatgpt.com "Information quality"
-[6]: https://datascience.codata.org/articles/dsj-2015-002?utm_source=chatgpt.com "The Challenges of Data Quality and Data Quality Assessment ..."
-[7]: https://www.jstor.org/stable/40398176?utm_source=chatgpt.com "What Data Quality - Beyond Accuracy"
+**Clarity means the information is easy to understand, clearly explained, and not confusing.** The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
+
+It's related to the following terms in the following authoritative publications:
+    - *Interpretability* and *Ease of Understanding* in Wang & Strong (1996) [^1]
+    - *Clarity* and *Conciseness* in Eppler (2006) [^2]
+    - *Clarity* in Paul & Elder (2008) [^3]
+    - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
+    - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
+
+---
+
+##### Fairness
+
+**Fairness means the information is unbiased, balanced, and considers different perspectives.** It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
+
+It's related to the following terms in the following authoritative publications:
+  - *Objectivity* in Wang & Strong (1996) [^1]
+  - *Fairness* and *Breadth* in Paul & Elder (2008) [^3]
+  - *Credibility* in ISO 25012 (2008) [^4]
+  - *Reliability* and *Flexibility* in O’Brien & Marakas (2011) [^5]
+
+---
+
+##### Efficiency
+
+**Efficiency means information can be accessed and used with reasonable effort, time, and cost.** People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
+
+It's related to the following terms in the following authoritative publications:
+    - *Accessibility* in Wang & Strong (1996) [^1]
+    - *Accessibility* in Eppler (2006) [^2]
+    - *Accessibility* and *Availability* in ISO 25012 (2008) [^4]
+    - *Accessibility* in O’Brien & Marakas (2011) [^5]
 
 
-3. Most Reliable Sources on Critical Thinking Pillars
+##### Other Information-Quality Criteria
 
-The following sources are widely cited, academically grounded, and considered authoritative:
+While the following information-quality criteria are important, IF-LLMs are likely able to produce results that satisfy users'  objectives well enough using the previous 8 priorities in addition to best practice processing policies (e.g., identifying and disclosing any conflicting or ambiguous instructions or information). Therefore, adding the following priorities likely would not significantly improve results further. As a result, these objectives have not been included in the [IF-LLM-BO processing policies](processing-policies.md).
 
+###### Consistency
 
-Sources:
-- Paul, Richard, and Linda Elder. Critical Thinking: Tools for Taking Charge of Your Learning and Your Life. Foundation for Critical Thinking, 2006.
-- The Foundation for Critical Thinking. “Defining Critical Thinking.” CriticalThinking.org, 2019, [https://www.criticalthinking.org/pages/defining-critical-thinking/766](https://www.criticalthinking.org/pages/defining-critical-thinking/766). Accessed 17 Feb. 2026.
+**Consistency means the information does not contradict itself and follows the same logic, terms, and structure throughout.** Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
 
+It's related to the following terms in the following authoritative publications:
+  - *Consistent Representation* in Wang & Strong (1996) [^1]
+  - *Consistency* in Eppler (2006) [^2]
+  - *Logic* in Paul & Elder (2008) [^3]
+  - *Consistency* in ISO 25012 (2008) [^4]
+  - *Reliability* in O’Brien & Marakas (2011) [^5]
 
-Stanford Encyclopedia of Philosophy Critical Thinking
+---
 
-Philosophical grounding of reasoning, justification, and argument evaluation.
+###### Flexibility
 
-American Philosophical Association (Delphi Report, 1990)
+**Flexibility means information can be used in more than one situation or adapted to different needs without losing meaning.** Flexible information still works when the situation changes slightly.
 
-Consensus definition of critical thinking skills and dispositions.
+It's related to *Flexibility* as published in O’Brien & Marakas (2011). [^5]
 
-Still the most cited formal definition.
+**Note:** 
 
-OECD – PISA Creative & Critical Thinking Frameworks
+While information flexibility creates value for information users, it does not necessarily create value for results of IF-LLMs.  Generally, IF-LLMs are most efficient when using relevant, yet specific, information for processing. 
 
-Modern, applied interpretation used in international education benchmarks.
+As a best practice and knowledge management policy, IF-LLM-BO will integrate reusable flexible information as knowledge entries in knowledge files to guide IF-LLM processing behavior.
 
-Bloom’s Taxonomy (Revised by Anderson & Krathwohl)
+And, IF-LLMs can produce flexible information in responses based on the behavior configuration (i.e., structures and personas). 
 
-While not exclusive to critical thinking, it underpins analytical and evaluative reasoning stages.
+Therefore,  including flexibility as a priority does not seem efficient.
+
+---
+
+###### Compliance
+
+**Compliance means the information follows required laws, rules, standards, and policies.** It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
+
+It's related to *Compliance* as published in ISO 25012 (2008). [^4]
+
+Because laws, rules, standards, and policies vary widely across objectives, geographies, industries, and occupations, users' can  create and apply compliance policies using knowledge entries organized into knowledge files. However,  these likely will not be baked into IF-LLM-BO.  Instead,  the authoritative entity responsible for the laws, rules, standards, and policies  should take the initiative to create, maintain, and distribute specialized knowledge files based on IF-LLM-BO scaffolding and policies.
+
+Therefore, compliance is not included as a processing priority of IF-LLM-BO.  
+
+Having said that, IF-LLM-BO will ensure behavior instructions, knowledge entries, and knowledge files comply with IF-LLM-BO policies and best practices.
+
+---
+
+###### Security / Protection
+
+**Security means information is protected from unauthorized access, misuse, or harm.** Only the right people can see or change it. Secure information is kept safe from people who should not have it.
+
+It's related to the following terms in the following authoritative publications:
+    - *Access Security* in Wang & Strong (1996) [^1]
+    - *Security* in Eppler (2006) [^2]
+    - *Confidentiality* in ISO 25012 (2008) [^4]
+
+ IF-LLM-BO will not create or distribute protected, confidential, or otherwise privileged information. Users are able to use IF-LLM-BO to create, maintain, store, and distribute knowledge entries and knowledge files containing such information based on their policies, procedures, and configurations.
+
+As part of development best practices and policies, IF-LLM-BO will use a version control system (i.e., GitHub) to prevent harmful or risky information injections into the model.
+
+Therefore, security is not included as a processing priority of IF-LLM-BO.  
+
+---
+
+###### Traceability / Auditability
+
+**Traceability means it is possible to track where information came from, how it was changed, and who handled it.** You can follow the information’s “paper trail” if questions come up.
+
+It's related to *Traceability* as published in ISO 25012 (2008). [^4]
+
+IF-LLM-BO's processing policies indicate that any information discovered and used must be cited, unless it is commonly-accepted general knowledge.
+
+As part of development best practices and policies, 1) IF-LLM-BO knowledge entries in knowledge files require versioning and changelog notations; and, 2) IF-LLM-BO uses a version control system (i.e., GitHub) to ensure traceability and auditability of model content.
+
+Users creating and maintaining their own knowledge entries in knowledge files based on IF-LLM-BO responsible for the policies and actions of their content.
+
+Therefore, traceability / auditability is not included as a processing priority of IF-LLM-BO.  
+
+---
+
+###### Recoverability / Resilience
+
+**Recoverability means information can be restored if it is lost, damaged, or disrupted.** Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
+
+It's related to *Recoverability* as published in ISO 25012 (2008). [^4]
+
+As part of development best practices and policies, IF-LLM-BO uses a version control system (i.e., GitHub) to ensure backups, recoverability, and resilience of model content.
+
+Users creating and maintaining their own knowledge entries in knowledge files based on IF-LLM-BO are responsible for their recoverability and resilience policies and activities related to their content.
+
+Therefore, recoverability / resilience is not included as a processing priority of IF-LLM-BO.  
+
+**Footnotes:**
+[^1]: **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+[^2]: **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+[^3]: **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+[^4]: **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+[^5]: **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
 
 
 #### Objectives
@@ -237,20 +331,9 @@ It must emphasize human-readable organization, stable identifiers, and explicit 
 #### Purpose
 As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
 
-#### Priorities
-TODO: Briefly define each of the following priorities and their value / significance for IF-LLM responses.
-1. Accuracy  
-2. Reliability  
-3. Relevance  
-4. Specificity  
-5. Clarity  
-6. Practicality  
-7. Fairness  
-8. Efficiency  
+### Operational Notes
 
-TODO: Briefly define each of the following priorities and their value / significance for IF-LLM responses.
-
-#### Instruction and Knowledge Authority Hierarchy
+### Instruction and Knowledge Authority Hierarchy
 
 TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authority as outlined below, including how instructions are granted authority, critical phrases used to grant/assign authority, plus 3 to 5 examplesto help users understand the value of this hierarchy.
 1. System (Global) Policies (e.g., knowledge entries with the highest authority (i.e., meta knowledge entries))
