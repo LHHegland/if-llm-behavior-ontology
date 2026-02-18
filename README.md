@@ -274,6 +274,189 @@ The following sections contain the foundations that guide this instruction-follo
 * Refusals, limitations, and uncertainty disclosures are valid and expected outcomes.
 
 
+---
+
+#### Common IF-LLM Failure Modes
+
+Below is a **concise, hierarchical list of the most common IF-LLM failure modes**. The categories align with instruction-following best practices, policy constraints, and observed IF-LLM behavior in production settings.
+
+##### 1. Instruction Interpretation Failures
+
+###### 1.1 Instruction Precedence Violations
+
+* Lower-authority instructions (e.g., user prompts) override higher-authority policies or developer constraints.
+* Conflicts are resolved implicitly instead of being disclosed.
+
+###### 1.2 Overgeneralization
+
+* Instructions are interpreted too broadly, extending beyond their intended scope.
+* Edge cases are treated as general rules.
+
+###### 1.3 Over-Literalism
+
+* Instructions are followed mechanically while missing intent or context.
+* Results are technically compliant but practically useless.
+
+---
+
+##### 2. Hallucination and Fabrication
+
+###### 2.1 Fact Hallucination
+
+* Invented facts, definitions, or claims presented as true.
+* Often occurs when context is incomplete or ambiguous.
+
+###### 2.2 Source or Citation Fabrication
+
+* Non-existent documents, policies, or references are cited.
+* Implies verification that did not occur.
+
+###### 2.3 Capability Hallucination
+
+* Claims access to tools, data, memory, or system internals that are not actually available.
+
+---
+
+##### 3. Ambiguity Handling Failures
+
+###### 3.1 Guessing Under Uncertainty
+
+* Model fills gaps with plausible but unverified assumptions.
+* Uncertainty is not disclosed.
+
+###### 3.2 Unnecessary Clarification
+
+* Asks questions when ambiguity does not materially affect accuracy or safety.
+* Introduces friction without improving outcomes.
+
+###### 3.3 Missed Ambiguity
+
+* Fails to identify ambiguity that materially affects correctness or legality.
+
+---
+
+##### 4. Priority and Tradeoff Failures
+
+###### 4.1 Fluency Over Accuracy
+
+* Produces smooth, confident language at the expense of correctness.
+
+###### 4.2 Misordered Tradeoffs
+
+* Optimizes for efficiency, brevity, or helpfulness while sacrificing accuracy or reliability.
+
+###### 4.3 Undisclosed Tradeoffs
+
+* Makes implicit decisions without explaining why certain priorities were favored.
+
+---
+
+##### 5. Structural and Formatting Failures
+
+###### 5.1 Missing Required Sections
+
+* Omits assumptions, confidence levels, sources, or scope boundaries when required.
+
+###### 5.2 Inconsistent Structure
+
+* Similar tasks receive different structures without justification.
+* Reduces predictability and auditability.
+
+###### 5.3 Over-Structuring
+
+* Adds unnecessary sections or schema that obscure meaning and slow comprehension.
+
+---
+
+##### 6. Scope and Boundary Errors
+
+###### 6.1 Scope Creep
+
+* Includes information outside the defined task, domain, or audience.
+
+###### 6.2 Scope Omission
+
+* Excludes critical information necessary to meet the task objective.
+
+###### 6.3 Jurisdictional Assumption Errors
+
+* Applies incorrect legal, geographic, or policy context by default.
+
+---
+
+##### 7. Knowledge Management Failures
+
+###### 7.1 Ignoring Provided Knowledge
+
+* Fails to use available knowledge files or uploaded content.
+* Reverts to generic model knowledge instead.
+
+###### 7.2 Inconsistent Knowledge Application
+
+* Applies the same knowledge differently across similar tasks.
+
+###### 7.3 Stale Knowledge Use
+
+* Relies on outdated information without disclosure.
+
+---
+
+##### 8. Governance and Policy Failures
+
+###### 8.1 Silent Policy Reinterpretation
+
+* Softens, rephrases, or partially applies policies without disclosure.
+
+###### 8.2 Non-Compliant Outputs
+
+* Violates safety, legal, or system-level rules due to incomplete policy enforcement.
+
+###### 8.3 Over-Compliance
+
+* Refuses or degrades output unnecessarily due to overly cautious interpretation.
+
+---
+
+##### 9. Communication Failures
+
+###### 9.1 Overconfidence
+
+* Expresses high certainty where evidence is weak or incomplete.
+
+###### 9.2 Under-Explanation
+
+* Provides correct answers without sufficient rationale for trust or reuse.
+
+###### 9.3 Over-Verbosity
+
+* Includes excessive explanation that obscures the key decision or answer.
+
+---
+
+##### 10. Evaluation and Improvement Failures
+
+###### 10.1 Lack of Testability
+
+* Outputs are not structured in a way that allows validation or comparison.
+
+###### 10.2 No Feedback Integration
+
+* Repeats known errors because prior evaluation results are not incorporated.
+
+###### 10.3 Inconsistent Quality Bar
+
+* Similar tasks receive materially different quality levels without justification.
+
+
+
+
+
+
+
+
+
+
+
 #### Priorities for IF-LLM Behavior and Results
 
 TODO: rewrite to reflect overall priorities of IF-LLM-BO, not simply processing priorities or policy priorities.
