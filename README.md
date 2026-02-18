@@ -103,13 +103,175 @@ The following sections contain user notes related to this instruction-following 
 ### Foundations
 The following sections contain the foundations that guide this instruction-following large language model (IF-LLM) behavior ontology.
 
+
 #### Assumptions
-This project assumes the following:
-- Instruction-following large language models (IF-LLMs) use instructions to influence processing behavior to generate more desirable results.
-- Some priorities are more commonly used to guide IF-LLMs toward desirable results. (critical thinking priorities)
-- Instructions may be provided by developers or users via prompt or API in addition to knowledge entries of various types.
-- Knowledge entries are often organized into files by entry type.
-- More specialized knowledge may be organized in subject matter collections and organized into files by entry type.
+
+##### 1. Instruction-Following Model Behavior
+
+###### 1.1 Instruction Precedence
+
+* IF-LLMs process instructions using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs.
+* Conflicts between instructions must be resolved deterministically according to that hierarchy.
+* Undisclosed or silent overrides reduce reliability and must be avoided.
+
+
+###### 1.2 Instruction Influence
+
+* Instructions and contextual knowledge **materially influence** how inputs are interpreted and how outputs are generated.
+* Explicit instructions outperform implicit expectations in reducing ambiguity and hallucination.
+
+###### 1.3 Observable Behavior
+
+* Instructional alignment is reflected in **observable output behavior**, not internal model state.
+* Behavioral correctness is evaluated based on outputs relative to stated instructions, priorities, and constraints.
+
+---
+
+##### 2. Knowledge Representation and Organization
+
+###### 2.1 Knowledge Entries and Files
+
+* Instructions and domain context can be stored as **discrete, reusable knowledge entries**.
+* Knowledge entries can be grouped into **knowledge files** to improve organization, reuse, and governance.
+
+###### 2.2 Authority of Knowledge
+
+* Knowledge files provided to the model override general model knowledge but do not override system- or developer-level instructions.
+* Missing, outdated, or uncertain knowledge must be disclosed rather than inferred.
+
+
+###### 2.3 Stability and Identifiers
+
+* Stable identifiers (IDs, tags, handles) improve traceability, reuse, and auditability over time.
+* Human-readable structure is preferred over opaque or auto-generated schemas.
+
+---
+
+##### 3. Instruction Sources and Governance
+
+###### 3.1 Multiple Instruction Authors
+
+* Instructions and context may be provided by:
+
+  * System architects
+  * Solution developers
+  * End users
+* These contributors may have different objectives, priorities, and constraints.
+
+###### 3.2 Governance Responsibility
+
+* Human actors are responsible for:
+
+  * Creating
+  * Reviewing
+  * Maintaining
+  * Retiring
+    knowledge entries and configurations.
+* The system assumes **active governance**, not self-correcting automation.
+
+###### 3.3 Adoption Discipline (Explicit)
+
+* The effectiveness of the ontology depends on **consistent and disciplined use** by humans.
+* Bypassing or inconsistently applying the ontology reduces reliability but does not invalidate the design.
+
+---
+
+##### 4. Variability and Limitations
+
+###### 4.1 Model Variability
+
+* Even with identical instructions, outputs may vary due to:
+
+  * Model capability differences
+  * Instruction formulation quality
+  * Context window constraints
+  * System-level limitations
+
+###### 4.2 Non-Determinism
+
+* The system does not assume perfect determinism.
+* Design goals emphasize **risk reduction and consistency improvement**, not absolute predictability.
+
+---
+
+##### 5. Priorities and Decision Quality
+
+###### 5.1 Explicit Priorities
+
+* Explicit, ordered priorities improve decision quality during tradeoffs.
+* Accuracy, reliability, and relevance take precedence over fluency or creativity.
+
+
+###### 5.2 Information Quality Dimensions
+
+* High-quality outputs are defined by:
+
+  * Accuracy
+  * Reliability
+  * Relevance
+  * Timeliness
+  * Sufficiency
+  * Clarity
+  * Fairness
+  * Efficiency
+  * Consistency
+  * Compliance
+  * Traceability
+  * Recoverability
+
+###### 5.3 Formalization Tradeoff
+
+* Formal priorities are sometimes preferable to informal judgment, especially in high-risk or repeatable workflows.
+
+---
+
+##### 6. Ontology Design Philosophy
+
+###### 6.1 Practical Ontology
+
+* The IF-LLM-BO is a **practical, lightweight semantic scaffolding system**, not a formally complete ontology.
+* Human usability and behavioral guidance take precedence over theoretical rigor.
+
+###### 6.2 Lean Development
+
+* The ontology should:
+
+  * Minimize unnecessary structure
+  * Enable incremental improvement
+  * Surface uncertainty early
+  * Support small-batch testing and refinement
+
+---
+
+##### 7. Evaluation and Feedback
+
+###### 7.1 Evaluation Is Necessary
+
+* Instruction-following behavior must be evaluated against stated objectives and priorities.
+* Evaluation criteria must be explicit and observable.
+
+###### 7.2 Feedback Loop (Explicit)
+
+* Evaluation results are expected to inform:
+
+  * Refinement of instructions
+  * Updates to knowledge entries
+  * Adjustments to configurations
+* Continuous improvement is an assumption, not an optional enhancement.
+
+---
+
+##### 8. Compliance and Safety
+
+###### 8.1 Policy Supremacy
+
+* System-level processing policies are authoritative and must not be silently reinterpreted or weakened.
+
+
+###### 8.2 Safety First
+
+* When conflicts arise, safety and correctness override completeness or convenience.
+* Refusals, limitations, and uncertainty disclosures are valid and expected outcomes.
 
 
 #### Priorities for IF-LLM Behavior and Results
@@ -324,8 +486,8 @@ Therefore, recoverability / resilience is not included as a processing priority 
 
 #### Objectives
 - Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
-
-It must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies. The scaffolding must help organize instruction-following LLM behavioral configurations in knowledge files. 
+  - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies.
+  - scaffolding must help organize instruction-following LLM behavioral configurations in knowledge entries and files. 
 
 
 #### Purpose
