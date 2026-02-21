@@ -448,216 +448,89 @@ Below is a **concise, hierarchical list of the most common IF-LLM failure modes*
 * Similar tasks receive materially different quality levels without justification.
 
 
+#### Information Quality Priorities
+
+Instruction-Following Large Language Models (IF-LLM) behavior and results must produce results capable of informing decision-making. Therefore, IF-LLMs should prioritize the ranked criteria below. Similarly, the underlying IF-LLM-BO policies and procedures should reflect and support these priorities. These criteria and definitions have been carefully **synthesized from cited authoritative sources**. Each definition answers: *“What does this mean in everyday decision-making?”*
+
+- **Auditability:** source of information, how information was changed, and who handled information can be identified.
+- **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
+- **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
+- **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
+- **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again. If information 
+- **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
+- **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
+- **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
+- **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
+- **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
+- **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
+- **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
+- **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
+- **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
 
 
+##### Authoritative Sources
 
+The sources for the priorities are the following authoritative publications:
 
-
-
-
-
-
-#### Priorities for IF-LLM Behavior and Results
-
-TODO: rewrite to reflect overall priorities of IF-LLM-BO, not simply processing priorities or policy priorities.
-
-Instruction-Following Large Language Models (IF-LLM) behavior and results must demonstrate the criteria in the order shown in this section (i.e., IF-LLM-BO's processing priorities) to be considered "good" or "desirable" for fulfilling a request, answering a question, or making a decision.
-
-This section identifies the priorities and **plain-language, community-accessible definitions** for each **information-quality dimension**. The criteria and definitions have been carefully **synthesized from cited authoritative sources** but written so they can be understood and used by **people across diverse communities in the United States today**. Each definition answers: *“What does this mean in everyday decision-making?”*
-
-
-##### Accuracy
-
-**Accuracy means the information is correct and matches reality.** Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
-
-It's related to *accuracy* in the following authoritative publications:
+- **Auditability:** *Traceability* as published in ISO 25012 (2008). [^4]
+- **Relevance**
+  - *Relevance* and *Value-added* in Wang & Strong (1996) [^1]
+  - *Relevance* in Eppler (2006) [^2]
+  - *Relevance* and *Significance* in Paul & Elder (2008) [^3]
+  - *Relevance* and *Value* in O’Brien & Marakas (2011) [^5]
+- **Timeliness**
+  - *Timeliness* in Wang & Strong (1996) [^1]
+  - *Timeliness*, *Up-to-dateness*, and *Frequency* in Eppler (2006) [^2]
+  - *Currentness* in ISO 25012 (2008) [^4]
+  - *Timeliness* in O’Brien & Marakas (2011) [^5]
+- **Accuracy**
   - Wang & Strong (1996) [^1]
   - Eppler (2006) [^2]
   - Paul & Elder (2008) [^3]
   - ISO 25012 (2008) [^4]
   - O’Brien & Marakas (2011) [^5]
-  
----
-
-##### Reliability
-
-**Reliability means information can be trusted to be dependable, honest, and consistent over time.** Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again. If information is reliable, you can count on it. It doesn’t change its story, exaggerate, or quietly push someone’s agenda.
-
-It's related to the following terms in the following authoritative publications:
+- **Reliability**
   - *Objectivity*, *Believability*, and *Reputation* in Wang & Strong (1996) [^1]
   - *Reliability* in Eppler (2006) [^2]
   - *Fairness* in Paul & Elder (2008) [^3]
   - *Credibility* in ISO 25012 (2008) [^4]
   - *Reliability* in O’Brien & Marakas (2011) [^5]
-
----
-
-##### Relevance
-
-**Relevance means the information matters for the decision being made and helps improve that decision.** It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
-
-It's related to the following terms in the following authoritative publications:
-  - *Relevance* and *Value-added* in Wang & Strong (1996) [^1]
-  - *Relevance* in Eppler (2006) [^2]
-  - *Relevance* and *Significance* in Paul & Elder (2008) [^3]
-  - *Relevance* and *Value* in O’Brien & Marakas (2011) [^5]
-
----
-
-##### Timeliness
-
-**Timeliness means the information is up to date and available when it is needed.** Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
-
-It's related to the following terms in the following authoritative publications:
-  - *Timeliness* in Wang & Strong (1996) [^1]
-  - *Timeliness*, *Up-to-dateness*, and *Frequency* in Eppler (2006) [^2]
-  - *Currentness* in ISO 25012 (2008) [^4]
-  - *Timeliness* in O’Brien & Marakas (2011) [^5]
-
----
-
-##### Sufficiency
-
-**Sufficiency means there is enough information—no important pieces are missing, and there is not unnecessary overload.** The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
-
-It's related to the following terms in the following authoritative publications:
+- **Sufficiency**
   - *Completeness* and *Appropriate Amount* in Wang & Strong (1996) [^1]
   - *Completeness*, *Conciseness*, and *Level of Detail* in Eppler (2006) [^2]
   - *Depth*, *Significance*, and *Precision* in Paul & Elder (2008) [^3]
   - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
   - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
-
----
-
-##### Clarity
-
-**Clarity means the information is easy to understand, clearly explained, and not confusing.** The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
-
-It's related to the following terms in the following authoritative publications:
-    - *Interpretability* and *Ease of Understanding* in Wang & Strong (1996) [^1]
-    - *Clarity* and *Conciseness* in Eppler (2006) [^2]
-    - *Clarity* in Paul & Elder (2008) [^3]
-    - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
-    - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
-
----
-
-##### Fairness
-
-**Fairness means the information is unbiased, balanced, and considers different perspectives.** It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
-
-It's related to the following terms in the following authoritative publications:
+- **Compliance:** *Compliance* as published in ISO 25012 (2008). [^4]
+- **Clarity**
+  - *Interpretability* and *Ease of Understanding* in Wang & Strong (1996) [^1]
+  - *Clarity* and *Conciseness* in Eppler (2006) [^2]
+  - *Clarity* in Paul & Elder (2008) [^3]
+  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
+  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
+- **Fairness**
   - *Objectivity* in Wang & Strong (1996) [^1]
   - *Fairness* and *Breadth* in Paul & Elder (2008) [^3]
   - *Credibility* in ISO 25012 (2008) [^4]
   - *Reliability* and *Flexibility* in O’Brien & Marakas (2011) [^5]
-
----
-
-##### Efficiency
-
-**Efficiency means information can be accessed and used with reasonable effort, time, and cost.** People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
-
-It's related to the following terms in the following authoritative publications:
-    - *Accessibility* in Wang & Strong (1996) [^1]
-    - *Accessibility* in Eppler (2006) [^2]
-    - *Accessibility* and *Availability* in ISO 25012 (2008) [^4]
-    - *Accessibility* in O’Brien & Marakas (2011) [^5]
-
-
-##### Other Information-Quality Criteria
-
-While the following information-quality criteria are important, IF-LLMs are likely able to produce results that satisfy users'  objectives well enough using the previous 8 priorities in addition to best practice processing policies (e.g., identifying and disclosing any conflicting or ambiguous instructions or information). Therefore, adding the following priorities likely would not significantly improve results further. As a result, these objectives have not been included in the [IF-LLM-BO processing policies](processing-policies.md).
-
-###### Consistency
-
-**Consistency means the information does not contradict itself and follows the same logic, terms, and structure throughout.** Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
-
-It's related to the following terms in the following authoritative publications:
+- **Consistency**
   - *Consistent Representation* in Wang & Strong (1996) [^1]
   - *Consistency* in Eppler (2006) [^2]
   - *Logic* in Paul & Elder (2008) [^3]
   - *Consistency* in ISO 25012 (2008) [^4]
   - *Reliability* in O’Brien & Marakas (2011) [^5]
+- **Efficiency**
+  - *Accessibility* in Wang & Strong (1996) [^1]
+  - *Accessibility* in Eppler (2006) [^2]
+  - *Accessibility* and *Availability* in ISO 25012 (2008) [^4]
+  - *Accessibility* in O’Brien & Marakas (2011) [^5]
+- **Security**
+  - *Access Security* in Wang & Strong (1996) [^1]
+  - *Security* in Eppler (2006) [^2]
+  - *Confidentiality* in ISO 25012 (2008) [^4]
+- **Recoverability:** *Recoverability* as published in ISO 25012 (2008). [^4]
+- **Flexibility:** *Flexibility* as published in O’Brien & Marakas (2011). [^5]
 
----
-
-###### Flexibility
-
-**Flexibility means information can be used in more than one situation or adapted to different needs without losing meaning.** Flexible information still works when the situation changes slightly.
-
-It's related to *Flexibility* as published in O’Brien & Marakas (2011). [^5]
-
-**Note:** 
-
-While information flexibility creates value for information users, it does not necessarily create value for results of IF-LLMs.  Generally, IF-LLMs are most efficient when using relevant, yet specific, information for processing. 
-
-As a best practice and knowledge management policy, IF-LLM-BO will integrate reusable flexible information as knowledge entries in knowledge files to guide IF-LLM processing behavior.
-
-And, IF-LLMs can produce flexible information in responses based on the behavior configuration (i.e., structures and personas). 
-
-Therefore,  including flexibility as a priority does not seem efficient.
-
----
-
-###### Compliance
-
-**Compliance means the information follows required laws, rules, standards, and policies.** It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
-
-It's related to *Compliance* as published in ISO 25012 (2008). [^4]
-
-Because laws, rules, standards, and policies vary widely across objectives, geographies, industries, and occupations, users' can  create and apply compliance policies using knowledge entries organized into knowledge files. However,  these likely will not be baked into IF-LLM-BO.  Instead,  the authoritative entity responsible for the laws, rules, standards, and policies  should take the initiative to create, maintain, and distribute specialized knowledge files based on IF-LLM-BO scaffolding and policies.
-
-Therefore, compliance is not included as a processing priority of IF-LLM-BO.  
-
-Having said that, IF-LLM-BO will ensure behavior instructions, knowledge entries, and knowledge files comply with IF-LLM-BO policies and best practices.
-
----
-
-###### Security / Protection
-
-**Security means information is protected from unauthorized access, misuse, or harm.** Only the right people can see or change it. Secure information is kept safe from people who should not have it.
-
-It's related to the following terms in the following authoritative publications:
-    - *Access Security* in Wang & Strong (1996) [^1]
-    - *Security* in Eppler (2006) [^2]
-    - *Confidentiality* in ISO 25012 (2008) [^4]
-
- IF-LLM-BO will not create or distribute protected, confidential, or otherwise privileged information. Users are able to use IF-LLM-BO to create, maintain, store, and distribute knowledge entries and knowledge files containing such information based on their policies, procedures, and configurations.
-
-As part of development best practices and policies, IF-LLM-BO will use a version control system (i.e., GitHub) to prevent harmful or risky information injections into the model.
-
-Therefore, security is not included as a processing priority of IF-LLM-BO.  
-
----
-
-###### Traceability / Auditability
-
-**Traceability means it is possible to track where information came from, how it was changed, and who handled it.** You can follow the information’s “paper trail” if questions come up.
-
-It's related to *Traceability* as published in ISO 25012 (2008). [^4]
-
-IF-LLM-BO's processing policies indicate that any information discovered and used must be cited, unless it is commonly-accepted general knowledge.
-
-As part of development best practices and policies, 1) IF-LLM-BO knowledge entries in knowledge files require versioning and changelog notations; and, 2) IF-LLM-BO uses a version control system (i.e., GitHub) to ensure traceability and auditability of model content.
-
-Users creating and maintaining their own knowledge entries in knowledge files based on IF-LLM-BO responsible for the policies and actions of their content.
-
-Therefore, traceability / auditability is not included as a processing priority of IF-LLM-BO.  
-
----
-
-###### Recoverability / Resilience
-
-**Recoverability means information can be restored if it is lost, damaged, or disrupted.** Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
-
-It's related to *Recoverability* as published in ISO 25012 (2008). [^4]
-
-As part of development best practices and policies, IF-LLM-BO uses a version control system (i.e., GitHub) to ensure backups, recoverability, and resilience of model content.
-
-Users creating and maintaining their own knowledge entries in knowledge files based on IF-LLM-BO are responsible for their recoverability and resilience policies and activities related to their content.
-
-Therefore, recoverability / resilience is not included as a processing priority of IF-LLM-BO.  
 
 **Footnotes:**
 [^1]: **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
