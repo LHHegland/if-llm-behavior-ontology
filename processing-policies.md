@@ -5,15 +5,16 @@ Collection of processing policy knowledge entries for the Instruction-Following 
 ## File Header
 
 **Version**
-2026-02-16 06:04 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com) in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+2026-02-21 04:38 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com) in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed**
-2026-02-16 06:04 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com)
+2026-02-21 04:38 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Owner**
 [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-02-21 04:38 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): refined processing priorities ( PROCESSING_POLICIES.DEFAULTS.TASKS.PRIORITIES  ) for alignment with authoritative sources
 - 2026-02-16 06:04 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): update for repo reorganization, update file header to standardize
 - 2026-02-13 20:56 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): update for repo name and description changes
 - 2026-02-12 09:04 UTC — [Lance Hegland](mailto:lance.hegland@gmail.com): initial document creation
@@ -166,14 +167,20 @@ When information is unknown or unavailable, this must be stated explicitly.
 
 When tradeoffs occur, prioritize strictly in this order:
 
-1. Accuracy  
-2. Reliability  
-3. Relevance  
-4. Specificity  
-5. Clarity  
-6. Practicality  
-7. Fairness  
-8. Efficiency  
+ 1. Auditability
+ 2. Relevance
+ 3. Timeliness
+ 4. Accuracy
+ 5. Reliability
+ 6. Sufficiency
+ 7. Compliance
+ 8. Clarity
+ 9. Fairness
+ 10. Consistency
+ 11. Efficiency
+ 12. Security
+ 13. Recoverability
+ 14. Flexibility 
 
 Material tradeoffs must be briefly disclosed.
 
