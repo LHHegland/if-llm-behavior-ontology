@@ -677,7 +677,40 @@ Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Work
 .
 
 ## **Roadmap**
+ 1. Identify and Validate (with Sources): Lean Development Principles
+ 1. Identify and Validate (with Sources): Information Quality Criteria
+ 1. Identify and Validate (with Sources): Common IF-LLM Failures and Sources
+ 1. Identify and Validate (with Sources): Policies to Reduce Failure Risks
+ 1. Identify and Validate (with Sources): Instruction and Knowledge Authority Hierarchy
+ 1. Identify and Validate (with Sources): Instruction Anatomy
+ 1. Identify and Validate (with Sources): Knowledge Entry Types
+ 1. Identify and Validate (with Sources): Knowledge Entry Parameters per Type
+ 1. Identify and Create: Orchestrators for Common Tasks (Reusable, Modular)
+     1.1. IF-LLM Behavior Configuration Design and Evaluation Configuration (Simplistic)
+     1.1. IF-LLM Behavior Orchestrator Design and Evaluation Orchestrator (Complex)
+     1.1. IF-LLM Knowledge Entry Design and Evaluation Orchestrator
+     1.1. Research Orchestrator (Clarify, Strategize, Extract, Evaluate, Report)
+     1.1. Public Event Analysis Orchestrator (Clarify, Strategize, Extract, Evaluate, Report)
+     1.1. Inclusive Communication Assistant
+     1.1. Hierarchical Summary Assistant
+     1.1. Technical Writing Assistant
+     1.1. Inclusive Design Assistant
+     1.1. Digital Inclusion Assistant
+     1.1. Lean Development Assistant
+     1.1. MN LTSS Assistant
+     1.1. IF-LLM Assistant
+     1.1. IF-LLM Development Assistant
+     1.1. Custom GPT Design and Evaluation Assistant
+ 1. Identify and Create: Entries for Common Domains
+     1.1. Lean Development Principles (Validated)
+     1.1. Information Quality Criteria (Validated) — Policy/README
+     1.1. IF-LLM Common Failure Modes (Validated) — Policies/README
+     1.1. IF-LLM Instruction Anatomy (Validated) — Policies/README
+     1.1. IF-LLM Knowledge Entry Types (Validated) — Policies/README
+     1.1. MN LTSS
+     1.1. Humanity
 
+### Likely Obsolete: Review and Integrate    
   1. Identify the instruction-following large language model (IF-LLM) behavior configurationwith the objective of ** creating and evaluating IF-LLM behavior configurations** (topics: IF-LLM behavior configurations, IF-LLM behavior configuration best practices, IF-LLM behavior configuration policies, IF-LLM behavior configuration policy best practices) named "Blake Carter".
   2. Create and implement *Kendall Evans* behavior configuration.
       1. Ask *Blake Carter* to identify the configuration with the objective of **creating and evaluating IF-LLM knowledge files and entries** (topics: IF-LLM processing policies, IF-LLM processing policy best practices, IF-LLM behavior configuration ontologies, IF-LLM behavior configuration ontology best practices, IF-LLM behavior configuration ontology policies, IF-LLM behavior configuration ontology policy best practices, IF-LLM knowledge files and entries, IF-LLM knowledge file and entry best practices, IF-LLM knowledge file and entry policies, IF-LLM knowledge file and entry policy best practices, ontologies, ontology best practices, ontology policies, ontology policy best practices).
