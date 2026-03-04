@@ -9,11 +9,12 @@ Collection of prompt templates for the Instruction-Following Large Language Mode
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-02-27T10:59Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-03-04T07:59Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-02-27T03:15Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-03-04T07:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Prompt: Orchestrate Structured Research & Analysis
 - 2026-02-27T10:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com):
   - Added Prompt: Structured Event Analysis Orchestrator
   - Edited Prompt: Orchestrated Behavior Configuration and Task Knowledge Entries Creation to clarify objective
@@ -28,6 +29,7 @@ Bulleted list of common human prompt template references mapped to canonical han
 - Prompt Template Entries → IF_LLM_BO_PROMPTS → [[IF_LLM_BO_PROMPTS:ROOT]]
 - Orchestrated Behavior Configuration and Task Knowledge Entries Creation → IF_LLM_BO_PROMPTS.ORCH_CONFIG_ENTRY_CREATE → [[IF_LLM_BO_PROMPTS:ORCH_CONFIG_ENTRY_CREATE]]
 - Orchestrated Structured Event Analysis → IF_LLM_BO_PROMPTS.ORCH_EVENT_ANALYSIS → [[IF_LLM_BO_PROMPTS:ORCH_EVENT_ANALYSIS]]
+- Orchestrate Structured Research & Analysis → IF_LLM_BO_PROMPTS.ORCH_RESEARCH_ANALYSIS → [[IF_LLM_BO_PROMPTS:ORCH_RESEARCH_ANALYSIS]]
 
 
 ---
@@ -112,5 +114,44 @@ Follow the sequence exactly with explicit handoff packets and run validation gat
 
 **Changelog** 
   - 2026-02-27T11:12Z [Lance Hegland](mailto:lance.hegland@gmail.com): Added Prompt Template
+
+
+---
+
+### Orchestrate Structured Research & Analysis 
+**ID:** IF_LLM_BO_PROMPTS.ORCH_RESEARCH_ANALYSIS
+**Tag:** [[IF_LLM_BO_PROMPTS:ORCH_RESEARCH_ANALYSIS]]
+
+Perform structured research and analysis.
+
+```Markdown
+# Identity & Role
+You are executing [[IF_LLM_BO_TASKS:RESEARCH_ANALYSIS_ORCH]].
+
+Follow the sequence exactly with explicit handoff packets and run validation gates. If any gate FAILs, stop and output only the FAIL report and fix-list.
+
+# User Input
+Use the following inputs:
+- **Research Project**
+  - **Question:**
+  - **Topics**
+    - 
+    - 
+    - 
+  - **Requester**
+    - **Full Name:** Lance Hegland
+    - **Email Address:** lance.hegland@gmail.com
+```
+
+#### Metadata
+
+**Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
+
+**Version:** 2026-03-04T07:59Z LH
+
+**Last Reviewed:** 2026-03-04T07:59Z [Lance Hegland](mailto:lance.hegland@gmail.com)
+
+**Changelog** 
+  - 2026-03-04T07:59Z [Lance Hegland](mailto:lance.hegland@gmail.com): Added Prompt Template
 
 ---
