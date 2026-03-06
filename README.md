@@ -539,7 +539,7 @@ The sources for the priorities are the following authoritative publications:
 
 
 
-### Appendix: Common IF-LLM Failure Modes {#appendix-common-if-llm-failure-modes}
+### Appendix: Common IF-LLM Failure Modes
 
 This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes along with [authoritative sources](#appendix-common-if-llm-failure-modes-works-cited).
 
