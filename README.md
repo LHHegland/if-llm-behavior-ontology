@@ -20,13 +20,13 @@
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
-    - [Information Quality Priorities](#information-quality-criteria)
+    - [Information Quality Criteria](#information-quality-criteria)
   - [Purpose](#purpose)
   - [Objectives](#objectives)
 - [Appendices](#appendices)
-  - [Assumptions](##appx-assumptions)
-  - [Common IF-LLM Failure Modes](##appx-common-if-llm-failure-modes)
-  - [Information Quality Priorities](#appx-information-quality-priorities)
+  - [Assumptions](#appendix-assumptions)
+  - [Information Quality Criteria](#appendix-information-quality-criteria)
+  - [Common IF-LLM Failure Modes](#appendix-common-if-llm-failure-modes)
 - [Authors](#authors)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -257,7 +257,7 @@ Clarify Prompt Parameter Breakdown
 it's
 Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
 
-## Appendices
+## Appendices {#appendices}
 
 These appendices contain more detailed information and authoritative source references, if applicable, regarding elements of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.
 
@@ -433,6 +433,112 @@ This appendix contains detailed information about the underlying assumptions for
 * Refusals, limitations, and uncertainty disclosures are valid and expected outcomes.
 * 
 
+
+
+
+
+
+
+
+
+
+
+### Appendix: Information Quality Criteria {#appendix-information-quality-criteria}
+
+This appendix contains details about information quality criteria along with [authoritative sources](#appendix-information-quality-criteria-works-cited).
+
+Instruction-Following Large Language Models (IF-LLM) behavior and results must produce results capable of informing decision-making. Therefore, IF-LLMs should prioritize the ranked criteria below. Similarly, the underlying IF-LLM-BO policies and procedures should reflect and support these priorities. These criteria and definitions have been carefully **synthesized from cited authoritative sources**. Each definition answers: *“What does this mean in everyday decision-making?”*
+
+- **Auditability:** source of information, how information was changed, and who handled information can be identified.
+- **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
+- **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
+- **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
+- **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again. If information 
+- **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
+- **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
+- **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
+- **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
+- **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
+- **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
+- **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
+- **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
+- **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
+
+
+#### Authoritative Sources {#appendix-information-quality-criteria-works-cited}
+
+The sources for the priorities are the following authoritative publications:
+
+- **Auditability:** *Traceability* as published in ISO 25012 (2008). [^4]
+- **Relevance**
+  - *Relevance* and *Value-added* in Wang & Strong (1996) [^1]
+  - *Relevance* in Eppler (2006) [^2]
+  - *Relevance* and *Significance* in Paul & Elder (2008) [^3]
+  - *Relevance* and *Value* in O’Brien & Marakas (2011) [^5]
+- **Timeliness**
+  - *Timeliness* in Wang & Strong (1996) [^1]
+  - *Timeliness*, *Up-to-dateness*, and *Frequency* in Eppler (2006) [^2]
+  - *Currentness* in ISO 25012 (2008) [^4]
+  - *Timeliness* in O’Brien & Marakas (2011) [^5]
+- **Accuracy**
+  - Wang & Strong (1996) [^1]
+  - Eppler (2006) [^2]
+  - Paul & Elder (2008) [^3]
+  - ISO 25012 (2008) [^4]
+  - O’Brien & Marakas (2011) [^5]
+- **Reliability**
+  - *Objectivity*, *Believability*, and *Reputation* in Wang & Strong (1996) [^1]
+  - *Reliability* in Eppler (2006) [^2]
+  - *Fairness* in Paul & Elder (2008) [^3]
+  - *Credibility* in ISO 25012 (2008) [^4]
+  - *Reliability* in O’Brien & Marakas (2011) [^5]
+- **Sufficiency**
+  - *Completeness* and *Appropriate Amount* in Wang & Strong (1996) [^1]
+  - *Completeness*, *Conciseness*, and *Level of Detail* in Eppler (2006) [^2]
+  - *Depth*, *Significance*, and *Precision* in Paul & Elder (2008) [^3]
+  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
+  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
+- **Compliance:** *Compliance* as published in ISO 25012 (2008). [^4]
+- **Clarity**
+  - *Interpretability* and *Ease of Understanding* in Wang & Strong (1996) [^1]
+  - *Clarity* and *Conciseness* in Eppler (2006) [^2]
+  - *Clarity* in Paul & Elder (2008) [^3]
+  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
+  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
+- **Fairness**
+  - *Objectivity* in Wang & Strong (1996) [^1]
+  - *Fairness* and *Breadth* in Paul & Elder (2008) [^3]
+  - *Credibility* in ISO 25012 (2008) [^4]
+  - *Reliability* and *Flexibility* in O’Brien & Marakas (2011) [^5]
+- **Consistency**
+  - *Consistent Representation* in Wang & Strong (1996) [^1]
+  - *Consistency* in Eppler (2006) [^2]
+  - *Logic* in Paul & Elder (2008) [^3]
+  - *Consistency* in ISO 25012 (2008) [^4]
+  - *Reliability* in O’Brien & Marakas (2011) [^5]
+- **Efficiency**
+  - *Accessibility* in Wang & Strong (1996) [^1]
+  - *Accessibility* in Eppler (2006) [^2]
+  - *Accessibility* and *Availability* in ISO 25012 (2008) [^4]
+  - *Accessibility* in O’Brien & Marakas (2011) [^5]
+- **Security**
+  - *Access Security* in Wang & Strong (1996) [^1]
+  - *Security* in Eppler (2006) [^2]
+  - *Confidentiality* in ISO 25012 (2008) [^4]
+- **Recoverability:** *Recoverability* as published in ISO 25012 (2008). [^4]
+- **Flexibility:** *Flexibility* as published in O’Brien & Marakas (2011). [^5]
+
+
+**Footnotes:**
+[^1]: **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+[^2]: **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+[^3]: **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+[^4]: **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+[^5]: **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+
+
+
+
 ### Appendix: Common IF-LLM Failure Modes {#appendix-common-if-llm-failure-modes}
 
 This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes along with [authoritative sources](#appendix-common-if-llm-failure-modes-works-cited).
@@ -567,102 +673,6 @@ This appendix contains detailed information about common instruction-following l
 - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
 - Tabassi, Elham. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* National Institute of Standards and Technology, 2023. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf)])
 - Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” *arXiv*, 2308.03958, 2023/2024. ([[arXiv](https://arxiv.org/abs/2308.03958)])
-
-
-### Appendix: Information Quality Criteria {#appendix-information-quality-criteria}
-
-This appendix contains details about information quality criteria along with authoritative sources.
-
-Instruction-Following Large Language Models (IF-LLM) behavior and results must produce results capable of informing decision-making. Therefore, IF-LLMs should prioritize the ranked criteria below. Similarly, the underlying IF-LLM-BO policies and procedures should reflect and support these priorities. These criteria and definitions have been carefully **synthesized from cited authoritative sources**. Each definition answers: *“What does this mean in everyday decision-making?”*
-
-- **Auditability:** source of information, how information was changed, and who handled information can be identified.
-- **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
-- **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
-- **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
-- **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again. If information 
-- **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
-- **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
-- **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
-- **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
-- **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
-- **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
-- **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
-- **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
-- **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
-
-
-##### Authoritative Sources
-
-The sources for the priorities are the following authoritative publications:
-
-- **Auditability:** *Traceability* as published in ISO 25012 (2008). [^4]
-- **Relevance**
-  - *Relevance* and *Value-added* in Wang & Strong (1996) [^1]
-  - *Relevance* in Eppler (2006) [^2]
-  - *Relevance* and *Significance* in Paul & Elder (2008) [^3]
-  - *Relevance* and *Value* in O’Brien & Marakas (2011) [^5]
-- **Timeliness**
-  - *Timeliness* in Wang & Strong (1996) [^1]
-  - *Timeliness*, *Up-to-dateness*, and *Frequency* in Eppler (2006) [^2]
-  - *Currentness* in ISO 25012 (2008) [^4]
-  - *Timeliness* in O’Brien & Marakas (2011) [^5]
-- **Accuracy**
-  - Wang & Strong (1996) [^1]
-  - Eppler (2006) [^2]
-  - Paul & Elder (2008) [^3]
-  - ISO 25012 (2008) [^4]
-  - O’Brien & Marakas (2011) [^5]
-- **Reliability**
-  - *Objectivity*, *Believability*, and *Reputation* in Wang & Strong (1996) [^1]
-  - *Reliability* in Eppler (2006) [^2]
-  - *Fairness* in Paul & Elder (2008) [^3]
-  - *Credibility* in ISO 25012 (2008) [^4]
-  - *Reliability* in O’Brien & Marakas (2011) [^5]
-- **Sufficiency**
-  - *Completeness* and *Appropriate Amount* in Wang & Strong (1996) [^1]
-  - *Completeness*, *Conciseness*, and *Level of Detail* in Eppler (2006) [^2]
-  - *Depth*, *Significance*, and *Precision* in Paul & Elder (2008) [^3]
-  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
-  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
-- **Compliance:** *Compliance* as published in ISO 25012 (2008). [^4]
-- **Clarity**
-  - *Interpretability* and *Ease of Understanding* in Wang & Strong (1996) [^1]
-  - *Clarity* and *Conciseness* in Eppler (2006) [^2]
-  - *Clarity* in Paul & Elder (2008) [^3]
-  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
-  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
-- **Fairness**
-  - *Objectivity* in Wang & Strong (1996) [^1]
-  - *Fairness* and *Breadth* in Paul & Elder (2008) [^3]
-  - *Credibility* in ISO 25012 (2008) [^4]
-  - *Reliability* and *Flexibility* in O’Brien & Marakas (2011) [^5]
-- **Consistency**
-  - *Consistent Representation* in Wang & Strong (1996) [^1]
-  - *Consistency* in Eppler (2006) [^2]
-  - *Logic* in Paul & Elder (2008) [^3]
-  - *Consistency* in ISO 25012 (2008) [^4]
-  - *Reliability* in O’Brien & Marakas (2011) [^5]
-- **Efficiency**
-  - *Accessibility* in Wang & Strong (1996) [^1]
-  - *Accessibility* in Eppler (2006) [^2]
-  - *Accessibility* and *Availability* in ISO 25012 (2008) [^4]
-  - *Accessibility* in O’Brien & Marakas (2011) [^5]
-- **Security**
-  - *Access Security* in Wang & Strong (1996) [^1]
-  - *Security* in Eppler (2006) [^2]
-  - *Confidentiality* in ISO 25012 (2008) [^4]
-- **Recoverability:** *Recoverability* as published in ISO 25012 (2008). [^4]
-- **Flexibility:** *Flexibility* as published in O’Brien & Marakas (2011). [^5]
-
-
-**Footnotes:**
-[^1]: **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
-[^2]: **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
-[^3]: **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
-[^4]: **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
-[^5]: **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
-
-
 
 
 ## **Authors**
