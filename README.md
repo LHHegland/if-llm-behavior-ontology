@@ -20,7 +20,7 @@
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
-    - [Information Quality Priorities](#information-quality-priorities)
+    - [Information Quality Priorities](#information-quality-criteria)
   - [Purpose](#purpose)
   - [Objectives](#objectives)
 - [Appendices](#appendices)
