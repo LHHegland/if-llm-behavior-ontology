@@ -257,11 +257,11 @@ Clarify Prompt Parameter Breakdown
 it's
 Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
 
-## Appendices {#appendices}
+## Appendices
 
 These appendices contain more detailed information and authoritative source references, if applicable, regarding elements of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.
 
-### Appendix: Assumptions {#appendix-assumptions}
+### Appendix: Assumptions
 
 This appendix contains detailed information about the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project along with authoritative sources.
 
@@ -443,7 +443,7 @@ This appendix contains detailed information about the underlying assumptions for
 
 
 
-### Appendix: Information Quality Criteria {#appendix-information-quality-criteria}
+### Appendix: Information Quality Criteria
 
 This appendix contains details about information quality criteria along with [authoritative sources](#appendix-information-quality-criteria-works-cited).
 
