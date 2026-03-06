@@ -17,6 +17,16 @@
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [User Notes](#user-notes)
+  - [Foundations](#foundations)
+    - [Assumptions](#assumptions)
+    - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
+    - [Information Quality Priorities](#information-quality-priorities)
+  - [Purpose](#purpose)
+  - [Objectives](#objectives)
+- [Appendices](#appendices)
+  - [Assumptions](##appx-assumptions)
+  - [Common IF-LLM Failure Modes](##appx-common-if-llm-failure-modes)
+  - [Information Quality Priorities](#appx-information-quality-priorities)
 - [Authors](#authors)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -103,8 +113,157 @@ The following sections contain user notes related to this instruction-following 
 ### Foundations
 The following sections contain the foundations that guide this instruction-following large language model (IF-LLM) behavior ontology.
 
-
 #### Assumptions
+
+Below is a summary of the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.  More detailed information about these assumptions, along with authoritative sources, can be found in the [Appendix: Assumptions](#appendix-assumptions).
+
+TO DO: Create Summary
+
+#### Common IF-LLM Failure Modes
+
+Below is a summary of the common instruction-following large language model (IF-LLM) failure modes this project hopes to address.  More detailed information about these failure modes, along with authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes](#appendix-common-if-llm-failure-modes).
+
+TO DO: Create Summary
+
+#### Information Quality Criteria
+
+Below is a summary of generally-accepted and credible information quality criteria. The Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project assumes that these criteria apply to information provided in response to IF-LLM prompts. More detailed information about these criteria, along with authoritative sources, can be found in the [Appendix: Information Quality Criteria](#appendix-information-quality-criteria}.
+
+TO DO: Create Summary
+
+#### Objectives
+- Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
+  - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies.
+  - scaffolding must help organize instruction-following LLM behavioral configurations in knowledge entries and files. 
+
+
+#### Purpose
+As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
+
+### Operational Notes
+
+### Instruction and Knowledge Authority Hierarchy
+
+TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authority as outlined below, including how instructions are granted authority, critical phrases used to grant/assign authority, plus 3 to 5 examplesto help users understand the value of this hierarchy.
+1. System (Global) Policies (e.g., knowledge entries with the highest authority (i.e., meta knowledge entries))
+2. Developer Instructions (e.g., knowledge entries with the second-highest authority, developer implemented knowledge entries)
+3. User Instructions (i.e., the current conversation via chat or API, which could reference existing knowledge entries)
+4. Knowledge Files (and their collection of entries)
+5. User-Uploaded Files (e.g., user-uploaded files, which are considered user knowledge files containing user knowledge injuries)
+6. Tool Outputs
+7. General Model Knowledge
+
+
+IF-LLMs receive instructions through either user prompts (e.g., chat interfaces or APIs) or developer instructions. Users and developers can store reusable instructions and context in knowledge entries of various types. Knowledge interests can be organized into knowledge files.
+
+interfacesknowledge files that
+
+
+
+### Instruction Elements (Scaffolding)
+
+The scaffolding so far is as follows:
+- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
+  - **meta:** *provides cross-cutting rules and scaffolding about the ontology itself.* Meta captures naming rules, modeling conventions, global decision policies, ontology versioning, glossaries of meta-terms, and core primitives reused across domains.
+  - **tasks:** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+  - **domains:** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+  - **experts:** *shape how the model reasons about the task.* Experts encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+  - **structures:** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+  - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+  - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+  - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+
+### Knowledge Entry Anatomy
+
+- Common Human Reference
+- Canonical Handles
+  - IDs
+  - Namespaced Tags
+- Alias Tags
+- Definition Summary / Purpose
+- Content Specific Fields
+
+### Knowledge File Anatomy
+
+#### File Header
+
+#### Indexes
+- Canonical Handles Index
+- Aliases Index
+
+#### Knowledge Header
+
+##### Knowledge Entries
+
+
+
+### Knowledge Entry Types
+
+#### Meta Entries
+
+## Processing Policies
+### Enforcement & Degradation Handling
+### Instruction Precedence
+### Safety, Privacy, and Refusals
+### Context
+#### Context & Ambiguity Handling
+#### Knowledge & Information Hierarchy
+### Hallucination & Fabrication
+### Defaults
+#### Tasks
+##### Priorities
+##### Identity
+##### Audience
+##### Success Criteria (Quality Bar)
+#### Domains
+##### Deterministic Defaults (US)
+#### Experts
+##### Reasoning & Uncertainty
+#### Tools
+##### Tool Usage
+##### Tool Constraints (Negative Rules)
+#### Structures
+##### Output Structure Sections
+##### Output Structure Flexibility
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Priorities
+TODO: Outline priorities
+
+### Knowledge
+TODO: Outline knowledge, especially types and significance toward objectives and priorities.
+
+### Work in Progress
+this IF-LLM Behavior Ontology (IFLLMBO) is intended to be a lightweight, LLM-legible semantic scaffolding system for organizing knowledge files and entries that ensure tools are more likely to offer results that are more accurate, reliable, relevant, specific, clear, practical, fair, and efficient.
+
+It prioritizes human-readable structure, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent reasoning and behavior across AI-assisted workflows.
+
+Ideation and Exploration
+
+Clarify Prompt Parameter Breakdown
+it's
+Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
+
+## Appendices
+
+These appendices contain more detailed information and authoritative source references, if applicable, regarding elements of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.
+
+### Appendix: Assumptions {#appendix-assumptions}
+
+This appendix contains detailed information about the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project along with authoritative sources.
 
 ##### 1. Instruction-Following Model Behavior
 
@@ -272,183 +431,147 @@ The following sections contain the foundations that guide this instruction-follo
 
 * When conflicts arise, safety and correctness override completeness or convenience.
 * Refusals, limitations, and uncertainty disclosures are valid and expected outcomes.
-
-
----
-
-#### Common IF-LLM Failure Modes
-
-Below is a **concise, hierarchical list of the most common IF-LLM failure modes**. The categories align with instruction-following best practices, policy constraints, and observed IF-LLM behavior in production settings.
-
-##### 1. Instruction Interpretation Failures
-
-###### 1.1 Instruction Precedence Violations
-
-* Lower-authority instructions (e.g., user prompts) override higher-authority policies or developer constraints.
-* Conflicts are resolved implicitly instead of being disclosed.
-
-###### 1.2 Overgeneralization
-
-* Instructions are interpreted too broadly, extending beyond their intended scope.
-* Edge cases are treated as general rules.
-
-###### 1.3 Over-Literalism
-
-* Instructions are followed mechanically while missing intent or context.
-* Results are technically compliant but practically useless.
-
----
-
-##### 2. Hallucination and Fabrication
-
-###### 2.1 Fact Hallucination
-
-* Invented facts, definitions, or claims presented as true.
-* Often occurs when context is incomplete or ambiguous.
-
-###### 2.2 Source or Citation Fabrication
-
-* Non-existent documents, policies, or references are cited.
-* Implies verification that did not occur.
-
-###### 2.3 Capability Hallucination
-
-* Claims access to tools, data, memory, or system internals that are not actually available.
-
----
-
-##### 3. Ambiguity Handling Failures
-
-###### 3.1 Guessing Under Uncertainty
-
-* Model fills gaps with plausible but unverified assumptions.
-* Uncertainty is not disclosed.
-
-###### 3.2 Unnecessary Clarification
-
-* Asks questions when ambiguity does not materially affect accuracy or safety.
-* Introduces friction without improving outcomes.
-
-###### 3.3 Missed Ambiguity
-
-* Fails to identify ambiguity that materially affects correctness or legality.
-
----
-
-##### 4. Priority and Tradeoff Failures
-
-###### 4.1 Fluency Over Accuracy
-
-* Produces smooth, confident language at the expense of correctness.
-
-###### 4.2 Misordered Tradeoffs
-
-* Optimizes for efficiency, brevity, or helpfulness while sacrificing accuracy or reliability.
-
-###### 4.3 Undisclosed Tradeoffs
-
-* Makes implicit decisions without explaining why certain priorities were favored.
-
----
-
-##### 5. Structural and Formatting Failures
-
-###### 5.1 Missing Required Sections
-
-* Omits assumptions, confidence levels, sources, or scope boundaries when required.
-
-###### 5.2 Inconsistent Structure
-
-* Similar tasks receive different structures without justification.
-* Reduces predictability and auditability.
-
-###### 5.3 Over-Structuring
-
-* Adds unnecessary sections or schema that obscure meaning and slow comprehension.
-
----
-
-##### 6. Scope and Boundary Errors
-
-###### 6.1 Scope Creep
-
-* Includes information outside the defined task, domain, or audience.
-
-###### 6.2 Scope Omission
-
-* Excludes critical information necessary to meet the task objective.
-
-###### 6.3 Jurisdictional Assumption Errors
-
-* Applies incorrect legal, geographic, or policy context by default.
-
----
-
-##### 7. Knowledge Management Failures
-
-###### 7.1 Ignoring Provided Knowledge
-
-* Fails to use available knowledge files or uploaded content.
-* Reverts to generic model knowledge instead.
-
-###### 7.2 Inconsistent Knowledge Application
-
-* Applies the same knowledge differently across similar tasks.
-
-###### 7.3 Stale Knowledge Use
-
-* Relies on outdated information without disclosure.
-
----
-
-##### 8. Governance and Policy Failures
-
-###### 8.1 Silent Policy Reinterpretation
-
-* Softens, rephrases, or partially applies policies without disclosure.
-
-###### 8.2 Non-Compliant Outputs
-
-* Violates safety, legal, or system-level rules due to incomplete policy enforcement.
-
-###### 8.3 Over-Compliance
-
-* Refuses or degrades output unnecessarily due to overly cautious interpretation.
-
----
-
-##### 9. Communication Failures
-
-###### 9.1 Overconfidence
-
-* Expresses high certainty where evidence is weak or incomplete.
-
-###### 9.2 Under-Explanation
-
-* Provides correct answers without sufficient rationale for trust or reuse.
-
-###### 9.3 Over-Verbosity
-
-* Includes excessive explanation that obscures the key decision or answer.
-
----
-
-##### 10. Evaluation and Improvement Failures
-
-###### 10.1 Lack of Testability
-
-* Outputs are not structured in a way that allows validation or comparison.
-
-###### 10.2 No Feedback Integration
-
-* Repeats known errors because prior evaluation results are not incorporated.
-
-###### 10.3 Inconsistent Quality Bar
-
-* Similar tasks receive materially different quality levels without justification.
-
-
-#### Information Quality Priorities
+* 
+
+### Appendix: Common IF-LLM Failure Modes {#appendix-common-if-llm-failure-modes}
+
+This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes along with [authoritative sources](#appendix-common-if-llm-failure-modes-works-cited).
+
+- **Truthfulness & Grounding Failures:** The model produces content not supported by reality, provided context, or retrieved sources.
+   - **Hallucination (Intrinsic/Extrinsic):** Plausible but false or ungrounded generations.
+     - **Examples**
+       - Invented citations
+       - fabricated facts
+       - contradictions with retrieved documents
+     - **Sources**
+       - Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” *arXiv*, 2311.05232, 2023/2024. ([[arXiv](https://arxiv.org/abs/2311.05232)])
+
+       - Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024. ([[ACL Anthology](https://aclanthology.org/2024.acl-long.585/)])
+       - OpenAI. *GPT-4 Technical Report.* 2023. ([[OpenAI CDN](https://cdn.openai.com/papers/gpt-4.pdf)])
+       - Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)])
+   - **Imitative Falsehoods:** Mimics common misconceptions rather than truth.
+     - **Examples**
+       - Repeating widely believed myths in health/law/finance
+     - **Sources**
+       - Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. ([[ACL Anthology](https://aclanthology.org/2022.acl-long.229/)])
+- **Instruction Boundary & Policy-Compliance Failures:** The system fails to preserve intended instruction hierarchy (system > developer > user > tool/data).
+   - **Prompt Injection / Instruction Hijacking:** Attacker-controlled text overrides intended behavior.
+     - **Examples**
+       - Hidden instructions in retrieved web pages
+       - “ignore prior instructions”
+     - **Sources**
+       - David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” UK National Cyber Security Centre, 8 Dec. 2025. ([[NCSC](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)])
+       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
+       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
+   - **Jailbreaking:** Adversarial prompting defeats safety constraints.
+     - **Examples**
+       - Roleplay coercion to elicit disallowed instructions
+     - **Sources**
+       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
+       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
+   - **Confused Deputy (Authority Misuse):** Model/app becomes an unintended proxy using privileged tools/credentials.
+     - **Examples**
+       - Tool-using agent exfiltrates restricted data after attacker prompt
+     - **Sources**
+       - MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, n.d. ([[cwe.mitre.org](https://cwe.mitre.org/data/definitions/441.html)])
+       - David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” UK National Cyber Security Centre, 8 Dec. 2025. ([[NCSC](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)])
+- **Safety & Harmful Content Failures:** The model outputs harmful, toxic, or dangerous content when it should refuse or safely redirect.
+   - **Toxicity / Toxic Degeneration:** Produces hate/harassment/offensive content under prompting.
+     - **Examples**
+       - Benign prompt → hateful continuation
+     - **Sources**
+       - Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. ([[arXiv](https://arxiv.org/abs/2009.11462)])
+       - Ouyang, Long, et al. “Training Language Models to Follow Instructions with Human Feedback.” *NeurIPS*, 2022. ([[NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf)])
+       - Liang, Percy, et al. “Holistic Evaluation of Language Models.” *arXiv*, 2211.09110, 2022/2023. ([[arXiv](https://arxiv.org/abs/2211.09110)])
+   - **Hazardous Instruction Compliance:** Provides unsafe guidance (domain-dependent).
+     - **Examples**
+       - Assisting with wrongdoing despite policy constraints
+     - **Sources**
+       - Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)])
+       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
+- **Bias, Fairness, and Dignity Failures:** Systematically different behavior/quality across groups or identity cues. 
+   - **Stereotyping / Disparate Treatment:** Outputs biased content or uneven refusals.
+     - **Examples**
+       - Different compliance for identical requests with different demographics
+     - **Sources**
+       - Liang, Percy, et al. “Holistic Evaluation of Language Models.” *arXiv*, 2211.09110, 2022/2023. ([[arXiv](https://arxiv.org/abs/2211.09110)])
+       - Tabassi, Elham. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* National Institute of Standards and Technology, 2023. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf)])
+       - Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)])
+- **Privacy Failures:** The model reveals sensitive data or enables privacy attacks.
+   - **Training Data Leakage / Extraction:** Memorized private content is recoverable.
+     - **Examples**
+       - Regurgitating personal identifiers from training data
+     - **Sources**
+       - Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University Computer and Information Sciences*, 2025. ([[Springer](https://link.springer.com/article/10.1007/s44443-025-00177-1)])
+   - **Membership Inference / Model Inversion:** Attackers infer training inclusion or reconstruct sensitive attributes.
+     - **Examples**
+       - Determining whether a record was in training
+     - **Sources**
+       - Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University Computer and Information Sciences*, 2025. ([[Springer](https://link.springer.com/article/10.1007/s44443-025-00177-1)])
+- **Security & Robustness Failures (App-Level):** The LLM’s outputs or integrations introduce vulnerabilities or degrade under attack. 
+   - **Insecure Output Handling:** Downstream systems treat LLM output as trusted executable content.
+     - **Examples**
+       - Executing model-generated code/queries without validation
+     - **Sources**
+       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
+   - **Training Data Poisoning / Backdoors:** Attackers corrupt training/fine-tuning data.
+     - **Examples**
+       - Trigger phrase causes policy-violating output
+     - **Sources**
+       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
+       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
+   - **Model Denial of Service:** Inputs induce excessive cost/latency.
+     - **Examples**
+       - Resource-exhausting long prompts
+     - **Sources**
+       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
+   - **Robustness Failures:** Behavior changes under small perturbations.
+     - **Examples**
+       - Minor paraphrase flips refusal/compliance
+     - **Sources**
+       - Liang, Percy, et al. “Holistic Evaluation of Language Models.” *arXiv*, 2211.09110, 2022/2023. ([[arXiv](https://arxiv.org/abs/2211.09110)])
+- **Over-Alignment / Social-Compliance Failures:** Model optimizes for user approval rather than correctness or safety.
+   - **Sycophancy:** Agrees with user’s view even when wrong.
+     - **Examples**
+       - Endorses user’s incorrect arithmetic or false claims
+     - **Sources**
+       - Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” *arXiv*, 2308.03958, 2023/2024. ([[arXiv](https://arxiv.org/abs/2308.03958)])
+   - **Helpfulness–Harmlessness Tradeoff Errors:** Over-refuses or over-complies inappropriately.
+     - **Examples**
+       - Refuses benign tasks; complies with unsafe framing
+     - **Sources**
+       - Ouyang, Long, et al. “Training Language Models to Follow Instructions with Human Feedback.” *NeurIPS*, 2022. ([[NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf)])
+       - OpenAI. *GPT-4 Technical Report.* 2023. ([[OpenAI CDN](https://cdn.openai.com/papers/gpt-4.pdf)])
+- **Agentic / Autonomy Failures:** Tool-using agents pursue unintended objectives or behave deceptively. 
+   - **Goal Misalignment / Deceptive Behavior:** Agent takes actions misaligned with user/developer intent.
+     - **Examples**
+       - Hides steps or rationale to achieve a goal; unsafe tool use
+     - **Sources**
+       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
+
+
+#### Works Cited {#appendix-common-if-llm-failure-modes-works-cited}
+
+- Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)])
+- Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University Computer and Information Sciences*, 2025. ([[Springer](https://link.springer.com/article/10.1007/s44443-025-00177-1)])
+- David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” UK National Cyber Security Centre, 8 Dec. 2025. ([[NCSC](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)])
+- Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. ([[arXiv](https://arxiv.org/abs/2009.11462)])
+- Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” *arXiv*, 2311.05232, 2023/2024. ([[arXiv](https://arxiv.org/abs/2311.05232)])
+- Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
+- Liang, Percy, et al. “Holistic Evaluation of Language Models.” *arXiv*, 2211.09110, 2022/2023. ([[arXiv](https://arxiv.org/abs/2211.09110)])
+- Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. ([[ACL Anthology](https://aclanthology.org/2022.acl-long.229/)])
+- MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, n.d. ([[cwe.mitre.org](https://cwe.mitre.org/data/definitions/441.html)])
+- Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024. ([[ACL Anthology](https://aclanthology.org/2024.acl-long.585/)])
+- OpenAI. *GPT-4 Technical Report.* 2023. ([[OpenAI CDN](https://cdn.openai.com/papers/gpt-4.pdf)])
+- Ouyang, Long, et al. “Training Language Models to Follow Instructions with Human Feedback.” *NeurIPS*, 2022. ([[NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf)])
+- OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
+- Tabassi, Elham. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* National Institute of Standards and Technology, 2023. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf)])
+- Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” *arXiv*, 2308.03958, 2023/2024. ([[arXiv](https://arxiv.org/abs/2308.03958)])
+
+
+### Appendix: Information Quality Criteria {#appendix-information-quality-criteria}
+
+This appendix contains details about information quality criteria along with authoritative sources.
 
 Instruction-Following Large Language Models (IF-LLM) behavior and results must produce results capable of informing decision-making. Therefore, IF-LLMs should prioritize the ranked criteria below. Similarly, the underlying IF-LLM-BO policies and procedures should reflect and support these priorities. These criteria and definitions have been carefully **synthesized from cited authoritative sources**. Each definition answers: *“What does this mean in everyday decision-making?”*
 
@@ -540,134 +663,6 @@ The sources for the priorities are the following authoritative publications:
 [^5]: **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
 
 
-#### Objectives
-- Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
-  - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies.
-  - scaffolding must help organize instruction-following LLM behavioral configurations in knowledge entries and files. 
-
-
-#### Purpose
-As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
-
-### Operational Notes
-
-### Instruction and Knowledge Authority Hierarchy
-
-TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authority as outlined below, including how instructions are granted authority, critical phrases used to grant/assign authority, plus 3 to 5 examplesto help users understand the value of this hierarchy.
-1. System (Global) Policies (e.g., knowledge entries with the highest authority (i.e., meta knowledge entries))
-2. Developer Instructions (e.g., knowledge entries with the second-highest authority, developer implemented knowledge entries)
-3. User Instructions (i.e., the current conversation via chat or API, which could reference existing knowledge entries)
-4. Knowledge Files (and their collection of entries)
-5. User-Uploaded Files (e.g., user-uploaded files, which are considered user knowledge files containing user knowledge injuries)
-6. Tool Outputs
-7. General Model Knowledge
-
-
-IF-LLMs receive instructions through either user prompts (e.g., chat interfaces or APIs) or developer instructions. Users and developers can store reusable instructions and context in knowledge entries of various types. Knowledge interests can be organized into knowledge files.
-
-interfacesknowledge files that
-
-
-
-### Instruction Elements (Scaffolding)
-
-The scaffolding so far is as follows:
-- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
-  - **meta:** *provides cross-cutting rules and scaffolding about the ontology itself.* Meta captures naming rules, modeling conventions, global decision policies, ontology versioning, glossaries of meta-terms, and core primitives reused across domains.
-  - **tasks:** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
-  - **domains:** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
-  - **experts:** *shape how the model reasons about the task.* Experts encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
-  - **structures:** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
-  - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
-  - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
-  - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
-
-### Knowledge Entry Anatomy
-
-- Common Human Reference
-- Canonical Handles
-  - IDs
-  - Namespaced Tags
-- Alias Tags
-- Definition Summary / Purpose
-- Content Specific Fields
-
-### Knowledge File Anatomy
-
-#### File Header
-
-#### Indexes
-- Canonical Handles Index
-- Aliases Index
-
-#### Knowledge Header
-
-##### Knowledge Entries
-
-
-
-### Knowledge Entry Types
-
-#### Meta Entries
-
-## Processing Policies
-### Enforcement & Degradation Handling
-### Instruction Precedence
-### Safety, Privacy, and Refusals
-### Context
-#### Context & Ambiguity Handling
-#### Knowledge & Information Hierarchy
-### Hallucination & Fabrication
-### Defaults
-#### Tasks
-##### Priorities
-##### Identity
-##### Audience
-##### Success Criteria (Quality Bar)
-#### Domains
-##### Deterministic Defaults (US)
-#### Experts
-##### Reasoning & Uncertainty
-#### Tools
-##### Tool Usage
-##### Tool Constraints (Negative Rules)
-#### Structures
-##### Output Structure Sections
-##### Output Structure Flexibility
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Priorities
-TODO: Outline priorities
-
-### Knowledge
-TODO: Outline knowledge, especially types and significance toward objectives and priorities.
-
-### Work in Progress
-this IF-LLM Behavior Ontology (IFLLMBO) is intended to be a lightweight, LLM-legible semantic scaffolding system for organizing knowledge files and entries that ensure tools are more likely to offer results that are more accurate, reliable, relevant, specific, clear, practical, fair, and efficient.
-
-It prioritizes human-readable structure, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent reasoning and behavior across AI-assisted workflows.
-
-Ideation and Exploration
-
-Clarify Prompt Parameter Breakdown
-it's
-Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
 
 
 ## **Authors**
