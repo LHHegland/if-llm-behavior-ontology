@@ -127,18 +127,38 @@ TO DO: Create Summary
 
 #### Information Quality Criteria
 
-Below is a summary of generally-accepted and credible information quality criteria. The Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project assumes that these criteria apply to information provided in response to IF-LLM prompts. More detailed information about these criteria, along with authoritative sources, can be found in the [Appendix: Information Quality Criteria](#appendix-information-quality-criteria}.
+Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making. Each definition is written to answer a practical question: *"What does this mean for everyday decision-making?"*
 
-TO DO: Create Summary
+To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
 
-#### Objectives
+**Information Quality Criteria (Prioritized)**
+ 1. **Auditability:** source of information, how information was changed, and who handled information can be identified.
+ 2. **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
+ 3. **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
+ 4. **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
+ 5. **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again.
+ 6. **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
+ 7. **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
+ 8. **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
+ 9. **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
+10. **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
+11. **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
+12. **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
+13. **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
+14. **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
+
+
+More detailed information about these criteria, along with authoritative sources, can be found in the [Appendix: Information Quality Criteria](#appendix-information-quality-criteria).
+
+
+
+### Purpose
+As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
+
+### Objectives
 - Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
   - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies.
   - scaffolding must help organize instruction-following LLM behavioral configurations in knowledge entries and files. 
-
-
-#### Purpose
-As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
 
 ### Operational Notes
 
@@ -445,98 +465,99 @@ This appendix contains detailed information about the underlying assumptions for
 
 ### Appendix: Information Quality Criteria
 
-This appendix contains details about information quality criteria along with [authoritative sources](#appendix-information-quality-criteria-works-cited).
+This appendix describes the information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-information-quality-criteria).
 
-Instruction-Following Large Language Models (IF-LLM) behavior and results must produce results capable of informing decision-making. Therefore, IF-LLMs should prioritize the ranked criteria below. Similarly, the underlying IF-LLM-BO policies and procedures should reflect and support these priorities. These criteria and definitions have been carefully **synthesized from cited authoritative sources**. Each definition answers: *“What does this mean in everyday decision-making?”*
+Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making.
+
+The criteria and definitions presented here are **synthesized from the cited authoritative sources**. Each definition is written to answer a practical question: *“What does this mean for everyday decision-making?”*
+
+To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
 
 - **Auditability:** source of information, how information was changed, and who handled information can be identified.
+  - *Sources*
+    - *Traceability* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
 - **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
+  - *Sources*
+    - *Relevance* and *Value* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Relevance* and *Value-added* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Relevance* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Relevance* and *Significance* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
 - **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
+  - *Sources*
+    - *Currentness* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Timeliness* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Timeliness* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Timeliness*, *Up-to-dateness*, and *Frequency* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
 - **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
-- **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again. If information 
+  - *Sources*
+    - **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+- **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again.
+  - *Sources*
+    - *Credibility* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Reliability* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Objectivity*, *Believability*, and *Reputation* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Reliability* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Fairness* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
 - **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
+  - *Sources*
+    - *Completeness* and *Precision* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Completeness* and *Economy* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Completeness* and *Appropriate Amount* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Completeness*, *Conciseness*, and *Level of Detail* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Depth*, *Significance*, and *Precision* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
 - **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
+  - *Source:* **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
 - **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
+  - *Sources*
+    - *Completeness* and *Precision* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Completeness* and *Economy* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Interpretability* and *Ease of Understanding* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Clarity* and *Conciseness* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Clarity* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
 - **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
+  - *Sources*
+    - *Credibility* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Reliability* and *Flexibility* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Objectivity* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Fairness* and *Breadth* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
 - **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
+  - *Sources*
+    - *Consistency* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Reliability* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Consistent Representation* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Consistency* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Logic* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
 - **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
+  - *Sources*
+    - *Accessibility* and *Availability* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Accessibility* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Accessibility* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Accessibility* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
 - **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
+  - *Sources*
+    - *Confidentiality* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Access Security* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Security* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
 - **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
+  - *Source:* **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
 - **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
+  - *Source:* **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
 
 
-#### Authoritative Sources {#appendix-information-quality-criteria-works-cited}
+##### Summary of Authoritative Sources for Information Quality Criteria
 
-The sources for the priorities are the following authoritative publications:
+A summary of the authoritative sources for these information quality criteria appears below:
+- **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+- **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+- **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+- **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+- **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
 
-- **Auditability:** *Traceability* as published in ISO 25012 (2008). [^4]
-- **Relevance**
-  - *Relevance* and *Value-added* in Wang & Strong (1996) [^1]
-  - *Relevance* in Eppler (2006) [^2]
-  - *Relevance* and *Significance* in Paul & Elder (2008) [^3]
-  - *Relevance* and *Value* in O’Brien & Marakas (2011) [^5]
-- **Timeliness**
-  - *Timeliness* in Wang & Strong (1996) [^1]
-  - *Timeliness*, *Up-to-dateness*, and *Frequency* in Eppler (2006) [^2]
-  - *Currentness* in ISO 25012 (2008) [^4]
-  - *Timeliness* in O’Brien & Marakas (2011) [^5]
-- **Accuracy**
-  - Wang & Strong (1996) [^1]
-  - Eppler (2006) [^2]
-  - Paul & Elder (2008) [^3]
-  - ISO 25012 (2008) [^4]
-  - O’Brien & Marakas (2011) [^5]
-- **Reliability**
-  - *Objectivity*, *Believability*, and *Reputation* in Wang & Strong (1996) [^1]
-  - *Reliability* in Eppler (2006) [^2]
-  - *Fairness* in Paul & Elder (2008) [^3]
-  - *Credibility* in ISO 25012 (2008) [^4]
-  - *Reliability* in O’Brien & Marakas (2011) [^5]
-- **Sufficiency**
-  - *Completeness* and *Appropriate Amount* in Wang & Strong (1996) [^1]
-  - *Completeness*, *Conciseness*, and *Level of Detail* in Eppler (2006) [^2]
-  - *Depth*, *Significance*, and *Precision* in Paul & Elder (2008) [^3]
-  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
-  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
-- **Compliance:** *Compliance* as published in ISO 25012 (2008). [^4]
-- **Clarity**
-  - *Interpretability* and *Ease of Understanding* in Wang & Strong (1996) [^1]
-  - *Clarity* and *Conciseness* in Eppler (2006) [^2]
-  - *Clarity* in Paul & Elder (2008) [^3]
-  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
-  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
-- **Fairness**
-  - *Objectivity* in Wang & Strong (1996) [^1]
-  - *Fairness* and *Breadth* in Paul & Elder (2008) [^3]
-  - *Credibility* in ISO 25012 (2008) [^4]
-  - *Reliability* and *Flexibility* in O’Brien & Marakas (2011) [^5]
-- **Consistency**
-  - *Consistent Representation* in Wang & Strong (1996) [^1]
-  - *Consistency* in Eppler (2006) [^2]
-  - *Logic* in Paul & Elder (2008) [^3]
-  - *Consistency* in ISO 25012 (2008) [^4]
-  - *Reliability* in O’Brien & Marakas (2011) [^5]
-- **Efficiency**
-  - *Accessibility* in Wang & Strong (1996) [^1]
-  - *Accessibility* in Eppler (2006) [^2]
-  - *Accessibility* and *Availability* in ISO 25012 (2008) [^4]
-  - *Accessibility* in O’Brien & Marakas (2011) [^5]
-- **Security**
-  - *Access Security* in Wang & Strong (1996) [^1]
-  - *Security* in Eppler (2006) [^2]
-  - *Confidentiality* in ISO 25012 (2008) [^4]
-- **Recoverability:** *Recoverability* as published in ISO 25012 (2008). [^4]
-- **Flexibility:** *Flexibility* as published in O’Brien & Marakas (2011). [^5]
-
-
-**Footnotes:**
-[^1]: **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
-[^2]: **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
-[^3]: **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
-[^4]: **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
-[^5]: **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
-
-
+---
 
 
 ### Appendix: Common IF-LLM Failure Modes
