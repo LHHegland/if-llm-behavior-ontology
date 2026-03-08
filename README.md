@@ -117,6 +117,11 @@ The following sections contain the foundations that guide this instruction-follo
 
 Below is a summary of the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.  More detailed information about these assumptions, along with authoritative sources, can be found in the [Appendix: Assumptions](#appendix-assumptions).
 
+There is credible and sufficient evidence that Instruction-Following Large Language Models (IF-LLMs) produce a finite number of [common failure modes](#common-if-llm-failure-modes).
+
+Instruction-Following Large Language Models (IF-LLMs) produce results that are likely considered when making future decisions. Therefore, the results they produce should meet [well-defined quality standards](#information-quality-criteria).
+
+
 TO DO: Create Summary
 
 #### Common IF-LLM Failure Modes
@@ -285,176 +290,91 @@ These appendices contain more detailed information and authoritative source refe
 
 This appendix contains detailed information about the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project along with authoritative sources.
 
-##### 1. Instruction-Following Model Behavior
+Instruction-Following Large Language Models (IF-LLMs) produce results that are likely considered when making decisions. Formal priorities are sometimes preferable to informal judgment, especially in high-risk or repeatable workflows. Explicit, ordered priorities improve decision quality during tradeoffs, regardless of the process used (i.e. whether using an IF-LLM or not). Therefore, IF-LLM processing and results for decision-making purposes should use [well-defined quality standards](#information-quality-criteria).
 
-###### 1.1 Instruction Precedence
+IF-LLMs are complex adaptive systems.
 
-* IF-LLMs process instructions using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs.
-* Conflicts between instructions must be resolved deterministically according to that hierarchy.
-* Undisclosed or silent overrides reduce reliability and must be avoided.
+Even with identical instructions, IF-LLM outputs may vary due to:
+- Model capability differences
+- Instruction formulation quality
+- Context window constraints
+- System-level limitations
 
+IF-LLM systems do not guarantee perfect determinism. Design goals emphasize **risk reduction and consistency improvement**, not absolute predictability. In other words, it is impossible to eliminate the risk of experiencing undesirable results. However, it is possible to reduce the risks of experiencing undesirable results.
 
-###### 1.2 Instruction Influence
+Instructional alignment (i.e. known and controllable for many developers and users) is reflected in **observable output behavior**, not internal model state (i.e. unknown and uncontrollable for most developers and users). 
 
-* Instructions and contextual knowledge **materially influence** how inputs are interpreted and how outputs are generated.
-* Explicit instructions outperform implicit expectations in reducing ambiguity and hallucination.
+IF-LLM instructions and contextual information **materially influence** how inputs are interpreted and how outputs are generated.
 
-###### 1.3 Observable Behavior
+IF-LLM behavioral correctness is evaluated based on outputs relative to stated instructions, priorities, and constraints.
 
-* Instructional alignment is reflected in **observable output behavior**, not internal model state.
-* Behavioral correctness is evaluated based on outputs relative to stated instructions, priorities, and constraints.
+Instruction-following behavior must be evaluated against stated objectives and priorities. Evaluation criteria must be explicit and observable.
 
----
+Evaluation results are expected to inform:
+- Refinement of instructions
+- Updates to knowledge entries
+- Adjustments to configurations
 
-##### 2. Knowledge Representation and Organization
+Continuous improvement is an assumption, not an optional enhancement.
 
-###### 2.1 Knowledge Entries and Files
+There is credible and sufficient evidence that Instruction-Following Large Language Models (IF-LLMs) produce a finite number of [common failure modes](#common-if-llm-failure-modes).
 
-* Instructions and domain context can be stored as **discrete, reusable knowledge entries**.
-* Knowledge entries can be grouped into **knowledge files** to improve organization, reuse, and governance.
+Explicit instructions outperform implicit expectations in reducing risks of experiencing common failure modes.
 
-###### 2.2 Authority of Knowledge
+The likelihood for IF-LLM behavioral correctness can be improved and risks of encountering common failure modes can be reduced by incorporating various policies and contextual information into explicit IF-LLM instructions.
 
-* Knowledge files provided to the model override general model knowledge but do not override system- or developer-level instructions.
-* Missing, outdated, or uncertain knowledge must be disclosed rather than inferred.
+Instructions and context may be provided by:
+- System architects
+- Solution developers
+- End users
 
+Instruction and context contributors may have different objectives, priorities, and constraints.
 
-###### 2.3 Stability and Identifiers
+IF-LLMs process instructions using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs.
 
-* Stable identifiers (IDs, tags, handles) improve traceability, reuse, and auditability over time.
-* Human-readable structure is preferred over opaque or auto-generated schemas.
+System-level processing policies are authoritative and should not be silently reinterpreted or weakenedto preserve auditability.
 
----
+Conflicts between instructions must be resolved deterministically according to that hierarchy. Undisclosed or silent overrides reduce reliability and must be avoided.
 
-##### 3. Instruction Sources and Governance
+Human beings are responsible for:
+- Creating
+- Reviewing
+- Maintaining
+- Retiring instructions (including knowledge entries and configurations).
 
-###### 3.1 Multiple Instruction Authors
+Instructions and contextual information context can be stored as **discrete, reusable knowledge entries**. Knowledge entries can be grouped into **knowledge files** to improve organization, reuse, and governance.
 
-* Instructions and context may be provided by:
+Knowledge files provided to the model override general model knowledge but do not override system- or developer-level instructions.
 
-  * System architects
-  * Solution developers
-  * End users
-* These contributors may have different objectives, priorities, and constraints.
+Stable identifiers (IDs, tags, handles) for knowledge entries improve traceability, reuse, and auditability over time.
 
-###### 3.2 Governance Responsibility
+Human-readable structure is preferred over opaque or auto-generated schemas for clarity.
 
-* Human actors are responsible for:
+Missing, outdated, or uncertain knowledge should be disclosed rather than inferred to ensure auditability.
 
-  * Creating
-  * Reviewing
-  * Maintaining
-  * Retiring
-    knowledge entries and configurations.
-* The system assumes **active governance**, not self-correcting automation.
+Refusals, limitations, and uncertainty disclosures are valid and expected outcomes for most IF-LLMs.
 
-###### 3.3 Adoption Discipline (Explicit)
+When conflicts arise, safety and correctness often override completeness or convenience for most IF-LLMs.
 
-* The effectiveness of the ontology depends on **consistent and disciplined use** by humans.
-* Bypassing or inconsistently applying the ontology reduces reliability but does not invalidate the design.
+Using a semi-formal ontology to establish system-level policies, contextual defaults, and offer reusable, standardized instructions for common use cases can help improve behavioral correctness and reduce risks of encountering common failure modes.
 
----
+The IF-LLM-BO is a **practical, lightweight semantic scaffolding system**, not a formally complete ontology.
 
-##### 4. Variability and Limitations
+Human usability and behavioral guidance take precedence over theoretical rigor.
 
-###### 4.1 Model Variability
+The ontology should:
+- Minimize unnecessary structure
+- Enable incremental improvement
+- Surface uncertainty early
+- Support small-batch testing and refinement
+ 
+Using an ontology assumes **active governance**, not self-correcting automation.
 
-* Even with identical instructions, outputs may vary due to:
+ Human beings are fallible and may not be consistent.
 
-  * Model capability differences
-  * Instruction formulation quality
-  * Context window constraints
-  * System-level limitations
+The effectiveness of any ontology depends on **consistent and disciplined use** by humans.
 
-###### 4.2 Non-Determinism
-
-* The system does not assume perfect determinism.
-* Design goals emphasize **risk reduction and consistency improvement**, not absolute predictability.
-
----
-
-##### 5. Priorities and Decision Quality
-
-###### 5.1 Explicit Priorities
-
-* Explicit, ordered priorities improve decision quality during tradeoffs.
-* Accuracy, reliability, and relevance take precedence over fluency or creativity.
-
-
-###### 5.2 Information Quality Dimensions
-
-* High-quality outputs are defined by:
-
-  * Accuracy
-  * Reliability
-  * Relevance
-  * Timeliness
-  * Sufficiency
-  * Clarity
-  * Fairness
-  * Efficiency
-  * Consistency
-  * Compliance
-  * Traceability
-  * Recoverability
-
-###### 5.3 Formalization Tradeoff
-
-* Formal priorities are sometimes preferable to informal judgment, especially in high-risk or repeatable workflows.
-
----
-
-##### 6. Ontology Design Philosophy
-
-###### 6.1 Practical Ontology
-
-* The IF-LLM-BO is a **practical, lightweight semantic scaffolding system**, not a formally complete ontology.
-* Human usability and behavioral guidance take precedence over theoretical rigor.
-
-###### 6.2 Lean Development
-
-* The ontology should:
-
-  * Minimize unnecessary structure
-  * Enable incremental improvement
-  * Surface uncertainty early
-  * Support small-batch testing and refinement
-
----
-
-##### 7. Evaluation and Feedback
-
-###### 7.1 Evaluation Is Necessary
-
-* Instruction-following behavior must be evaluated against stated objectives and priorities.
-* Evaluation criteria must be explicit and observable.
-
-###### 7.2 Feedback Loop (Explicit)
-
-* Evaluation results are expected to inform:
-
-  * Refinement of instructions
-  * Updates to knowledge entries
-  * Adjustments to configurations
-* Continuous improvement is an assumption, not an optional enhancement.
-
----
-
-##### 8. Compliance and Safety
-
-###### 8.1 Policy Supremacy
-
-* System-level processing policies are authoritative and must not be silently reinterpreted or weakened.
-
-
-###### 8.2 Safety First
-
-* When conflicts arise, safety and correctness override completeness or convenience.
-* Refusals, limitations, and uncertainty disclosures are valid and expected outcomes.
-* 
-
-
-
+Bypassing or inconsistently applying the ontology reduces reliability but does not invalidate the design.
 
 
 
