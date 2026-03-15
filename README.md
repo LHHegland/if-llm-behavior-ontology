@@ -26,7 +26,7 @@
 - [Appendices](#appendices)
   - [Assumptions](#appendix-assumptions)
   - [Information Quality Criteria](#appendix-information-quality-criteria)
-  - [Common IF-LLM Failure Modes](#appendix-common-if-llm-failure-modes)
+  - [Common IF-LLM Failure Modes](#appendix-common-if-llm-failure-modes-with-examples-and-sources)
 - [Authors](#authors)
 - [Roadmap](#roadmap)
 - [License](#license)
