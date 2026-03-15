@@ -526,10 +526,9 @@ A summary of the authoritative sources for these information quality criteria ap
 ---
 
 
-### Appendix: Common IF-LLM Failure Modes with Sources and Examples
+### Appendix: Common IF-LLM Failure Modes with Examples and Sources
 
 This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes with examples and sources.  There is also a [summary of authoritative sources](#appendix-common-if-llm-failure-modes-works-cited).
-## IF-LLM Failure Modes with Examples and Sources
 
 * **Truthfulness & Knowledge Failures**
 
