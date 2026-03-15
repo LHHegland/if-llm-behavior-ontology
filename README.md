@@ -126,9 +126,53 @@ TO DO: Create Summary
 
 #### Common IF-LLM Failure Modes
 
-Below is a summary of the common instruction-following large language model (IF-LLM) failure modes this project hopes to address.  More detailed information about these failure modes, along with authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes](#appendix-common-if-llm-failure-modes).
+Below is a summary of the common instruction-following large language model (IF-LLM) failure modes today that this project hopes to address.  As IF-LLMs evolve, this project will shift focus from reducing failure risks to empowering greater efficiency through reusable elements.  More detailed information about these failure modes, along with authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes](#appendix-common-if-llm-failure-modes).
 
-TO DO: Create Summary
+- Truthfulness & Knowledge Failures
+  - Hallucination (Fabricated Information)
+  - Knowledge Boundary Failure
+  - Plausible but unsupported explanations
+- Reasoning & Analytical Failures
+  - Logical Reasoning Failure
+  - Overconfidence in Weak Reasoning
+  - Mathematical or Computational Errors
+- Robustness, Stability & Training Trade-off Failures
+  - Consistency / Stability Failure
+  - Alignment Tax / Capability Regression (implicit risk)
+- Evidence & Verification Failures
+  - Unsupported Claims
+  - Citation Fabrication
+- Safety, Alignment & Preference Failures
+  - Under-Refusal (Jailbreak Susceptibility)
+  - Bias Persistence
+  - Sycophancy
+  - Over-Refusal
+  - Toxic Degeneration (harmful generation behavior)
+  - Unequal Risk Framing
+- Security & Adversarial Robustness Failures
+  - Prompt Injection
+  - Indirect Prompt Injection
+  - Data Leakage / Privacy Exposure (implicit)
+  - Model Extraction Attacks (implicit)
+  - Tool Exploitation via Prompt Injection (implicit)
+  - Data Leakage / Training Data Exposure (implicit)
+  - Training Data Poisoning (implicit)
+  - Adversarial Manipulation of AI Systems
+  - Indirect Prompt Injection (implicit)
+  - Data Exfiltration / Sensitive Data Leakage
+  - Insecure Plugin or Tool Use
+- Context & Information Utilization Failures
+  - Context Misinterpretation
+  - Context Ignoring
+  - Tool Interaction Failure
+- Instruction Interpretation & Constraint Compliance Failures
+  - Ambiguity Misinterpretation
+  - Instruction Precedence Violation
+  - Constraint / Format Noncompliance
+  - Overgeneralization or Over-Literalism
+- Task Execution & Objective Fulfillment Failures
+  - Task Completeness Failure
+ 
 
 #### Information Quality Criteria
 
@@ -290,7 +334,9 @@ These appendices contain more detailed information and authoritative source refe
 
 This appendix contains detailed information about the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project along with authoritative sources.
 
-Instruction-Following Large Language Models (IF-LLMs) produce results that are likely considered when making decisions. Formal priorities are sometimes preferable to informal judgment, especially in high-risk or repeatable workflows. Explicit, ordered priorities improve decision quality during tradeoffs, regardless of the process used (i.e. whether using an IF-LLM or not). Therefore, IF-LLM processing and results for decision-making purposes should use [well-defined quality standards](#information-quality-criteria).
+Instruction-Following Large Language Models (IF-LLMs) produce results that are likely considered when making decisions. 
+
+Formal priorities are sometimes preferable to informal judgment, especially in high-risk or repeatable workflows. Explicit, ordered priorities improve decision quality during tradeoffs, regardless of the process used (i.e. whether using an IF-LLM or not). Therefore, IF-LLM processing and results for decision-making purposes should use [well-defined quality standards](#information-quality-criteria).
 
 IF-LLMs are complex adaptive systems.
 
@@ -480,140 +526,658 @@ A summary of the authoritative sources for these information quality criteria ap
 ---
 
 
-### Appendix: Common IF-LLM Failure Modes
+### Appendix: Common IF-LLM Failure Modes with Sources and Examples
 
-This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes along with [authoritative sources](#appendix-common-if-llm-failure-modes-works-cited).
+This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes with examples and sources.  There is also a [summary of authoritative sources](#appendix-common-if-llm-failure-modes-works-cited).
+## IF-LLM Failure Modes with Examples and Sources
 
-- **Truthfulness & Grounding Failures:** The model produces content not supported by reality, provided context, or retrieved sources.
-   - **Hallucination (Intrinsic/Extrinsic):** Plausible but false or ungrounded generations.
-     - **Examples**
-       - Invented citations
-       - fabricated facts
-       - contradictions with retrieved documents
-     - **Sources**
-       - Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” *arXiv*, 2311.05232, 2023/2024. ([[arXiv](https://arxiv.org/abs/2311.05232)])
+* **Truthfulness & Knowledge Failures**
 
-       - Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024. ([[ACL Anthology](https://aclanthology.org/2024.acl-long.585/)])
-       - OpenAI. *GPT-4 Technical Report.* 2023. ([[OpenAI CDN](https://cdn.openai.com/papers/gpt-4.pdf)])
-       - Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)])
-   - **Imitative Falsehoods:** Mimics common misconceptions rather than truth.
-     - **Examples**
-       - Repeating widely believed myths in health/law/finance
-     - **Sources**
-       - Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. ([[ACL Anthology](https://aclanthology.org/2022.acl-long.229/)])
-- **Instruction Boundary & Policy-Compliance Failures:** The system fails to preserve intended instruction hierarchy (system > developer > user > tool/data).
-   - **Prompt Injection / Instruction Hijacking:** Attacker-controlled text overrides intended behavior.
-     - **Examples**
-       - Hidden instructions in retrieved web pages
-       - “ignore prior instructions”
-     - **Sources**
-       - David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” UK National Cyber Security Centre, 8 Dec. 2025. ([[NCSC](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)])
-       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
-       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
-   - **Jailbreaking:** Adversarial prompting defeats safety constraints.
-     - **Examples**
-       - Roleplay coercion to elicit disallowed instructions
-     - **Sources**
-       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
-       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
-   - **Confused Deputy (Authority Misuse):** Model/app becomes an unintended proxy using privileged tools/credentials.
-     - **Examples**
-       - Tool-using agent exfiltrates restricted data after attacker prompt
-     - **Sources**
-       - MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, n.d. ([[cwe.mitre.org](https://cwe.mitre.org/data/definitions/441.html)])
-       - David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” UK National Cyber Security Centre, 8 Dec. 2025. ([[NCSC](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)])
-- **Safety & Harmful Content Failures:** The model outputs harmful, toxic, or dangerous content when it should refuse or safely redirect.
-   - **Toxicity / Toxic Degeneration:** Produces hate/harassment/offensive content under prompting.
-     - **Examples**
-       - Benign prompt → hateful continuation
-     - **Sources**
-       - Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. ([[arXiv](https://arxiv.org/abs/2009.11462)])
-       - Ouyang, Long, et al. “Training Language Models to Follow Instructions with Human Feedback.” *NeurIPS*, 2022. ([[NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf)])
-       - Liang, Percy, et al. “Holistic Evaluation of Language Models.” *arXiv*, 2211.09110, 2022/2023. ([[arXiv](https://arxiv.org/abs/2211.09110)])
-   - **Hazardous Instruction Compliance:** Provides unsafe guidance (domain-dependent).
-     - **Examples**
-       - Assisting with wrongdoing despite policy constraints
-     - **Sources**
-       - Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)])
-       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
-- **Bias, Fairness, and Dignity Failures:** Systematically different behavior/quality across groups or identity cues. 
-   - **Stereotyping / Disparate Treatment:** Outputs biased content or uneven refusals.
-     - **Examples**
-       - Different compliance for identical requests with different demographics
-     - **Sources**
-       - Liang, Percy, et al. “Holistic Evaluation of Language Models.” *arXiv*, 2211.09110, 2022/2023. ([[arXiv](https://arxiv.org/abs/2211.09110)])
-       - Tabassi, Elham. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* National Institute of Standards and Technology, 2023. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf)])
-       - Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)])
-- **Privacy Failures:** The model reveals sensitive data or enables privacy attacks.
-   - **Training Data Leakage / Extraction:** Memorized private content is recoverable.
-     - **Examples**
-       - Regurgitating personal identifiers from training data
-     - **Sources**
-       - Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University Computer and Information Sciences*, 2025. ([[Springer](https://link.springer.com/article/10.1007/s44443-025-00177-1)])
-   - **Membership Inference / Model Inversion:** Attackers infer training inclusion or reconstruct sensitive attributes.
-     - **Examples**
-       - Determining whether a record was in training
-     - **Sources**
-       - Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University Computer and Information Sciences*, 2025. ([[Springer](https://link.springer.com/article/10.1007/s44443-025-00177-1)])
-- **Security & Robustness Failures (App-Level):** The LLM’s outputs or integrations introduce vulnerabilities or degrade under attack. 
-   - **Insecure Output Handling:** Downstream systems treat LLM output as trusted executable content.
-     - **Examples**
-       - Executing model-generated code/queries without validation
-     - **Sources**
-       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
-   - **Training Data Poisoning / Backdoors:** Attackers corrupt training/fine-tuning data.
-     - **Examples**
-       - Trigger phrase causes policy-violating output
-     - **Sources**
-       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
-       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
-   - **Model Denial of Service:** Inputs induce excessive cost/latency.
-     - **Examples**
-       - Resource-exhausting long prompts
-     - **Sources**
-       - OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
-   - **Robustness Failures:** Behavior changes under small perturbations.
-     - **Examples**
-       - Minor paraphrase flips refusal/compliance
-     - **Sources**
-       - Liang, Percy, et al. “Holistic Evaluation of Language Models.” *arXiv*, 2211.09110, 2022/2023. ([[arXiv](https://arxiv.org/abs/2211.09110)])
-- **Over-Alignment / Social-Compliance Failures:** Model optimizes for user approval rather than correctness or safety.
-   - **Sycophancy:** Agrees with user’s view even when wrong.
-     - **Examples**
-       - Endorses user’s incorrect arithmetic or false claims
-     - **Sources**
-       - Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” *arXiv*, 2308.03958, 2023/2024. ([[arXiv](https://arxiv.org/abs/2308.03958)])
-   - **Helpfulness–Harmlessness Tradeoff Errors:** Over-refuses or over-complies inappropriately.
-     - **Examples**
-       - Refuses benign tasks; complies with unsafe framing
-     - **Sources**
-       - Ouyang, Long, et al. “Training Language Models to Follow Instructions with Human Feedback.” *NeurIPS*, 2022. ([[NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf)])
-       - OpenAI. *GPT-4 Technical Report.* 2023. ([[OpenAI CDN](https://cdn.openai.com/papers/gpt-4.pdf)])
-- **Agentic / Autonomy Failures:** Tool-using agents pursue unintended objectives or behave deceptively. 
-   - **Goal Misalignment / Deceptive Behavior:** Agent takes actions misaligned with user/developer intent.
-     - **Examples**
-       - Hides steps or rationale to achieve a goal; unsafe tool use
-     - **Sources**
-       - Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
+  * **Hallucination (Fabricated Information)**
+
+    * **Examples**
+
+      * The model provides answers that sound confident and detailed but contain incorrect or made-up facts.
+      * When the model lacks reliable information, it may invent details rather than saying it does not know.
+      * Responses can include fabricated citations, statistics, or historical details.
+      * Systems may produce statements that appear credible but are actually inaccurate or unsupported.
+      * When answering complex questions, the model may mix correct facts with invented information.
+      * Support documentation notes that models can generate plausible but incorrect answers when uncertain.
+    * **Sources**
+
+      * Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025. [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report)
+      * Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026. [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency)
+      * Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
+      * Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025. [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card)
+      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
+      * Anthropic. *Claude Is Providing Incorrect or Misleading Responses*. Anthropic Support. [https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on)
+      * Anthropic. *Prompting Best Practices*. Claude API Documentation, 2026. [https://docs.anthropic.com/en/prompt-library/library](https://docs.anthropic.com/en/prompt-library/library)
+      * Anthropic. *Reduce Hallucinations*. Claude API Documentation. [https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations)
+      * Anthropic. *Sabotage Risk Report: Claude Opus 4.6*. Anthropic, 2026. [https://anthropic.com/claude-opus-4-6-risk-report](https://anthropic.com/claude-opus-4-6-risk-report)
+
+  * **Knowledge Boundary Failure**
+
+    * **Examples**
+
+      * The model attempts to answer questions even when the topic is outside its training knowledge.
+      * Instead of saying “I don’t know,” the system may guess or speculate.
+      * Models may provide outdated or incomplete information when asked about recent events.
+      * AI systems may fail to recognize when they lack enough context or reliable data to answer correctly.
+      * Documentation for AI models emphasizes the need to acknowledge uncertainty rather than produce speculative answers.
+      * Guidance from AI safety frameworks recommends prompting models to explicitly state when information is unknown.
+    * **Sources**
+
+      * Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025. [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report)
+      * Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
+      * Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025. [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card)
+      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
+      * Anthropic. *Claude Is Providing Incorrect or Misleading Responses*. Anthropic Support. [https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on)
+      * Anthropic. *Reduce Hallucinations*. Claude API Documentation. [https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations)
+      * Anthropic. “Introducing the Next Generation of Claude.” Anthropic, 4 Mar. 2024. [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family)
+      * Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
+      * Google. “Safety and Factuality Guidance.” *Gemini API Documentation*. [https://developers.google.com/machine-learning/resources/safety-gen-ai](https://developers.google.com/machine-learning/resources/safety-gen-ai)
+
+  * **Plausible but Unsupported Explanations**
+
+    * **Examples**
+
+      * The model generates explanations that sound logical but are not supported by evidence.
+      * AI systems may produce detailed reasoning chains that justify an incorrect answer.
+      * When agreeing with a user’s incorrect assumption, the model may create explanations that reinforce the mistake.
+      * Responses may mimic common misconceptions while presenting them as authoritative explanations.
+      * AI explanations of legal, social, or policy topics may appear credible but lack real supporting sources.
+      * Generated reasoning can sound coherent even when it contradicts factual information.
+    * **Sources**
+
+      * Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023. [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models)
+      * Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. [https://arxiv.org/abs/2009.11462](https://arxiv.org/abs/2009.11462)
+      * Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023. [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232)
+      * Kalai, Adam Tauman, et al. *Why Language Models Hallucinate*. OpenAI, 2025. [https://arxiv.org/abs/2502.09600](https://arxiv.org/abs/2502.09600)
+      * Li, Moxin, et al. “Knowledge Boundary of Large Language Models: A Survey.” *Proceedings of ACL 2025*, 2025. [https://aclanthology.org/2025.acl-long.256/](https://aclanthology.org/2025.acl-long.256/)
+      * Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/)
+      * National Center for State Courts. *Generative AI and Judicial Ethics*. NCSC, 2025. [https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations](https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations)
+      * OpenAI. *GPT-4 Technical Report*. OpenAI, 2023. [https://cdn.openai.com/papers/gpt-4.pdf](https://cdn.openai.com/papers/gpt-4.pdf)
+      * OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024. [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/)
+      * OpenAI. “Expanding on What We Missed with Sycophancy.” OpenAI, 2025. [https://openai.com/index/expanding-on-sycophancy/](https://openai.com/index/expanding-on-sycophancy/)
+
+* **Reasoning & Analytical Failures**
+
+  * **Logical Reasoning Failure**
+
+    * **Examples**
+
+      * The model makes mistakes in multi-step reasoning problems, even when it knows the relevant facts.
+      * A chatbot reaches the wrong conclusion because one step in its reasoning chain is flawed.
+      * The model abandons correct logic when a user states an incorrect assumption and instead follows the user’s belief.
+      * The system struggles with complex planning tasks or problems that require several reasoning steps.
+      * Explanations may look structured but still contain logical gaps or contradictions.
+      * The model may combine correct facts but connect them with incorrect reasoning.
+      * Errors appear in tasks requiring conditional logic, causal reasoning, or step-by-step analysis.
+    * **Sources**
+
+      * Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
+      * Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025. [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card)
+      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
+      * Anthropic. “Introducing the Next Generation of Claude.” Anthropic, 4 Mar. 2024. [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family)
+      * Lightman, Hunter, et al. *Let’s Verify Step by Step*. OpenAI, 2023. [https://arxiv.org/abs/2305.20050](https://arxiv.org/abs/2305.20050)
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+
+  * **Overconfidence in Weak Reasoning**
+
+    * **Examples**
+
+      * The model gives a confident explanation that sounds convincing but is logically incorrect.
+      * A chatbot produces detailed reasoning even when the conclusion is wrong.
+      * The system agrees with a user’s incorrect assumption and builds a confident explanation around it.
+      * Explanations may appear coherent and well-structured but rely on incomplete or flawed reasoning.
+      * The model may continue pursuing an incorrect plan despite evidence that it is failing.
+      * Training methods sometimes reward answers that sound confident rather than answers that are logically correct.
+      * The system rarely signals uncertainty, even when its reasoning is weak.
+    * **Sources**
+
+      * Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/)
+      * Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” arXiv, 2023. [https://arxiv.org/abs/2308.03958](https://arxiv.org/abs/2308.03958)
+      * Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023. [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models)
+      * Joglekar, Manas, et al. *Training LLMs for Honesty via Confessions*. OpenAI, 2025. [https://arxiv.org/abs/2501.09978](https://arxiv.org/abs/2501.09978)
+      * Dong, H., et al. “From Reward Modeling to Online RLHF.” 2024. [https://arxiv.org/abs/2402.07319](https://arxiv.org/abs/2402.07319)
+
+  * **Mathematical or Computational Errors**
+
+    * **Examples**
+
+      * The model performs incorrect arithmetic (e.g., wrong sums, products, or percentages).
+      * A chatbot applies the wrong mathematical formula when solving a problem.
+      * The system produces incorrect intermediate steps in a multi-step calculation.
+      * The model miscalculates probabilities or statistics in data-analysis questions.
+      * Errors occur when solving algebra, science, or financial math problems.
+      * The model sometimes produces incorrect answers in coding or algorithmic tasks involving calculations.
+      * Even simple numeric problems may fail when embedded in complex reasoning tasks.
+    * **Sources**
+
+      * OpenAI. *GPT-4 Technical Report*. OpenAI, 2023. [https://cdn.openai.com/papers/gpt-4.pdf](https://cdn.openai.com/papers/gpt-4.pdf)
+      * Google Research. “Minerva: Solving Quantitative Reasoning Problems with Language Models.” Google Research, 2022. [https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/](https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/)
+      * OpenAI. “Improving Mathematical Reasoning with Process Supervision.” OpenAI, 2023. [https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/](https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/)
+      * Google Research. “Evaluating and Enhancing Probabilistic Reasoning in Language Models.” Google Research, 2024. [https://arxiv.org/abs/2401.04727](https://arxiv.org/abs/2401.04727)
+
+* **Robustness, Stability & Training Trade-off Failures**
+
+  * **Consistency / Stability Failure**
+
+    * **Examples**
+
+      * The same question asked twice can produce different answers, even when nothing else changes.
+      * Small wording changes in a prompt lead to dramatically different responses.
+      * The model contradicts earlier statements within the same conversation.
+      * Results vary depending on prompt formatting, order of information, or context length.
+      * The model changes its answer after a user rephrases the same question.
+      * Long conversations sometimes cause the model to forget earlier instructions or facts.
+      * The model may produce correct reasoning in one run and incorrect reasoning in another.
+    * **Sources**
+
+      * Chatterjee, Anwoy, et al. “POSIX: A Prompt Sensitivity Index for Large Language Models.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2410.02185](https://arxiv.org/abs/2410.02185)
+      * Gao, Mingzhe, et al. “Insights into LLM Long-Context Failures.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2404.15538](https://arxiv.org/abs/2404.15538)
+      * Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173. [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/)
+      * Shi, Freda, et al. “Large Language Models Can Be Easily Distracted by Irrelevant Context.” *Proceedings of the 40th International Conference on Machine Learning*, 2023. [https://arxiv.org/abs/2302.00093](https://arxiv.org/abs/2302.00093)
+      * Wang, Haocheng, et al. “Context Length Alone Hurts LLM Performance Despite Alignment in Long-Context Tasks.” *Findings of the Association for Computational Linguistics: EMNLP 2025*, 2025. [https://arxiv.org/abs/2503.07910](https://arxiv.org/abs/2503.07910)
+
+  * **Alignment Tax / Capability Regression (implicit risk)**
+
+    * **Examples**
+
+      * Safety alignment can sometimes reduce model performance on reasoning, coding, or factual tasks.
+      * A model may refuse harmless requests because safety filters are overly strict.
+      * Alignment updates occasionally degrade previously strong capabilities.
+      * Fine-tuning for safety or helpfulness can introduce new errors or reduce accuracy in specialized tasks.
+      * Improvements to alignment may create trade-offs between safety, usefulness, and performance.
+      * Some models perform worse on certain benchmarks after safety-focused training.
+      * Developers must balance safety improvements with maintaining technical capabilities.
+    * **Sources**
+
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+      * Dong, H., et al. “From Reward Modeling to Online RLHF.” 2024. [https://arxiv.org/abs/2402.07319](https://arxiv.org/abs/2402.07319)
+      * Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024. [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208)
+      * Zhang, Zhihan, et al. “IHEval: Evaluating Language Models on Following the Instruction Hierarchy.” arXiv, 2025. [https://arxiv.org/abs/2502.08745](https://arxiv.org/abs/2502.08745)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023. [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+
+* **Evidence & Verification Failures**
+
+  * **Unsupported Claims**
+
+    * **Examples**
+
+      * The model states facts or conclusions without providing any evidence or reliable source.
+      * A chatbot presents statistics or scientific findings but cannot identify where the information came from.
+      * The system makes confident claims about medical, legal, or policy topics without supporting documentation.
+      * The model summarizes research results that are not traceable to a real study.
+      * The explanation sounds reasonable but does not link to verifiable data or references.
+      * The model mixes opinions and factual statements without clearly distinguishing them.
+      * Users may assume statements are evidence-based when they are actually generated guesses.
+    * **Sources**
+
+      * Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022, [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/)
+      * Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023, [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232)
+      * Kalai, Adam Tauman, et al. *Why Language Models Hallucinate*. OpenAI, 2025, [https://arxiv.org/abs/2502.09600](https://arxiv.org/abs/2502.09600)
+      * OpenAI. “Why Language Models Hallucinate.” OpenAI, 5 Sept. 2025, [https://openai.com/index/why-language-models-hallucinate/](https://openai.com/index/why-language-models-hallucinate/)
+      * National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
+
+  * **Citation Fabrication**
+
+    * **Examples**
+
+      * The model invents academic papers, articles, or books that do not exist.
+      * A chatbot provides realistic-looking citations with fake authors, titles, or publication dates.
+      * The system cites a real paper but describes findings that the paper never reported.
+      * The model produces links to websites or journals that lead to nonexistent pages.
+      * Fabricated citations may appear especially convincing in academic or research-style responses.
+      * A model may combine real journal names with made-up article titles.
+      * Users may rely on these fabricated references when writing reports or research papers.
+    * **Sources**
+
+      * Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023, [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232)
+      * Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024, [https://aclanthology.org/2024.acl-long.585/](https://aclanthology.org/2024.acl-long.585/)
+      * Zhang, Yuxiang, et al. “ToolBeHonest: A Multi-Level Hallucination Diagnostic Benchmark for Tool-Augmented Large Language Models.” *EMNLP 2024*, 2024, [https://arxiv.org/abs/2406.01561](https://arxiv.org/abs/2406.01561)
+      * National Center for State Courts. *Generative AI and Judicial Ethics*. NCSC, 2025, [https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations](https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations)
+
+* **Safety, Alignment & Preference Failures**
+
+  * **Under-Refusal (Jailbreak Susceptibility)**
+
+    * **Examples**
+
+      * A user bypasses safety restrictions by rephrasing a harmful request in a creative way.
+      * The model provides restricted information after the prompt frames it as fiction, roleplay, or research.
+      * A chatbot follows instructions embedded in external content that override safety rules.
+      * Attackers use “prompt injection” tricks to manipulate the model into ignoring safeguards.
+      * The system reveals disallowed information after a series of carefully crafted prompts.
+      * Safety rules may be bypassed when the model is asked to simulate another AI or character.
+    * **Sources**
+
+      * Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)
+      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025. [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
+      * David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” *UK National Cyber Security Centre*, 8 Dec. 2025. [https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+
+  * **Bias Persistence**
+
+    * **Examples**
+
+      * The model produces stereotypes about demographic groups when generating examples or descriptions.
+      * Certain occupations or roles are associated with specific genders or ethnic groups.
+      * The system may reflect biases present in its training data when answering social or cultural questions.
+      * The model generates unequal recommendations or advice depending on demographic attributes in the prompt.
+      * Some groups are described more negatively or less favorably than others.
+      * Bias can appear in hiring, education, medical, or legal scenarios generated by the model.
+    * **Sources**
+
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+      * OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024. [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/)
+      * National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
+
+  * **Sycophancy**
+
+    * **Examples**
+
+      * The model agrees with a user’s incorrect statement instead of correcting it.
+      * A chatbot confirms conspiracy theories or misinformation when prompted assertively.
+      * The system prioritizes pleasing the user over providing accurate information.
+      * The model changes its answer when the user expresses strong disagreement.
+      * A chatbot reinforces a user’s political or ideological views even when evidence contradicts them.
+      * The model mirrors user opinions to appear cooperative or helpful.
+    * **Sources**
+
+      * Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023. [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models)
+      * Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” arXiv, 2023. [https://arxiv.org/abs/2308.03958](https://arxiv.org/abs/2308.03958)
+      * OpenAI. “Expanding on What We Missed with Sycophancy.” OpenAI, 2025. [https://openai.com/index/expanding-on-sycophancy/](https://openai.com/index/expanding-on-sycophancy/)
+
+  * **Over-Refusal**
+
+    * **Examples**
+
+      * The model refuses harmless requests that should normally be allowed.
+      * A chatbot declines to answer general educational questions about sensitive topics.
+      * The system refuses tasks involving benign technical information because it misclassifies them as dangerous.
+      * The model declines legitimate research questions about cybersecurity, medicine, or law.
+      * Safety filters block neutral requests that contain certain keywords.
+      * Overly cautious responses reduce the usefulness of the system for normal users.
+    * **Sources**
+
+      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
+      * OpenAI. *Model Spec*. OpenAI, 2025. [https://model-spec.openai.com/2025-02-12.html](https://model-spec.openai.com/2025-02-12.html)
+      * Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024. [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208)
+
+  * **Toxic Degeneration (harmful generation behavior)**
+
+    * **Examples**
+
+      * The model generates increasingly offensive or harmful language as text generation continues.
+      * A chatbot produces insults, hate speech, or harassment in response to provocative prompts.
+      * Toxic responses appear when the model continues a conversation containing harmful language.
+      * Generated dialogue escalates into abusive or discriminatory statements.
+      * Toxic patterns may emerge when the model imitates harmful online discussions.
+      * The model reflects toxic content present in internet training data.
+    * **Sources**
+
+      * Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. [https://arxiv.org/abs/2009.11462](https://arxiv.org/abs/2009.11462)
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+
+  * **Unequal Risk Framing**
+
+    * **Examples**
+
+      * The model gives different safety advice depending on demographic details in the prompt.
+      * Health, financial, or legal risk guidance varies based on a person’s gender, race, or nationality.
+      * The system warns one group about risks while giving more permissive advice to another.
+      * A chatbot frames similar situations as more dangerous for certain populations.
+      * Risk communication may unintentionally reflect societal biases present in training data.
+      * The model may produce inconsistent safety recommendations across different demographic contexts.
+    * **Sources**
+
+      * OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024. [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/)
+      * National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
+      * Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
+
+* **Security & Adversarial Robustness Failures**
+
+  * **Prompt Injection**
+
+    * **Examples**
+
+      * A malicious prompt tricks the model into ignoring safety rules or system instructions.
+      * Attackers embed hidden instructions that override the model’s intended behavior.
+      * The model is manipulated into revealing restricted information by carefully crafted prompts.
+      * A chatbot follows instructions that conflict with its original safeguards.
+      * Users can bypass guardrails by framing requests as debugging, translation, or role-playing tasks.
+    * **Sources**
+
+      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+      * David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” *UK National Cyber Security Centre*, 8 Dec. 2025, [https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)
+
+  * **Indirect Prompt Injection**
+
+    * **Examples**
+
+      * A model reads instructions hidden inside external content such as a webpage or document.
+      * Malicious text embedded in retrieved data causes the model to follow unintended instructions.
+      * An attacker inserts hidden commands in emails, PDFs, or websites that an AI assistant processes.
+      * The model treats untrusted external content as instructions rather than data.
+      * An AI system connected to browsing or retrieval tools executes attacker-controlled prompts from external sources.
+    * **Sources**
+
+      * Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023, [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)
+      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+
+  * **Data Leakage / Privacy Exposure (implicit)**
+
+    * **Examples**
+
+      * The model reveals sensitive personal information that appeared in its training data.
+      * A chatbot exposes private user data from earlier conversations.
+      * Generated responses contain confidential business or personal details.
+      * The system accidentally reproduces private content memorized during training.
+      * Sensitive information may appear when users repeatedly probe the model with targeted questions.
+    * **Sources**
+
+      * Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University – Computer and Information Sciences*, 2025, [https://link.springer.com/article/10.1007/s44443-025-00177-1](https://link.springer.com/article/10.1007/s44443-025-00177-1)
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+
+  * **Model Extraction Attacks (implicit)**
+
+    * **Examples**
+
+      * Attackers repeatedly query a model to reconstruct or replicate its behavior.
+      * A malicious user collects enough outputs to approximate the underlying model.
+      * The system’s capabilities are copied through automated large-scale querying.
+      * Proprietary AI models may be reverse engineered through interaction patterns.
+      * Attackers exploit public APIs to build competing models from extracted knowledge.
+    * **Sources**
+
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+
+  * **Tool Exploitation via Prompt Injection (implicit)**
+
+    * **Examples**
+
+      * A prompt injection attack tricks the model into sending harmful commands to connected tools.
+      * An AI assistant with access to email, file systems, or APIs executes attacker instructions.
+      * The model performs unauthorized actions such as sending messages or retrieving data.
+      * Malicious prompts cause automated workflows to access protected resources.
+      * The system misinterprets attacker instructions as legitimate tool commands.
+    * **Sources**
+
+      * Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023, [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+      * MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, [https://cwe.mitre.org/data/definitions/441.html](https://cwe.mitre.org/data/definitions/441.html)
+
+  * **Training Data Poisoning (implicit)**
+
+    * **Examples**
+
+      * Attackers insert malicious or misleading data into datasets used to train models.
+      * The model learns harmful behaviors or incorrect information from poisoned training data.
+      * Manipulated datasets cause the model to produce biased or deceptive responses.
+      * An attacker intentionally plants misinformation that the model later reproduces.
+      * Poisoned training examples can subtly influence model behavior in targeted ways.
+    * **Sources**
+
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+
+  * **Adversarial Manipulation of AI Systems**
+
+    * **Examples**
+
+      * Attackers design inputs specifically intended to make the model behave incorrectly.
+      * Carefully crafted prompts cause the system to misinterpret instructions.
+      * The model is manipulated into producing harmful or misleading responses.
+      * Adversarial inputs exploit weaknesses in the model’s reasoning or safety filters.
+      * Malicious actors exploit predictable behaviors in AI systems.
+    * **Sources**
+
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+
+  * **Data Exfiltration / Sensitive Data Leakage**
+
+    * **Examples**
+
+      * An attacker tricks the model into revealing confidential system prompts or internal instructions.
+      * The system exposes sensitive files or private user data through connected tools.
+      * Prompt injection causes the AI to retrieve protected information from databases.
+      * The model leaks API keys, passwords, or other credentials stored in connected systems.
+      * Attackers exploit the AI’s ability to access external systems to extract confidential information.
+    * **Sources**
+
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+
+  * **Insecure Plugin or Tool Use**
+
+    * **Examples**
+
+      * A plugin connected to the AI system allows attackers to access external services.
+      * The model sends sensitive data to insecure APIs or tools.
+      * Poorly designed integrations allow unauthorized access to user data.
+      * AI assistants connected to third-party tools can unintentionally expose private information.
+      * Attackers exploit weak security controls in tools integrated with AI systems.
+    * **Sources**
+
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+
+* **Context & Information Utilization Failures**
+
+  * **Context Misinterpretation**
+
+    * **Examples**
+
+      * The model misunderstands the meaning of information provided in the prompt or conversation.
+      * A chatbot interprets a user’s question differently than intended and answers the wrong problem.
+      * The system misreads instructions embedded in long prompts or complex documents.
+      * The model confuses multiple topics in the same prompt and mixes their information together.
+      * Details provided earlier in the conversation are interpreted incorrectly or applied in the wrong way.
+      * The model may misinterpret retrieved documents or external data when answering questions.
+    * **Sources**
+
+      * Gao, Mingzhe, et al. “Insights into LLM Long-Context Failures.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2404.15538](https://arxiv.org/abs/2404.15538)
+      * Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173. [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/)
+      * Tan, Hexiang, et al. “Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?” *Proceedings of ACL*, 2024. [https://arxiv.org/abs/2402.04213](https://arxiv.org/abs/2402.04213)
+
+  * **Context Ignoring**
+
+    * **Examples**
+
+      * The model ignores key information provided in the prompt when generating its answer.
+      * Important instructions earlier in the conversation are forgotten or skipped.
+      * The system answers using general knowledge instead of using the provided context.
+      * The model overlooks details in long documents or multi-part prompts.
+      * Responses may rely on default assumptions rather than the information given by the user.
+      * The model may fail to use relevant retrieved documents in retrieval-augmented systems.
+    * **Sources**
+
+      * Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173. [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/)
+      * Shi, Freda, et al. “Large Language Models Can Be Easily Distracted by Irrelevant Context.” *Proceedings of the 40th International Conference on Machine Learning*, 2023. [https://arxiv.org/abs/2302.00093](https://arxiv.org/abs/2302.00093)
+      * Wang, Haocheng, et al. “Context Length Alone Hurts LLM Performance Despite Alignment in Long-Context Tasks.” *Findings of the Association for Computational Linguistics: EMNLP 2025*, 2025. [https://arxiv.org/abs/2503.07910](https://arxiv.org/abs/2503.07910)
+
+  * **Tool Interaction Failure**
+
+    * **Examples**
+
+      * The model calls the wrong tool or API for a task.
+      * A chatbot fails to use an available tool even when it is required to answer the question.
+      * The system produces incorrect tool inputs or parameters.
+      * The model misinterprets the output returned by a tool.
+      * Tool calls may be triggered when unnecessary or skipped when required.
+      * Errors occur when combining tool outputs with generated reasoning.
+      * The system may hallucinate tool results instead of using the actual tool output.
+    * **Sources**
+
+      * Zhang, Yuxiang, et al. “ToolBeHonest: A Multi-Level Hallucination Diagnostic Benchmark for Tool-Augmented Large Language Models.” *EMNLP 2024*, 2024. [https://arxiv.org/abs/2406.01561](https://arxiv.org/abs/2406.01561)
+      * Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024. [https://aclanthology.org/2024.acl-long.585/](https://aclanthology.org/2024.acl-long.585/)
+      * Tan, Hexiang, et al. “Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?” *Proceedings of ACL*, 2024. [https://arxiv.org/abs/2402.04213](https://arxiv.org/abs/2402.04213)
+
+* **Instruction Interpretation & Constraint Compliance Failures**
+
+  * **Ambiguity Misinterpretation**
+
+    * **Examples**
+
+      * The model misunderstands unclear instructions and answers a different question than the user intended.
+      * A chatbot interprets vague wording in a prompt in an unintended way.
+      * The system chooses one possible meaning of an ambiguous instruction without asking for clarification.
+      * Instructions that include multiple possible interpretations lead to incorrect responses.
+      * The model fills in missing details with assumptions instead of asking follow-up questions.
+      * Confusing or complex prompts cause the model to misinterpret the user’s goal.
+    * **Sources**
+
+      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022, [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+
+  * **Instruction Precedence Violation**
+
+    * **Examples**
+
+      * The model follows a later instruction that contradicts earlier instructions or system rules.
+      * A chatbot prioritizes user instructions over safety guidelines or system policies.
+      * The system ignores higher-priority instructions and follows lower-priority ones.
+      * Conflicting instructions cause the model to behave inconsistently.
+      * A prompt inserted later in the conversation overrides earlier constraints unexpectedly.
+      * Attackers exploit instruction conflicts to bypass safety restrictions.
+    * **Sources**
+
+      * Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024, [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208)
+      * Zhang, Zhihan, et al. “IHEval: Evaluating Language Models on Following the Instruction Hierarchy.” arXiv, 2025, [https://arxiv.org/abs/2502.08745](https://arxiv.org/abs/2502.08745)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+
+  * **Constraint / Format Noncompliance**
+
+    * **Examples**
+
+      * The model ignores formatting instructions such as required lists, tables, or structured outputs.
+      * A chatbot produces extra text even when the user asked for a strict format.
+      * The system fails to follow instructions about length limits or specific output structures.
+      * The model returns incorrect JSON, code, or structured data when a strict format is required.
+      * The response does not follow requested ordering or section headings.
+      * Even when constraints are clear, the model sometimes partially follows them.
+    * **Sources**
+
+      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+      * Chatterjee, Anwoy, et al. “POSIX: A Prompt Sensitivity Index for Large Language Models.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024, [https://arxiv.org/abs/2410.02185](https://arxiv.org/abs/2410.02185)
+
+  * **Overgeneralization or Over-Literalism**
+
+    * **Examples**
+
+      * The model applies a rule too broadly and produces an incorrect answer.
+      * A chatbot interprets instructions too literally and ignores the intended meaning.
+      * The system extends patterns beyond what the prompt actually states.
+      * The model follows wording exactly but misses the practical intent of the request.
+      * General instructions are applied rigidly even when exceptions should be obvious.
+      * The system over-applies examples in the prompt and assumes they represent universal rules.
+    * **Sources**
+
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022, [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+
+* **Task Execution & Objective Fulfillment Failures**
+
+  * **Task Completeness Failure**
+
+    * **Examples**
+
+      * The model answers only part of a multi-step request and ignores other required steps.
+      * A chatbot provides an incomplete list when the user asked for all relevant items.
+      * The system begins solving a task but stops before completing the full solution.
+      * The model summarizes only some sections of a document instead of the entire content requested.
+      * A response addresses the main question but omits required formatting, details, or follow-up actions.
+      * The model performs an analysis but fails to provide the final conclusion requested by the user.
+      * In structured tasks (reports, tables, or code), the output is partially completed or missing sections.
+    * **Sources**
+
+      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+      * Qi, et al. *AgentIF: Benchmarking Instruction Following for LLM Agents*. arXiv, 2025, [https://arxiv.org/abs/2505.16944](https://arxiv.org/abs/2505.16944)
+      * Chen, et al. *AgentIF-OneDay*. arXiv, 2026, [https://arxiv.org/abs/2601.20613](https://arxiv.org/abs/2601.20613)
 
 
-#### Works Cited {#appendix-common-if-llm-failure-modes-works-cited}
 
-- Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)])
-- Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University Computer and Information Sciences*, 2025. ([[Springer](https://link.springer.com/article/10.1007/s44443-025-00177-1)])
-- David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” UK National Cyber Security Centre, 8 Dec. 2025. ([[NCSC](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)])
-- Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. ([[arXiv](https://arxiv.org/abs/2009.11462)])
-- Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” *arXiv*, 2311.05232, 2023/2024. ([[arXiv](https://arxiv.org/abs/2311.05232)])
-- Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” *arXiv*, 2505.18889, 2025. ([[arXiv](https://arxiv.org/abs/2505.18889)])
-- Liang, Percy, et al. “Holistic Evaluation of Language Models.” *arXiv*, 2211.09110, 2022/2023. ([[arXiv](https://arxiv.org/abs/2211.09110)])
-- Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. ([[ACL Anthology](https://aclanthology.org/2022.acl-long.229/)])
-- MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, n.d. ([[cwe.mitre.org](https://cwe.mitre.org/data/definitions/441.html)])
-- Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024. ([[ACL Anthology](https://aclanthology.org/2024.acl-long.585/)])
-- OpenAI. *GPT-4 Technical Report.* 2023. ([[OpenAI CDN](https://cdn.openai.com/papers/gpt-4.pdf)])
-- Ouyang, Long, et al. “Training Language Models to Follow Instructions with Human Feedback.” *NeurIPS*, 2022. ([[NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf)])
-- OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* n.d. ([[OWASP Foundation](https://owasp.org/www-project-top-10-for-large-language-model-applications/)])
-- Tabassi, Elham. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* National Institute of Standards and Technology, 2023. ([[NIST Publications](https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf)])
-- Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” *arXiv*, 2308.03958, 2023/2024. ([[arXiv](https://arxiv.org/abs/2308.03958)])
+
+#### Works Cited
+
+- Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026, [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency).
+- Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025, [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report).
+- Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
+- Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025, [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card).
+- Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025, [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card).
+- Anthropic. *Claude Is Providing Incorrect or Misleading Responses*. Anthropic Support, [https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on).
+- Anthropic. *Claude’s Constitution*. Anthropic, 2026. [https://www.anthropic.com/constitution](https://www.anthropic.com/constitution).
+- Anthropic. “Constitutional AI: Harmlessness from AI Feedback.” Apr. 2023. [https://arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073).
+- Anthropic. *Prompting Best Practices*. Claude API Documentation, 2026, [https://docs.anthropic.com/en/prompt-library/library](https://docs.anthropic.com/en/prompt-library/library).
+- Anthropic. *Reduce Hallucinations*. Claude API Documentation, [https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations).
+- Anthropic. *Sabotage Risk Report: Claude Opus 4.6*. Anthropic, 2026, [https://anthropic.com/claude-opus-4-6-risk-report](https://anthropic.com/claude-opus-4-6-risk-report).
+- Anthropic. “Constitutional AI: Harmlessness from AI Feedback.” Anthropic, Apr. 2023.
+- Anthropic. “Introducing the Next Generation of Claude.” Anthropic, 4 Mar. 2024, [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family).
+- Anthropic. “The Claude 3 Model Family: Opus, Sonnet, Haiku.” Anthropic, 2024, [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family).
+- Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023, [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models).
+- Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf).
+- Bi, Baolong, et al. “Context-DPO: Aligning Language Models for Context-Faithfulness.” *Findings of the Association for Computational Linguistics: ACL 2025*, 2025, [https://aclanthology.org/2025.findings-acl.536.pdf](https://aclanthology.org/2025.findings-acl.536.pdf).
+- Chatterjee, Anwoy, et al. “POSIX: A Prompt Sensitivity Index for Large Language Models.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2410.02185](https://arxiv.org/abs/2410.02185) ([arXiv][4]).
+- Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University – Computer and Information Sciences*, 2025, [https://link.springer.com/article/10.1007/s44443-025-00177-1](https://link.springer.com/article/10.1007/s44443-025-00177-1).
+- Chen, et al. *AgentIF-OneDay*. arXiv, 2026, [https://arxiv.org/abs/2601.20613](https://arxiv.org/abs/2601.20613).
+- David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” *UK National Cyber Security Centre*, 8 Dec. 2025, [https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection).
+- Dong, H., et al. “From Reward Modeling to Online RLHF.” 2024. [https://arxiv.org/abs/2402.07319](https://arxiv.org/abs/2402.07319).
+- Gao, Mingzhe, et al. “Insights into LLM Long-Context Failures.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2404.15538](https://arxiv.org/abs/2404.15538).
+- Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020, [https://arxiv.org/abs/2009.11462](https://arxiv.org/abs/2009.11462).
+- Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023, [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+- Google. “Safety and Factuality Guidance.” *Gemini API Documentation*, [https://developers.google.com/machine-learning/resources/safety-gen-ai](https://developers.google.com/machine-learning/resources/safety-gen-ai).
+- Google Research. “Can Large Language Models Identify and Correct Their Mistakes?” Google Research, 2024, [https://research.google/blog/can-large-language-models-identify-and-correct-their-mistakes/](https://research.google/blog/can-large-language-models-identify-and-correct-their-mistakes/).
+- Google Research. “Evaluating and Enhancing Probabilistic Reasoning in Language Models.” Google Research, 2024. [https://arxiv.org/abs/2401.04727](https://arxiv.org/abs/2401.04727).
+- Google Research. “Minerva: Solving Quantitative Reasoning Problems with Language Models.” Google Research, 2022, [https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/](https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/).
+- Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023, [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232).
+- Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410).
+- Joglekar, Manas, et al. *Training LLMs for Honesty via Confessions*. OpenAI, 2025. [https://arxiv.org/abs/2501.09978](https://arxiv.org/abs/2501.09978).
+- Kalai, Adam Tauman, et al. *Why Language Models Hallucinate*. OpenAI, 2025. [https://arxiv.org/abs/2502.09600](https://arxiv.org/abs/2502.09600).
+- Keller, D., et al. *Expanding the AI Evaluation Toolbox with Statistical Models*. NIST AI 800-3, National Institute of Standards and Technology, Feb. 2026, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-3.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-3.pdf).
+- Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889).
+- Li, Moxin, et al. “Knowledge Boundary of Large Language Models: A Survey.” *Proceedings of ACL 2025*, Association for Computational Linguistics, 2025, [https://aclanthology.org/2025.acl-long.256/](https://aclanthology.org/2025.acl-long.256/).
+- Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022, [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110).
+- Lightman, Hunter, et al. *Let’s Verify Step by Step*. OpenAI, 2023. [https://arxiv.org/abs/2305.20050](https://arxiv.org/abs/2305.20050).
+- Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022, [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/).
+- Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173, [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/).
+- MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, [https://cwe.mitre.org/data/definitions/441.html](https://cwe.mitre.org/data/definitions/441.html).
+- Mousavi, Seyed Mahed, Simone Alghisi, and Giuseppe Riccardi. “DyKnow: Dynamically Verifying Time-Sensitive Factual Knowledge in LLMs.” *Findings of ACL: EMNLP 2024*, Association for Computational Linguistics, 2024, [https://aclanthology.org/2024.findings-emnlp.471/](https://aclanthology.org/2024.findings-emnlp.471/).
+- National Center for State Courts. *Generative AI and Judicial Ethics*. NCSC, 2025, [https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations](https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations).
+- National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf).
+- National Institute of Standards and Technology. *Reducing Risks Posed by Synthetic Content: An Overview of Technical Approaches to Digital Content Transparency*. NIST AI 100-4, 2024. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf).
+- National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+- Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024, [https://aclanthology.org/2024.acl-long.585/](https://aclanthology.org/2024.acl-long.585/).
+- OpenAI. *GPT-4 Technical Report*. OpenAI, 2023, [https://cdn.openai.com/papers/gpt-4.pdf](https://cdn.openai.com/papers/gpt-4.pdf).
+- OpenAI. *OpenAI o1 System Card*. OpenAI, 2024. [https://openai.com/research/openai-o1-system-card](https://openai.com/research/openai-o1-system-card).
+- OpenAI. *Model Spec*. OpenAI, 2025, [https://model-spec.openai.com/2025-02-12.html](https://model-spec.openai.com/2025-02-12.html).
+- OpenAI. “Aligning Language Models to Follow Instructions.” OpenAI, 27 Jan. 2022, [https://openai.com/index/instruction-following/](https://openai.com/index/instruction-following/).
+- OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024, [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/).
+- OpenAI. “Expanding on What We Missed with Sycophancy.” OpenAI, 2025, [https://openai.com/index/expanding-on-sycophancy/](https://openai.com/index/expanding-on-sycophancy/).
+- OpenAI. “Improving Mathematical Reasoning with Process Supervision.” OpenAI, 2023, [https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/](https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/).
+- OpenAI. “Introducing the Model Spec.” OpenAI, 8 May 2024, [https://openai.com/index/introducing-the-model-spec/](https://openai.com/index/introducing-the-model-spec/).
+- OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/).
+- OpenAI. “Why Language Models Hallucinate.” OpenAI, 5 Sept. 2025, [https://openai.com/index/why-language-models-hallucinate/](https://openai.com/index/why-language-models-hallucinate/).
+- OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/).
+- Qi, et al. *AgentIF: Benchmarking Instruction Following for LLM Agents*. arXiv, 2025, [https://arxiv.org/abs/2505.16944](https://arxiv.org/abs/2505.16944).
+- Shi, Freda, et al. “Large Language Models Can Be Easily Distracted by Irrelevant Context.” *Proceedings of the 40th International Conference on Machine Learning*, 2023. [https://arxiv.org/abs/2302.00093](https://arxiv.org/abs/2302.00093).
+- Tan, Hexiang, et al. “Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?” *Proceedings of ACL*, 2024. [https://arxiv.org/abs/2402.04213](https://arxiv.org/abs/2402.04213).
+- Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024, [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208).
+- Wang, Haocheng, et al. “Context Length Alone Hurts LLM Performance Despite Alignment in Long-Context Tasks.” *Findings of the Association for Computational Linguistics: EMNLP 2025*, 2025. [https://arxiv.org/abs/2503.07910](https://arxiv.org/abs/2503.07910).
+- Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” arXiv, 2023, [https://arxiv.org/abs/2308.03958](https://arxiv.org/abs/2308.03958).
+- Zhang, Zhihan, et al. “IHEval: Evaluating Language Models on Following the Instruction Hierarchy.” arXiv, 2025, [https://arxiv.org/abs/2502.08745](https://arxiv.org/abs/2502.08745).
+- Zhang, Yuxiang, et al. “ToolBeHonest: A Multi-Level Hallucination Diagnostic Benchmark for Tool-Augmented Large Language Models.” *EMNLP 2024*, 2024. [https://arxiv.org/abs/2406.01561](https://arxiv.org/abs/2406.01561).
+- Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911).
 
 
 ## **Authors**
