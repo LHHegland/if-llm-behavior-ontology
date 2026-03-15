@@ -26,7 +26,7 @@
 - [Appendices](#appendices)
   - [Assumptions](#appendix-assumptions)
   - [Information Quality Criteria](#appendix-information-quality-criteria)
-  - [Common IF-LLM Failure Modes](#appendix-common-if-llm-failure-modes-with-examples-and-sources)
+  - [Common IF-LLM Failure Modes with Examples and Sources](#appendix-common-if-llm-failure-modes-with-examples-and-sources)
 - [Authors](#authors)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -126,7 +126,7 @@ TO DO: Create Summary
 
 #### Common IF-LLM Failure Modes
 
-Below is a summary of the common instruction-following large language model (IF-LLM) failure modes today that this project hopes to address.  As IF-LLMs evolve, this project will shift focus from reducing failure risks to empowering greater efficiency through reusable elements.  More detailed information about these failure modes, along with authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes](#appendix-common-if-llm-failure-modes).
+Below is a summary of the common instruction-following large language model (IF-LLM) failure modes today that this project hopes to address.  As IF-LLMs evolve, this project will shift focus from reducing failure risks to empowering greater efficiency through reusable elements.  More detailed information about these failure modes, along with authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#appendix-common-if-llm-failure-modes-with-examples-and-sources).
 
 - Truthfulness & Knowledge Failures
   - Hallucination (Fabricated Information)
@@ -1108,7 +1108,7 @@ This appendix contains detailed information about common instruction-following l
 
 
 
-#### Works Cited
+#### Summary of Authoritative Sources for Common IF-LLM Failure Modes with Examples and Sources
 
 - Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026, [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency).
 - Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025, [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report).
