@@ -17,6 +17,16 @@
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [User Notes](#user-notes)
+  - [Foundations](#foundations)
+    - [Assumptions](#assumptions)
+    - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
+    - [Information Quality Criteria](#information-quality-criteria)
+  - [Purpose](#purpose)
+  - [Objectives](#objectives)
+- [Appendices](#appendices)
+  - [Assumptions](#appendix-assumptions)
+  - [Information Quality Criteria](#appendix-information-quality-criteria)
+  - [Common IF-LLM Failure Modes with Examples and Sources](#appendix-common-if-llm-failure-modes-with-examples-and-sources)
 - [Authors](#authors)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -103,451 +113,101 @@ The following sections contain user notes related to this instruction-following 
 ### Foundations
 The following sections contain the foundations that guide this instruction-following large language model (IF-LLM) behavior ontology.
 
-
 #### Assumptions
 
-##### 1. Instruction-Following Model Behavior
+Below is a summary of the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.  More detailed information about these assumptions, along with authoritative sources, can be found in the [Appendix: Assumptions](#appendix-assumptions).
 
-###### 1.1 Instruction Precedence
+There is credible and sufficient evidence that Instruction-Following Large Language Models (IF-LLMs) produce a finite number of [common failure modes](#common-if-llm-failure-modes).
 
-* IF-LLMs process instructions using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs.
-* Conflicts between instructions must be resolved deterministically according to that hierarchy.
-* Undisclosed or silent overrides reduce reliability and must be avoided.
+Instruction-Following Large Language Models (IF-LLMs) produce results that are likely considered when making future decisions. Therefore, the results they produce should meet [well-defined quality standards](#information-quality-criteria).
 
 
-###### 1.2 Instruction Influence
-
-* Instructions and contextual knowledge **materially influence** how inputs are interpreted and how outputs are generated.
-* Explicit instructions outperform implicit expectations in reducing ambiguity and hallucination.
-
-###### 1.3 Observable Behavior
-
-* Instructional alignment is reflected in **observable output behavior**, not internal model state.
-* Behavioral correctness is evaluated based on outputs relative to stated instructions, priorities, and constraints.
-
----
-
-##### 2. Knowledge Representation and Organization
-
-###### 2.1 Knowledge Entries and Files
-
-* Instructions and domain context can be stored as **discrete, reusable knowledge entries**.
-* Knowledge entries can be grouped into **knowledge files** to improve organization, reuse, and governance.
-
-###### 2.2 Authority of Knowledge
-
-* Knowledge files provided to the model override general model knowledge but do not override system- or developer-level instructions.
-* Missing, outdated, or uncertain knowledge must be disclosed rather than inferred.
-
-
-###### 2.3 Stability and Identifiers
-
-* Stable identifiers (IDs, tags, handles) improve traceability, reuse, and auditability over time.
-* Human-readable structure is preferred over opaque or auto-generated schemas.
-
----
-
-##### 3. Instruction Sources and Governance
-
-###### 3.1 Multiple Instruction Authors
-
-* Instructions and context may be provided by:
-
-  * System architects
-  * Solution developers
-  * End users
-* These contributors may have different objectives, priorities, and constraints.
-
-###### 3.2 Governance Responsibility
-
-* Human actors are responsible for:
-
-  * Creating
-  * Reviewing
-  * Maintaining
-  * Retiring
-    knowledge entries and configurations.
-* The system assumes **active governance**, not self-correcting automation.
-
-###### 3.3 Adoption Discipline (Explicit)
-
-* The effectiveness of the ontology depends on **consistent and disciplined use** by humans.
-* Bypassing or inconsistently applying the ontology reduces reliability but does not invalidate the design.
-
----
-
-##### 4. Variability and Limitations
-
-###### 4.1 Model Variability
-
-* Even with identical instructions, outputs may vary due to:
-
-  * Model capability differences
-  * Instruction formulation quality
-  * Context window constraints
-  * System-level limitations
-
-###### 4.2 Non-Determinism
-
-* The system does not assume perfect determinism.
-* Design goals emphasize **risk reduction and consistency improvement**, not absolute predictability.
-
----
-
-##### 5. Priorities and Decision Quality
-
-###### 5.1 Explicit Priorities
-
-* Explicit, ordered priorities improve decision quality during tradeoffs.
-* Accuracy, reliability, and relevance take precedence over fluency or creativity.
-
-
-###### 5.2 Information Quality Dimensions
-
-* High-quality outputs are defined by:
-
-  * Accuracy
-  * Reliability
-  * Relevance
-  * Timeliness
-  * Sufficiency
-  * Clarity
-  * Fairness
-  * Efficiency
-  * Consistency
-  * Compliance
-  * Traceability
-  * Recoverability
-
-###### 5.3 Formalization Tradeoff
-
-* Formal priorities are sometimes preferable to informal judgment, especially in high-risk or repeatable workflows.
-
----
-
-##### 6. Ontology Design Philosophy
-
-###### 6.1 Practical Ontology
-
-* The IF-LLM-BO is a **practical, lightweight semantic scaffolding system**, not a formally complete ontology.
-* Human usability and behavioral guidance take precedence over theoretical rigor.
-
-###### 6.2 Lean Development
-
-* The ontology should:
-
-  * Minimize unnecessary structure
-  * Enable incremental improvement
-  * Surface uncertainty early
-  * Support small-batch testing and refinement
-
----
-
-##### 7. Evaluation and Feedback
-
-###### 7.1 Evaluation Is Necessary
-
-* Instruction-following behavior must be evaluated against stated objectives and priorities.
-* Evaluation criteria must be explicit and observable.
-
-###### 7.2 Feedback Loop (Explicit)
-
-* Evaluation results are expected to inform:
-
-  * Refinement of instructions
-  * Updates to knowledge entries
-  * Adjustments to configurations
-* Continuous improvement is an assumption, not an optional enhancement.
-
----
-
-##### 8. Compliance and Safety
-
-###### 8.1 Policy Supremacy
-
-* System-level processing policies are authoritative and must not be silently reinterpreted or weakened.
-
-
-###### 8.2 Safety First
-
-* When conflicts arise, safety and correctness override completeness or convenience.
-* Refusals, limitations, and uncertainty disclosures are valid and expected outcomes.
-
-
----
+TO DO: Create Summary
 
 #### Common IF-LLM Failure Modes
 
-Below is a **concise, hierarchical list of the most common IF-LLM failure modes**. The categories align with instruction-following best practices, policy constraints, and observed IF-LLM behavior in production settings.
-
-##### 1. Instruction Interpretation Failures
-
-###### 1.1 Instruction Precedence Violations
-
-* Lower-authority instructions (e.g., user prompts) override higher-authority policies or developer constraints.
-* Conflicts are resolved implicitly instead of being disclosed.
-
-###### 1.2 Overgeneralization
-
-* Instructions are interpreted too broadly, extending beyond their intended scope.
-* Edge cases are treated as general rules.
-
-###### 1.3 Over-Literalism
-
-* Instructions are followed mechanically while missing intent or context.
-* Results are technically compliant but practically useless.
-
----
-
-##### 2. Hallucination and Fabrication
-
-###### 2.1 Fact Hallucination
-
-* Invented facts, definitions, or claims presented as true.
-* Often occurs when context is incomplete or ambiguous.
-
-###### 2.2 Source or Citation Fabrication
-
-* Non-existent documents, policies, or references are cited.
-* Implies verification that did not occur.
-
-###### 2.3 Capability Hallucination
-
-* Claims access to tools, data, memory, or system internals that are not actually available.
-
----
-
-##### 3. Ambiguity Handling Failures
-
-###### 3.1 Guessing Under Uncertainty
-
-* Model fills gaps with plausible but unverified assumptions.
-* Uncertainty is not disclosed.
-
-###### 3.2 Unnecessary Clarification
-
-* Asks questions when ambiguity does not materially affect accuracy or safety.
-* Introduces friction without improving outcomes.
-
-###### 3.3 Missed Ambiguity
-
-* Fails to identify ambiguity that materially affects correctness or legality.
-
----
-
-##### 4. Priority and Tradeoff Failures
-
-###### 4.1 Fluency Over Accuracy
-
-* Produces smooth, confident language at the expense of correctness.
-
-###### 4.2 Misordered Tradeoffs
-
-* Optimizes for efficiency, brevity, or helpfulness while sacrificing accuracy or reliability.
-
-###### 4.3 Undisclosed Tradeoffs
-
-* Makes implicit decisions without explaining why certain priorities were favored.
-
----
-
-##### 5. Structural and Formatting Failures
-
-###### 5.1 Missing Required Sections
-
-* Omits assumptions, confidence levels, sources, or scope boundaries when required.
-
-###### 5.2 Inconsistent Structure
-
-* Similar tasks receive different structures without justification.
-* Reduces predictability and auditability.
-
-###### 5.3 Over-Structuring
-
-* Adds unnecessary sections or schema that obscure meaning and slow comprehension.
-
----
-
-##### 6. Scope and Boundary Errors
-
-###### 6.1 Scope Creep
-
-* Includes information outside the defined task, domain, or audience.
-
-###### 6.2 Scope Omission
-
-* Excludes critical information necessary to meet the task objective.
-
-###### 6.3 Jurisdictional Assumption Errors
-
-* Applies incorrect legal, geographic, or policy context by default.
-
----
-
-##### 7. Knowledge Management Failures
-
-###### 7.1 Ignoring Provided Knowledge
-
-* Fails to use available knowledge files or uploaded content.
-* Reverts to generic model knowledge instead.
-
-###### 7.2 Inconsistent Knowledge Application
-
-* Applies the same knowledge differently across similar tasks.
-
-###### 7.3 Stale Knowledge Use
-
-* Relies on outdated information without disclosure.
-
----
-
-##### 8. Governance and Policy Failures
-
-###### 8.1 Silent Policy Reinterpretation
-
-* Softens, rephrases, or partially applies policies without disclosure.
-
-###### 8.2 Non-Compliant Outputs
-
-* Violates safety, legal, or system-level rules due to incomplete policy enforcement.
-
-###### 8.3 Over-Compliance
-
-* Refuses or degrades output unnecessarily due to overly cautious interpretation.
-
----
-
-##### 9. Communication Failures
-
-###### 9.1 Overconfidence
-
-* Expresses high certainty where evidence is weak or incomplete.
-
-###### 9.2 Under-Explanation
-
-* Provides correct answers without sufficient rationale for trust or reuse.
-
-###### 9.3 Over-Verbosity
-
-* Includes excessive explanation that obscures the key decision or answer.
-
----
-
-##### 10. Evaluation and Improvement Failures
-
-###### 10.1 Lack of Testability
-
-* Outputs are not structured in a way that allows validation or comparison.
-
-###### 10.2 No Feedback Integration
-
-* Repeats known errors because prior evaluation results are not incorporated.
-
-###### 10.3 Inconsistent Quality Bar
-
-* Similar tasks receive materially different quality levels without justification.
-
-
-#### Information Quality Priorities
-
-Instruction-Following Large Language Models (IF-LLM) behavior and results must produce results capable of informing decision-making. Therefore, IF-LLMs should prioritize the ranked criteria below. Similarly, the underlying IF-LLM-BO policies and procedures should reflect and support these priorities. These criteria and definitions have been carefully **synthesized from cited authoritative sources**. Each definition answers: *“What does this mean in everyday decision-making?”*
-
-- **Auditability:** source of information, how information was changed, and who handled information can be identified.
-- **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
-- **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
-- **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
-- **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again. If information 
-- **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
-- **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
-- **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
-- **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
-- **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
-- **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
-- **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
-- **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
-- **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
-
-
-##### Authoritative Sources
-
-The sources for the priorities are the following authoritative publications:
-
-- **Auditability:** *Traceability* as published in ISO 25012 (2008). [^4]
-- **Relevance**
-  - *Relevance* and *Value-added* in Wang & Strong (1996) [^1]
-  - *Relevance* in Eppler (2006) [^2]
-  - *Relevance* and *Significance* in Paul & Elder (2008) [^3]
-  - *Relevance* and *Value* in O’Brien & Marakas (2011) [^5]
-- **Timeliness**
-  - *Timeliness* in Wang & Strong (1996) [^1]
-  - *Timeliness*, *Up-to-dateness*, and *Frequency* in Eppler (2006) [^2]
-  - *Currentness* in ISO 25012 (2008) [^4]
-  - *Timeliness* in O’Brien & Marakas (2011) [^5]
-- **Accuracy**
-  - Wang & Strong (1996) [^1]
-  - Eppler (2006) [^2]
-  - Paul & Elder (2008) [^3]
-  - ISO 25012 (2008) [^4]
-  - O’Brien & Marakas (2011) [^5]
-- **Reliability**
-  - *Objectivity*, *Believability*, and *Reputation* in Wang & Strong (1996) [^1]
-  - *Reliability* in Eppler (2006) [^2]
-  - *Fairness* in Paul & Elder (2008) [^3]
-  - *Credibility* in ISO 25012 (2008) [^4]
-  - *Reliability* in O’Brien & Marakas (2011) [^5]
-- **Sufficiency**
-  - *Completeness* and *Appropriate Amount* in Wang & Strong (1996) [^1]
-  - *Completeness*, *Conciseness*, and *Level of Detail* in Eppler (2006) [^2]
-  - *Depth*, *Significance*, and *Precision* in Paul & Elder (2008) [^3]
-  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
-  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
-- **Compliance:** *Compliance* as published in ISO 25012 (2008). [^4]
-- **Clarity**
-  - *Interpretability* and *Ease of Understanding* in Wang & Strong (1996) [^1]
-  - *Clarity* and *Conciseness* in Eppler (2006) [^2]
-  - *Clarity* in Paul & Elder (2008) [^3]
-  - *Completeness* and *Precision* in ISO 25012 (2008) [^4]
-  - *Completeness* and *Economy* in O’Brien & Marakas (2011) [^5]
-- **Fairness**
-  - *Objectivity* in Wang & Strong (1996) [^1]
-  - *Fairness* and *Breadth* in Paul & Elder (2008) [^3]
-  - *Credibility* in ISO 25012 (2008) [^4]
-  - *Reliability* and *Flexibility* in O’Brien & Marakas (2011) [^5]
-- **Consistency**
-  - *Consistent Representation* in Wang & Strong (1996) [^1]
-  - *Consistency* in Eppler (2006) [^2]
-  - *Logic* in Paul & Elder (2008) [^3]
-  - *Consistency* in ISO 25012 (2008) [^4]
-  - *Reliability* in O’Brien & Marakas (2011) [^5]
-- **Efficiency**
-  - *Accessibility* in Wang & Strong (1996) [^1]
-  - *Accessibility* in Eppler (2006) [^2]
-  - *Accessibility* and *Availability* in ISO 25012 (2008) [^4]
-  - *Accessibility* in O’Brien & Marakas (2011) [^5]
-- **Security**
-  - *Access Security* in Wang & Strong (1996) [^1]
-  - *Security* in Eppler (2006) [^2]
-  - *Confidentiality* in ISO 25012 (2008) [^4]
-- **Recoverability:** *Recoverability* as published in ISO 25012 (2008). [^4]
-- **Flexibility:** *Flexibility* as published in O’Brien & Marakas (2011). [^5]
-
-
-**Footnotes:**
-[^1]: **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
-[^2]: **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
-[^3]: **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
-[^4]: **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
-[^5]: **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
-
-
-#### Objectives
+Below is a summary of the common instruction-following large language model (IF-LLM) failure modes today that this project hopes to address.  As IF-LLMs evolve, this project will shift focus from reducing failure risks to empowering greater efficiency through reusable elements.  More detailed information about these failure modes, along with authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#appendix-common-if-llm-failure-modes-with-examples-and-sources).
+
+- Truthfulness & Knowledge Failures
+  - Hallucination (Fabricated Information)
+  - Knowledge Boundary Failure
+  - Plausible but unsupported explanations
+- Reasoning & Analytical Failures
+  - Logical Reasoning Failure
+  - Overconfidence in Weak Reasoning
+  - Mathematical or Computational Errors
+- Robustness, Stability & Training Trade-off Failures
+  - Consistency / Stability Failure
+  - Alignment Tax / Capability Regression (implicit risk)
+- Evidence & Verification Failures
+  - Unsupported Claims
+  - Citation Fabrication
+- Safety, Alignment & Preference Failures
+  - Under-Refusal (Jailbreak Susceptibility)
+  - Bias Persistence
+  - Sycophancy
+  - Over-Refusal
+  - Toxic Degeneration (harmful generation behavior)
+  - Unequal Risk Framing
+- Security & Adversarial Robustness Failures
+  - Prompt Injection
+  - Indirect Prompt Injection
+  - Data Leakage / Privacy Exposure (implicit)
+  - Model Extraction Attacks (implicit)
+  - Tool Exploitation via Prompt Injection (implicit)
+  - Data Leakage / Training Data Exposure (implicit)
+  - Training Data Poisoning (implicit)
+  - Adversarial Manipulation of AI Systems
+  - Indirect Prompt Injection (implicit)
+  - Data Exfiltration / Sensitive Data Leakage
+  - Insecure Plugin or Tool Use
+- Context & Information Utilization Failures
+  - Context Misinterpretation
+  - Context Ignoring
+  - Tool Interaction Failure
+- Instruction Interpretation & Constraint Compliance Failures
+  - Ambiguity Misinterpretation
+  - Instruction Precedence Violation
+  - Constraint / Format Noncompliance
+  - Overgeneralization or Over-Literalism
+- Task Execution & Objective Fulfillment Failures
+  - Task Completeness Failure
+ 
+
+#### Information Quality Criteria
+
+Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making. Each definition is written to answer a practical question: *"What does this mean for everyday decision-making?"*
+
+To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
+
+**Information Quality Criteria (Prioritized)**
+ 1. **Auditability:** source of information, how information was changed, and who handled information can be identified.
+ 2. **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
+ 3. **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
+ 4. **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
+ 5. **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again.
+ 6. **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
+ 7. **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
+ 8. **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
+ 9. **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
+10. **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
+11. **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
+12. **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
+13. **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
+14. **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
+
+
+More detailed information about these criteria, along with authoritative sources, can be found in the [Appendix: Information Quality Criteria](#appendix-information-quality-criteria).
+
+
+
+### Purpose
+As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
+
+### Objectives
 - Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
   - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies.
   - scaffolding must help organize instruction-following LLM behavioral configurations in knowledge entries and files. 
-
-
-#### Purpose
-As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
 
 ### Operational Notes
 
@@ -649,9 +309,6 @@ The scaffolding so far is as follows:
 
 
 
-
-
-
 ### Priorities
 TODO: Outline priorities
 
@@ -668,6 +325,858 @@ Ideation and Exploration
 Clarify Prompt Parameter Breakdown
 it's
 Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
+
+## Appendices
+
+These appendices contain more detailed information and authoritative source references, if applicable, regarding elements of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.
+
+### Appendix: Assumptions
+
+This appendix contains detailed information about the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project along with authoritative sources.
+
+Instruction-Following Large Language Models (IF-LLMs) produce results that are likely considered when making decisions. 
+
+Formal priorities are sometimes preferable to informal judgment, especially in high-risk or repeatable workflows. Explicit, ordered priorities improve decision quality during tradeoffs, regardless of the process used (i.e. whether using an IF-LLM or not). Therefore, IF-LLM processing and results for decision-making purposes should use [well-defined quality standards](#information-quality-criteria).
+
+IF-LLMs are complex adaptive systems.
+
+Even with identical instructions, IF-LLM outputs may vary due to:
+- Model capability differences
+- Instruction formulation quality
+- Context window constraints
+- System-level limitations
+
+IF-LLM systems do not guarantee perfect determinism. Design goals emphasize **risk reduction and consistency improvement**, not absolute predictability. In other words, it is impossible to eliminate the risk of experiencing undesirable results. However, it is possible to reduce the risks of experiencing undesirable results.
+
+Instructional alignment (i.e. known and controllable for many developers and users) is reflected in **observable output behavior**, not internal model state (i.e. unknown and uncontrollable for most developers and users). 
+
+IF-LLM instructions and contextual information **materially influence** how inputs are interpreted and how outputs are generated.
+
+IF-LLM behavioral correctness is evaluated based on outputs relative to stated instructions, priorities, and constraints.
+
+Instruction-following behavior must be evaluated against stated objectives and priorities. Evaluation criteria must be explicit and observable.
+
+Evaluation results are expected to inform:
+- Refinement of instructions
+- Updates to knowledge entries
+- Adjustments to configurations
+
+Continuous improvement is an assumption, not an optional enhancement.
+
+There is credible and sufficient evidence that Instruction-Following Large Language Models (IF-LLMs) produce a finite number of [common failure modes](#common-if-llm-failure-modes).
+
+Explicit instructions outperform implicit expectations in reducing risks of experiencing common failure modes.
+
+The likelihood for IF-LLM behavioral correctness can be improved and risks of encountering common failure modes can be reduced by incorporating various policies and contextual information into explicit IF-LLM instructions.
+
+Instructions and context may be provided by:
+- System architects
+- Solution developers
+- End users
+
+Instruction and context contributors may have different objectives, priorities, and constraints.
+
+IF-LLMs process instructions using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs.
+
+System-level processing policies are authoritative and should not be silently reinterpreted or weakenedto preserve auditability.
+
+Conflicts between instructions must be resolved deterministically according to that hierarchy. Undisclosed or silent overrides reduce reliability and must be avoided.
+
+Human beings are responsible for:
+- Creating
+- Reviewing
+- Maintaining
+- Retiring instructions (including knowledge entries and configurations).
+
+Instructions and contextual information context can be stored as **discrete, reusable knowledge entries**. Knowledge entries can be grouped into **knowledge files** to improve organization, reuse, and governance.
+
+Knowledge files provided to the model override general model knowledge but do not override system- or developer-level instructions.
+
+Stable identifiers (IDs, tags, handles) for knowledge entries improve traceability, reuse, and auditability over time.
+
+Human-readable structure is preferred over opaque or auto-generated schemas for clarity.
+
+Missing, outdated, or uncertain knowledge should be disclosed rather than inferred to ensure auditability.
+
+Refusals, limitations, and uncertainty disclosures are valid and expected outcomes for most IF-LLMs.
+
+When conflicts arise, safety and correctness often override completeness or convenience for most IF-LLMs.
+
+Using a semi-formal ontology to establish system-level policies, contextual defaults, and offer reusable, standardized instructions for common use cases can help improve behavioral correctness and reduce risks of encountering common failure modes.
+
+The IF-LLM-BO is a **practical, lightweight semantic scaffolding system**, not a formally complete ontology.
+
+Human usability and behavioral guidance take precedence over theoretical rigor.
+
+The ontology should:
+- Minimize unnecessary structure
+- Enable incremental improvement
+- Surface uncertainty early
+- Support small-batch testing and refinement
+ 
+Using an ontology assumes **active governance**, not self-correcting automation.
+
+ Human beings are fallible and may not be consistent.
+
+The effectiveness of any ontology depends on **consistent and disciplined use** by humans.
+
+Bypassing or inconsistently applying the ontology reduces reliability but does not invalidate the design.
+
+
+
+
+
+
+
+
+### Appendix: Information Quality Criteria
+
+This appendix describes the information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-information-quality-criteria).
+
+Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making.
+
+The criteria and definitions presented here are **synthesized from the cited authoritative sources**. Each definition is written to answer a practical question: *“What does this mean for everyday decision-making?”*
+
+To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
+
+- **Auditability:** source of information, how information was changed, and who handled information can be identified.
+  - *Sources*
+    - *Traceability* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+- **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
+  - *Sources*
+    - *Relevance* and *Value* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Relevance* and *Value-added* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Relevance* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Relevance* and *Significance* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+- **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
+  - *Sources*
+    - *Currentness* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Timeliness* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Timeliness* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Timeliness*, *Up-to-dateness*, and *Frequency* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+- **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
+  - *Sources*
+    - **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+- **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again.
+  - *Sources*
+    - *Credibility* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Reliability* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Objectivity*, *Believability*, and *Reputation* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Reliability* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Fairness* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+- **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
+  - *Sources*
+    - *Completeness* and *Precision* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Completeness* and *Economy* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Completeness* and *Appropriate Amount* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Completeness*, *Conciseness*, and *Level of Detail* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Depth*, *Significance*, and *Precision* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+- **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
+  - *Source:* **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+- **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
+  - *Sources*
+    - *Completeness* and *Precision* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Completeness* and *Economy* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Interpretability* and *Ease of Understanding* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Clarity* and *Conciseness* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Clarity* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+- **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
+  - *Sources*
+    - *Credibility* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Reliability* and *Flexibility* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Objectivity* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Fairness* and *Breadth* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+- **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
+  - *Sources*
+    - *Consistency* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Reliability* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Consistent Representation* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Consistency* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+    - *Logic* in **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+- **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
+  - *Sources*
+    - *Accessibility* and *Availability* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Accessibility* in **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+    - *Accessibility* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Accessibility* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+- **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
+  - *Sources*
+    - *Confidentiality* in **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+    - *Access Security* in **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+    - *Security* in **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+- **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
+  - *Source:* **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+- **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
+  - *Source:* **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+
+
+##### Summary of Authoritative Sources for Information Quality Criteria
+
+A summary of the authoritative sources for these information quality criteria appears below:
+- **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
+- **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
+- **Wang, Richard Y., and Diane M. Strong.** “Beyond Accuracy: What Data Quality Means to Data Consumers.” *Journal of Management Information Systems*, vol. 12, no. 4, 1996, pp. 5–33.
+- **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
+- **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
+
+---
+
+
+### Appendix: Common IF-LLM Failure Modes with Examples and Sources
+
+This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes with examples and sources.  There is also a [summary of authoritative sources](#summary-of-authoritative-sources-for-common-if-llm-failure-modes-with-examples-and-sources).
+
+* **Truthfulness & Knowledge Failures**
+
+  * **Hallucination (Fabricated Information)**
+
+    * **Examples**
+
+      * The model provides answers that sound confident and detailed but contain incorrect or made-up facts.
+      * When the model lacks reliable information, it may invent details rather than saying it does not know.
+      * Responses can include fabricated citations, statistics, or historical details.
+      * Systems may produce statements that appear credible but are actually inaccurate or unsupported.
+      * When answering complex questions, the model may mix correct facts with invented information.
+      * Support documentation notes that models can generate plausible but incorrect answers when uncertain.
+    * **Sources**
+
+      * Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025. [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report)
+      * Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026. [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency)
+      * Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
+      * Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025. [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card)
+      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
+      * Anthropic. *Claude Is Providing Incorrect or Misleading Responses*. Anthropic Support. [https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on)
+      * Anthropic. *Prompting Best Practices*. Claude API Documentation, 2026. [https://docs.anthropic.com/en/prompt-library/library](https://docs.anthropic.com/en/prompt-library/library)
+      * Anthropic. *Reduce Hallucinations*. Claude API Documentation. [https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations)
+      * Anthropic. *Sabotage Risk Report: Claude Opus 4.6*. Anthropic, 2026. [https://anthropic.com/claude-opus-4-6-risk-report](https://anthropic.com/claude-opus-4-6-risk-report)
+
+  * **Knowledge Boundary Failure**
+
+    * **Examples**
+
+      * The model attempts to answer questions even when the topic is outside its training knowledge.
+      * Instead of saying “I don’t know,” the system may guess or speculate.
+      * Models may provide outdated or incomplete information when asked about recent events.
+      * AI systems may fail to recognize when they lack enough context or reliable data to answer correctly.
+      * Documentation for AI models emphasizes the need to acknowledge uncertainty rather than produce speculative answers.
+      * Guidance from AI safety frameworks recommends prompting models to explicitly state when information is unknown.
+    * **Sources**
+
+      * Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025. [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report)
+      * Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
+      * Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025. [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card)
+      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
+      * Anthropic. *Claude Is Providing Incorrect or Misleading Responses*. Anthropic Support. [https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on)
+      * Anthropic. *Reduce Hallucinations*. Claude API Documentation. [https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations)
+      * Anthropic. “Introducing the Next Generation of Claude.” Anthropic, 4 Mar. 2024. [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family)
+      * Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
+      * Google. “Safety and Factuality Guidance.” *Gemini API Documentation*. [https://developers.google.com/machine-learning/resources/safety-gen-ai](https://developers.google.com/machine-learning/resources/safety-gen-ai)
+
+  * **Plausible but Unsupported Explanations**
+
+    * **Examples**
+
+      * The model generates explanations that sound logical but are not supported by evidence.
+      * AI systems may produce detailed reasoning chains that justify an incorrect answer.
+      * When agreeing with a user’s incorrect assumption, the model may create explanations that reinforce the mistake.
+      * Responses may mimic common misconceptions while presenting them as authoritative explanations.
+      * AI explanations of legal, social, or policy topics may appear credible but lack real supporting sources.
+      * Generated reasoning can sound coherent even when it contradicts factual information.
+    * **Sources**
+
+      * Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023. [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models)
+      * Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. [https://arxiv.org/abs/2009.11462](https://arxiv.org/abs/2009.11462)
+      * Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023. [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232)
+      * Kalai, Adam Tauman, et al. *Why Language Models Hallucinate*. OpenAI, 2025. [https://arxiv.org/abs/2502.09600](https://arxiv.org/abs/2502.09600)
+      * Li, Moxin, et al. “Knowledge Boundary of Large Language Models: A Survey.” *Proceedings of ACL 2025*, 2025. [https://aclanthology.org/2025.acl-long.256/](https://aclanthology.org/2025.acl-long.256/)
+      * Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/)
+      * National Center for State Courts. *Generative AI and Judicial Ethics*. NCSC, 2025. [https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations](https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations)
+      * OpenAI. *GPT-4 Technical Report*. OpenAI, 2023. [https://cdn.openai.com/papers/gpt-4.pdf](https://cdn.openai.com/papers/gpt-4.pdf)
+      * OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024. [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/)
+      * OpenAI. “Expanding on What We Missed with Sycophancy.” OpenAI, 2025. [https://openai.com/index/expanding-on-sycophancy/](https://openai.com/index/expanding-on-sycophancy/)
+
+* **Reasoning & Analytical Failures**
+
+  * **Logical Reasoning Failure**
+
+    * **Examples**
+
+      * The model makes mistakes in multi-step reasoning problems, even when it knows the relevant facts.
+      * A chatbot reaches the wrong conclusion because one step in its reasoning chain is flawed.
+      * The model abandons correct logic when a user states an incorrect assumption and instead follows the user’s belief.
+      * The system struggles with complex planning tasks or problems that require several reasoning steps.
+      * Explanations may look structured but still contain logical gaps or contradictions.
+      * The model may combine correct facts but connect them with incorrect reasoning.
+      * Errors appear in tasks requiring conditional logic, causal reasoning, or step-by-step analysis.
+    * **Sources**
+
+      * Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
+      * Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025. [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card)
+      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
+      * Anthropic. “Introducing the Next Generation of Claude.” Anthropic, 4 Mar. 2024. [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family)
+      * Lightman, Hunter, et al. *Let’s Verify Step by Step*. OpenAI, 2023. [https://arxiv.org/abs/2305.20050](https://arxiv.org/abs/2305.20050)
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+
+  * **Overconfidence in Weak Reasoning**
+
+    * **Examples**
+
+      * The model gives a confident explanation that sounds convincing but is logically incorrect.
+      * A chatbot produces detailed reasoning even when the conclusion is wrong.
+      * The system agrees with a user’s incorrect assumption and builds a confident explanation around it.
+      * Explanations may appear coherent and well-structured but rely on incomplete or flawed reasoning.
+      * The model may continue pursuing an incorrect plan despite evidence that it is failing.
+      * Training methods sometimes reward answers that sound confident rather than answers that are logically correct.
+      * The system rarely signals uncertainty, even when its reasoning is weak.
+    * **Sources**
+
+      * Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/)
+      * Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” arXiv, 2023. [https://arxiv.org/abs/2308.03958](https://arxiv.org/abs/2308.03958)
+      * Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023. [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models)
+      * Joglekar, Manas, et al. *Training LLMs for Honesty via Confessions*. OpenAI, 2025. [https://arxiv.org/abs/2501.09978](https://arxiv.org/abs/2501.09978)
+      * Dong, H., et al. “From Reward Modeling to Online RLHF.” 2024. [https://arxiv.org/abs/2402.07319](https://arxiv.org/abs/2402.07319)
+
+  * **Mathematical or Computational Errors**
+
+    * **Examples**
+
+      * The model performs incorrect arithmetic (e.g., wrong sums, products, or percentages).
+      * A chatbot applies the wrong mathematical formula when solving a problem.
+      * The system produces incorrect intermediate steps in a multi-step calculation.
+      * The model miscalculates probabilities or statistics in data-analysis questions.
+      * Errors occur when solving algebra, science, or financial math problems.
+      * The model sometimes produces incorrect answers in coding or algorithmic tasks involving calculations.
+      * Even simple numeric problems may fail when embedded in complex reasoning tasks.
+    * **Sources**
+
+      * OpenAI. *GPT-4 Technical Report*. OpenAI, 2023. [https://cdn.openai.com/papers/gpt-4.pdf](https://cdn.openai.com/papers/gpt-4.pdf)
+      * Google Research. “Minerva: Solving Quantitative Reasoning Problems with Language Models.” Google Research, 2022. [https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/](https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/)
+      * OpenAI. “Improving Mathematical Reasoning with Process Supervision.” OpenAI, 2023. [https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/](https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/)
+      * Google Research. “Evaluating and Enhancing Probabilistic Reasoning in Language Models.” Google Research, 2024. [https://arxiv.org/abs/2401.04727](https://arxiv.org/abs/2401.04727)
+
+* **Robustness, Stability & Training Trade-off Failures**
+
+  * **Consistency / Stability Failure**
+
+    * **Examples**
+
+      * The same question asked twice can produce different answers, even when nothing else changes.
+      * Small wording changes in a prompt lead to dramatically different responses.
+      * The model contradicts earlier statements within the same conversation.
+      * Results vary depending on prompt formatting, order of information, or context length.
+      * The model changes its answer after a user rephrases the same question.
+      * Long conversations sometimes cause the model to forget earlier instructions or facts.
+      * The model may produce correct reasoning in one run and incorrect reasoning in another.
+    * **Sources**
+
+      * Chatterjee, Anwoy, et al. “POSIX: A Prompt Sensitivity Index for Large Language Models.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2410.02185](https://arxiv.org/abs/2410.02185)
+      * Gao, Mingzhe, et al. “Insights into LLM Long-Context Failures.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2404.15538](https://arxiv.org/abs/2404.15538)
+      * Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173. [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/)
+      * Shi, Freda, et al. “Large Language Models Can Be Easily Distracted by Irrelevant Context.” *Proceedings of the 40th International Conference on Machine Learning*, 2023. [https://arxiv.org/abs/2302.00093](https://arxiv.org/abs/2302.00093)
+      * Wang, Haocheng, et al. “Context Length Alone Hurts LLM Performance Despite Alignment in Long-Context Tasks.” *Findings of the Association for Computational Linguistics: EMNLP 2025*, 2025. [https://arxiv.org/abs/2503.07910](https://arxiv.org/abs/2503.07910)
+
+  * **Alignment Tax / Capability Regression (implicit risk)**
+
+    * **Examples**
+
+      * Safety alignment can sometimes reduce model performance on reasoning, coding, or factual tasks.
+      * A model may refuse harmless requests because safety filters are overly strict.
+      * Alignment updates occasionally degrade previously strong capabilities.
+      * Fine-tuning for safety or helpfulness can introduce new errors or reduce accuracy in specialized tasks.
+      * Improvements to alignment may create trade-offs between safety, usefulness, and performance.
+      * Some models perform worse on certain benchmarks after safety-focused training.
+      * Developers must balance safety improvements with maintaining technical capabilities.
+    * **Sources**
+
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+      * Dong, H., et al. “From Reward Modeling to Online RLHF.” 2024. [https://arxiv.org/abs/2402.07319](https://arxiv.org/abs/2402.07319)
+      * Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024. [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208)
+      * Zhang, Zhihan, et al. “IHEval: Evaluating Language Models on Following the Instruction Hierarchy.” arXiv, 2025. [https://arxiv.org/abs/2502.08745](https://arxiv.org/abs/2502.08745)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023. [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+
+* **Evidence & Verification Failures**
+
+  * **Unsupported Claims**
+
+    * **Examples**
+
+      * The model states facts or conclusions without providing any evidence or reliable source.
+      * A chatbot presents statistics or scientific findings but cannot identify where the information came from.
+      * The system makes confident claims about medical, legal, or policy topics without supporting documentation.
+      * The model summarizes research results that are not traceable to a real study.
+      * The explanation sounds reasonable but does not link to verifiable data or references.
+      * The model mixes opinions and factual statements without clearly distinguishing them.
+      * Users may assume statements are evidence-based when they are actually generated guesses.
+    * **Sources**
+
+      * Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022, [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/)
+      * Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023, [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232)
+      * Kalai, Adam Tauman, et al. *Why Language Models Hallucinate*. OpenAI, 2025, [https://arxiv.org/abs/2502.09600](https://arxiv.org/abs/2502.09600)
+      * OpenAI. “Why Language Models Hallucinate.” OpenAI, 5 Sept. 2025, [https://openai.com/index/why-language-models-hallucinate/](https://openai.com/index/why-language-models-hallucinate/)
+      * National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
+
+  * **Citation Fabrication**
+
+    * **Examples**
+
+      * The model invents academic papers, articles, or books that do not exist.
+      * A chatbot provides realistic-looking citations with fake authors, titles, or publication dates.
+      * The system cites a real paper but describes findings that the paper never reported.
+      * The model produces links to websites or journals that lead to nonexistent pages.
+      * Fabricated citations may appear especially convincing in academic or research-style responses.
+      * A model may combine real journal names with made-up article titles.
+      * Users may rely on these fabricated references when writing reports or research papers.
+    * **Sources**
+
+      * Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023, [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232)
+      * Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024, [https://aclanthology.org/2024.acl-long.585/](https://aclanthology.org/2024.acl-long.585/)
+      * Zhang, Yuxiang, et al. “ToolBeHonest: A Multi-Level Hallucination Diagnostic Benchmark for Tool-Augmented Large Language Models.” *EMNLP 2024*, 2024, [https://arxiv.org/abs/2406.01561](https://arxiv.org/abs/2406.01561)
+      * National Center for State Courts. *Generative AI and Judicial Ethics*. NCSC, 2025, [https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations](https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations)
+
+* **Safety, Alignment & Preference Failures**
+
+  * **Under-Refusal (Jailbreak Susceptibility)**
+
+    * **Examples**
+
+      * A user bypasses safety restrictions by rephrasing a harmful request in a creative way.
+      * The model provides restricted information after the prompt frames it as fiction, roleplay, or research.
+      * A chatbot follows instructions embedded in external content that override safety rules.
+      * Attackers use “prompt injection” tricks to manipulate the model into ignoring safeguards.
+      * The system reveals disallowed information after a series of carefully crafted prompts.
+      * Safety rules may be bypassed when the model is asked to simulate another AI or character.
+    * **Sources**
+
+      * Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)
+      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025. [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
+      * David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” *UK National Cyber Security Centre*, 8 Dec. 2025. [https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+
+  * **Bias Persistence**
+
+    * **Examples**
+
+      * The model produces stereotypes about demographic groups when generating examples or descriptions.
+      * Certain occupations or roles are associated with specific genders or ethnic groups.
+      * The system may reflect biases present in its training data when answering social or cultural questions.
+      * The model generates unequal recommendations or advice depending on demographic attributes in the prompt.
+      * Some groups are described more negatively or less favorably than others.
+      * Bias can appear in hiring, education, medical, or legal scenarios generated by the model.
+    * **Sources**
+
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+      * OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024. [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/)
+      * National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
+
+  * **Sycophancy**
+
+    * **Examples**
+
+      * The model agrees with a user’s incorrect statement instead of correcting it.
+      * A chatbot confirms conspiracy theories or misinformation when prompted assertively.
+      * The system prioritizes pleasing the user over providing accurate information.
+      * The model changes its answer when the user expresses strong disagreement.
+      * A chatbot reinforces a user’s political or ideological views even when evidence contradicts them.
+      * The model mirrors user opinions to appear cooperative or helpful.
+    * **Sources**
+
+      * Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023. [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models)
+      * Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” arXiv, 2023. [https://arxiv.org/abs/2308.03958](https://arxiv.org/abs/2308.03958)
+      * OpenAI. “Expanding on What We Missed with Sycophancy.” OpenAI, 2025. [https://openai.com/index/expanding-on-sycophancy/](https://openai.com/index/expanding-on-sycophancy/)
+
+  * **Over-Refusal**
+
+    * **Examples**
+
+      * The model refuses harmless requests that should normally be allowed.
+      * A chatbot declines to answer general educational questions about sensitive topics.
+      * The system refuses tasks involving benign technical information because it misclassifies them as dangerous.
+      * The model declines legitimate research questions about cybersecurity, medicine, or law.
+      * Safety filters block neutral requests that contain certain keywords.
+      * Overly cautious responses reduce the usefulness of the system for normal users.
+    * **Sources**
+
+      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
+      * OpenAI. *Model Spec*. OpenAI, 2025. [https://model-spec.openai.com/2025-02-12.html](https://model-spec.openai.com/2025-02-12.html)
+      * Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024. [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208)
+
+  * **Toxic Degeneration (harmful generation behavior)**
+
+    * **Examples**
+
+      * The model generates increasingly offensive or harmful language as text generation continues.
+      * A chatbot produces insults, hate speech, or harassment in response to provocative prompts.
+      * Toxic responses appear when the model continues a conversation containing harmful language.
+      * Generated dialogue escalates into abusive or discriminatory statements.
+      * Toxic patterns may emerge when the model imitates harmful online discussions.
+      * The model reflects toxic content present in internet training data.
+    * **Sources**
+
+      * Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. [https://arxiv.org/abs/2009.11462](https://arxiv.org/abs/2009.11462)
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+
+  * **Unequal Risk Framing**
+
+    * **Examples**
+
+      * The model gives different safety advice depending on demographic details in the prompt.
+      * Health, financial, or legal risk guidance varies based on a person’s gender, race, or nationality.
+      * The system warns one group about risks while giving more permissive advice to another.
+      * A chatbot frames similar situations as more dangerous for certain populations.
+      * Risk communication may unintentionally reflect societal biases present in training data.
+      * The model may produce inconsistent safety recommendations across different demographic contexts.
+    * **Sources**
+
+      * OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024. [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/)
+      * National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
+      * Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
+
+* **Security & Adversarial Robustness Failures**
+
+  * **Prompt Injection**
+
+    * **Examples**
+
+      * A malicious prompt tricks the model into ignoring safety rules or system instructions.
+      * Attackers embed hidden instructions that override the model’s intended behavior.
+      * The model is manipulated into revealing restricted information by carefully crafted prompts.
+      * A chatbot follows instructions that conflict with its original safeguards.
+      * Users can bypass guardrails by framing requests as debugging, translation, or role-playing tasks.
+    * **Sources**
+
+      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+      * David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” *UK National Cyber Security Centre*, 8 Dec. 2025, [https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)
+
+  * **Indirect Prompt Injection**
+
+    * **Examples**
+
+      * A model reads instructions hidden inside external content such as a webpage or document.
+      * Malicious text embedded in retrieved data causes the model to follow unintended instructions.
+      * An attacker inserts hidden commands in emails, PDFs, or websites that an AI assistant processes.
+      * The model treats untrusted external content as instructions rather than data.
+      * An AI system connected to browsing or retrieval tools executes attacker-controlled prompts from external sources.
+    * **Sources**
+
+      * Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023, [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)
+      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+
+  * **Data Leakage / Privacy Exposure (implicit)**
+
+    * **Examples**
+
+      * The model reveals sensitive personal information that appeared in its training data.
+      * A chatbot exposes private user data from earlier conversations.
+      * Generated responses contain confidential business or personal details.
+      * The system accidentally reproduces private content memorized during training.
+      * Sensitive information may appear when users repeatedly probe the model with targeted questions.
+    * **Sources**
+
+      * Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University – Computer and Information Sciences*, 2025, [https://link.springer.com/article/10.1007/s44443-025-00177-1](https://link.springer.com/article/10.1007/s44443-025-00177-1)
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+
+  * **Model Extraction Attacks (implicit)**
+
+    * **Examples**
+
+      * Attackers repeatedly query a model to reconstruct or replicate its behavior.
+      * A malicious user collects enough outputs to approximate the underlying model.
+      * The system’s capabilities are copied through automated large-scale querying.
+      * Proprietary AI models may be reverse engineered through interaction patterns.
+      * Attackers exploit public APIs to build competing models from extracted knowledge.
+    * **Sources**
+
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+
+  * **Tool Exploitation via Prompt Injection (implicit)**
+
+    * **Examples**
+
+      * A prompt injection attack tricks the model into sending harmful commands to connected tools.
+      * An AI assistant with access to email, file systems, or APIs executes attacker instructions.
+      * The model performs unauthorized actions such as sending messages or retrieving data.
+      * Malicious prompts cause automated workflows to access protected resources.
+      * The system misinterprets attacker instructions as legitimate tool commands.
+    * **Sources**
+
+      * Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023, [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+      * MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, [https://cwe.mitre.org/data/definitions/441.html](https://cwe.mitre.org/data/definitions/441.html)
+
+  * **Training Data Poisoning (implicit)**
+
+    * **Examples**
+
+      * Attackers insert malicious or misleading data into datasets used to train models.
+      * The model learns harmful behaviors or incorrect information from poisoned training data.
+      * Manipulated datasets cause the model to produce biased or deceptive responses.
+      * An attacker intentionally plants misinformation that the model later reproduces.
+      * Poisoned training examples can subtly influence model behavior in targeted ways.
+    * **Sources**
+
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+
+  * **Adversarial Manipulation of AI Systems**
+
+    * **Examples**
+
+      * Attackers design inputs specifically intended to make the model behave incorrectly.
+      * Carefully crafted prompts cause the system to misinterpret instructions.
+      * The model is manipulated into producing harmful or misleading responses.
+      * Adversarial inputs exploit weaknesses in the model’s reasoning or safety filters.
+      * Malicious actors exploit predictable behaviors in AI systems.
+    * **Sources**
+
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+
+  * **Data Exfiltration / Sensitive Data Leakage**
+
+    * **Examples**
+
+      * An attacker tricks the model into revealing confidential system prompts or internal instructions.
+      * The system exposes sensitive files or private user data through connected tools.
+      * Prompt injection causes the AI to retrieve protected information from databases.
+      * The model leaks API keys, passwords, or other credentials stored in connected systems.
+      * Attackers exploit the AI’s ability to access external systems to extract confidential information.
+    * **Sources**
+
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
+      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
+
+  * **Insecure Plugin or Tool Use**
+
+    * **Examples**
+
+      * A plugin connected to the AI system allows attackers to access external services.
+      * The model sends sensitive data to insecure APIs or tools.
+      * Poorly designed integrations allow unauthorized access to user data.
+      * AI assistants connected to third-party tools can unintentionally expose private information.
+      * Attackers exploit weak security controls in tools integrated with AI systems.
+    * **Sources**
+
+      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+
+* **Context & Information Utilization Failures**
+
+  * **Context Misinterpretation**
+
+    * **Examples**
+
+      * The model misunderstands the meaning of information provided in the prompt or conversation.
+      * A chatbot interprets a user’s question differently than intended and answers the wrong problem.
+      * The system misreads instructions embedded in long prompts or complex documents.
+      * The model confuses multiple topics in the same prompt and mixes their information together.
+      * Details provided earlier in the conversation are interpreted incorrectly or applied in the wrong way.
+      * The model may misinterpret retrieved documents or external data when answering questions.
+    * **Sources**
+
+      * Gao, Mingzhe, et al. “Insights into LLM Long-Context Failures.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2404.15538](https://arxiv.org/abs/2404.15538)
+      * Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173. [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/)
+      * Tan, Hexiang, et al. “Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?” *Proceedings of ACL*, 2024. [https://arxiv.org/abs/2402.04213](https://arxiv.org/abs/2402.04213)
+
+  * **Context Ignoring**
+
+    * **Examples**
+
+      * The model ignores key information provided in the prompt when generating its answer.
+      * Important instructions earlier in the conversation are forgotten or skipped.
+      * The system answers using general knowledge instead of using the provided context.
+      * The model overlooks details in long documents or multi-part prompts.
+      * Responses may rely on default assumptions rather than the information given by the user.
+      * The model may fail to use relevant retrieved documents in retrieval-augmented systems.
+    * **Sources**
+
+      * Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173. [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/)
+      * Shi, Freda, et al. “Large Language Models Can Be Easily Distracted by Irrelevant Context.” *Proceedings of the 40th International Conference on Machine Learning*, 2023. [https://arxiv.org/abs/2302.00093](https://arxiv.org/abs/2302.00093)
+      * Wang, Haocheng, et al. “Context Length Alone Hurts LLM Performance Despite Alignment in Long-Context Tasks.” *Findings of the Association for Computational Linguistics: EMNLP 2025*, 2025. [https://arxiv.org/abs/2503.07910](https://arxiv.org/abs/2503.07910)
+
+  * **Tool Interaction Failure**
+
+    * **Examples**
+
+      * The model calls the wrong tool or API for a task.
+      * A chatbot fails to use an available tool even when it is required to answer the question.
+      * The system produces incorrect tool inputs or parameters.
+      * The model misinterprets the output returned by a tool.
+      * Tool calls may be triggered when unnecessary or skipped when required.
+      * Errors occur when combining tool outputs with generated reasoning.
+      * The system may hallucinate tool results instead of using the actual tool output.
+    * **Sources**
+
+      * Zhang, Yuxiang, et al. “ToolBeHonest: A Multi-Level Hallucination Diagnostic Benchmark for Tool-Augmented Large Language Models.” *EMNLP 2024*, 2024. [https://arxiv.org/abs/2406.01561](https://arxiv.org/abs/2406.01561)
+      * Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024. [https://aclanthology.org/2024.acl-long.585/](https://aclanthology.org/2024.acl-long.585/)
+      * Tan, Hexiang, et al. “Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?” *Proceedings of ACL*, 2024. [https://arxiv.org/abs/2402.04213](https://arxiv.org/abs/2402.04213)
+
+* **Instruction Interpretation & Constraint Compliance Failures**
+
+  * **Ambiguity Misinterpretation**
+
+    * **Examples**
+
+      * The model misunderstands unclear instructions and answers a different question than the user intended.
+      * A chatbot interprets vague wording in a prompt in an unintended way.
+      * The system chooses one possible meaning of an ambiguous instruction without asking for clarification.
+      * Instructions that include multiple possible interpretations lead to incorrect responses.
+      * The model fills in missing details with assumptions instead of asking follow-up questions.
+      * Confusing or complex prompts cause the model to misinterpret the user’s goal.
+    * **Sources**
+
+      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022, [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+
+  * **Instruction Precedence Violation**
+
+    * **Examples**
+
+      * The model follows a later instruction that contradicts earlier instructions or system rules.
+      * A chatbot prioritizes user instructions over safety guidelines or system policies.
+      * The system ignores higher-priority instructions and follows lower-priority ones.
+      * Conflicting instructions cause the model to behave inconsistently.
+      * A prompt inserted later in the conversation overrides earlier constraints unexpectedly.
+      * Attackers exploit instruction conflicts to bypass safety restrictions.
+    * **Sources**
+
+      * Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024, [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208)
+      * Zhang, Zhihan, et al. “IHEval: Evaluating Language Models on Following the Instruction Hierarchy.” arXiv, 2025, [https://arxiv.org/abs/2502.08745](https://arxiv.org/abs/2502.08745)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+
+  * **Constraint / Format Noncompliance**
+
+    * **Examples**
+
+      * The model ignores formatting instructions such as required lists, tables, or structured outputs.
+      * A chatbot produces extra text even when the user asked for a strict format.
+      * The system fails to follow instructions about length limits or specific output structures.
+      * The model returns incorrect JSON, code, or structured data when a strict format is required.
+      * The response does not follow requested ordering or section headings.
+      * Even when constraints are clear, the model sometimes partially follows them.
+    * **Sources**
+
+      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+      * Chatterjee, Anwoy, et al. “POSIX: A Prompt Sensitivity Index for Large Language Models.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024, [https://arxiv.org/abs/2410.02185](https://arxiv.org/abs/2410.02185)
+
+  * **Overgeneralization or Over-Literalism**
+
+    * **Examples**
+
+      * The model applies a rule too broadly and produces an incorrect answer.
+      * A chatbot interprets instructions too literally and ignores the intended meaning.
+      * The system extends patterns beyond what the prompt actually states.
+      * The model follows wording exactly but misses the practical intent of the request.
+      * General instructions are applied rigidly even when exceptions should be obvious.
+      * The system over-applies examples in the prompt and assumes they represent universal rules.
+    * **Sources**
+
+      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022, [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
+      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+
+* **Task Execution & Objective Fulfillment Failures**
+
+  * **Task Completeness Failure**
+
+    * **Examples**
+
+      * The model answers only part of a multi-step request and ignores other required steps.
+      * A chatbot provides an incomplete list when the user asked for all relevant items.
+      * The system begins solving a task but stops before completing the full solution.
+      * The model summarizes only some sections of a document instead of the entire content requested.
+      * A response addresses the main question but omits required formatting, details, or follow-up actions.
+      * The model performs an analysis but fails to provide the final conclusion requested by the user.
+      * In structured tasks (reports, tables, or code), the output is partially completed or missing sections.
+    * **Sources**
+
+      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
+      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
+      * Qi, et al. *AgentIF: Benchmarking Instruction Following for LLM Agents*. arXiv, 2025, [https://arxiv.org/abs/2505.16944](https://arxiv.org/abs/2505.16944)
+      * Chen, et al. *AgentIF-OneDay*. arXiv, 2026, [https://arxiv.org/abs/2601.20613](https://arxiv.org/abs/2601.20613)
+
+
+
+
+#### Summary of Authoritative Sources for Common IF-LLM Failure Modes with Examples and Sources
+
+- Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026, [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency).
+- Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025, [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report).
+- Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
+- Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025, [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card).
+- Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025, [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card).
+- Anthropic. *Claude Is Providing Incorrect or Misleading Responses*. Anthropic Support, [https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on).
+- Anthropic. *Claude’s Constitution*. Anthropic, 2026. [https://www.anthropic.com/constitution](https://www.anthropic.com/constitution).
+- Anthropic. “Constitutional AI: Harmlessness from AI Feedback.” Apr. 2023. [https://arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073).
+- Anthropic. *Prompting Best Practices*. Claude API Documentation, 2026, [https://docs.anthropic.com/en/prompt-library/library](https://docs.anthropic.com/en/prompt-library/library).
+- Anthropic. *Reduce Hallucinations*. Claude API Documentation, [https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations).
+- Anthropic. *Sabotage Risk Report: Claude Opus 4.6*. Anthropic, 2026, [https://anthropic.com/claude-opus-4-6-risk-report](https://anthropic.com/claude-opus-4-6-risk-report).
+- Anthropic. “Constitutional AI: Harmlessness from AI Feedback.” Anthropic, Apr. 2023.
+- Anthropic. “Introducing the Next Generation of Claude.” Anthropic, 4 Mar. 2024, [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family).
+- Anthropic. “The Claude 3 Model Family: Opus, Sonnet, Haiku.” Anthropic, 2024, [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family).
+- Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023, [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models).
+- Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf).
+- Bi, Baolong, et al. “Context-DPO: Aligning Language Models for Context-Faithfulness.” *Findings of the Association for Computational Linguistics: ACL 2025*, 2025, [https://aclanthology.org/2025.findings-acl.536.pdf](https://aclanthology.org/2025.findings-acl.536.pdf).
+- Chatterjee, Anwoy, et al. “POSIX: A Prompt Sensitivity Index for Large Language Models.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2410.02185](https://arxiv.org/abs/2410.02185) ([arXiv][4]).
+- Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University – Computer and Information Sciences*, 2025, [https://link.springer.com/article/10.1007/s44443-025-00177-1](https://link.springer.com/article/10.1007/s44443-025-00177-1).
+- Chen, et al. *AgentIF-OneDay*. arXiv, 2026, [https://arxiv.org/abs/2601.20613](https://arxiv.org/abs/2601.20613).
+- David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” *UK National Cyber Security Centre*, 8 Dec. 2025, [https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection).
+- Dong, H., et al. “From Reward Modeling to Online RLHF.” 2024. [https://arxiv.org/abs/2402.07319](https://arxiv.org/abs/2402.07319).
+- Gao, Mingzhe, et al. “Insights into LLM Long-Context Failures.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2404.15538](https://arxiv.org/abs/2404.15538).
+- Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020, [https://arxiv.org/abs/2009.11462](https://arxiv.org/abs/2009.11462).
+- Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023, [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+- Google. “Safety and Factuality Guidance.” *Gemini API Documentation*, [https://developers.google.com/machine-learning/resources/safety-gen-ai](https://developers.google.com/machine-learning/resources/safety-gen-ai).
+- Google Research. “Can Large Language Models Identify and Correct Their Mistakes?” Google Research, 2024, [https://research.google/blog/can-large-language-models-identify-and-correct-their-mistakes/](https://research.google/blog/can-large-language-models-identify-and-correct-their-mistakes/).
+- Google Research. “Evaluating and Enhancing Probabilistic Reasoning in Language Models.” Google Research, 2024. [https://arxiv.org/abs/2401.04727](https://arxiv.org/abs/2401.04727).
+- Google Research. “Minerva: Solving Quantitative Reasoning Problems with Language Models.” Google Research, 2022, [https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/](https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/).
+- Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023, [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232).
+- Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410).
+- Joglekar, Manas, et al. *Training LLMs for Honesty via Confessions*. OpenAI, 2025. [https://arxiv.org/abs/2501.09978](https://arxiv.org/abs/2501.09978).
+- Kalai, Adam Tauman, et al. *Why Language Models Hallucinate*. OpenAI, 2025. [https://arxiv.org/abs/2502.09600](https://arxiv.org/abs/2502.09600).
+- Keller, D., et al. *Expanding the AI Evaluation Toolbox with Statistical Models*. NIST AI 800-3, National Institute of Standards and Technology, Feb. 2026, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-3.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-3.pdf).
+- Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889).
+- Li, Moxin, et al. “Knowledge Boundary of Large Language Models: A Survey.” *Proceedings of ACL 2025*, Association for Computational Linguistics, 2025, [https://aclanthology.org/2025.acl-long.256/](https://aclanthology.org/2025.acl-long.256/).
+- Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022, [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110).
+- Lightman, Hunter, et al. *Let’s Verify Step by Step*. OpenAI, 2023. [https://arxiv.org/abs/2305.20050](https://arxiv.org/abs/2305.20050).
+- Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022, [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/).
+- Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173, [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/).
+- MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, [https://cwe.mitre.org/data/definitions/441.html](https://cwe.mitre.org/data/definitions/441.html).
+- Mousavi, Seyed Mahed, Simone Alghisi, and Giuseppe Riccardi. “DyKnow: Dynamically Verifying Time-Sensitive Factual Knowledge in LLMs.” *Findings of ACL: EMNLP 2024*, Association for Computational Linguistics, 2024, [https://aclanthology.org/2024.findings-emnlp.471/](https://aclanthology.org/2024.findings-emnlp.471/).
+- National Center for State Courts. *Generative AI and Judicial Ethics*. NCSC, 2025, [https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations](https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations).
+- National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf).
+- National Institute of Standards and Technology. *Reducing Risks Posed by Synthetic Content: An Overview of Technical Approaches to Digital Content Transparency*. NIST AI 100-4, 2024. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf).
+- National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
+- Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024, [https://aclanthology.org/2024.acl-long.585/](https://aclanthology.org/2024.acl-long.585/).
+- OpenAI. *GPT-4 Technical Report*. OpenAI, 2023, [https://cdn.openai.com/papers/gpt-4.pdf](https://cdn.openai.com/papers/gpt-4.pdf).
+- OpenAI. *OpenAI o1 System Card*. OpenAI, 2024. [https://openai.com/research/openai-o1-system-card](https://openai.com/research/openai-o1-system-card).
+- OpenAI. *Model Spec*. OpenAI, 2025, [https://model-spec.openai.com/2025-02-12.html](https://model-spec.openai.com/2025-02-12.html).
+- OpenAI. “Aligning Language Models to Follow Instructions.” OpenAI, 27 Jan. 2022, [https://openai.com/index/instruction-following/](https://openai.com/index/instruction-following/).
+- OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024, [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/).
+- OpenAI. “Expanding on What We Missed with Sycophancy.” OpenAI, 2025, [https://openai.com/index/expanding-on-sycophancy/](https://openai.com/index/expanding-on-sycophancy/).
+- OpenAI. “Improving Mathematical Reasoning with Process Supervision.” OpenAI, 2023, [https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/](https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/).
+- OpenAI. “Introducing the Model Spec.” OpenAI, 8 May 2024, [https://openai.com/index/introducing-the-model-spec/](https://openai.com/index/introducing-the-model-spec/).
+- OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/).
+- OpenAI. “Why Language Models Hallucinate.” OpenAI, 5 Sept. 2025, [https://openai.com/index/why-language-models-hallucinate/](https://openai.com/index/why-language-models-hallucinate/).
+- OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/).
+- Qi, et al. *AgentIF: Benchmarking Instruction Following for LLM Agents*. arXiv, 2025, [https://arxiv.org/abs/2505.16944](https://arxiv.org/abs/2505.16944).
+- Shi, Freda, et al. “Large Language Models Can Be Easily Distracted by Irrelevant Context.” *Proceedings of the 40th International Conference on Machine Learning*, 2023. [https://arxiv.org/abs/2302.00093](https://arxiv.org/abs/2302.00093).
+- Tan, Hexiang, et al. “Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?” *Proceedings of ACL*, 2024. [https://arxiv.org/abs/2402.04213](https://arxiv.org/abs/2402.04213).
+- Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024, [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208).
+- Wang, Haocheng, et al. “Context Length Alone Hurts LLM Performance Despite Alignment in Long-Context Tasks.” *Findings of the Association for Computational Linguistics: EMNLP 2025*, 2025. [https://arxiv.org/abs/2503.07910](https://arxiv.org/abs/2503.07910).
+- Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” arXiv, 2023, [https://arxiv.org/abs/2308.03958](https://arxiv.org/abs/2308.03958).
+- Zhang, Zhihan, et al. “IHEval: Evaluating Language Models on Following the Instruction Hierarchy.” arXiv, 2025, [https://arxiv.org/abs/2502.08745](https://arxiv.org/abs/2502.08745).
+- Zhang, Yuxiang, et al. “ToolBeHonest: A Multi-Level Hallucination Diagnostic Benchmark for Tool-Augmented Large Language Models.” *EMNLP 2024*, 2024. [https://arxiv.org/abs/2406.01561](https://arxiv.org/abs/2406.01561).
+- Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911).
 
 
 ## **Authors**
