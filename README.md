@@ -431,7 +431,7 @@ Bypassing or inconsistently applying the ontology reduces reliability but does n
 
 ### Appendix: Information Quality Criteria
 
-This appendix describes the information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-common-if-llm-failure-modes-with-examples-and-sources).
+This appendix describes the information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-information-quality-criteria).
 
 Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making.
 
@@ -528,7 +528,7 @@ A summary of the authoritative sources for these information quality criteria ap
 
 ### Appendix: Common IF-LLM Failure Modes with Examples and Sources
 
-This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes with examples and sources.  There is also a [summary of authoritative sources](#appendix-common-if-llm-failure-modes-works-cited).
+This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes with examples and sources.  There is also a [summary of authoritative sources](#summary-of-authoritative-sources-for-common-if-llm-failure-modes-with-examples-and-sources).
 
 * **Truthfulness & Knowledge Failures**
 
