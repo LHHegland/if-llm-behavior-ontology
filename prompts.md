@@ -9,11 +9,12 @@ Collection of prompt templates for the Instruction-Following Large Language Mode
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-03-04T07:59Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-03-22T07:38Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-02-27T03:15Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-03-22T07:38Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated Orchestrated Behavior Configuration and Task Knowledge Entries Creation to be more comprehensive.
 - 2026-03-04T07:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Prompt: Orchestrate Structured Research & Analysis
 - 2026-02-27T10:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com):
   - Added Prompt: Structured Event Analysis Orchestrator
@@ -50,21 +51,55 @@ Collection of prompt templates for the Instruction-Following Large Language Mode
 Translate user-provided project input into copyable behavior configurations and task knowledge entries to be pasted into the appropriate knowledge files.
 
 ```
+# Configuration
+
+## System Policies
+The uploaded file 'processing-policies.md' contains the **system-level policies** for this conversation.
+
+## Developer Configurations
+The uploaded file 'configurations.md' contains the **system-level configurations** for this conversation.
+
+## Developer Tasks
+The uploaded file 'tasks.md' contains the **system-level tasks** for this conversation.
+
 # Identity & Role
 You are executing [[IF_LLM_BO_TASKS:ORCH_CONFIG_ENTRY_CREATE]].
+
+# Priorities
+[[PROCESSING_POLICIES:PRIORITIES]]
 
 # Input
 - **Knowledge Entries Owner:** [First Last Name](mailto:username@example.com)
 - **Knowledge Entries Developer:** [First Last Name](mailto:username@example.com)
-- **Priorities:** [[PROCESSING_POLICIES:PRIORITIES]] 
-- **Objectives:** Create an information-following large language model configuration orchestrator pattern or single behavior configuration, whichever is most appropriate, to satisfy the following requirements:
-  - 
-  - 
-  - 
-- **Topics**
-  - 
-  - 
-  - 
+- **Objectives:** Create an information-following large language model configuration orchestrator pattern or single behavior configuration to accomplish the following objectives:
+  - <identify objective>
+  - <identify objective>
+  - <identify objective>
+  - **Inputs:** Use the following inputs: 
+    - **<identify input group>**
+      - **<identify input>**
+      - **<identify input>**
+      - **<identify input>** 
+  - Follow the processing priorities strictly in this order: 
+     1. Auditability
+     2. Relevance
+     3. Accuracy
+     4. Timeliness
+     5. Reliability
+     6. Sufficiency
+  - Use the **Workflow** as follows: 
+     1. **<identify step title>:** <briefly describe workflow step>
+     2. **<identify step title>:** <briefly describe workflow step>
+         2.1. **<identify step title>:** <briefly describe workflow step>
+         2.2. **<identify step title>:** <briefly describe workflow step>
+         …
+         2.N. **<identify step title>:** <briefly describe workflow step>
+     …
+     N. **<identify step title>:** <briefly describe workflow step>
+  - Provide response output using the following structure (**Response Output Structure**): 
+    '''
+<identify response output structure with field names in angled brackets (e.g., <Workflow Step Field Name>)>
+    '''
 ```
 
 
@@ -72,11 +107,12 @@ You are executing [[IF_LLM_BO_TASKS:ORCH_CONFIG_ENTRY_CREATE]].
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-02-27T03:15Z LH
+**Version:** 2026-03-22T07:38Z LH
 
-**Last Reviewed:** 2026-02-27T03:15Z [Lance Hegland](mailto:lance.hegland@gmail.com)
+**Last Reviewed:** 2026-03-22T07:38Z [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog** 
+  - 2026-03-22T07:38Z [Lance Hegland](mailto:lance.hegland@gmail.com): Updated prompt template to be more comprehensive.
   - 2026-02-27T11:12Z [Lance Hegland](mailto:lance.hegland@gmail.com): Edited Prompt Template Objective statement to clarify the creation of an orchestrator or behavior configuration.
   - 2026-02-27T03:15Z [Lance Hegland](mailto:lance.hegland@gmail.com): Added Prompt Template
 
