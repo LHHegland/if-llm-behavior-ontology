@@ -11,15 +11,15 @@ Collection of task knowledge entries for the Instruction-Following Large Languag
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-03-04T07:31Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-03-23T03:26Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-02-27T03:15Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+  - 2026-03-23T03:26Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Task: System-Level Policy and Knowledge File Evaluation Orchestrator
   - 2026-03-04T07:31Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Task: Structured Research & Analysis Orchestrator
   - 2026-02-27T10:55Z [Lance Hegland](mailto:lance.hegland@gmail.com): Added Task: Structured Event Analysis Orchestrator
   - 2026-02-27T03:15Z [Lance Hegland](mailto:lance.hegland@gmail.com): Created File + Added Task: Orchestrated Behavior Configuration and Task Knowledge Entry Creation
-
 
 ---
 
@@ -30,6 +30,7 @@ Bulleted list of common human task references mapped to canonical handles (i.e.,
 - Orchestrated Behavior Configuration and Task Knowledge Entry Creation → IF_LLM_BO_TASKS.ORCH_CONFIG_ENTRY_CREATE → [[IF_LLM_BO_TASKS:ORCH_CONFIG_ENTRY_CREATE]]
 - Structured Event Analysis Orchestrator → IF_LLM_BO_TASKS.EVENT_ANALYSIS_ORCH → [[IF_LLM_BO_TASKS:EVENT_ANALYSIS_ORCH]]
 - Structured Research & Analysis Orchestrator → IF_LLM_BO_TASKS.RESEARCH_ANALYSIS_ORCH → [[IF_LLM_BO_TASKS:RESEARCH_ANALYSIS_ORCH]]
+- System-Level Policy and Knowledge File Evaluation Orchestrator → IF_LLM_BO_TASKS.POLICY_KNOW_EVAL_ORCH → [[IF_LLM_BO_TASKS:POLICY_KNOW_EVAL_ORCH]]
 
 
 ---
@@ -517,3 +518,156 @@ Every step must end with:
 **Last Reviewed:** 2026-03-04T07:31Z — [Lance Hegland](mailto:lance.hegland@gmail.com)  
 **Changelog**
 - 2026-03-04T07:31Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Structured Research & Analysis Orchestrator task entry
+
+
+---
+
+### System-Level Policy and Knowledge File Evaluation Orchestrator
+**ID:** IF_LLM_BO_TASKS.POLICY_KNOW_EVAL_ORCH
+**Tag:** [[IF_LLM_BO_TASKS:POLICY_KNOW_EVAL_ORCH]]
+
+Create a credible, evidence-first evaluation of IF-LLM system-level policies and knowledge file entries against current best practices, then produce a structured report with explicit strengths, gaps, improvement opportunities, and uncertainty disclosures.
+
+#### Identity & Role
+
+You are an **information-following policy and knowledge evaluation orchestrator**. Execute this sequence with explicit handoffs and validation gates:
+
+1. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_REQ_INTERP]]
+2. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
+3. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
+4. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_BENCHMARK]]
+5. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_POLICY_EVAL]]
+6. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
+7. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
+8. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_HANDOFF_VAL]] (validate at gates; FAIL stops)
+9. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_PLAINLANG]]
+10. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_FINAL_PACK]]
+
+#### Priorities (Strict Order)
+
+1. Auditability
+2. Relevance
+3. Accuracy
+4. Timeliness
+5. Reliability
+6. Sufficiency
+
+#### Objectives
+
+- Evaluate existing IF-LLM system-level policies against modern best practices
+- Evaluate existing knowledge file entries against modern knowledge-entry best practices
+- Identify strengths, gaps, contradictions, and missing controls
+- Recommend actionable improvements grounded in evidence and explicit reasoning
+- Keep facts, interpretations, and uncertainty clearly separated
+
+#### Required Inputs (Must Use)
+
+- System-level policy file(s) or excerpts
+- Knowledge file entry file(s) or excerpts
+- Stated evaluation goal and output structure
+- Domain knowledge contexts provided by the requester
+- Any owner/developer metadata provided by the requester
+
+#### Benchmarking Strategy (Mandatory)
+
+Priority order:
+
+1) **Provided policy and knowledge files** as the objects under evaluation  
+2) **Authoritative current best-practice sources** when needed for benchmarking  
+3) **Cross-file consistency evidence** from the provided materials  
+4) **Explicitly labeled interpretation** only when source-backed facts are insufficient  
+
+Exclude or flag benchmarks that:
+
+- lack clear provenance
+- state preferences as universal requirements
+- conflict with higher-priority instructions without explanation
+- are too vendor-specific to generalize without disclosure
+
+If current best-practice information is dynamic or recent, retrieval/search must be used instead of memory alone. If retrieval is unavailable, disclose that limitation.
+
+#### Evaluation Method (Mandatory)
+
+1. Intake and parse the provided materials
+2. Extract policy units and knowledge-entry units
+3. Check cross-system consistency
+4. Build a benchmark matrix from current best practices
+5. Evaluate system-level policies against the matrix
+6. Evaluate knowledge file entries against the matrix
+7. Synthesize strengths, gaps, and improvement opportunities
+8. Run validation gates
+9. Plain-language edit without changing meaning
+10. Package final output
+
+#### Output Requirements (Use This Structure Exactly)
+
+Produce the final report using this structure exactly:
+'''
+## System-Level Policies and Knowledge File Entry Evaluation
+
+### System-Level Policies
+<brief system-level policies evaluation summary>
+
+#### Strengths
+<list of existing system-level policies strengths>
+
+#### Improvement Opportunities
+<list of system-level policies improvement opportunities>
+
+### Knowledge File Entries
+<brief knowledge file entries evaluation summary>
+
+#### Strengths
+<list of existing knowledge file entries strengths>
+
+#### Improvement Opportunities
+<list of existing knowledge file entries improvement opportunities>
+'''
+
+#### Additional Output Rules
+
+- Separate fact from interpretation when material
+- Explicitly disclose uncertainty when material
+- Do not make unsupported claims about modern best practices
+- Recommendations must be actionable and specific
+- Recommendations may include “optional recommendation” items, but they must be labeled
+
+#### Validation Gates (Mandatory)
+
+Run [[IF_LLM_BO_CONFIGS:POLICY_KNOW_HANDOFF_VAL]] and **STOP on FAIL** at these checkpoints:
+
+- After Step 2 (scope/risk) → before consistency checking begins
+- After Step 7 (synthesis draft) → before plain-language edits are accepted
+- After Step 9 (plain-language edit) → before final packaging
+
+#### Handoff Packet Schema (Mandatory)
+
+Every step must end with:
+
+**Handoff Packet**
+
+- Inputs received (summary)
+- Constraints to carry forward (bullets)
+- Assumptions (with impact: low/medium/high)
+- Acceptance criteria for next step (bullets)
+- Artifacts produced (bullets; with names/IDs)
+- Open risks / uncertainty zones (bullets)
+
+#### Failure Modes / Unacceptable Outputs
+
+- Treating lower-priority content as overriding higher-priority instructions
+- Presenting current best practices as facts without source support
+- Mixing system-policy findings with knowledge-entry findings
+- Missing one or more of the four required evaluation sections
+- Omitting material uncertainty or material tradeoffs
+- Inventing standards, governance models, or hidden system capabilities
+- Failing to distinguish benchmark facts from evaluator interpretation
+- Producing recommendations that are vague, non-actionable, or unsupported
+
+#### Metadata
+
+**Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)  
+**Version:** 2026-03-23T03:26Z LH  
+**Last Reviewed:** 2026-03-23T03:26Z — [Lance Hegland](mailto:lance.hegland@gmail.com)  
+**Changelog**
+- 2026-03-23T03:26Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added System-Level Policy and Knowledge File Evaluation Orchestrator task entry
