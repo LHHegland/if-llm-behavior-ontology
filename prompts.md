@@ -9,11 +9,12 @@ Collection of prompt templates for the Instruction-Following Large Language Mode
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-03-23T03:07Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-03-23T04:01Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-02-27T03:15Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-03-23T04:01Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Prompt Template: Orchestrate Structured Policy and Knowledge Evaluation 
 - 2026-03-23T03:07Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated Orchestrated Behavior Configuration and Task Knowledge Entries Creation prompt template to reduce the risk of failure (i.e., interpreting input and as processing instructions for the current tasks).
 - 2026-03-22T07:38Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated Orchestrated Behavior Configuration and Task Knowledge Entries Creation to be more comprehensive.
 - 2026-03-04T07:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Prompt: Orchestrate Structured Research & Analysis
@@ -31,7 +32,7 @@ Bulleted list of common human prompt template references mapped to canonical han
 - Orchestrated Behavior Configuration and Task Knowledge Entries Creation → IF_LLM_BO_PROMPTS.ORCH_CONFIG_ENTRY_CREATE → [[IF_LLM_BO_PROMPTS:ORCH_CONFIG_ENTRY_CREATE]]
 - Orchestrated Structured Event Analysis → IF_LLM_BO_PROMPTS.ORCH_EVENT_ANALYSIS → [[IF_LLM_BO_PROMPTS:ORCH_EVENT_ANALYSIS]]
 - Orchestrate Structured Research & Analysis → IF_LLM_BO_PROMPTS.ORCH_RESEARCH_ANALYSIS → [[IF_LLM_BO_PROMPTS:ORCH_RESEARCH_ANALYSIS]]
-
+- Orchestrate Structured Policy and Knowledge Evaluation → IF_LLM_BO_PROMPTS.ORCH_POLICY_KNOW_EVAL → [[IF_LLM_BO_PROMPTS:ORCH_POLICY_KNOW_EVAL]]
 
 ---
 
@@ -199,5 +200,81 @@ Use the following inputs:
 
 **Changelog** 
   - 2026-03-04T07:59Z [Lance Hegland](mailto:lance.hegland@gmail.com): Added Prompt Template
+
+---
+
+### Orchestrate Structured Policy and Knowledge Evaluation 
+**ID:** IF_LLM_BO_PROMPTS.ORCH_POLICY_KNOW_EVAL
+**Tag:** [[IF_LLM_BO_PROMPTS:ORCH_POLICY_KNOW_EVAL]]
+
+Perform structured system-level policy and knowledge entry evaluation.
+
+```Markdown
+You are executing [[IF_LLM_BO_TASKS:POLICY_KNOW_EVAL_ORCH]].
+
+Goal:
+Evaluate IF-LLM system-level policies and knowledge file entries against current best practices.
+
+Required Inputs:
+- System-level policies: <paste or attach>
+- Knowledge file entries: <paste or attach>
+- Optional benchmark constraints or preferred sources: <paste if any>
+
+Rules:
+- Follow the orchestration sequence exactly.
+- Use explicit handoff packets between every step. No implicit carryover.
+- Run [[IF_LLM_BO_CONFIGS:POLICY_KNOW_HANDOFF_VAL]] at the required gates and STOP on FAIL.
+- Treat provided files as the primary evaluation targets.
+- When “current best practices” are dynamic or recent, use retrieval/search instead of memory alone.
+- Separate fact from interpretation.
+- Disclose material uncertainty explicitly.
+- Do not invent standards, policies, or hidden system capabilities.
+- Keep language plain and inclusive.
+
+Sequence:
+1. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_REQ_INTERP]]
+2. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
+3. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
+4. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_BENCHMARK]]
+5. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_POLICY_EVAL]]
+6. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
+7. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
+8. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_HANDOFF_VAL]]
+9. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_PLAINLANG]]
+10. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_FINAL_PACK]]
+
+Final output must use this exact structure:
+
+## System-Level Policies and Knowledge File Entry Evaluation
+
+### System-Level Policies
+<brief system-level policies evaluation summary>
+
+#### Strengths
+<list of existing system-level policies strengths>
+
+#### Improvement Opportunities
+<list of system-level policies improvement opportunities>
+
+### Knowledge File Entries
+<brief knowledge file entries evaluation summary>
+
+#### Strengths
+<list of existing knowledge file entries strengths>
+
+#### Improvement Opportunities
+<list of existing knowledge file entries improvement opportunities>
+```
+
+#### Metadata
+
+**Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
+
+**Version:** 2026-03-23T04:01Z LH
+
+**Last Reviewed:** 2026-03-23T04:01Z [Lance Hegland](mailto:lance.hegland@gmail.com)
+
+**Changelog** 
+  - 2026-03-23T04:01Z [Lance Hegland](mailto:lance.hegland@gmail.com): Added Prompt Template
 
 ---
