@@ -19,39 +19,43 @@
 - [IF-LLM-BO User Notes](!!!TODO!!!)
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
-    - [Decision-Making Information Quality Criteria (Priorities)](!!!TODO!!!)
+    - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
-    - [Common IF-LLM Failure Mitigation Strategies (Governance, Instructions, and Context)](!!!TODO!!!)
+    - [Common IF-LLM Failure Mitigation Strategies](!!!TODO!!!)
   - [Purpose](#purpose)
   - [Objectives](#objectives)
 - [Appendices](#appendices)
   - [Assumptions](#appendix-assumptions)
-  - [Evidenced-based Information Criteria (Research)](!!!TODO!!!)
-  - [Decision-Making Information Quality Criteria (Priorities)](!!!TODO!!!)
-  - [IF-LLM Information](!!!TODO!!!)
-    - [Currently Popular Models](!!!TODO!!!)
-    - [Instruction and Context Hierarchy](!!!TODO!!!)
-    - [Prompt Anatomy](!!!TODO!!!)
-      - [Identity & Role](!!!TODO!!!)
+  - [Evidenced-based Information Criteria (Research)](#appendix-evidenced-based-information-criteria-research)
+  - [Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources](#appendix-decision-making-information-quality-criteria-priorities-with-definitions-and-sources)
+    - [Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities)
+  - [IF-LLM Information](#appendix-if-llm-information)
+    - [Currently Popular Models](#currently-popular-models)
+    - [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)
+    - [Prompt Anatomy](#prompt-anatomy)
+      - [Identity & Role](#identity--role)
       - [Priorities](!!!TODO!!!)
-      - [Task](!!!TODO!!!)
-      - [Domains](!!!TODO!!!)
-      - [Reasoning](!!!TODO!!!)
-      - [Structure](!!!TODO!!!)
-      - [Persona](!!!TODO!!!)
-      - [Examples](!!!TODO!!!)
+      - [Task](#task)
+      - [Domains](#domains)
+      - [Reasoning](#reasoning)
+      - [Structure](#structure)
+      - [Persona](#persona)
+      - [Examples](#examples)
     - [Developed Solution Anatomy](!!!TODO!!!)
-      - [Knowledge Files](!!!TODO!!!)
-         - [Policies](!!!TODO!!!)
-         - [Configurations](!!!TODO!!!)
-         - [Orchestrators](!!!TODO!!!)
-         - [Prompt Elements](!!!TODO!!!)
-         - [Prompt Templates](!!!TODO!!!)
-      - [Tools](!!!TODO!!!)
-    - [Common Failure Modes](!!!TODO!!!)
-      - [Examples and Sources](!!!TODO!!!)
-      - [Works Cited](!!!TODO!!!)
-  - [IF-LLM-BO Project Journey](!!!TODO!!!)
+      - [Knowledge Files](#knowledge-files)
+         - [Policies](#policies)
+         - [Configurations](#configurations)
+         - [Orchestrators](#orchestrators)
+         - [Prompt Elements](#prompt-anatomy)
+         - [Prompt Templates](#prompt-templates)
+      - [Tools](#tools)
+    - [Common Failure Modes](#common-failure-modes)
+      - [Examples and Sources](#examples-and-sources)
+        - [Authoritative Works Cited](#summary-of-authoritative-works-cited-for-common-failure-modes-with-examples-and-sources)
+    - [Common IF-LLM Failure Mitigation Strategies](!!!TODO!!!)
+  - [IF-LLM-BO Project Journey](#appendix-if-llm-bo-project-journey)
+    - [Expanded Objectives](#expanded-objectives)
+    - [Activity Iterations](#activity-iterations)
 - [Authors](#authors)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -132,8 +136,8 @@ TODO
 
 .
 
-## User Notes
-The following sections contain user notes related to this instruction-following large language model (IF-LLM) behavior ontology. This ontology helps to most efficiently organize and maintain the frequently- or commonly-used IF-LLM behavior instructions.
+## IF-LLM-BO Project Notes
+The following sections contain project notes related to this instruction-following large language model (IF-LLM) behavior ontology.
 
 ### Foundations
 The following sections contain the foundations that guide this instruction-following large language model (IF-LLM) behavior ontology.
@@ -224,6 +228,10 @@ Below is a summary of the common instruction-following large language model (IF-
 - Task Execution & Objective Fulfillment Failures
   - Task Completeness Failure
  
+
+#### Common IF-LLM Failure Mitigation Strategies
+TBD (Governance, Instructions, and Context)
+
 
 
 ### Purpose
@@ -586,6 +594,9 @@ TBD
 - Audience (i.e., who, where, when)
 
 
+##### Priorities
+TBD
+
 ##### Task
 TBD
 
@@ -597,7 +608,7 @@ TBD
 - Workflow
 
 
-##### Domain
+##### Domains
 TBD
 
 - In-Scope Topics
@@ -635,7 +646,7 @@ TBD
 TBD
 
 
-#### Appendix: Developed Solution Anatomy
+#### Developed Solution Anatomy
 TBD
 
 - [Knowledge Files](!!!TODO!!!)
@@ -670,10 +681,10 @@ TBD
   - [Examples](!!!TODO!!!)
 - [Prompt Templates](!!!TODO!!!)
 
-##### Policies
+###### Policies
 TBD
 
-##### Configurations
+###### Configurations
 TBD
 
   - [Identity & Role](!!!TODO!!!)
@@ -687,7 +698,7 @@ TBD
 
 
 
-##### Orchestrators
+###### Orchestrators
 TBD
 
   - [Identity & Role](!!!TODO!!!)
@@ -704,7 +715,7 @@ TBD
   - [Examples](!!!TODO!!!)
 
 
-##### Prompt Templates
+###### Prompt Templates
 TBD
 
 ##### Tools
@@ -1297,7 +1308,7 @@ TBD
       * Chen, et al. *AgentIF-OneDay*. arXiv, 2026, [https://arxiv.org/abs/2601.20613](https://arxiv.org/abs/2601.20613)
 
 
-##### Summary of Authoritative Works Cited for Common Failure Modes with Examples and Sources
+###### Summary of Authoritative Works Cited for Common Failure Modes with Examples and Sources
 TBD
 
 - Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026, [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency).
