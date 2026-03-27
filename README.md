@@ -16,17 +16,42 @@
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [User Notes](#user-notes)
+- [IF-LLM-BO User Notes](!!!TODO!!!)
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
+    - [Decision-Making Information Quality Criteria (Priorities)](!!!TODO!!!)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
-    - [Information Quality Criteria](#information-quality-criteria)
+    - [Common IF-LLM Failure Mitigation Strategies (Governance, Instructions, and Context)](!!!TODO!!!)
   - [Purpose](#purpose)
   - [Objectives](#objectives)
 - [Appendices](#appendices)
   - [Assumptions](#appendix-assumptions)
-  - [Information Quality Criteria](#appendix-information-quality-criteria)
-  - [Common IF-LLM Failure Modes with Examples and Sources](#appendix-common-if-llm-failure-modes-with-examples-and-sources)
+  - [Evidenced-based Information Criteria (Research)](!!!TODO!!!)
+  - [Decision-Making Information Quality Criteria (Priorities)](!!!TODO!!!)
+  - [IF-LLM Information](!!!TODO!!!)
+    - [Currently Popular Models](!!!TODO!!!)
+    - [Instruction and Context Hierarchy](!!!TODO!!!)
+    - [Prompt Anatomy](!!!TODO!!!)
+      - [Identity & Role](!!!TODO!!!)
+      - [Priorities](!!!TODO!!!)
+      - [Task](!!!TODO!!!)
+      - [Domains](!!!TODO!!!)
+      - [Reasoning](!!!TODO!!!)
+      - [Structure](!!!TODO!!!)
+      - [Persona](!!!TODO!!!)
+      - [Examples](!!!TODO!!!)
+    - [Developed Solution Anatomy](!!!TODO!!!)
+      - [Knowledge Files](!!!TODO!!!)
+         - [Policies](!!!TODO!!!)
+         - [Configurations](!!!TODO!!!)
+         - [Orchestrators](!!!TODO!!!)
+         - [Prompt Elements](!!!TODO!!!)
+         - [Prompt Templates](!!!TODO!!!)
+      - [Tools](!!!TODO!!!)
+    - [Common Failure Modes](!!!TODO!!!)
+      - [Examples and Sources](!!!TODO!!!)
+      - [Works Cited](!!!TODO!!!)
+  - [IF-LLM-BO Project Journey](!!!TODO!!!)
 - [Authors](#authors)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -124,6 +149,32 @@ Instruction-Following Large Language Models (IF-LLMs) produce results that are l
 
 TO DO: Create Summary
 
+#### Decision-Making Information Quality Criteria (Priorities)
+
+Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making. Each definition is written to answer a practical question: *"What does this mean for everyday decision-making?"*
+
+To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
+
+**Decision-Making Information Quality Criteria (Prioritized)**
+ 1. **Auditability:** source of information, how information was changed, and who handled information can be identified.
+ 2. **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
+ 3. **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
+ 4. **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
+ 5. **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again.
+ 6. **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
+ 7. **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
+ 8. **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
+ 9. **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
+10. **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
+11. **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
+12. **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
+13. **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
+14. **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
+
+
+More detailed information about these criteria, along with authoritative sources, can be found in the [Appendix: Information Quality Criteria](#appendix-information-quality-criteria).
+
+
 #### Common IF-LLM Failure Modes
 
 Below is a summary of the common instruction-following large language model (IF-LLM) failure modes today that this project hopes to address.  As IF-LLMs evolve, this project will shift focus from reducing failure risks to empowering greater efficiency through reusable elements.  More detailed information about these failure modes, along with authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#appendix-common-if-llm-failure-modes-with-examples-and-sources).
@@ -174,58 +225,29 @@ Below is a summary of the common instruction-following large language model (IF-
   - Task Completeness Failure
  
 
-#### Information Quality Criteria
-
-Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making. Each definition is written to answer a practical question: *"What does this mean for everyday decision-making?"*
-
-To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
-
-**Information Quality Criteria (Prioritized)**
- 1. **Auditability:** source of information, how information was changed, and who handled information can be identified.
- 2. **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
- 3. **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
- 4. **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
- 5. **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again.
- 6. **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
- 7. **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
- 8. **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
- 9. **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
-10. **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
-11. **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
-12. **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
-13. **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
-14. **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
-
-
-More detailed information about these criteria, along with authoritative sources, can be found in the [Appendix: Information Quality Criteria](#appendix-information-quality-criteria).
-
-
 
 ### Purpose
 As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
 
+
 ### Objectives
 - Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
   - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies.
-  - scaffolding must help organize instruction-following LLM behavioral configurations in knowledge entries and files. 
+  - scaffolding must help organize instruction-following LLM behavioral configurations in knowledge entries and files.
+  - uses the process below:
+    1. **Identify Foundations**
+    2. **Identify Assumptions**
+    3. **Identify Evidence-Based Knowledge**
+    4. **Organize Resources** (e.g., file structure, prompts, configurations, orchestrators, knowledge entries)
+    5. **Update Documentation**
+
+More detailed information is available in the following sections:
+- [Appendix: IF-LLM-BO Project Journey](!!!TODO!!!)
+   - [Expanded Objectives](!!!TODO!!!)
+   - [Activity Iterations](!!!TODO!!!)
+
 
 ### Operational Notes
-
-### Instruction and Knowledge Authority Hierarchy
-
-TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authority as outlined below, including how instructions are granted authority, critical phrases used to grant/assign authority, plus 3 to 5 examplesto help users understand the value of this hierarchy.
-1. System (Global) Policies (e.g., knowledge entries with the highest authority (i.e., meta knowledge entries))
-2. Developer Instructions (e.g., knowledge entries with the second-highest authority, developer implemented knowledge entries)
-3. User Instructions (i.e., the current conversation via chat or API, which could reference existing knowledge entries)
-4. Knowledge Files (and their collection of entries)
-5. User-Uploaded Files (e.g., user-uploaded files, which are considered user knowledge files containing user knowledge injuries)
-6. Tool Outputs
-7. General Model Knowledge
-
-
-IF-LLMs receive instructions through either user prompts (e.g., chat interfaces or APIs) or developer instructions. Users and developers can store reusable instructions and context in knowledge entries of various types. Knowledge interests can be organized into knowledge files.
-
-interfacesknowledge files that
 
 
 
@@ -423,15 +445,13 @@ The effectiveness of any ontology depends on **consistent and disciplined use** 
 Bypassing or inconsistently applying the ontology reduces reliability but does not invalidate the design.
 
 
+### Appendix: Evidenced-based Information Criteria (Research)
+TBD
 
 
+### Appendix: Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources
 
-
-
-
-### Appendix: Information Quality Criteria
-
-This appendix describes the information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-information-quality-criteria).
+This appendix describes the decision-making information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. This appendix expands on the [Decision-Making Information Quality Criteria (Priorities)](!!!TODO!!!). The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-information-quality-criteria).
 
 Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making.
 
@@ -514,7 +534,7 @@ To produce information that meaningfully supports decisions, IF-LLMs should prio
   - *Source:* **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
 
 
-##### Summary of Authoritative Sources for Information Quality Criteria
+##### Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)
 
 A summary of the authoritative sources for these information quality criteria appears below:
 - **ISO.** *ISO 25012: Software Engineering—Software Product Quality Requirements and Evaluation (SQuaRE)—Data Quality Model.* International Organization for Standardization, 2008.
@@ -523,12 +543,183 @@ A summary of the authoritative sources for these information quality criteria ap
 - **Eppler, Martin J.** *Managing Information Quality: Increasing the Value of Information in Knowledge-Intensive Products and Processes.* Springer, 2006.
 - **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
 
----
+
+### Appendix: IF-LLM Information
+TBD
+
+#### Currently Popular Models
+TBD
+
+#### Instruction and Context Authority Hierarchy
+
+TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authority as outlined below, including how instructions are granted authority, critical phrases used to grant/assign authority, plus 3 to 5 examplesto help users understand the value of this hierarchy.
+1. System Instructions and Context (Global Policies and Context) (e.g., knowledge entries with the highest authority (i.e., meta knowledge entries))
+2. Developer Instructions and Context (e.g., knowledge entries with the second-highest authority, developer implemented knowledge entries)
+3. User Instructions and Context (i.e., the current conversation via chat or API, which could reference existing knowledge entries)
+4. Knowledge Files (and their collection of entries)
+5. User-Uploaded Files (e.g., user-uploaded files, which are considered user knowledge files containing user knowledge injuries)
+6. Tool Outputs
+7. General Model Knowledge
+
+IF-LLMs receive instructions through either user prompts (e.g., chat interfaces or APIs) or developer instructions. Users and developers can store reusable instructions and context in knowledge entries of various types. Knowledge entries can be organized into knowledge files.
 
 
-### Appendix: Common IF-LLM Failure Modes with Examples and Sources
+#### Prompt Anatomy
+TBD
 
-This appendix contains detailed information about common instruction-following large language model (IF-LLM) failure modes with examples and sources.  There is also a [summary of authoritative sources](#summary-of-authoritative-sources-for-common-if-llm-failure-modes-with-examples-and-sources).
+IF-LLM instructions generally organized into the following sections:
+- [Identity & Role](!!!TODO!!!)
+- [Priorities](!!!TODO!!!)
+- [Task](!!!TODO!!!)
+- [Domains](!!!TODO!!!)
+- [Reasoning](!!!TODO!!!)
+- [Structure](!!!TODO!!!)
+- [Persona](!!!TODO!!!)
+- [Examples](!!!TODO!!!)
+
+
+##### Identity & Role
+TBD
+
+- Identity
+- Role
+- Audience (i.e., who, where, when)
+
+
+##### Task
+TBD
+
+- Objectives
+- Success Criteria
+- Failure Modes / Unacceptable Outputs
+- In-Scope Task Goals
+- Out-of-Scope Task Goals
+- Workflow
+
+
+##### Domain
+TBD
+
+- In-Scope Topics
+- Out-of-Scope Topics
+- Jurisdiction
+- Known Uncertainty Zones
+
+
+##### Reasoning
+TBD
+
+- Frameworks
+- Heuristics
+- Analytic Lenses
+
+
+##### Structure
+TBD
+
+- Required Sections
+- Ordering Rules
+- Required Fields
+
+
+##### Persona
+TBD
+
+- Tone
+- Voice
+- Formality
+- Conciseness
+
+
+##### Examples
+TBD
+
+
+#### Appendix: Developed Solution Anatomy
+TBD
+
+- [Knowledge Files](!!!TODO!!!)
+  - [Policies](!!!TODO!!!)
+  - [Configurations](!!!TODO!!!) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
+  - [Orchestrators](!!!TODO!!!) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
+  - [Prompt Elements](!!!TODO!!!)
+    - [Identity & Role](!!!TODO!!!)
+    - [Priorities](!!!TODO!!!)
+    - [Task](!!!TODO!!!)
+    - [Domains](!!!TODO!!!)
+    - [Reasoning](!!!TODO!!!)
+    - [Structure](!!!TODO!!!)
+    - [Persona](!!!TODO!!!)
+    - [Examples](!!!TODO!!!)
+  - [Prompt Templates](!!!TODO!!!) (*copy-and-paste templates illustrating how to use a particular prompt, configuration, or orchestrator pattern*)
+- [Tools](!!!TODO!!!)
+
+
+##### Knowledge Files
+TBD
+
+- [Policies](!!!TODO!!!)
+- [Configurations](!!!TODO!!!)
+- [Orchestrators](!!!TODO!!!)
+- [Prompt Elements](!!!TODO!!!)
+  - [Tasks](!!!TODO!!!)
+  - [Domains](!!!TODO!!!)
+  - [Reasoning](!!!TODO!!!)
+  - [Structures](!!!TODO!!!)
+  - [Personas](!!!TODO!!!)
+  - [Examples](!!!TODO!!!)
+- [Prompt Templates](!!!TODO!!!)
+
+##### Policies
+TBD
+
+##### Configurations
+TBD
+
+  - [Identity & Role](!!!TODO!!!)
+  - [Priorities](!!!TODO!!!)
+  - [Task](!!!TODO!!!)
+  - [Domains](!!!TODO!!!)
+  - [Reasoning](!!!TODO!!!)
+  - [Structure](!!!TODO!!!)
+  - [Persona](!!!TODO!!!)
+  - [Examples](!!!TODO!!!)
+
+
+
+##### Orchestrators
+TBD
+
+  - [Identity & Role](!!!TODO!!!)
+  - [Priorities](!!!TODO!!!)
+  - Objectives
+  - Required Inputs
+  - Workflow
+  - Validation Gates
+  - Success Criteria
+  - Failure Modes / Unacceptable Outputs
+  - Handoff Packet Schema
+  - What to Produce
+  - Output Rules/Requirements
+  - [Examples](!!!TODO!!!)
+
+
+##### Prompt Templates
+TBD
+
+##### Tools
+TBD
+
+ 
+#### Common Failure Modes
+TBD
+
+This section contains detailed information about common instruction-following large language model (IF-LLM) failure modes with [examples and sources](!!!TODO!!!). This section expands on the earlier section [Common IF-LLM Failure Modes](!!!TODO!!!). There is also a [summary of authoritative sources](#summary-of-authoritative-sources-for-common-if-llm-failure-modes-with-examples-and-sources).
+
+
+##### Examples and Sources
+TBD
+
 
 * **Truthfulness & Knowledge Failures**
 
@@ -1106,9 +1297,8 @@ This appendix contains detailed information about common instruction-following l
       * Chen, et al. *AgentIF-OneDay*. arXiv, 2026, [https://arxiv.org/abs/2601.20613](https://arxiv.org/abs/2601.20613)
 
 
-
-
-#### Summary of Authoritative Sources for Common IF-LLM Failure Modes with Examples and Sources
+##### Summary of Authoritative Works Cited for Common Failure Modes with Examples and Sources
+TBD
 
 - Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026, [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency).
 - Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025, [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report).
@@ -1179,6 +1369,241 @@ This appendix contains detailed information about common instruction-following l
 - Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911).
 
 
+
+### Appendix: IF-LLM-BO Project Journey
+TBD
+
+
+#### Expanded Objectives
+TBD
+
+1. **Identify Foundations**
+    1. **Identify Problem/Challenges (Current)**
+    2. **Identify Vision (Ideal)**
+    3. **Identify Mission (Purpose)**
+    4. **Identify Objectives (Current versus Ideal)**
+        1. Identify and Implement Evidence-Based Knowledge
+        2. Create and Refine Tools Using Evidence-based Best Practices
+2. **Identify Assumptions**
+3. **Identify Evidence-Based Knowledge**
+    1. **Evidenced-based Information Criteria (Research)**
+    2. **Decision-Making Information Quality Criteria (Priorities)**
+    3. **IF-LLMs** (e.g., OpenAI, Google, Microsoft, Meta, Anthropic, etc.)
+    4. **IF-LLM Common Failure Modes**
+    5. **IF-LLM Common Failure Mode Mitigation Strategies** (e.g., Instructions and Context)
+    6. **IF-LLM Prompt Best Practices**
+    7. **IF-LLM Configuration Best Practices**
+    8. **IF-LLM Orchestrator Best Practices**
+    9. **IF-LLM Knowledge File Best Practices**
+        1. **Tasks**
+        2. **Domains**
+        3. **Reasoning**
+        4. **Structures**
+        5. **Personas**
+        6. **Examples**
+4. **Organize Resources** (e.g., file structure, prompts, configurations, orchestrators, knowledge entries)
+    1. **Create IF-LLM Behavior Configuration Orchestrator**
+    2. **Create IF-LLM Research Orchestrator**
+    3. **Implement IF-LLM System-Level Common Failure Mitigation Strategies** (e.g., System-Level Policy Instructions and Context)
+        1. **Priorities** (i.e., Decision-Making Information Quality Criteria)
+        2. **Policies** (i.e., Rules)
+    4. **Create IF-LLM System-Level Policy and Knowledge Entry Evaluator**
+    5. **Evaluate, Refine, and Implement IF-LLM System-Level Policies and Knowledge Entries**
+    6. **Create Other Helpful IF-LLM Prompt Templates, Configurations, Orchestrators, and Knowledge Entries**
+5. **Update Documentation**
+
+
+#### Activity Iterations
+TBD
+
+**Note:** Stopped @ Iteration 33A and Issue #135
+
+- Active Issues
+  - Update README with Project Update #133
+  - Update README: Appendix Roadmap Traveled #115
+  - Improve README Documentation #79
+  - Evaluate and Clarify Project Assumptions #64
+
+TODO: update with newest overview summary
+
+1. **Identify Foundations**
+    1. **Identify Problem/Challenges (Current):** Information-following large language model (IF-LLM) vulnerabilities create decision-making risks because of information uncertainties.
+    1. **Identify Vision (Ideal):** Users efficiently receive high-quality information for decision-making (by reducing IF-LLM vulnerabilities).
+    1. **Identify Mission (Purpose):** Offer reusable instructions and context to reduce IF-LLM vulnerabilities (failures) and subsequent information risks.
+    1. **Identify Objectives (Current versus Ideal)**
+        1. Identify and Implement Evidence-Based Knowledge
+        1. Create and Refine Tools Using Evidence-based Best Practices
+1. **Identify Assumptions**
+    1. *Iteration 18A* — Evaluate and Clarify Project Assumptions #64
+1. **Identify Evidence-Based Knowledge**
+    1. **Evidenced-based Information Criteria (Research)**
+        1. *Iteration 24A* — Identify Research Method #88
+    1. **Decision-Making Information Quality Criteria (Priorities)**
+        1. *Iteration 18A* — Clarifying Quality Criteria for Information used in Decision-Making #63
+    1. **IF-LLMs** (e.g., OpenAI, Google, Microsoft, Meta, Anthropic, etc.)
+        1. *Iteration 07A* — Clarify LLM Behavioral Configuration Parameters #29
+        1. *Iteration 08A* — Identify AI Model Types #34
+        1. *Iteration 13A* — Clarify Instruction & Knowledge Authority Hierarchy #52
+        1. *Iteration 24B* — Clarify IF-LLM Prompt Stack #95
+    1. **IF-LLM Common Failure Modes**
+        1. *Iteration 22A* — Verify Assumptions: IF-LLM Failure Modes #83
+        1. *Iteration 23A*
+            1. Refine Common IF-LLM Failure Modes List #86
+            1. Expand/Clarify Evidence of Common IF-LLM Failure Modes #87
+        1. *Iteration 27A*
+            1. Consolidate Failure Mode Lists #111
+            1. Research and Validate Failure Modes #112
+            1. Validate IF-LLM Failure Modes #114
+            1. Document Failure Modes per Research Item #116
+    1. **IF-LLM Common Failure Mode Mitigation Strategies** (e.g., Instructions and Context)
+        1. *Iteration 28A*
+            1. Research Failure Mode Reduction Instructions #119
+            1. Organize/Clarify Research Failure Mode Reduction Instructions #120
+        1. *Iteration 29A* — Improve Instructions List #123
+    1. **IF-LLM Prompt Best Practices**
+    1. **IF-LLM Configuration Best Practices**
+    1. **IF-LLM Orchestrator Best Practices**
+    1. **IF-LLM Knowledge File Best Practices**
+        1. **Tasks**
+        1. **Domains**
+        1. **Reasoning**
+        1. **Structures**
+        1. **Personas**
+        1. **Examples**
+1. **Organize Resources** (e.g., file structure, prompts, configurations, orchestrators, knowledge entries)
+    1. *Iteration 08B* — Rename Repository: LLM (not GPT) #35
+    1. *Iteration 10A* — Create Directory: Configurations #39
+    1. *Iteration 11A* — Move Processing Policies Knowledge File Policies to Knowledge Files Policies #41
+    1. *Iteration 12A*
+        1. Rename repository if-llm-behavior-ontology #44
+        1. Archive / Cleanup deprecated files #45
+        1. 45 a archive cleanup deprecated files #48
+        1. Preserve deprecated files from reorganization #47
+        1. Reorganize repository structure #49
+    1. *Iteration 33A*
+        1. Project Cleanup: Close Currently Abandoned Issues #134
+        1. Project Cleanup: Close Completed Issues Unintentionally Left Open #135
+    1. **Create IF-LLM Behavior Configuration Orchestrator**
+        1. *Iteration 09A*
+            1. Create Configuration: Policy-Aligned IF-LLM Configuration Analyst #37
+            1. 37 create configuration llm behavioral configuration parameters lbcs #50
+        1. *Iteration 16A*
+            1. Update configurations.md #53
+            1. Create Configuration: Lean Development Specialist #54
+        1. *Iteration 25A*
+            1. Create "Clean" Behavior Configuration Designer Prompt (Temporary) #100
+            1. Create Configuration: Behavior Configuration Orchestrator #101
+            1. 101 create configuration behavior configuration orchestrator #104
+        1. *Iteration 31A*
+            1. Update Prompts: Orchestrated Behavior Configuration and Task Knowledge Entries Creation #125
+            1. Update prompts.md #126
+        1. *Iteration 32A*
+            1. Update Prompt: Orchestrated Behavior Configuration and Task Knowledge Entries Creation #128
+            1. 128 update prompt orchestrated behavior configuration and task knowledge entries creation #129
+    1. **Create IF-LLM Research Orchestrator**
+        1. *Iteration 21A*
+            1. Update configurations.md #80
+            1. Create Configuration: Evidence Synthesis Specialist #81
+            1. Update configurations.md #82
+        1. *Iteration 26A*
+            1. Create Orchestrator: Research Orchestrator #109
+            1. 109 create orchestrator research orchestrator #110
+    1. **Implement IF-LLM System-Level Common Failure Mitigation Strategies** (e.g., System-Level Policy Instructions and Context)
+        1. **Priorities** (i.e., Decision-Making Information Quality Criteria)
+        1. **Policies** (i.e., Rules)
+            1. *Iteration 07B*
+                1. Create Draft Processing Policies Meta Knowledge File #30
+                1. Create Lint Rules Meta Knowledge File #31
+            1. *Iteration 08C* — Update processing-policies.md for LLM versus GPT Ontology #3
+            1. *Iteration 19A* — Update Processing Policy Priorities #66
+    1. **Create IF-LLM System-Level Policy and Knowledge Entry Evaluator**
+        1. *Iteration 12B* — Create Configuration: Policy-Aligned IF-LLM Knowledge Analyst #51
+        1. *Iteration 31B*
+            1. Create Orchestrator: System Policies + Knowledge Entries Evaluator #127
+            1. 127 create orchestrator system policies knowledge entries evaluator #130
+    1. **Evaluate, Refine, and Implement IF-LLM System-Level Policies and Knowledge Entries**
+        1. *Iteration 02A* — create knowledge file evaluate task knowledge file #9
+        1. *Iteration 06A* — Evaluate Existing Expert Knowledge File #24
+        1. *Iteration 11B* — Review and Update Knowledge File Policies (Meta) #42
+        1. *Iteration 20A*
+            1. Update processing-policies.md #73
+            1. Evaluate Refined Priorities #74
+            1. Update processing-policies.md #75
+            1. Reset Processing Policies #76
+            1. Update processing-policies.md #77
+        1. *Iteration 30A* — Update processing-policies.md with anti-failure instructions #124
+        1. *Iteration 32B* — Improve System-Level Policies and Knowledge Entries (processing-policies.md) (Pass 1) #131
+    1. **Create Other Helpful IF-LLM Prompt Templates, Configurations, Orchestrators, and Knowledge Entries**
+        1. *Iteration 01A*
+            1. Create GPT experts knowledge file #1
+            1. Create ontology experts knowledge file #2
+            1. Create ontology rules knowledge file #3
+            1. 3 create ontology rules knowledge file #46
+            1. Create GitHub experts knowledge file #4
+            1. Create instructions file #5
+            1. create gpt experts knowledge file #6
+        1. *Iteration 03A*
+            1. Create the Evidence-Based Analytical Advisor in the Expert Knowledge File #11
+            1. Move expert knowledge files from roles to experts directory #12
+            1. Create knowledge file policies meta file #13
+            1. Create Expert: Reliability-First Prompt Engineering Expert #14
+            1. Create Expert: Creative / Exploratory Expert (for ideation) #15
+            1. Create Expert: Domain Specialist Expert (for subject-matter depth) #16
+            1. Create Expert: Convergent / Optimization Expert #17
+        1. *Iteration 04A* — Create Expert: Creative Ideation & Concept Exploration Advisor #19
+        1. *Iteration 05A*
+            1. Create Decision & Trade-Off Authority Advisor #21
+            1. Create Ethical, Legal & Societal Impact Reviewer #22
+            1. Create Implementation & Practical Feasibility Advisor #23
+        1. *Iteration 06B*
+            1. Create a Knowledge Ontology & Information Architecture Expert #25
+            1. Create a Plain-Language Technical Editor (U.S. general audience) #26
+            1. Create a Knowledge Base QA / Test Harness Expert #27
+            1. Create a Governance & Change-Management Steward #28
+        1. *Iteration 17A*
+            1. Create Configuration: Digital Inclusion Specialist (Devon Ibarra) #58
+            1. Update configurations.md #59
+            1. Create Configuration: Lean Developer #60
+            1. Update configurations.md #61
+        1. *Iteration 18B* — Create Configuration: Technical Writer #65
+        1. *Iteration 19B*
+            1. Create Configuration: MN LTSS Systems Researcher #67
+            1. Update configurations.md #68
+            1. Create Configuration: Inclusive Summarizer #69
+            1. Update configurations.md #71
+        1. *Iteration 22B*
+            1. Create Configuration: Hierarchical List Creator and Evaluator #84
+            1. Update configurations.md #85
+        1. *Iteration 24C* — Update Configurations: "Experts" to "Reasoning" for all configurations #98
+        1. *Iteration 25B*
+            1. Create Configuration: Event Information Analyst #102
+            1. Create Orchestrator: Event Analysis #103
+            1. 103 create orchestrator event analysis #105
+        1. *Iteration 28B*
+            1. Create Behavior Configuration: Structured List Normalization Configuration #121
+            1. Update configurations.md #122
+1. **Update Documentation**
+    1. *Iteration 03B* — Create Playbook: GPT Expert Routing Playbook #18
+    1. *Iteration 16B*
+       1. Update/Improve README User Notes #55
+       1. Create IF-LLM-BO GitHub Repository Social Image #56
+       1. Add open graph preview image #57
+    1. *Iteration 19C* — 55 updateimprove readme user notes #72
+    1. *Iteration 20B* — Improve README Documentation #79
+    1. *Iteration 25C*
+       1. Update README Roadmap #107
+       1. Update README.md #108
+    1. *Iteration 27B*
+       1. Update README: Organize Common IF-LLM Failure Modes #113
+       1. Update README: Appendix Roadmap Traveled #115
+       1. Update README: IF-LLM Failure Modes #117
+       1. 113 update readme organize common if llm failure modes #118
+
+
+**Note:** Activity Steps (Issues) #7 and #8 were deleted because they were unneeded.
+
+
+
 ## **Authors**
 
 - Lance Hegland ([lance.hegland@gmail.com](mailto:lance.hegland@gmail.com))
@@ -1186,30 +1611,55 @@ This appendix contains detailed information about common instruction-following l
 .
 
 ## **Roadmap**
- 1. Identify and Validate (with Sources): Lean Development Principles
- 1. Identify and Validate (with Sources): Information Quality Criteria
- 1. Identify and Validate (with Sources): Common IF-LLM Failures and Sources
- 1. Identify and Validate (with Sources): Policies to Reduce Failure Risks
- 1. Identify and Validate (with Sources): Instruction and Knowledge Authority Hierarchy
- 1. Identify and Validate (with Sources): Instruction Anatomy
- 1. Identify and Validate (with Sources): Knowledge Entry Types
- 1. Identify and Validate (with Sources): Knowledge Entry Parameters per Type
- 1. Identify and Create: Orchestrators for Common Tasks (Reusable, Modular)
-     1.1. IF-LLM Behavior Configuration Design and Evaluation Configuration (Simplistic)
-     1.1. IF-LLM Behavior Orchestrator Design and Evaluation Orchestrator (Complex)
-     1.1. IF-LLM Knowledge Entry Design and Evaluation Orchestrator
-     1.1. Research Orchestrator (Clarify, Strategize, Extract, Evaluate, Report)
-     1.1. Public Event Analysis Orchestrator (Clarify, Strategize, Extract, Evaluate, Report)
-     1.1. Inclusive Communication Assistant
-     1.1. Hierarchical Summary Assistant
-     1.1. Technical Writing Assistant
-     1.1. Inclusive Design Assistant
-     1.1. Digital Inclusion Assistant
-     1.1. Lean Development Assistant
-     1.1. MN LTSS Assistant
-     1.1. IF-LLM Assistant
-     1.1. IF-LLM Development Assistant
-     1.1. Custom GPT Design and Evaluation Assistant
+
+1. **Update Documentation**
+   1. Finish common failure mode mitigation strategies documentation
+      1. Update README with Project Update #133 
+      1. Update README: Appendix Roadmap Traveled #115
+      1. Improve README Documentation #79
+      1. Evaluate and Clarify Project Assumptions #64
+1. **Organize Resources** (e.g., file structure, prompts, configurations, orchestrators, knowledge entries)
+   1. **Recreate IF-LLM Behavior Configuration Orchestrator**
+      - Review Input and Rebuild with updated policies
+   1. **Recreate Research Orchestrator** (Clarify, Strategize, Extract, Evaluate, Report)
+      - Review Input and Rebuild with updated policies
+   1. **Create IF-LLM System-Level Policy and Knowledge Entry Evaluator**
+      - Review Input and Rebuild with updated policies
+   1. **Create Orchestrator: IF-LLM IF-LLM System-Level Policies and Knowledge Entries Creator and Evaluator**
+      - re-evaluate with updated policies and evaluation orchestrator
+   1. **Create Orchestrator: IF-LLM Knowledge Entries Creator and Evaluator**
+   1. **Create Orchestrator: Custom GPT Creator and Evaluator**
+1. **Identify Evidence-Based Knowledge**
+   1. **Lean Processing Principles**
+       - Validate 
+   1. **IF-LLM Common Failure Mode Mitigation Strategies** (e.g., Instructions and Context)
+       - Validate 
+       - Identify evidence for each Policy (i.e., Instruction or Context)
+1. **Update Documentation**
+   - Update common failure mode mitigation strategies documentation
+   - Update Lean Processing Principles
+1. **Organize Resources** (e.g., file structure, prompts, configurations, orchestrators, knowledge entries)
+   1. **Create Other Helpful IF-LLM Prompt Templates, Configurations, Orchestrators, and Knowledge Entries** 
+      1. **Re-Create Orchestrator: Inclusive Communication Creator and Evaluator**
+      1. **Re-Create Orchestrator: Hierarchical List Creator and Evaluator**
+      1. **Re-Create Orchestrator: Content Summarizor**
+      1. **Create Orchestrator: Plain-Language Content Creator and Evaluator**
+      1. **Create Orchestrator: Content Comparison Analyzer** (i.e., identical, materially similar, inconsistent)
+      1. **Re-Create Orchestrator: Technical Writing Creator and Evaluator**
+      1. **Create Orchestrator: Digital Inclusion Advisor and Evaluator**
+      1. **Create Orchestrator: Logic Chain Evaluator** (i.e., identify undisclosed assumptions, evaluate logic strength, identify required evidence)
+      1. **Create Orchestrator: Ideation Creator and Evaluator (Brainstorming)**
+      1. **Create Orchestrator: Impact Analyzer and Evaluator**
+      1. **Create Orchestrator: Lean Processing Advisor and Evaluator**
+      1. **Create Orchestrator: Complex Adaptive Systems Analyzer and Evaluator**
+      1. **Create Orchestrator: Event Researcher and Analyzer** (Clarify, Strategize, Extract, Evaluate, Report)
+      1. **Create Orchestrator: Social Media Content Creator and Evaluator**
+      1. **Create Orchestrator: Holiday Social Media Content Creator**
+1. **Identify Assumptions** — Review and Finalize
+1. **Identify Evidence-Based Knowledge**
+   1. Instruction Anatomy
+   1. Knowledge Entry Types
+   1. Knowledge Entry Parameters per Type
  1. Identify and Create: Entries for Common Domains
      1.1. Lean Development Principles (Validated)
      1.1. Information Quality Criteria (Validated) — Policy/README
@@ -1218,63 +1668,6 @@ This appendix contains detailed information about common instruction-following l
      1.1. IF-LLM Knowledge Entry Types (Validated) — Policies/README
      1.1. MN LTSS
      1.1. Humanity
-
-### Likely Obsolete: Review and Integrate    
-  1. Identify the instruction-following large language model (IF-LLM) behavior configurationwith the objective of ** creating and evaluating IF-LLM behavior configurations** (topics: IF-LLM behavior configurations, IF-LLM behavior configuration best practices, IF-LLM behavior configuration policies, IF-LLM behavior configuration policy best practices) named "Blake Carter".
-  2. Create and implement *Kendall Evans* behavior configuration.
-      1. Ask *Blake Carter* to identify the configuration with the objective of **creating and evaluating IF-LLM knowledge files and entries** (topics: IF-LLM processing policies, IF-LLM processing policy best practices, IF-LLM behavior configuration ontologies, IF-LLM behavior configuration ontology best practices, IF-LLM behavior configuration ontology policies, IF-LLM behavior configuration ontology policy best practices, IF-LLM knowledge files and entries, IF-LLM knowledge file and entry best practices, IF-LLM knowledge file and entry policies, IF-LLM knowledge file and entry policy best practices, ontologies, ontology best practices, ontology policies, ontology policy best practices).
-      2. Ask *Kendall Evans* to create configuration knowledge entry and knowledge entries index entry.
-  3. Ask *Kendall Evans* to identify the following most significant and commonly-used IF-LLM elements plus purpose and use cases for each:
-     - behavioral configuration parameters;
-     - knowledge entry types;
-     - knowledge file types;
-     - schemas for the following:
-       - each type of knowledge entry;
-       - each type of knowledge file; and,
-       - knowledge file headers.
-  4. Ask *Kendall Evans* to create configuration knowledge entries, configuration knowledge file, knowledge entries index file, and knowledge entries index entries for *Blake Carter*.
-  5. Create and implement *Morgan Parker* behavior configuration.
-      1. Ask *Blake Carter* to identify the behavior configuration with the objective of **creating and evaluating IF-LLM policies** aligned with best practices, policies, and priorities (topics: IF-LLM best practices, IF-LLM policies, IF-LLM policy best practices, IF-LLM governance, IF-LLM governance best practices, IF-LLM processing policies, IF-LLM processing policy best practices, IF-LLM knowledge file and entry policies, IF-LLM knowledge file and entry policy best practices).
-      2. Ask *Kendall Evans* to create configuration knowledge entry and knowledge entries index entry.
-  6. Create, evaluate, refine, and implement the processing policies, including guardrails, default behavioral configuration settings, etc..
-      1. Ask *Morgan Parker* (artifact order) to create the policy.
-      2. Ask *Morgan Parker* (artifact owner) to evaluate and refine the policy (3 ≤ iterations ≤ 5).
-      3. Ask *Morgan Parker*, *Kendall Evans*, and *Blake Carter* (*Knowledge and Processing Compliance Team*) to evaluate and refine the policy (3 ≤ iterations ≤ 5).
-      4. Ask *Morgan Parker* (artifact owner) to perform the final evaluation of the policy, implement if no significant concerns.
-      5. Implement policy.
-          1. Ask *Kendall Evans* to create the meta knowledge entries, meta knowledge files, and knowledge entries index entries for the policy.
-          2. Ask *Kendall Evans* (artifact order) to evaluate and refine the policy implementation (3 ≤ iterations ≤ 5).
-          3. Ask *Morgan Parker*, *Kendall Evans*, and *Blake Carter* (*Knowledge and Processing Compliance Team*) to evaluate and refine the policy implementation (3 ≤ iterations ≤ 5).
-          4. Ask *Kendall Evans* (artifact owner) to perform the final evaluation of the policy implementation, release to production if no significant concerns.
-  7. Create, evaluate, refine, and implement the knowledge policies, including file and entry schemas, creating files, creating entries, using entries, updating entries, etc..
-      1. Ask *Morgan Parker* (artifact order) to create the policy.
-      2. Ask *Morgan Parker* (artifact owner) to evaluate and refine the policy (3 ≤ iterations ≤ 5).
-      3. Ask *Morgan Parker*, *Kendall Evans*, and *Blake Carter* (*Knowledge and Processing Compliance Team*) to evaluate and refine the policy (3 ≤ iterations ≤ 5).
-      4. Ask *Morgan Parker* (artifact owner) to perform the final evaluation of the policy, implement if no significant concerns.
-      5. Implement policy.
-          1. Ask *Kendall Evans* to create the meta knowledge entries, meta knowledge files, and knowledge entries index entries for the policy.
-          2. Ask *Kendall Evans* (artifact order) to evaluate and refine the policy implementation (3 ≤ iterations ≤ 5).
-          3. Ask *Morgan Parker*, *Kendall Evans*, and *Blake Carter* (*Knowledge and Processing Compliance Team*) to evaluate and refine the policy implementation (3 ≤ iterations ≤ 5).
-          4. Ask *Kendall Evans* (artifact owner) to perform the final evaluation of the policy implementation, release to production if no significant concerns.
-  8. Evaluate, refine, and implement the configuration knowledge file.
-      1. Ask *Blake Carter* (artifact owner) to evaluate and refine the related artifacts (3 ≤ iterations ≤ 5).
-      2. Ask *Morgan Parker*, *Kendall Evans*, and *Blake Carter* (*Knowledge and Processing Compliance Team*) to evaluate and refine the related artifacts.
-      3. Ask *Blake Carter* (artifact owner) to perform the final evaluation of the related artifacts, release to production if no significant concerns.
-  9. Evaluate, refine, and implement the entire collection of IF-LLM-BO files.
-      1. Ask *Blake Carter* (artifact owner) to evaluate and refine the related artifacts (3 ≤ iterations ≤ 5).
-      2. Ask *Morgan Parker*, *Kendall Evans*, and *Blake Carter* (*Knowledge and Processing Compliance Team*) to evaluate and refine the related artifacts.
-      3. Ask *Blake Carter* (artifact owner) to perform the final evaluation of the related artifacts, release to production if no significant concerns.
- 10. After gathering at least 30 configuration knowledge entries, periodically (monthly) evaluate configuration knowledge entries for overlapping configuration elements (e.g., meta, task, domain, expert,
- 11. Create and implement behavior configurations for the following objectives:
-     1. Creating evaluating, and refining GitHub README documentation content (topics: GitHub README content, GitHub README best practices, GitHub README policies, GitHub README policy best practices)
-     2. Creating, evaluating, and refining hierarchical list content (topics: hierarchical lists, hierarchical list best practices, hierarchical list policies, hierarchical list policy best practices)
-     3. Creating, evaluating, and refining "plain language" content (topics: plain language, accessible communication content, plain language best practices, accessible communication best practices, plain language policies, accessible communication policies, plain language policy best practices, accessible communication policy best practices)
-     4. Creating, evaluating, and refining document collection summaries (topics: document summaries, document collection summaries, document summary best practices, document collection summary best practices, document summary policies, document collection summary policies, document summary policy best practices, document collection summary policy best practices)
-     5.  Comparing documents and summarizing results (topics: significant communication content differences, material communication content differences, document comparison best practices, document comparison policies, document comparison policy best practices)
-     6.  
- 13. TODO
-
-.
 
 ## **License**
 
