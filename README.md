@@ -16,12 +16,12 @@
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [IF-LLM-BO User Notes](!!!TODO!!!)
+- [IF-LLM-BO Project Notes](#if-llm-bo-project-notes)
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
     - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
-    - [Common IF-LLM Failure Mitigation Strategies](!!!TODO!!!)
+    - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
   - [Purpose](#purpose)
   - [Objectives](#objectives)
 - [Appendices](#appendices)
@@ -34,14 +34,14 @@
     - [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)
     - [Prompt Anatomy](#prompt-anatomy)
       - [Identity & Role](#identity--role)
-      - [Priorities](!!!TODO!!!)
+      - [Priorities](#priorities-2)
       - [Task](#task)
       - [Domains](#domains)
       - [Reasoning](#reasoning)
       - [Structure](#structure)
       - [Persona](#persona)
       - [Examples](#examples)
-    - [Developed Solution Anatomy](!!!TODO!!!)
+    - [Developed Solution Anatomy](#developed-solution-anatomy)
       - [Knowledge Files](#knowledge-files)
          - [Policies](#policies)
          - [Configurations](#configurations)
@@ -1380,6 +1380,8 @@ TBD
 - Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911).
 
 
+#### Common IF-LLM Failure Mitigation Strategies
+TBD
 
 ### Appendix: IF-LLM-BO Project Journey
 TBD
