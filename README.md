@@ -32,7 +32,7 @@
       - [Identity & Role](#identity--role)
       - [Priorities](#priorities-2)
       - [Task](#task)
-      - [Domains](#domains)
+      - [Domains](#domains-1)
       - [Reasoning](#reasoning)
       - [Structure](#structure)
       - [Persona](#persona)
@@ -49,16 +49,17 @@
          - [Prompt Templates](#prompt-templates)
       - [Tools](#tools)
     - [Common Failure Modes](#common-failure-modes)
+      - [Expanded List](#expanded-list)
       - [Examples and Sources](#examples-and-sources)
         - [Authoritative Works Cited](#summary-of-authoritative-works-cited-for-common-failure-modes-with-examples-and-sources)
     - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies-1)
-      - Strategies for Failure Modes with Sources
-        - Authoritative Works Cited
+      - [Strategies for Failure Modes with Sources](#strategies-for-failure-modes-with-sources)
+        - [Authoritative Works Cited](#summary-of-authoritative-works-cited-for-mitigation-strategies-for-common-if-llm-failure-modes)
   - [IF-LLM-BO Project Journey](#appendix-if-llm-bo-project-journey)
     - [Expanded Objectives](#expanded-objectives)
     - [Activity Iterations](#activity-iterations)
-- [Authors](#authors)
 - [Roadmap](#roadmap)
+- [Authors](#authors)
 - [License](#license)
 
 
@@ -188,7 +189,7 @@ The goal is to build a lightweight semantic scaffolding system for structuring k
     - **[knowledge entry](#policies-knowledge-entry):** naming rules, modeling conventions, versioning, and core primitives.
     - **[processing](#policies-processing):** global decision policies.
   - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
-  - **[domains](#domains):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+  - **[domains](#domains-1):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
   - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
   - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
   - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
@@ -391,7 +392,7 @@ This appendix contains detailed information about the underlying assumptions for
 
 Instruction-Following Large Language Models (IF-LLMs) produce results that are likely considered when making decisions. 
 
-Formal priorities are sometimes preferable to informal judgment, especially in high-risk or repeatable workflows. Explicit, ordered priorities improve decision quality during tradeoffs, regardless of the process used (i.e. whether using an IF-LLM or not). Therefore, IF-LLM processing and results for decision-making purposes should use [well-defined quality standards](#information-quality-criteria).
+Formal priorities are sometimes preferable to informal judgment, especially in high-risk or repeatable workflows. Explicit, ordered priorities improve decision quality during tradeoffs, regardless of the process used (i.e. whether using an IF-LLM or not). Therefore, IF-LLM processing and results for decision-making purposes should use [well-defined quality standards](#decision-making-information-quality-criteria-priorities).
 
 IF-LLMs are complex adaptive systems.
 
@@ -490,7 +491,7 @@ TODO
 
 ### Appendix: Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources
 
-This appendix describes the decision-making information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. This appendix expands on the [Decision-Making Information Quality Criteria (Priorities)](!!!TODO!!!). The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-information-quality-criteria).
+This appendix describes the decision-making information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. This appendix expands on the [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities). The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities).
 
 Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making.
 
@@ -621,14 +622,15 @@ IF-LLMs receive instructions through either user prompts (e.g., chat interfaces 
 TODO
 
 IF-LLM instructions generally organized into the following sections:
-- [Identity & Role](!!!TODO!!!)
-- [Priorities](!!!TODO!!!)
-- [Task](!!!TODO!!!)
-- [Domains](!!!TODO!!!)
-- [Reasoning](!!!TODO!!!)
-- [Structure](!!!TODO!!!)
-- [Persona](!!!TODO!!!)
-- [Examples](!!!TODO!!!)
+
+- [Identity & Role](#identity--role)
+- [Priorities](#priorities-2)
+- [Task](#task)
+- [Domains](#domains-1)
+- [Reasoning](#reasoning)
+- [Structure](#structure)
+- [Persona](#persona)
+- [Examples](#examples)
 
 
 ---
@@ -704,46 +706,42 @@ TODO
 TODO
 
 
-#### Developed Solution Anatomy
-TODO
-
-- [Knowledge Files](!!!TODO!!!)
-  - [Policies](!!!TODO!!!)
-    - [Governance](!!!TODO!!!)
-    - [Knowledge Entry](!!!TODO!!!)
-    - [Processing](!!!TODO!!!)
-  - [Configurations](!!!TODO!!!) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
-  - [Orchestrators](!!!TODO!!!) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
-  - [Prompt Elements](!!!TODO!!!)
-    - [Identity & Role](!!!TODO!!!)
-    - [Priorities](!!!TODO!!!)
-    - [Task](!!!TODO!!!)
-    - [Domains](!!!TODO!!!)
-    - [Reasoning](!!!TODO!!!)
-    - [Structure](!!!TODO!!!)
-    - [Persona](!!!TODO!!!)
-    - [Examples](!!!TODO!!!)
-  - [Prompt Templates](!!!TODO!!!) (*copy-and-paste templates illustrating how to use a particular prompt, configuration, or orchestrator pattern*)
-- [Tools](!!!TODO!!!)
-
 
 ##### Knowledge Files
 TODO
 
-- [Policies](!!!TODO!!!)
-  - [Governance](!!!TODO!!!)
-  - [Knowledge Entry](!!!TODO!!!)
-  - [Processing](!!!TODO!!!)
-- [Configurations](!!!TODO!!!)
-- [Orchestrators](!!!TODO!!!)
-- [Prompt Elements](!!!TODO!!!)
-  - [Tasks](!!!TODO!!!)
-  - [Domains](!!!TODO!!!)
-  - [Reasoning](!!!TODO!!!)
-  - [Structures](!!!TODO!!!)
-  - [Personas](!!!TODO!!!)
-  - [Examples](!!!TODO!!!)
-- [Prompt Templates](!!!TODO!!!)
+- [Prompt Templates](#prompt-templates)
+- [Policies](#policies)
+  - [Governance](#policies-governance)
+  - [Knowledge Entry](#policies-knowledge-entry)
+  - [Processing](#policies-processing)
+- [Context Elements](#prompt-anatomy)
+  - [Tasks](#task)
+  - [Domains](#domains-1)
+  - [Reasonings](#reasoning)
+  - [Structures](#structure)
+  - [Personas](#persona)
+  - [Examples](#examples)
+- [Configurations](#configurations) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
+- [Orchestrators](#orchestrators) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
+
+
+#### Developed Solution Anatomy
+TODO
+
+- [Knowledge Files](#knowledge-files)
+  - [Prompt Templates](#prompt-templates) (*copy-and-paste templates illustrating how to use a configuration or orchestrator pattern with existing elements and named variable inputs to accomplish a specified objective and workflow aligned with a particular policy set*)
+  - [Policies](#policies)
+  - [Configurations](#configurations)
+  - [Orchestrators](#orchestrators)
+  - [Elements](#prompt-anatomy)
+    - [Tasks](#task)
+    - [Domains](#domains-1)
+    - [Reasonings](#reasoning)
+    - [Structures](#structure)
+    - [Personas](#persona)
+    - [Examples](#examples)
+- [Tools](#tools)
 
 
 ###### Policies
@@ -768,32 +766,32 @@ TODO
 ###### Configurations
 TODO
 
-  - [Identity & Role](!!!TODO!!!)
-  - [Priorities](!!!TODO!!!)
-  - [Task](!!!TODO!!!)
-  - [Domains](!!!TODO!!!)
-  - [Reasoning](!!!TODO!!!)
-  - [Structure](!!!TODO!!!)
-  - [Persona](!!!TODO!!!)
-  - [Examples](!!!TODO!!!)
-
+- [Identity & Role](#identity--role)
+- [Priorities](#priorities-2)
+- [Task](#task)
+- [Domains](#domains-1)
+- [Reasoning](#reasoning)
+- [Structure](#structure)
+- [Persona](#persona)
+- [Examples](#examples)
 
 
 ###### Orchestrators
 TODO
 
-  - [Identity & Role](!!!TODO!!!)
-  - [Priorities](!!!TODO!!!)
+- [Identity & Role](#identity--role)
+- [Priorities](#priorities-2)
+- Required Inputs
+- Task
   - Objectives
-  - Required Inputs
   - Workflow
-  - Validation Gates
-  - Success Criteria
-  - Failure Modes / Unacceptable Outputs
-  - Handoff Packet Schema
-  - What to Produce
-  - Output Rules/Requirements
-  - [Examples](!!!TODO!!!)
+- Success Criteria
+- Failure Modes / Unacceptable Outputs
+- Handoff Packet Schema
+- Validation Gates
+- What to Produce
+- Output Rules/Requirements
+- [Examples](!!!TODO!!!)
 
 
 ###### Prompt Templates
@@ -1840,13 +1838,14 @@ Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-03-30T07:34Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-03-30T10:19Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
-**Last Reviewed:** 2026-03-30T07:09Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
+**Last Reviewed:** 2026-03-30T10:19Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
-- 2026-03-30T07:34Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updating Table of Contents hyperlinks (Pass 5) and content hyperlinks (Pass 3)
-- 2026-03-30T07:24Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updating Table of Content hyperlinks (Pass 4) and content hyperlinks (Pass 2)
+- 2026-03-30T10:19Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and updating Table of Contents hyperlinks (Pass 6) and content hyperlinks (Pass 4)
+- 2026-03-30T08:36Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and updating Table of Contents hyperlinks (Pass 5) and content hyperlinks (Pass 3)
+- 2026-03-30T07:24Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and updating Table of Content hyperlinks (Pass 4) and content hyperlinks (Pass 2)
 - 2026-03-30T07:12Z — [Lance Hegland](mailto:lance.hegland@gmail.com): 
   - Began reviewing and updating content hyperlinks (Pass 1)
   - File Heading section, including creating changelog
