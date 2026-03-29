@@ -1,14 +1,10 @@
-# Instruction-Following Large Language Model (LLM) Behavior Ontology (IF-LLM-Behavior-Ontology) *[if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)*
+# Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) (*README.md*)
 
-**NAMESPACE:** me.hegland-lance.if-llm-behavior-ontology
+**PURPOSE:** **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
 
-**PURPOSE**
-**Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
-
-.
 
 ## Table of Contents
-
+- [File Header Metadata]
 - [Features](#features)
 - [Background](#background)
 - [Known Issues](#known-issues)
@@ -44,6 +40,9 @@
     - [Developed Solution Anatomy](#developed-solution-anatomy)
       - [Knowledge Files](#knowledge-files)
          - [Policies](#policies)
+           - [Governance](!!!TODO!!!)
+           - [Knowledge Entry](!!!TODO!!!)
+           - [Processing](!!!TODO!!!)
          - [Configurations](#configurations)
          - [Orchestrators](#orchestrators)
          - [Prompt Elements](#prompt-anatomy)
@@ -52,7 +51,9 @@
     - [Common Failure Modes](#common-failure-modes)
       - [Examples and Sources](#examples-and-sources)
         - [Authoritative Works Cited](#summary-of-authoritative-works-cited-for-common-failure-modes-with-examples-and-sources)
-    - [Common IF-LLM Failure Mitigation Strategies](!!!TODO!!!)
+    - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies-1)
+      - Strategies for Failure Modes with Sources
+        - Authoritative Works Cited
   - [IF-LLM-BO Project Journey](#appendix-if-llm-bo-project-journey)
     - [Expanded Objectives](#expanded-objectives)
     - [Activity Iterations](#activity-iterations)
@@ -60,203 +61,16 @@
 - [Roadmap](#roadmap)
 - [License](#license)
 
-.
-
-## **Features**
-
-TODO
-
-.
-
-## **Background**
-
-The goal is to build a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following LLMs toward high-priority results (i.e., accurate, reliable, relevant, specific, clear, practical, fair, and efficient). The scaffolding and LLM processing must align with these priorities. It must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies. The scaffolding must help organize instruction-following LLM behavioral configurations in knowledge files. The scaffolding so far is as follows:
-- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
-  - **meta:** *provides cross-cutting rules and scaffolding about the ontology itself.* Meta captures naming rules, modeling conventions, global decision policies, ontology versioning, glossaries of meta-terms, and core primitives reused across domains.
-  - **tasks:** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
-  - **domains:** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
-  - **experts:** *shape how the model reasons about the task.* Experts encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
-  - **structures:** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
-  - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
-  - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
-  - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
-
-.
-
-## **Known Issues**
-
-TODO
-
-.
-
-## **Requirements**
-
-TODO
-
-1. Familiarity and access to instruction-following LLM like [ChatGPT](https://chatgpt.com/)
-1. Familiarity and access to [GitHub](https://github.com/)
-1. Agree to the [Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0)](LICENSE.txt)
-1. Review [README](README.md)
-
-.
-
-## **Installation**
-
-1. Review [README](README.md).
-1. Perform the necessary actions to satisfy [minimum requirements](#requirements).
-1. From your local projects directory, copy the entire remote GitHub repository into your local project directory.
-
-TODO
-
-.
-
-## **Configuration**
-
-TODO
-
-.
-
-## **Usage**
-
-1. Perform the necessary actions to complete the [installation](#installation).
-
-
-TODO
-
-
-**TIPS:** Refer to the following documentation and tools to efficiently develop prompts delivering accurate, reliable, relevant, specific, clear, practical, fair, and efficient results for your users:
-- [ChatGPT Prompt Engineering Best Practices](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt)
-- [How do I create a good prompt for an AI model?](https://help.openai.com/en/articles/4936848-how-do-i-create-a-good-prompt-for-an-ai-model)
-- [OpenAI Prompting Guide](https://platform.openai.com/docs/guides/prompting)
-- [OpenAI Prompt Examples)](https://platform.openai.com/docs/examples)
-- [OpenAI Prompt Optimizer Tool](https://platform.openai.com/chat/edit?optimize=true)
-- [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
-- [OpenAI Reasoning Best Practices](https://platform.openai.com/docs/guides/reasoning-best-practices)
-- [OpenAI GPT-5 Prompting Guide](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
-
-.
-
-## IF-LLM-BO Project Notes
-The following sections contain project notes related to this instruction-following large language model (IF-LLM) behavior ontology.
-
-### Foundations
-The following sections contain the foundations that guide this instruction-following large language model (IF-LLM) behavior ontology.
-
-#### Assumptions
-
-Below is a summary of the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.  More detailed information about these assumptions, along with authoritative sources, can be found in the [Appendix: Assumptions](#appendix-assumptions).
-
-There is credible and sufficient evidence that Instruction-Following Large Language Models (IF-LLMs) produce a finite number of [common failure modes](#common-if-llm-failure-modes).
-
-Instruction-Following Large Language Models (IF-LLMs) produce results that are likely considered when making future decisions. Therefore, the results they produce should meet [well-defined quality standards](#information-quality-criteria).
-
-
-TO DO: Create Summary
-
-#### Decision-Making Information Quality Criteria (Priorities)
-
-Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making. Each definition is written to answer a practical question: *"What does this mean for everyday decision-making?"*
-
-To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
-
-**Decision-Making Information Quality Criteria (Prioritized)**
- 1. **Auditability:** source of information, how information was changed, and who handled information can be identified.
- 2. **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
- 3. **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
- 4. **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
- 5. **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again.
- 6. **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
- 7. **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
- 8. **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
- 9. **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
-10. **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
-11. **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
-12. **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
-13. **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
-14. **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
-
-
-More detailed information about these criteria, along with authoritative sources, can be found in the [Appendix: Information Quality Criteria](#appendix-information-quality-criteria).
-
-
-#### Common IF-LLM Failure Modes
-
-Below is a summary of the common instruction-following large language model (IF-LLM) failure modes today that this project hopes to address.  As IF-LLMs evolve, this project will shift focus from reducing failure risks to empowering greater efficiency through reusable elements.  More detailed information about these failure modes, along with authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#appendix-common-if-llm-failure-modes-with-examples-and-sources).
-
-- Truthfulness & Knowledge Failures
-  - Hallucination (Fabricated Information)
-  - Knowledge Boundary Failure
-  - Plausible but unsupported explanations
-- Reasoning & Analytical Failures
-  - Logical Reasoning Failure
-  - Overconfidence in Weak Reasoning
-  - Mathematical or Computational Errors
-- Robustness, Stability & Training Trade-off Failures
-  - Consistency / Stability Failure
-  - Alignment Tax / Capability Regression (implicit risk)
-- Evidence & Verification Failures
-  - Unsupported Claims
-  - Citation Fabrication
-- Safety, Alignment & Preference Failures
-  - Under-Refusal (Jailbreak Susceptibility)
-  - Bias Persistence
-  - Sycophancy
-  - Over-Refusal
-  - Toxic Degeneration (harmful generation behavior)
-  - Unequal Risk Framing
-- Security & Adversarial Robustness Failures
-  - Prompt Injection
-  - Indirect Prompt Injection
-  - Data Leakage / Privacy Exposure (implicit)
-  - Model Extraction Attacks (implicit)
-  - Tool Exploitation via Prompt Injection (implicit)
-  - Data Leakage / Training Data Exposure (implicit)
-  - Training Data Poisoning (implicit)
-  - Adversarial Manipulation of AI Systems
-  - Indirect Prompt Injection (implicit)
-  - Data Exfiltration / Sensitive Data Leakage
-  - Insecure Plugin or Tool Use
-- Context & Information Utilization Failures
-  - Context Misinterpretation
-  - Context Ignoring
-  - Tool Interaction Failure
-- Instruction Interpretation & Constraint Compliance Failures
-  - Ambiguity Misinterpretation
-  - Instruction Precedence Violation
-  - Constraint / Format Noncompliance
-  - Overgeneralization or Over-Literalism
-- Task Execution & Objective Fulfillment Failures
-  - Task Completeness Failure
- 
-
-#### Common IF-LLM Failure Mitigation Strategies
-TBD (Governance, Instructions, and Context)
 
 
 
-### Purpose
-As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
+---
 
 
-### Objectives
-- Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
-  - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies.
-  - scaffolding must help organize instruction-following LLM behavioral configurations in knowledge entries and files.
-  - uses the process below:
-    1. **Identify Foundations**
-    2. **Identify Assumptions**
-    3. **Identify Evidence-Based Knowledge**
-    4. **Organize Resources** (e.g., file structure, prompts, configurations, orchestrators, knowledge entries)
-    5. **Update Documentation**
+## NOT YET ORGANIZED
+TODO: Review then integrate or eliminate
 
-More detailed information is available in the following sections:
-- [Appendix: IF-LLM-BO Project Journey](!!!TODO!!!)
-   - [Expanded Objectives](!!!TODO!!!)
-   - [Activity Iterations](!!!TODO!!!)
-
-
-### Operational Notes
-
+---
 
 
 ### Instruction Elements (Scaffolding)
@@ -271,6 +85,10 @@ The scaffolding so far is as follows:
   - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
   - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
   - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+
+
+---
+
 
 ### Knowledge Entry Anatomy
 
@@ -325,20 +143,6 @@ The scaffolding so far is as follows:
 ##### Output Structure Sections
 ##### Output Structure Flexibility
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Priorities
 TODO: Outline priorities
 
@@ -356,9 +160,257 @@ Clarify Prompt Parameter Breakdown
 it's
 Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
 
+## END NOT YET ORGANIZED
+
+
+---
+
+
+---
+
+
+## **Features**
+
+TODO
+
+
+---
+
+
+## **Background**
+
+The goal is to build a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following LLMs toward [high-priority results](#decision-making-information-quality-criteria-priorities). The scaffolding and IF-LLM processing must align with these priorities. It must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology. The scaffolding must help organize IF-LLM behavioral configurations in knowledge files. The scaffolding so far is as follows:
+- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
+  - **[policies](#policies):** *provides cross-cutting rules and scaffolding about the ontology itself.*
+    - **[governance](!!!TODO!!!):** other policies requiring human responsibility.
+    - **[knowledge entry](!!!TODO!!!):** naming rules, modeling conventions, versioning, and core primitives.
+    - **[processing](!!!TODO!!!):** global decision policies.
+  - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+  - **[domains](#domains):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+  - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+  - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+  - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+  - **[examples](#examples):** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+  - **[prompt templates](#prompt-templates):** *offer reusable, copyable prompt pattern templates ensuring more consistent use and improved results.*
+  - **[configurations](#configurations):** *compose a complete behavioral profile.* Configurations bind tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+  - **[orchestrators](#orchestrators):** TODO *orchestrates activity across multiple configurations.* Orchestrators coordinate tasks among multiple configurations with unique tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts. Orchestrators validate results between each configuration to improve results.
+
+
+---
+
+
+## **Known Issues**
+
+TODO
+
+
+---
+
+
+## **Requirements**
+
+TODO
+
+1. Familiarity and access to instruction-following LLM like [ChatGPT](https://chatgpt.com/)
+1. Familiarity and access to [GitHub](https://github.com/)
+1. Agree to the [Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0)](LICENSE.txt)
+1. Review [README](README.md)
+
+
+---
+
+
+## **Installation**
+
+TODO
+
+1. Review [README](README.md).
+1. Perform the necessary actions to satisfy [minimum requirements](#requirements).
+1. From your local projects directory, copy the entire remote GitHub repository into your local project directory.
+
+
+---
+
+
+## **Configuration**
+
+TODO
+
+
+---
+
+
+## **Usage**
+
+TODO
+
+1. Perform the necessary actions to complete the [installation](#installation).
+
+**TIPS:** Refer to the following documentation and tools to efficiently develop prompts delivering accurate, reliable, relevant, specific, clear, practical, fair, and efficient results for your users:
+- [ChatGPT Prompt Engineering Best Practices](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt)
+- [How do I create a good prompt for an AI model?](https://help.openai.com/en/articles/4936848-how-do-i-create-a-good-prompt-for-an-ai-model)
+- [OpenAI Prompting Guide](https://platform.openai.com/docs/guides/prompting)
+- [OpenAI Prompt Examples)](https://platform.openai.com/docs/examples)
+- [OpenAI Prompt Optimizer Tool](https://platform.openai.com/chat/edit?optimize=true)
+- [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
+- [OpenAI Reasoning Best Practices](https://platform.openai.com/docs/guides/reasoning-best-practices)
+- [OpenAI GPT-5 Prompting Guide](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
+
+
+---
+
+
+## IF-LLM-BO Project Notes
+The following sections contain notes related to the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.
+
+
+---
+
+
+### Foundations
+The following sections describe the foundations guiding the IF-LLM-BO project.
+
+
+---
+
+
+#### Assumptions
+
+TO DO: Create Summary
+
+Below is a summary of the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.  More detailed information about these assumptions, along with authoritative sources, can be found in the [Appendix: Assumptions](#appendix-assumptions).
+
+There is credible and sufficient evidence that Instruction-Following Large Language Models (IF-LLMs) produce a finite number of [common failure modes](#common-if-llm-failure-modes).
+
+Instruction-Following Large Language Models (IF-LLMs) produce results that are likely considered when making future decisions. Therefore, the results they produce should meet [well-defined quality standards](#information-quality-criteria).
+
+
+---
+
+
+#### Decision-Making Information Quality Criteria (Priorities)
+
+Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making. Each definition is written to answer a practical question: *"What does this mean for everyday decision-making?"*
+
+To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
+
+**Decision-Making Information Quality Criteria (Prioritized)**
+ 1. **Auditability:** source of information, how information was changed, and who handled information can be identified.
+ 2. **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
+ 3. **Timeliness:** information is up to date and available when it is needed. Information that is too old or arrives too late loses its usefulness. Good information comes at the right time—not after the decision is already over.
+ 4. **Accuracy:** information is correct and matches reality. Facts are right, numbers are right, and statements reflect what is actually true. If something is accurate, you can trust that it isn’t wrong, misleading, or made up.
+ 5. **Reliability:** information can be trusted to be dependable, honest, and consistent over time. Reliable information is not biased or misleading, comes from a credible source, and holds up when checked or used again.
+ 6. **Sufficiency:** there is enough information—no important pieces are missing, and there is not unnecessary overload. The amount and level of detail fit the decision. You have what you need to decide, without being overwhelmed or left guessing.
+ 7. **Compliance:** information follows required laws, rules, standards, and policies. It meets formal obligations and expectations. Compliant information plays by the rules it is supposed to follow.
+ 8. **Clarity:** information is easy to understand, clearly explained, and not confusing. The meaning is obvious without special knowledge or extra interpretation. Clear information makes sense the first time you read or hear it.
+ 9. **Fairness:** information is unbiased, balanced, and considers different perspectives. It is not slanted to favor one group, outcome, or opinion unfairly. Fair information doesn’t “stack the deck” or leave out voices that matter.
+10. **Consistency:** information does not contradict itself and follows the same logic, terms, and structure throughout. Similar things are treated the same way. Consistent information doesn’t change its story halfway through.
+11. **Efficiency:** information can be accessed and used with reasonable effort, time, and cost. People can get what they need without unnecessary barriers. Efficient information is easy to find and use without wasting time or energy.
+12. **Security:** information is protected from unauthorized access, misuse, or harm. Only the right people can see or change it. Secure information is kept safe from people who should not have it.
+13. **Recoverability:** information can be restored if it is lost, damaged, or disrupted. Systems can bounce back after problems. If something goes wrong, the information isn’t gone forever.
+14. **Flexibility:** information can be used in more than one situation or adapted to different needs without losing meaning. Flexible information still works when the situation changes slightly.
+
+
+More detailed information about these criteria, along with authoritative sources, can be found in the [Appendix: Information Quality Criteria](#appendix-information-quality-criteria).
+
+
+---
+
+
+#### Common IF-LLM Failure Modes
+
+Below is a summary of the common instruction-following large language model (IF-LLM) failure modes today that this project hopes to address.  As IF-LLMs evolve, this project will shift focus from reducing failure risks to empowering greater efficiency through reusable elements.  More detailed information about these failure modes, along with authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#appendix-common-if-llm-failure-modes-with-examples-and-sources).
+
+- Truthfulness & Knowledge Failures
+  - Hallucination (Fabricated Information)
+  - Knowledge Boundary Failure
+  - Plausible but unsupported explanations
+- Reasoning & Analytical Failures
+  - Logical Reasoning Failure
+  - Overconfidence in Weak Reasoning
+  - Mathematical or Computational Errors
+- Robustness, Stability & Training Trade-off Failures
+  - Consistency / Stability Failure
+  - Alignment Tax / Capability Regression (implicit risk)
+- Evidence & Verification Failures
+  - Unsupported Claims
+  - Citation Fabrication
+- Safety, Alignment & Preference Failures
+  - Under-Refusal (Jailbreak Susceptibility)
+  - Bias Persistence
+  - Sycophancy
+  - Over-Refusal
+  - Toxic Degeneration (harmful generation behavior)
+  - Unequal Risk Framing
+- Security & Adversarial Robustness Failures
+  - Prompt Injection
+  - Indirect Prompt Injection
+  - Data Leakage / Privacy Exposure (implicit)
+  - Model Extraction Attacks (implicit)
+  - Tool Exploitation via Prompt Injection (implicit)
+  - Data Leakage / Training Data Exposure (implicit)
+  - Training Data Poisoning (implicit)
+  - Adversarial Manipulation of AI Systems
+  - Indirect Prompt Injection (implicit)
+  - Data Exfiltration / Sensitive Data Leakage
+  - Insecure Plugin or Tool Use
+- Context & Information Utilization Failures
+  - Context Misinterpretation
+  - Context Ignoring
+  - Tool Interaction Failure
+- Instruction Interpretation & Constraint Compliance Failures
+  - Ambiguity Misinterpretation
+  - Instruction Precedence Violation
+  - Constraint / Format Noncompliance
+  - Overgeneralization or Over-Literalism
+- Task Execution & Objective Fulfillment Failures
+  - Task Completeness Failure
+ 
+
+---
+
+
+#### Common IF-LLM Failure Mitigation Strategies
+TODO (Governance, Instructions, and Context)
+
+
+---
+
+
+### Purpose
+As stated previously, **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
+
+
+---
+
+
+### Objectives
+- Build a lightweight semantic scaffolding system for structuring instructions for instruction-following large language models (IF-LLMs). 
+  - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontologies.
+  - scaffolding must help organize instruction-following LLM behavioral configurations in knowledge entries and files.
+  - uses the process below:
+    1. **Identify Foundations**
+    2. **Identify Assumptions**
+    3. **Identify Evidence-Based Knowledge**
+    4. **Organize Resources** (e.g., file structure, prompts, configurations, orchestrators, knowledge entries)
+    5. **Update Documentation**
+
+More detailed information is available in the following sections:
+- [Appendix: IF-LLM-BO Project Journey](!!!TODO!!!)
+   - [Expanded Objectives](!!!TODO!!!)
+   - [Activity Iterations](!!!TODO!!!)
+
+ 
+---
+
+
 ## Appendices
 
 These appendices contain more detailed information and authoritative source references, if applicable, regarding elements of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.
+
+
+---
+
 
 ### Appendix: Assumptions
 
@@ -453,8 +505,14 @@ The effectiveness of any ontology depends on **consistent and disciplined use** 
 Bypassing or inconsistently applying the ontology reduces reliability but does not invalidate the design.
 
 
+---
+
+
 ### Appendix: Evidenced-based Information Criteria (Research)
-TBD
+TODO
+
+
+---
 
 
 ### Appendix: Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources
@@ -542,6 +600,9 @@ To produce information that meaningfully supports decisions, IF-LLMs should prio
   - *Source:* **O’Brien, James A., and George M. Marakas.** *Management Information Systems.* 10th ed., McGraw-Hill/Irwin, 2011.
 
 
+---
+
+
 ##### Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)
 
 A summary of the authoritative sources for these information quality criteria appears below:
@@ -552,11 +613,22 @@ A summary of the authoritative sources for these information quality criteria ap
 - **Paul, Richard, and Linda Elder.** *The Miniature Guide to Critical Thinking: Concepts and Tools.* Foundation for Critical Thinking, 2008.
 
 
+---
+
+
 ### Appendix: IF-LLM Information
-TBD
+TODO
+
+
+---
+
 
 #### Currently Popular Models
-TBD
+TODO
+
+
+---
+
 
 #### Instruction and Context Authority Hierarchy
 
@@ -573,7 +645,7 @@ IF-LLMs receive instructions through either user prompts (e.g., chat interfaces 
 
 
 #### Prompt Anatomy
-TBD
+TODO
 
 IF-LLM instructions generally organized into the following sections:
 - [Identity & Role](!!!TODO!!!)
@@ -586,19 +658,29 @@ IF-LLM instructions generally organized into the following sections:
 - [Examples](!!!TODO!!!)
 
 
+---
+
+
 ##### Identity & Role
-TBD
+TODO
 
 - Identity
 - Role
 - Audience (i.e., who, where, when)
 
 
+---
+
+
 ##### Priorities
-TBD
+TODO
+
+
+---
+
 
 ##### Task
-TBD
+TODO
 
 - Objectives
 - Success Criteria
@@ -608,8 +690,11 @@ TBD
 - Workflow
 
 
+---
+
+
 ##### Domains
-TBD
+TODO
 
 - In-Scope Topics
 - Out-of-Scope Topics
@@ -618,7 +703,7 @@ TBD
 
 
 ##### Reasoning
-TBD
+TODO
 
 - Frameworks
 - Heuristics
@@ -626,7 +711,7 @@ TBD
 
 
 ##### Structure
-TBD
+TODO
 
 - Required Sections
 - Ordering Rules
@@ -634,7 +719,7 @@ TBD
 
 
 ##### Persona
-TBD
+TODO
 
 - Tone
 - Voice
@@ -643,14 +728,17 @@ TBD
 
 
 ##### Examples
-TBD
+TODO
 
 
 #### Developed Solution Anatomy
-TBD
+TODO
 
 - [Knowledge Files](!!!TODO!!!)
   - [Policies](!!!TODO!!!)
+    - [Governance](!!!TODO!!!)
+    - [Knowledge Entry](!!!TODO!!!)
+    - [Processing](!!!TODO!!!)
   - [Configurations](!!!TODO!!!) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
   - [Orchestrators](!!!TODO!!!) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
   - [Prompt Elements](!!!TODO!!!)
@@ -667,9 +755,12 @@ TBD
 
 
 ##### Knowledge Files
-TBD
+TODO
 
 - [Policies](!!!TODO!!!)
+  - [Governance](!!!TODO!!!)
+  - [Knowledge Entry](!!!TODO!!!)
+  - [Processing](!!!TODO!!!)
 - [Configurations](!!!TODO!!!)
 - [Orchestrators](!!!TODO!!!)
 - [Prompt Elements](!!!TODO!!!)
@@ -681,11 +772,21 @@ TBD
   - [Examples](!!!TODO!!!)
 - [Prompt Templates](!!!TODO!!!)
 
-###### Policies
-TBD
 
+###### Policies
+TODO
+
+####### Governance
+TODO
+
+####### Knowledge Entry
+TODO
+
+####### Processing
+TODO
+    
 ###### Configurations
-TBD
+TODO
 
   - [Identity & Role](!!!TODO!!!)
   - [Priorities](!!!TODO!!!)
@@ -699,7 +800,7 @@ TBD
 
 
 ###### Orchestrators
-TBD
+TODO
 
   - [Identity & Role](!!!TODO!!!)
   - [Priorities](!!!TODO!!!)
@@ -716,20 +817,20 @@ TBD
 
 
 ###### Prompt Templates
-TBD
+TODO
 
 ##### Tools
-TBD
+TODO
 
  
 #### Common Failure Modes
-TBD
+TODO
 
 This section contains detailed information about common instruction-following large language model (IF-LLM) failure modes with [examples and sources](!!!TODO!!!). This section expands on the earlier section [Common IF-LLM Failure Modes](!!!TODO!!!). There is also a [summary of authoritative sources](#summary-of-authoritative-sources-for-common-if-llm-failure-modes-with-examples-and-sources).
 
 
 ##### Examples and Sources
-TBD
+TODO
 
 
 * **Truthfulness & Knowledge Failures**
@@ -1309,7 +1410,7 @@ TBD
 
 
 ###### Summary of Authoritative Works Cited for Common Failure Modes with Examples and Sources
-TBD
+TODO
 
 - Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026, [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency).
 - Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025, [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report).
@@ -1381,14 +1482,21 @@ TBD
 
 
 #### Common IF-LLM Failure Mitigation Strategies
-TBD
+TODO
+
+
+##### Strategies for Failure Modes with Sources
+TODO
+
+###### Summary of Authoritative Works Cited for Mitigation Strategies for Common IF-LLM Failure Modes
+TODO
 
 ### Appendix: IF-LLM-BO Project Journey
-TBD
+TODO
 
 
 #### Expanded Objectives
-TBD
+TODO
 
 1. **Identify Foundations**
     1. **Identify Problem/Challenges (Current)**
@@ -1427,7 +1535,7 @@ TBD
 
 
 #### Activity Iterations
-TBD
+TODO
 
 **Note:** Stopped @ Iteration 33A and Issue #135
 
@@ -1688,3 +1796,54 @@ Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0
 
 - See [LICENSE.txt](LICENSE.txt)
 - See [Creative Commons Attribution Share Alike 4.0 International (CC-BY-SA-4.0)](https://choosealicense.com/licenses/cc-by-sa-4.0/)
+
+
+## File Header
+
+**NAMESPACE:** me.hegland-lance.if-llm-behavior-ontology
+
+**Scope:** TODO
+
+**Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
+
+**Version:** 2026-03-30T07:09Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+
+**Last Reviewed:** 2026-03-30T07:09Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
+
+**Changelog**
+- 2026-03-30T07:09Z — [Lance Hegland](mailto:lance.hegland@gmail.com): 
+  - Began reviewing and updating content hyperlinks (Pass 1)
+  - File Heading section, including creating changelog
+  - Moved unorganized content into temporary "NOT YET ORGANIZED" section
+  - Reviewing and updating Table of Contents hyperlinks (Pass 3)
+- 2026-03-27T09:55Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and updating Table of Content hyperlinks (Pass 2)
+- 2026-03-27T06:40Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and updating Table of Content hyperlinks (Pass 1)
+- 2026-03-27T06:40Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Working on the following sections:
+  - Decision-Making Information Quality Criteria (Priorities) and appendix
+  - IF-LLM Information > Instruction and Context Authority Hierarchy
+  - Appendix: IF-LLM-BO Project Journey
+  - Updating Roadmap
+  - Table of Contents
+- 2026-03-15T17:52Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Revising previous
+- 2026-03-15T17:47Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Revising previous
+- 2026-03-15T17:45Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Revising previous
+- 2026-03-15T17:40Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Revising previous
+- 2026-03-15T17:37Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Revising previous
+- 2026-03-15T17:32Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated Common Failure Modes and related appendix
+- 2026-03-08T09:21Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated Assumptions and related appendix
+- 2026-03-08T07:37Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Edited Decision-Making Information Quality Criteria (Priorities) and related appendix
+- 2026-03-06T14:09Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and editing Assumptions and Decision-Making Information Quality Criteria (Priorities)
+- 2026-03-06T14:05Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and editing content (stage 2)
+- 2026-03-06T03:55Z — [Lance Hegland](mailto:lance.hegland@gmail.com): fixed typo in table of contents link for information quality priorities
+- 2026-03-06T03:53Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and editing content (stage 1)
+- 2026-03-03T06:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated Roadmap
+- 2026-02-20T04:16Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated decision-making information quality criteria (priorities)
+- 2026-02-18T07:14Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Common IF-LLM Failure Modes
+- 2026-02-18T06:17Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated User Notes Foundations Assumptions section
+- 2026-02-18T04:27Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Priorities section content
+- 2026-02-17T09:51Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added decision-making information quality criteria
+- 2026-02-17T08:50Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and editing
+- 2026-02-15T08:54Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated user notes section
+- 2026-02-15T08:49Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated Roadmap section
+- 2026-02-13T20:24Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Renamed repository and scaffolding
+- 2026-02-01T06:50Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Created repository and README.md from [IF-LLM Development Repository Template](https://github.com/LHHegland/if-llm-dev-repo-template)
