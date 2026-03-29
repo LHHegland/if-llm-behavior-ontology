@@ -182,21 +182,22 @@ TODO
 
 TODO: Verify hyperlinks
 
-The goal is to build a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following LLMs toward [high-priority results](#decision-making-information-quality-criteria-priorities). The scaffolding and IF-LLM processing must align with these priorities. It must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology. The scaffolding must help organize IF-LLM behavioral configurations in knowledge files. The scaffolding so far is as follows:
+The goal is to build a lightweight semantic scaffolding system for organizing instructions and context in structured knowledge files; instructions and context guiding instruction-following large language models (IF-LLMs) toward [high-priority results](#decision-making-information-quality-criteria-priorities). The scaffolding helping organize instructions and context must also align with these priorities. It must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology. The scaffolding so far is as follows:
 - **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
-  - **[policies](#policies):** *provides cross-cutting rules and scaffolding about the ontology itself.*
-    - **[governance](#policies-governance):** other policies requiring human responsibility.
-    - **[knowledge entry](#policies-knowledge-entry):** naming rules, modeling conventions, versioning, and core primitives.
-    - **[processing](#policies-processing):** global decision policies.
-  - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
-  - **[domains](#domains-1):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
-  - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
-  - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
-  - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
-  - **[examples](#examples):** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
-  - **[prompt templates](#prompt-templates):** *offer reusable, copyable prompt pattern templates ensuring more consistent use and improved results.*
-  - **[configurations](#configurations):** *compose a complete behavioral profile.* Configurations bind tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
-  - **[orchestrators](#orchestrators):** TODO *orchestrates activity across multiple configurations.* Orchestrators coordinate tasks among multiple configurations with unique tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts. Orchestrators validate results between each configuration to improve results.
+  - **[knowledge files](#knowledge-files)**
+    - **[policies](#policies):** *provides cross-cutting rules and scaffolding about the ontology itself.*
+      - **[governance](#policies-governance):** other policies requiring human responsibility.
+      - **[knowledge entry](#policies-knowledge-entry):** naming rules, modeling conventions, versioning, and core primitives.
+      - **[processing](#policies-processing):** global decision policies.
+    - **[prompt templates](#prompt-templates):** *offer reusable, copyable prompt pattern templates ensuring more consistent use and improved results.*
+      - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+      - **[domains](#domains-1):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+      - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+      - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+      - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+      - **[examples](#examples):** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+    - **[configurations](#configurations):** *compose a complete behavioral profile.* Configurations bind tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+    - **[orchestrators](#orchestrators):** TODO *orchestrates activity across multiple configurations.* Orchestrators coordinate tasks among multiple configurations with unique tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts. Orchestrators validate results between each configuration to improve results.
 
 
 ---
@@ -271,7 +272,7 @@ The following sections contain notes related to the Instruction-Following Large 
 
 
 ### Foundations
-The following sections describe the foundations guiding the IF-LLM-BO project.
+The following sections describe the foundations grounding the IF-LLM-BO project.
 
 
 ---
@@ -283,7 +284,7 @@ TO DO: Create Summary
 
 Below is a summary of the underlying assumptions for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.  More detailed information about these assumptions can be found in the [Appendix: Assumptions](#appendix-assumptions).
 
-There is credible and sufficient evidence that Instruction-Following Large Language Models (IF-LLMs) produce a finite number of [common failure modes](#common-if-llm-failure-modes).
+There is credible and sufficient evidence that instruction-following large language models (IF-LLMs) produce a finite number of [common failure modes](#common-if-llm-failure-modes).
 
 IF-LLMs produce results that are likely considered when making future decisions. Therefore, the results they produce should meet [well-defined quality standards](#decision-making-information-quality-criteria-priorities).
 
@@ -321,7 +322,7 @@ More detailed information about these criteria, along with authoritative sources
 
 #### Common IF-LLM Failure Modes
 
-Below is a high-level summary of the common instruction-following large language model (IF-LLM) failure modes (as of March 2026) that this project hopes to address.  As IF-LLMs evolve, this project will shift focus from reducing failure risks to empowering greater efficiency through reusable elements.  More detailed information about these failure modes, along with examples and authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#common-failure-modes).
+Below is a high-level summary of the common instruction-following large language model (IF-LLM) failure modes (as of March 2026) that this project hopes to address.  More detailed information about these failure modes, along with examples and authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#common-failure-modes).
 
 - Truthfulness & Knowledge Failures
 - Reasoning & Analytical Failures
@@ -423,7 +424,7 @@ There is credible and sufficient evidence that Instruction-Following Large Langu
 
 Explicit instructions outperform implicit expectations in reducing risks of experiencing common failure modes.
 
-The likelihood for IF-LLM behavioral correctness can be improved and risks of encountering common failure modes can be reduced by incorporating various policies and contextual information into explicit IF-LLM instructions.
+The likelihood for IF-LLM behavioral correctness can be improved and risks of encountering common failure modes can be reduced by incorporating various policies and contextual information into explicit IF-LLM instructions (i.e., [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)).
 
 Instructions and context may be provided by:
 - System architects
@@ -432,19 +433,19 @@ Instructions and context may be provided by:
 
 Instruction and context contributors may have different objectives, priorities, and constraints.
 
-IF-LLMs process instructions using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs.
+IF-LLMs process instructions and context using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs (i.e., [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)).
 
 System-level processing policies are authoritative and should not be silently reinterpreted or weakenedto preserve auditability.
 
 Conflicts between instructions must be resolved deterministically according to that hierarchy. Undisclosed or silent overrides reduce reliability and must be avoided.
 
-Human beings are responsible for:
+Human beings are responsible for the following activities related to IF-LLM instructions and context:
 - Creating
 - Reviewing
-- Maintaining
-- Retiring instructions (including knowledge entries and configurations).
+- Updating (Maintaining)
+- Deleting (Retiring)
 
-Instructions and contextual information context can be stored as **discrete, reusable knowledge entries**. Knowledge entries can be grouped into **knowledge files** to improve organization, reuse, and governance.
+[Instructions and contextual elements](#prompt-anatomy) can be stored as **discrete, reusable [knowledge entries](#knowledge-files)**. Knowledge entries can be grouped into **[knowledge files](#knowledge-files)** to improve organization, reuse, and governance.
 
 Knowledge files provided to the model override general model knowledge but do not override system- or developer-level instructions.
 
@@ -452,13 +453,19 @@ Stable identifiers (IDs, tags, handles) for knowledge entries improve traceabili
 
 Human-readable structure is preferred over opaque or auto-generated schemas for clarity.
 
+Instructions and contextual elements can be stored as **discrete, reusable [prompt templates](#prompt-templates)**, also stored in a dedicated knowledge file.
+
+Specific combinations of instructions and contextual elements can be stored as **discrete, reusable [configurations](#configurations)**, stored in a dedicated knowledge file too.
+
+Specific arrangements of configurations can be stored as **discrete, reusable [orchestrators](#orchestrators)**, stored in a dedicated knowledge file as well.
+
 Missing, outdated, or uncertain knowledge should be disclosed rather than inferred to ensure auditability.
 
 Refusals, limitations, and uncertainty disclosures are valid and expected outcomes for most IF-LLMs.
 
 When conflicts arise, safety and correctness often override completeness or convenience for most IF-LLMs.
 
-Using a semi-formal ontology to establish system-level policies, contextual defaults, and offer reusable, standardized instructions for common use cases can help improve behavioral correctness and reduce risks of encountering common failure modes.
+Using a [semi-formal ontology](#background) to establish system-level policies, contextual defaults, and offer reusable, standardized instructions for common use cases can help improve behavioral correctness and reduce risks of encountering common failure modes.
 
 The IF-LLM-BO is a **practical, lightweight semantic scaffolding system**, not a formally complete ontology.
 
@@ -474,7 +481,9 @@ Using an ontology assumes **active governance**, not self-correcting automation.
 
  Human beings are fallible and may not be consistent.
 
-The effectiveness of any ontology depends on **consistent and disciplined use** by humans.
+The effectiveness of any ontology depends on **consistent and disciplined use** by humans, including [governance policies](#policies-governance).
+
+Human beings must take responsibility for creating, reviewing, updating, and deleting [governance policies](#policies-governance). IF-LLM tools should assist human beings to create, review, update, and delete knowledge entries related to knowledge file policies, knowledge entry policies, processing policies, and other knowledge entries while referring to governance policies. This can to improve clarity, completeness, consistency, which ultimately improves behavioral correctness and auditability.
 
 Bypassing or inconsistently applying the ontology reduces reliability but does not invalidate the design.
 
