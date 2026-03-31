@@ -27,8 +27,8 @@
   - [Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources](#appendix-decision-making-information-quality-criteria-priorities-with-definitions-and-sources)
     - [Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities)
   - [IF-LLM Information](#appendix-if-llm-information)
-    - [Commonly Used IF-LLM Models](!!!TODO!!!)
-      - [Summary of Authoritative Sources](!!!TODO!!!)
+    - [Commonly Used IF-LLMs](#commonly-used-if-llms-2)
+      - [Summary of Authoritative Sources](#summary-of-authoritative-sources-for-commonly-used-if-llms)
     - [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)
     - [Prompt Anatomy](#prompt-anatomy)
       - [Identity & Role](#identity--role)
@@ -321,7 +321,7 @@ More detailed information about these criteria, along with authoritative sources
 
 ---
 
-#### Commonly Used IF-LLM Models
+#### Commonly Used IF-LLMs
 
 Currently, the following are the commonly used IF-LLMs.  More detailed information with authoritative sources appear in the [Appendix > IF-LLM Information > Commonly Used IF-LLMs](#commonly-used-if-llms-2).
 
@@ -700,7 +700,7 @@ The following is a list of IF-LLMs. This list has been sorted from highest to le
   - **Stakeholder impact:** Rankings may influence business or personal tool choices; uncertainty could affect decisions.
 
 
-##### Summary of Authoritative Sources
+##### Summary of Authoritative Sources for Commonly Used IF-LLMs
 
 Below is the summary of authoritative sources used to identify commonly used IF-LLMs:
 - Andreessen Horowitz. "State of Consumer AI 2025: Product Hits, Misses, and What’s Next." ([Andreessen Horowitz](https://a16z.com/state-of-consumer-ai-2025-product-hits-misses-and-whats-next/)).
