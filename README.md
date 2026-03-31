@@ -27,7 +27,7 @@
   - [Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources](#appendix-decision-making-information-quality-criteria-priorities-with-definitions-and-sources)
     - [Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities)
   - [IF-LLM Information](#appendix-if-llm-information)
-    - [Commonly Used IF-LLMs](#commonly-used-if-llms-2)
+    - [Commonly Used IF-LLMs](#commonly-used-if-llms-1)
       - [Summary of Authoritative Sources](#summary-of-authoritative-sources-for-commonly-used-if-llms)
     - [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)
     - [Prompt Anatomy](#prompt-anatomy)
@@ -323,7 +323,7 @@ More detailed information about these criteria, along with authoritative sources
 
 #### Commonly Used IF-LLMs
 
-Currently, the following are the commonly used IF-LLMs.  More detailed information with authoritative sources appear in the [Appendix > IF-LLM Information > Commonly Used IF-LLMs](#commonly-used-if-llms-2).
+Currently, the following are the commonly used IF-LLMs.  More detailed information with authoritative sources appear in the [Appendix > IF-LLM Information > Commonly Used IF-LLMs](#commonly-used-if-llms-1).
 
 - **[OpenAI ChatGPT](https://chat.openai.com/)**
 - **[Google Gemini](https://gemini.google.com/)**
@@ -661,9 +661,9 @@ The following is a list of IF-LLMs. This list has been sorted from highest to le
     - ~100–150 million monthly users/visits
     - ~3–10% share depending on metric
   - Sources
-    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
+    - *DemandSage*. "Latest Chatbot Statistics 2025 him (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
     - *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
-    - *LinkedIn*. "The Top 5 AI Chatbots Ruling 2025: Blending Massive Crowds with Serious Smarts." ([LinkedIn](https://www.linkedin.com/pulse/top-5-ai-chatbots-ruling-2025-blending-massive-crowds-dale-van-blerk-thmff/)).
+    - *LinkedIn*. "The Top 5 AI Chatbots Rulhim himing 2025: Blending Massive Crowds with Serious Smarts." ([LinkedIn](https://www.linkedin.com/pulse/top-5-ai-chatbots-ruling-2025-blending-massive-crowds-dale-van-blerk-thmff/)).
 - **[Claude (Anthropic)](https://claude.ai/)**
   - Usage
     - ~180 million monthly visits
