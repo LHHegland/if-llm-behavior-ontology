@@ -16,7 +16,7 @@
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
     - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
-    - [Commonly Used IF-LLM Models](!!!TODO!!!)
+    - [Commonly Used IF-LLMs](#commonly-used-if-llms)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
     - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
   - [Purpose](#purpose)
@@ -323,7 +323,7 @@ More detailed information about these criteria, along with authoritative sources
 
 #### Commonly Used IF-LLM Models
 
-Currently, the following are the commonly used IF-LLMs.  More detailed information with authoritative sources appear in the  [Appendix > IF-LLM Information > Commonly Used IF-LLM Models](!!!TODO!!!).
+Currently, the following are the commonly used IF-LLMs.  More detailed information with authoritative sources appear in the [Appendix > IF-LLM Information > Commonly Used IF-LLMs](#commonly-used-if-llms-2).
 
 - **[OpenAI ChatGPT](https://chat.openai.com/)**
 - **[Google Gemini](https://gemini.google.com/)**
@@ -622,10 +622,10 @@ TODO
 ---
 
 
-#### Commonly Used IF-LLM Models
+#### Commonly Used IF-LLMs
 TODO
       
-The following is a list of IF-LLMs. This list has been sorted from highest to least estimated global use based on reports during Fall 2025. The list below is the expansion of the previous list in [Foundations > Commonly Used IF-LLM Models](!!!TODO!!!).
+The following is a list of IF-LLMs. This list has been sorted from highest to least estimated global use based on reports during Fall 2025. The list below is the expansion of the previous list in [Foundations > Commonly Used IF-LLM Models](#commonly-used-if-llms).
 
 - **[OpenAI ChatGPT](https://chat.openai.com/)**
   - Usage
@@ -1955,6 +1955,7 @@ Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0
 **Last Reviewed:** 2026-03-30T11:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-03-31T07:05Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Update hyperlinks for Commonly Used IF-LLMs in Table of Contents, Foundations, and Appendix IF-LLM Information sections
 - 2026-03-31T06:57Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Update Commonly Used IF-LLMs in Table of Contents, Foundations, and Appendix IF-LLM Information sections
 - 2026-03-30T11:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Update Changelog
 - 2026-03-30T11:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Review and update Assumptions section
