@@ -16,6 +16,7 @@
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
     - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
+    - [Commonly Used IF-LLM Models](!!!TODO!!!)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
     - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
   - [Purpose](#purpose)
@@ -26,7 +27,8 @@
   - [Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources](#appendix-decision-making-information-quality-criteria-priorities-with-definitions-and-sources)
     - [Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities)
   - [IF-LLM Information](#appendix-if-llm-information)
-    - [Currently Popular Models](#currently-popular-models)
+    - [Commonly Used IF-LLM Models](!!!TODO!!!)
+      - [Summary of Authoritative Sources](!!!TODO!!!)
     - [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)
     - [Prompt Anatomy](#prompt-anatomy)
       - [Identity & Role](#identity--role)
@@ -319,6 +321,20 @@ More detailed information about these criteria, along with authoritative sources
 
 ---
 
+#### Commonly Used IF-LLM Models
+
+Currently, the following are the commonly used IF-LLMs.  More detailed information with authoritative sources appear in the  [Appendix > IF-LLM Information > Commonly Used IF-LLM Models](!!!TODO!!!).
+
+- **[OpenAI ChatGPT](https://chat.openai.com/)**
+- **[Google Gemini](https://gemini.google.com/)**
+- **[Perplexity AI](https://www.perplexity.ai/)**
+- **[Microsoft Copilot](https://copilot.microsoft.com/)**
+- **[Claude (Anthropic)](https://claude.ai/)**
+- **[Meta AI (Meta Platforms)](https://www.meta.ai/)**
+- **[Grok (xAI)](https://grok.x.ai/)**
+
+
+---
 
 #### Common IF-LLM Failure Modes
 
@@ -606,8 +622,95 @@ TODO
 ---
 
 
-#### Currently Popular Models
+#### Commonly Used IF-LLM Models
 TODO
+      
+The following is a list of IF-LLMs. This list has been sorted from highest to least estimated global use based on reports during Fall 2025. The list below is the expansion of the previous list in [Foundations > Commonly Used IF-LLM Models](!!!TODO!!!).
+
+- **[OpenAI ChatGPT](https://chat.openai.com/)**
+  - Usage
+    - ~5.5–5.8 billion monthly visits
+    - ~46–46.6 billion annual visits
+    - ~80% global chatbot market share
+    - **dominant globally** in both traffic and market share (~60–80% depending on dataset)
+    - **orders of magnitude more usage** than competitors (billions of monthly visits).
+  - Sources
+    - *Exploding Topics*. "65 Most Popular AI Tools Ranked (December 2025)." ([Exploding Topics](https://explodingtopics.com/blog/most-popular-ai-tools)).
+    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
+    - *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
+    - *Visual Capitalist*. "The 10 Most-Used AI Chatbots in 2025." ([Visual Capitalist](https://www.visualcapitalist.com/the-10-most-used-ai-chatbots-in-2025)).
+- **[Google Gemini](https://gemini.google.com/)**
+  - Usage
+    - ~1.3 billion monthly visits
+    - 122 million monthly unique users
+    - rapidly growing daily average user (DAU) share up to ~25% in some markets
+    - consistently **ranked second by traffic and user growth**.
+  - Sources
+    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
+    - *eMarketer*. "Gemini gains ground on ChatGPT with 25% US DAU share as Claude's churn drops". ([eMarketer](https://www.emarketer.com/content/gemini-gains-ground-chatgpt-25-dau-share-claude-churn-drops)).
+    - *DataReportal*. "Digital 2026: More Than 1 Billion People Use AI". ([DataReportal](https://datareportal.com/reports/digital-2026-one-billion-people-using-ai)).
+- **[Perplexity AI](https://www.perplexity.ai/)**
+  - Usage
+    - ~189 million monthly visits
+    - ~7–11% global market share depending on dataset
+  - Sources
+    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
+    - *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
+- **[Microsoft Copilot](https://copilot.microsoft.com/)**
+  - Usage
+    - ~100–150 million monthly users/visits
+    - ~3–10% share depending on metric
+  - Sources
+    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
+    - *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
+    - *LinkedIn*. "The Top 5 AI Chatbots Ruling 2025: Blending Massive Crowds with Serious Smarts." ([LinkedIn](https://www.linkedin.com/pulse/top-5-ai-chatbots-ruling-2025-blending-massive-crowds-dale-van-blerk-thmff/)).
+- **[Claude (Anthropic)](https://claude.ai/)**
+  - Usage
+    - ~180 million monthly visits
+    - ~1–4% share depending on region
+    - strong enterprise growth
+  - Sources
+    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
+    - *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
+    - *eMarketer*. "Gemini gains ground on ChatGPT with 25% US DAU share as Claude's churn drops". ([eMarketer](https://www.emarketer.com/content/gemini-gains-ground-chatgpt-25-dau-share-claude-churn-drops)).
+- **[Meta AI (Meta Platforms)](https://www.meta.ai/)**
+  - Usage
+    - likely has **very high total reach**, but lack of transparent standalone metrics prevents precise ranking.
+    - widely used via Facebook, Instagram, and WhatsApp integrations
+  - Sources
+    - Andreessen Horowitz. "State of Consumer AI 2025: Product Hits, Misses, and What’s Next." ([Andreessen Horowitz](https://a16z.com/state-of-consumer-ai-2025-product-hits-misses-and-whats-next/)).
+- **[Grok (xAI)](https://grok.x.ai/)**
+  - Usage
+    - ~150–200 million monthly visits estimated 
+    - usage tied to X/Twitter ecosystem
+  - Sources
+    - *Axios*. "ChatGPT is still by far the most popular AI chatbot." ([Axios](https://www.axios.com/2025/09/06/ai-chatbot-popularity)).
+
+
+**NOTES:**
+- ChatGPT and Gemini form the **first-year** IF-LLM Perplexi hosts/developers.
+- Perplexity, Copilot, and Claude form a **second tier** with tens to hundreds of millions of users.
+- Meta AI and Grok are ecosystem-dependent and emerging
+- Interpretation
+  - Ranking is based on **traffic + market share + user estimates combined**, since no single standardized metric exists across all providers.
+- Material Tradeoffs & Limitations (Required Disclosure)
+  - **Metric inconsistency:** Sources mix **visits, unique users, DAUs, and market share**, which are not directly comparable.
+  - **Platform integration bias:** Tools embedded in ecosystems (Google, Microsoft, Meta) may have **underreported or differently measured usage**.
+  - **Timeliness vs. reliability tradeoff:** Using recent (2025–2026) data improves relevance but introduces **variation across datasets and methodologies**.
+  - **Stakeholder impact:** Rankings may influence business or personal tool choices; uncertainty could affect decisions.
+
+
+##### Summary of Authoritative Sources
+
+Below is the summary of authoritative sources used to identify commonly used IF-LLMs:
+- Andreessen Horowitz. "State of Consumer AI 2025: Product Hits, Misses, and What’s Next." ([Andreessen Horowitz](https://a16z.com/state-of-consumer-ai-2025-product-hits-misses-and-whats-next/)).
+- *DataReportal*. "Digital 2026: More Than 1 Billion People Use AI". ([DataReportal](https://datareportal.com/reports/digital-2026-one-billion-people-using-ai)).
+- *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
+- *eMarketer*. "Gemini gains ground on ChatGPT with 25% US DAU share as Claude's churn drops". ([eMarketer](https://www.emarketer.com/content/gemini-gains-ground-chatgpt-25-dau-share-claude-churn-drops)).
+- *Exploding Topics*. "65 Most Popular AI Tools Ranked (December 2025)." ([Exploding Topics](https://explodingtopics.com/blog/most-popular-ai-tools)).
+- *LinkedIn*. "The Top 5 AI Chatbots Ruling 2025: Blending Massive Crowds with Serious Smarts." ([LinkedIn](https://www.linkedin.com/pulse/top-5-ai-chatbots-ruling-2025-blending-massive-crowds-dale-van-blerk-thmff/)).
+- *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
+- *Visual Capitalist*. "The 10 Most-Used AI Chatbots in 2025." ([Visual Capitalist](https://www.visualcapitalist.com/the-10-most-used-ai-chatbots-in-2025)).
 
 
 ---
@@ -1847,11 +1950,12 @@ Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-03-30T11:59Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-03-31T06:57Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-03-30T11:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-03-31T06:57Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Update Commonly Used IF-LLMs in Table of Contents, Foundations, and Appendix IF-LLM Information sections
 - 2026-03-30T11:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Update Changelog
 - 2026-03-30T11:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Review and update Assumptions section
 - 2026-03-30T10:24Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Reviewing and updating Table of Contents hyperlinks (Pass 6) and content hyperlinks (Pass 4)
