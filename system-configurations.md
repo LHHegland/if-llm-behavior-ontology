@@ -1,4 +1,4 @@
-# Instruction-Following Large Language Model (IF-LLM) Behavior Configurations (*configurations.md*)
+# Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) Behavior Configurations (*system-configurations.md*)
 Collection of behavior configuration knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
 ## File Header
@@ -9,7 +9,7 @@ Collection of behavior configuration knowledge entries for the Instruction-Follo
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-03-23T03:40Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-04-03T07:52Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-02-27T03:15Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
