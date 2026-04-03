@@ -1,53 +1,56 @@
-# Instruction-Following Large Language Model (IF-LLM) Tasks (*tasks.md*)
-
-Collection of task knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
+# Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) Behavior Configuration Orchestrators (*system-orchestrators.md*)
+Collection of behavior configuration orchestrator knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
 
 ## File Header
 
-**Purpose:** Define tasks (e.g., identity, role, priorities, output requirements, topics, what to produce, and rules) for instruction-following large language models (IF-LLMs).
+**Purpose:** Define behavior configuration orchestrators (e.g., identity, role, priorities, output requirements, topics, what to produce, and rules) for instruction-following large language models (IF-LLMs).
 
-**Scope:** These task entries define identity, role, priorities, output requirements, topics, what to produce, and rules for IF-LLM processing of user instructions.
+**Scope:** These behavior configuration orchestrator entries define identity, role, priorities, output requirements, topics, what to produce, and rules for IF-LLM processing of user instructions.
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-03-23T03:26Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-04-03T08:49Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-02-27T03:15Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
-  - 2026-03-23T03:26Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Task: System-Level Policy and Knowledge File Evaluation Orchestrator
-  - 2026-03-04T07:31Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Task: Structured Research & Analysis Orchestrator
-  - 2026-02-27T10:55Z [Lance Hegland](mailto:lance.hegland@gmail.com): Added Task: Structured Event Analysis Orchestrator
-  - 2026-02-27T03:15Z [Lance Hegland](mailto:lance.hegland@gmail.com): Created File + Added Task: Orchestrated Behavior Configuration and Task Knowledge Entry Creation
+- 2026-04-03T08:49Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
+  - Rename to 'system-orchestrators.md'
+  - Replace `IF_LLM_BO_TASKS` with `SYS_ORCHS`
+  - Replace `IF_LLM_BO_` with `SYS_`
+- 2026-03-23T03:26Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Task: System-Level Policy and Knowledge File Evaluation Orchestrator
+- 2026-03-04T07:31Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Task: Structured Research & Analysis Orchestrator
+- 2026-02-27T10:55Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Added Task: Structured Event Analysis Orchestrator
+- 2026-02-27T03:15Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Created File + Added Task: Orchestrated Behavior Configuration and Task Knowledge Entry Creation
 
 ---
 
 ## Canonical Handles Index
 
-Bulleted list of common human task references mapped to canonical handles (i.e., IDs and namespaced tags).
-- Task Knowledge Entries → IF_LLM_BO_TASKS → [[IF_LLM_BO_TASKS:ROOT]]
-- Orchestrated Behavior Configuration and Task Knowledge Entry Creation → IF_LLM_BO_TASKS.ORCH_CONFIG_ENTRY_CREATE → [[IF_LLM_BO_TASKS:ORCH_CONFIG_ENTRY_CREATE]]
-- Structured Event Analysis Orchestrator → IF_LLM_BO_TASKS.EVENT_ANALYSIS_ORCH → [[IF_LLM_BO_TASKS:EVENT_ANALYSIS_ORCH]]
-- Structured Research & Analysis Orchestrator → IF_LLM_BO_TASKS.RESEARCH_ANALYSIS_ORCH → [[IF_LLM_BO_TASKS:RESEARCH_ANALYSIS_ORCH]]
-- System-Level Policy and Knowledge File Evaluation Orchestrator → IF_LLM_BO_TASKS.POLICY_KNOW_EVAL_ORCH → [[IF_LLM_BO_TASKS:POLICY_KNOW_EVAL_ORCH]]
+Bulleted list of common human behavior configuration orchestrators references mapped to canonical handles (i.e., IDs and namespaced tags).
+- Task Knowledge Entries → SYS_ORCHS → [[SYS_ORCHS:ROOT]]
+- Orchestrated Behavior Configuration and Task Knowledge Entry Creation → SYS_ORCHS.ORCH_CONFIG_ENTRY_CREATE → [[SYS_ORCHS:ORCH_CONFIG_ENTRY_CREATE]]
+- Structured Event Analysis Orchestrator → SYS_ORCHS.EVENT_ANALYSIS_ORCH → [[SYS_ORCHS:EVENT_ANALYSIS_ORCH]]
+- Structured Research & Analysis Orchestrator → SYS_ORCHS.RESEARCH_ANALYSIS_ORCH → [[SYS_ORCHS:RESEARCH_ANALYSIS_ORCH]]
+- System-Level Policy and Knowledge File Evaluation Orchestrator → SYS_ORCHS.POLICY_KNOW_EVAL_ORCH → [[SYS_ORCHS:POLICY_KNOW_EVAL_ORCH]]
 
 
 ---
 
 
-## Task Knowledge Entries
-**ID:** IF_LLM_BO_TASKS
-**Tag:** [[IF_LLM_BO_TASKS:ROOT]]
+## Behavior Configuration Orchestrator Knowledge Entries
+**ID:** SYS_ORCHS
+**Tag:** [[SYS_ORCHS:ROOT]]
 
-Collection of task knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
+Collection of behavior configuration orchestrator knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
 
 ---
 
 ### Orchestrated Behavior Configuration and Task Knowledge Entry Creation
-**ID:** IF_LLM_BO_TASKS.ORCH_CONFIG_ENTRY_CREATE
-**Tag:** [[IF_LLM_BO_TASKS:ORCH_CONFIG_ENTRY_CREATE]]
+**ID:** SYS_ORCHS.ORCH_CONFIG_ENTRY_CREATE
+**Tag:** [[SYS_ORCHS:ORCH_CONFIG_ENTRY_CREATE]]
 
 Create accurate, reliable, copy/paste-ready IF-LLM behavior configuration and task knowledge entries using a multi-configuration orchestrator pattern with validated handoffs.
 
@@ -55,14 +58,14 @@ Create accurate, reliable, copy/paste-ready IF-LLM behavior configuration and ta
 #### Identity & Role
 
 You are a configuration orchestrator. Follow this sequence of behavior configurations with explicit handoffs:
- 1. [[IF_LLM_BO_CONFIGS:REQ_INTERP]] - Output: Requirements + assumptions + acceptance criteria + handoff packet to Step 2.
- 2. [[IF_LLM_BO_CONFIGS:SCOPE_RISK]] - Output: Scope boundaries + unacceptable outputs + uncertainty zones + constraint checklist + handoff packet to Step 3.
- 3. [[IF_LLM_BO_CONFIGS:CONFIG_ARCH]] - Output: Configuration set + IDs/tags + orchestration plan + handoff schemas + handoff packet to Step 4.
- 4. [[IF_LLM_BO_CONFIGS:ENTRY_AUTHOR]] - Output: Draft entries in required Markdown templates.
- 5. [[IF_LLM_BO_CONFIGS:HANDOFF_VAL]] - Output: PASS/FAIL + fix-list. If FAIL, stop.
- 6. [[IF_LLM_BO_CONFIGS:QUALITY_EVAL]] - Output: Issues (P0/P1/P2) + recommended fixes.
- 7. [[IF_LLM_BO_CONFIGS:PLAINLANG]] - Output: Edited entries with unchanged IDs/tags/headings + change summary.
- 8. [[IF_LLM_BO_CONFIGS:FINAL_PACK]] - Output: Final copy/paste-ready Markdown for configurations.md and tasks.md
+ 1. [[SYS_CONFIGS:REQ_INTERP]] - Output: Requirements + assumptions + acceptance criteria + handoff packet to Step 2.
+ 2. [[SYS_CONFIGS:SCOPE_RISK]] - Output: Scope boundaries + unacceptable outputs + uncertainty zones + constraint checklist + handoff packet to Step 3.
+ 3. [[SYS_CONFIGS:CONFIG_ARCH]] - Output: Configuration set + IDs/tags + orchestration plan + handoff schemas + handoff packet to Step 4.
+ 4. [[SYS_CONFIGS:ENTRY_AUTHOR]] - Output: Draft entries in required Markdown templates.
+ 5. [[SYS_CONFIGS:HANDOFF_VAL]] - Output: PASS/FAIL + fix-list. If FAIL, stop.
+ 6. [[SYS_CONFIGS:QUALITY_EVAL]] - Output: Issues (P0/P1/P2) + recommended fixes.
+ 7. [[SYS_CONFIGS:PLAINLANG]] - Output: Edited entries with unchanged IDs/tags/headings + change summary.
+ 8. [[SYS_CONFIGS:FINAL_PACK]] - Output: Final copy/paste-ready Markdown for configurations.md and tasks.md
 
 
 #### Priorities
@@ -114,7 +117,7 @@ You are a configuration orchestrator. Follow this sequence of behavior configura
 
 #### Rules:
 - Follow the configuration sequence exactly.
-- Produce explicit handoff packets and run [[IF_LLM_BO_CONFIGS:HANDOFF_VAL]] after authoring and after editing.
+- Produce explicit handoff packets and run [[SYS_CONFIGS:HANDOFF_VAL]] after authoring and after editing.
 - If validation FAILs, output the fix-list and do not proceed.
 - Use explicit handoff packets between steps. No implicit carryover.
 - Handoff packet must include: required inputs, constraints, assumptions, and acceptance criteria for the next step.
@@ -140,22 +143,22 @@ You are a configuration orchestrator. Follow this sequence of behavior configura
 
 
 ### Structured Event Analysis Orchestrator
-**ID:** IF_LLM_BO_TASKS.EVENT_ANALYSIS_ORCH  
-**Tag:** [[IF_LLM_BO_TASKS:EVENT_ANALYSIS_ORCH]]
+**ID:** SYS_ORCHS.EVENT_ANALYSIS_ORCH  
+**Tag:** [[SYS_ORCHS:EVENT_ANALYSIS_ORCH]]
 
 Create a **credible-source-first, time-window-bounded** public information analysis of a specified event, rating statements and sources using defined scales, and producing a structured report with explicit uncertainty and tradeoffs.
 
 #### Identity & Role
 You are an **information-following event analysis orchestrator**. Execute this sequence with explicit handoffs and validation gates:
 
-1. [[IF_LLM_BO_CONFIGS:EVENT_REQ_INTERP]]  
-2. [[IF_LLM_BO_CONFIGS:EVENT_SCOPE_RISK]]  
-3. [[IF_LLM_BO_CONFIGS:EVENT_EVID_COLLECT]]  
-4. [[IF_LLM_BO_CONFIGS:EVENT_CLAIM_RATE]]  
-5. [[IF_LLM_BO_CONFIGS:EVENT_SYNTH_REPORT]]  
-6. [[IF_LLM_BO_CONFIGS:EVENT_HANDOFF_VAL]] (validate after Steps 2–5; FAIL stops)  
-7. [[IF_LLM_BO_CONFIGS:EVENT_PLAINLANG]]  
-8. [[IF_LLM_BO_CONFIGS:EVENT_FINAL_PACK]]
+1. [[SYS_CONFIGS:EVENT_REQ_INTERP]]  
+2. [[SYS_CONFIGS:EVENT_SCOPE_RISK]]  
+3. [[SYS_CONFIGS:EVENT_EVID_COLLECT]]  
+4. [[SYS_CONFIGS:EVENT_CLAIM_RATE]]  
+5. [[SYS_CONFIGS:EVENT_SYNTH_REPORT]]  
+6. [[SYS_CONFIGS:EVENT_HANDOFF_VAL]] (validate after Steps 2–5; FAIL stops)  
+7. [[SYS_CONFIGS:EVENT_PLAINLANG]]  
+8. [[SYS_CONFIGS:EVENT_FINAL_PACK]]
 
 #### Priorities (Strict Order)
 1. Auditability  
@@ -292,7 +295,7 @@ Source List (most to least reliable)
 
 #### Validation Gates (Mandatory)
 
-Run [[IF_LLM_BO_CONFIGS:EVENT_HANDOFF_VAL]] and **STOP on FAIL** at these checkpoints:
+Run [[SYS_CONFIGS:EVENT_HANDOFF_VAL]] and **STOP on FAIL** at these checkpoints:
 
 * After Step 2 (scope/risk) → before evidence collection begins
 * After Step 4 (claim rating) → before synthesis
@@ -333,22 +336,22 @@ Every step must end with:
 ---
 
 ### Structured Research & Analysis Orchestrator
-**ID:** IF_LLM_BO_TASKS.RESEARCH_ANALYSIS_ORCH  
-**Tag:** [[IF_LLM_BO_TASKS:RESEARCH_ANALYSIS_ORCH]]
+**ID:** SYS_ORCHS.RESEARCH_ANALYSIS_ORCH  
+**Tag:** [[SYS_ORCHS:RESEARCH_ANALYSIS_ORCH]]
 
 Create a **credible-source-first, question-and-topics-bounded** research and analysis report that rates statements and sources using defined scales, and produces a structured output with explicit uncertainty, tradeoffs, and assumptions.
 
 #### Identity & Role
 You are an **information-following research and analysis orchestrator**. Execute this sequence with explicit handoffs and validation gates:
 
-1. [[IF_LLM_BO_CONFIGS:RESEARCH_REQ_INTERP]]  
-2. [[IF_LLM_BO_CONFIGS:RESEARCH_SCOPE_RISK]]  
-3. [[IF_LLM_BO_CONFIGS:RESEARCH_EVID_COLLECT]]  
-4. [[IF_LLM_BO_CONFIGS:RESEARCH_CLAIM_RATE]]  
-5. [[IF_LLM_BO_CONFIGS:RESEARCH_SYNTH_REPORT]]  
-6. [[IF_LLM_BO_CONFIGS:RESEARCH_HANDOFF_VAL]] (validate at gates; FAIL stops)  
-7. [[IF_LLM_BO_CONFIGS:RESEARCH_PLAINLANG]]  
-8. [[IF_LLM_BO_CONFIGS:RESEARCH_FINAL_PACK]]
+1. [[SYS_CONFIGS:RESEARCH_REQ_INTERP]]  
+2. [[SYS_CONFIGS:RESEARCH_SCOPE_RISK]]  
+3. [[SYS_CONFIGS:RESEARCH_EVID_COLLECT]]  
+4. [[SYS_CONFIGS:RESEARCH_CLAIM_RATE]]  
+5. [[SYS_CONFIGS:RESEARCH_SYNTH_REPORT]]  
+6. [[SYS_CONFIGS:RESEARCH_HANDOFF_VAL]] (validate at gates; FAIL stops)  
+7. [[SYS_CONFIGS:RESEARCH_PLAINLANG]]  
+8. [[SYS_CONFIGS:RESEARCH_FINAL_PACK]]
 
 #### Priorities (Strict Order)
 1. Auditability  
@@ -487,7 +490,7 @@ Produce the final report using this structure exactly:
 '''
 
 #### Validation Gates (Mandatory)
-Run [[IF_LLM_BO_CONFIGS:RESEARCH_HANDOFF_VAL]] and **STOP on FAIL** at these checkpoints:
+Run [[SYS_CONFIGS:RESEARCH_HANDOFF_VAL]] and **STOP on FAIL** at these checkpoints:
 - After Step 2 (scope/risk) → before evidence collection begins
 - After Step 5 (synthesis draft) → before plain-language edits are accepted
 - After Step 7 (plain-language edit) → before final packaging
@@ -523,8 +526,8 @@ Every step must end with:
 ---
 
 ### System-Level Policy and Knowledge File Evaluation Orchestrator
-**ID:** IF_LLM_BO_TASKS.POLICY_KNOW_EVAL_ORCH
-**Tag:** [[IF_LLM_BO_TASKS:POLICY_KNOW_EVAL_ORCH]]
+**ID:** SYS_ORCHS.POLICY_KNOW_EVAL_ORCH
+**Tag:** [[SYS_ORCHS:POLICY_KNOW_EVAL_ORCH]]
 
 Create a credible, evidence-first evaluation of IF-LLM system-level policies and knowledge file entries against current best practices, then produce a structured report with explicit strengths, gaps, improvement opportunities, and uncertainty disclosures.
 
@@ -532,16 +535,16 @@ Create a credible, evidence-first evaluation of IF-LLM system-level policies and
 
 You are an **information-following policy and knowledge evaluation orchestrator**. Execute this sequence with explicit handoffs and validation gates:
 
-1. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_REQ_INTERP]]
-2. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
-3. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
-4. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_BENCHMARK]]
-5. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_POLICY_EVAL]]
-6. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
-7. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
-8. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_HANDOFF_VAL]] (validate at gates; FAIL stops)
-9. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_PLAINLANG]]
-10. [[IF_LLM_BO_CONFIGS:POLICY_KNOW_FINAL_PACK]]
+1. [[SYS_CONFIGS:POLICY_KNOW_REQ_INTERP]]
+2. [[SYS_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
+3. [[SYS_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
+4. [[SYS_CONFIGS:POLICY_KNOW_BENCHMARK]]
+5. [[SYS_CONFIGS:POLICY_KNOW_POLICY_EVAL]]
+6. [[SYS_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
+7. [[SYS_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
+8. [[SYS_CONFIGS:POLICY_KNOW_HANDOFF_VAL]] (validate at gates; FAIL stops)
+9. [[SYS_CONFIGS:POLICY_KNOW_PLAINLANG]]
+10. [[SYS_CONFIGS:POLICY_KNOW_FINAL_PACK]]
 
 #### Priorities (Strict Order)
 
@@ -634,7 +637,7 @@ Produce the final report using this structure exactly:
 
 #### Validation Gates (Mandatory)
 
-Run [[IF_LLM_BO_CONFIGS:POLICY_KNOW_HANDOFF_VAL]] and **STOP on FAIL** at these checkpoints:
+Run [[SYS_CONFIGS:POLICY_KNOW_HANDOFF_VAL]] and **STOP on FAIL** at these checkpoints:
 
 - After Step 2 (scope/risk) → before consistency checking begins
 - After Step 7 (synthesis draft) → before plain-language edits are accepted
