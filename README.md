@@ -14,17 +14,23 @@
 - [Usage](#usage)
 - [Project Notes](#if-llm-bo-project-notes)
   - [Foundations](#foundations)
+    - [Assumptions](#assumptions)
+    - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
+    - [Commonly Used IF-LLMs](#commonly-used-if-llms)
+    - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
+    - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
   - [Purpose](#purpose)
   - [Objectives](#objectives)
-  - [Governance, Policies, Rules](!!!TODO!!!)
-  - [Prompt Templates, Orchestrators, Configurations](!!!TODO!!!)
+  - [Governance, Policies, Rules](#governance-policies-and-rules)
+  - [Prompt Templates, Orchestrators, Configurations](#prompt-templates-orchestrators-configurations)
 - [Appendices](#appendices)
 - [Roadmap](#roadmap)
 - [Authors](#authors)
 - [License](#license)
-- [Index](!!!TODO!!!)
+- [Index](#document-index)
 
----
+
+
 
 
 NOT YET ORGANIZED
@@ -389,7 +395,7 @@ Below is a high-level summary of recommended instruction-following large languag
 
 ---
 
-#### Knowledge File and Entry Policies (Stored Context Policies)
+#### Knowledge File and Knowledge Entry Policies (Stored Context Policies)
 TBD
 
 [Instructions and contextual elements](#prompt-anatomy) can be stored as **discrete, reusable [knowledge entries](#knowledge-files)**. Knowledge entries can be grouped into **[knowledge files](#knowledge-files)** to improve organization, reuse, and governance.
@@ -915,101 +921,6 @@ TODO
 ##### Examples
 TODO
 
-
-
-##### Knowledge Files
-TODO
-
-- [Prompt Templates](#prompt-templates)
-- [Policies](#policies)
-  - [Governance](#policies-governance)
-  - [Knowledge Entry](#policies-knowledge-entry)
-  - [Processing](#policies-processing)
-- [Context Elements](#prompt-anatomy)
-  - [Tasks](#task)
-  - [Domains](#domains-1)
-  - [Reasonings](#reasoning)
-  - [Structures](#structure)
-  - [Personas](#persona)
-  - [Examples](#examples)
-- [Configurations](#configurations) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
-- [Orchestrators](#orchestrators) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
-
-
-#### Developed Solution Anatomy
-TODO
-
-- [Knowledge Files](#knowledge-files)
-  - [Prompt Templates](#prompt-templates) (*copy-and-paste templates illustrating how to use a configuration or orchestrator pattern with existing elements and named variable inputs to accomplish a specified objective and workflow aligned with a particular policy set*)
-  - [Policies](#policies)
-  - [Configurations](#configurations)
-  - [Orchestrators](#orchestrators)
-  - [Elements](#prompt-anatomy)
-    - [Tasks](#task)
-    - [Domains](#domains-1)
-    - [Reasonings](#reasoning)
-    - [Structures](#structure)
-    - [Personas](#persona)
-    - [Examples](#examples)
-- [Tools](#tools)
-
-
-###### Policies
-TODO
-
-
-**Governance**  <a name="policies-governance"></a>
-
-TODO
-
-
-**Knowledge Entry** <a name="policies-knowledge-entry"></a>
-
-TODO
-
-
-**Processing** <a name="policies-processing"></a>
-
-TODO
-
-
-###### Configurations
-TODO
-
-- [Identity & Role](#identity--role)
-- [Priorities](#priorities-2)
-- [Task](#task)
-- [Domains](#domains-1)
-- [Reasoning](#reasoning)
-- [Structure](#structure)
-- [Persona](#persona)
-- [Examples](#examples)
-
-
-###### Orchestrators
-TODO
-
-- [Identity & Role](#identity--role)
-- [Priorities](#priorities-2)
-- Required Inputs
-- Task
-  - Objectives
-  - Workflow
-- Success Criteria
-- Failure Modes / Unacceptable Outputs
-- Handoff Packet Schema
-- Validation Gates
-- What to Produce
-- Output Rules/Requirements
-- [Examples](!!!TODO!!!)
-
-
-###### Prompt Templates
-TODO
-
-##### Tools
-TODO
-
  
 #### Common Failure Modes
 TODO
@@ -1017,7 +928,7 @@ TODO
 The following sections contain more detailed information about common instruction-following large language model (IF-LLM) failure modes compared to the earlier section [Common IF-LLM Failure Modes](#common-if-llm-failure-modes), which contains the most concise summary.  The first section contains [an expanded summary of common failure modes](#expanded-list).  The second section has [an expanded list with examples and sources](#examples-and-sources).
 
 
-#### Expanded List
+##### Expanded List
 
 Below is an expanded summary of the common instruction-following large language model (IF-LLM) failure modes (as of March 2026) that this project hopes to address.  The earlier Foundations section discussing [Common IF-LLM Failure Modes](#common-if-llm-failure-modes) contains a more concise summary.  More detailed information, along with authoritative sources, can be found in the next section [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#common-failure-modes).
 
@@ -1733,13 +1644,7 @@ TODO
 
 ---
 
-### Appendix: IF-LLM-BO Information
-TODO
-
-
----
-
-#### Governance, Policies, and Rules
+### Appendix: IF-LLM-BO Governance, Policies, and Rules
 TBD
 
 
@@ -1975,6 +1880,103 @@ TBD
     - Success Criteria (Quality Bar)
 
  
+---
+
+### Appendix: IF-LLM-BO Developed Solution Anatomy
+TODO
+
+- [Knowledge Files](#knowledge-files)
+  - [Prompt Templates](#prompt-templates) (*copy-and-paste templates illustrating how to use a configuration or orchestrator pattern with existing elements and named variable inputs to accomplish a specified objective and workflow aligned with a particular policy set*)
+  - [Policies](#policies)
+  - [Configurations](#configurations)
+  - [Orchestrators](#orchestrators)
+  - [Elements](#prompt-anatomy)
+    - [Tasks](#task)
+    - [Domains](#domains-1)
+    - [Reasonings](#reasoning)
+    - [Structures](#structure)
+    - [Personas](#persona)
+    - [Examples](#examples)
+- [Tools](#tools)
+
+
+##### Knowledge Files
+TODO
+
+- [Prompt Templates](#prompt-templates)
+- [Policies](#policies)
+  - [Governance](#policies-governance)
+  - [Knowledge Entry](#policies-knowledge-entry)
+  - [Processing](#policies-processing)
+- [Context Elements](#prompt-anatomy)
+  - [Tasks](#task)
+  - [Domains](#domains-1)
+  - [Reasonings](#reasoning)
+  - [Structures](#structure)
+  - [Personas](#persona)
+  - [Examples](#examples)
+- [Configurations](#configurations) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
+- [Orchestrators](#orchestrators) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
+
+
+
+###### Policies
+TODO
+
+
+**Governance**  <a name="policies-governance"></a>
+
+TODO
+
+
+**Knowledge Entry** <a name="policies-knowledge-entry"></a>
+
+TODO
+
+
+**Processing** <a name="policies-processing"></a>
+
+TODO
+
+
+###### Configurations
+TODO
+
+- [Identity & Role](#identity--role)
+- [Priorities](#priorities-2)
+- [Task](#task)
+- [Domains](#domains-1)
+- [Reasoning](#reasoning)
+- [Structure](#structure)
+- [Persona](#persona)
+- [Examples](#examples)
+
+
+###### Orchestrators
+TODO
+
+- [Identity & Role](#identity--role)
+- [Priorities](#priorities-2)
+- Required Inputs
+- Task
+  - Objectives
+  - Workflow
+- Success Criteria
+- Failure Modes / Unacceptable Outputs
+- Handoff Packet Schema
+- Validation Gates
+- What to Produce
+- Output Rules/Requirements
+- [Examples](!!!TODO!!!)
+
+
+###### Prompt Templates
+TODO
+
+##### Tools
+TODO
+
+
 ---
 
 ### Appendix: IF-LLM-BO Project Journey
@@ -2313,15 +2315,15 @@ TBD
     - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
   - [Purpose](#purpose)
   - [Objectives](#objectives)
-  - [Governance, Policies, Rules](!!!TODO!!!)
-    - [Human Governance (System Architect and Solution Developer Governance)](!!!TODO!!!)
-    - [Stored Context Policies (Knowledge File and Knowledge Entry Policies)](!!!TODO!!!)
-    - [Stored Instruction Rules (Processing Policies)](!!!TODO!!!)
-  - [Prompt Templates, Orchestrators, Configurations](!!!TODO!!!)
-    - [Prompt Templates](!!!TODO!!!)
-    - [Orchestrators](!!!TODO!!!)
-    - [Configurations](!!!TODO!!!)
-    - [Prompt Elements](!!!TODO!!!)
+  - [Governance, Policies, Rules](#governance-policies-and-rules)
+    - [Human Governance (System Architect and Solution Developer Governance)](#system-architect-and-solution-developer-governance-human-governance)
+    - [Stored Context Policies (Knowledge File and Knowledge Entry Policies)](#knowledge-file-and-entry-policies-stored-context-policies)
+    - [Stored Instruction Rules (Processing Policies)](#processing-policies-stored-instruction-rules)
+  - [Prompt Templates, Orchestrators, Configurations](#prompt-templates-orchestrators-configurations)
+    - [Prompt Templates](#prompt-templates)
+    - [Orchestrators](#orchestrators)
+    - [Configurations](#configurations)
+    - [Prompt Elements](#prompt-elements)
 - [Appendices](#appendices)
   - [Assumptions](#appendix-assumptions)
   - [Evidenced-based Information Criteria (Research)](#appendix-evidenced-based-information-criteria-research)
