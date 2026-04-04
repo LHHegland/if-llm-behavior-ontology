@@ -361,7 +361,7 @@ TBD
 
 The following sections outline the **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) Governance, Policies, and Rules**.
 
-The likelihood for IF-LLM behavioral correctness can be improved and risks of encountering [common IF-LLM failure modes](#common-if-llm-failure-modes) can be reduced by using [common IF-LLM failure mitigation strategies](#common-if-llm-failure-mitigation-strategies)). These strategies generally rely on humans consistently practicing various best practices (e.g., [System Designer and Developer Governance]()), including providing a few explicit IF-LLM instructions and context elements.
+The likelihood for IF-LLM behavioral correctness can be improved — risks of encountering [common IF-LLM failure modes](#common-if-llm-failure-modes) can be reduced — by using [common IF-LLM failure mitigation strategies](#common-if-llm-failure-mitigation-strategies). These strategies generally rely on humans consistently practicing [human governance](#system-architect-and-solution-developer-governance-human-governance), including using explicit IF-LLM instructions such as [stored context policies](#knowledge-file-and-knowledge-entry-policies-stored-context-policies) and [stored instruction rules](#processing-policies-stored-instruction-rules)).
 
 
 ---
@@ -369,15 +369,13 @@ The likelihood for IF-LLM behavioral correctness can be improved and risks of en
 #### System Architect and Solution Developer Governance (Human Governance)
 TBD
 
-The likelihood for IF-LLM behavioral correctness can be improved — risks of encountering [common IF-LLM failure modes](#common-if-llm-failure-modes) — can be reduced by using [common IF-LLM failure mitigation strategies](#common-if-llm-failure-mitigation-strategies). These strategies rely on humans consistently practicing the following primary best practices. Humans are ultimately responsible for creating, reviewing, updating/maintaining, and deleting/retiring the instructions and context. Human beings must govern the overall system and developed solutions.
+Humans are ultimately responsible for creating, reviewing, updating/maintaining, and deleting/retiring instructions and context for instruction-following large language models (IF-LLMs). Meaning, humans must actively govern the overall system and developed solutions.
 
-Instructions and context may be provided by system architects, solution developers, and end users. End users may not have the experience, knowledge, skills, or tools to effectively use these best practices consistently. Therefore, the vast majority of responsibility must be assumed by system architects and solution developers.
+Instructions and context may be provided by system architects, solution developers, and end users. End users may not have the experience, knowledge, skills, or tools to effectively use [common IF-LLM failure mitigation strategies](#common-if-llm-failure-mitigation-strategies) consistently. Therefore, the vast majority of responsibility must be assumed by system architects and solution developers.
 
-Instruction and context contributors may have different objectives, priorities, and constraints. As such, there may be various layers of governance, policies, and rules. To offer the necessary flexibility, IF-LLMs process instructions and context using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs (i.e., [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)). To maintain reliability, stability, and auditability, this authority hierarchy must be respected; lower-level policies must not *silently* reinterpret or weaken higher-level policies. Lower-level policies *can* override higher-level policies if necessary, just not *silently*; overrides must be **explicitly disclosed to end users**.
+Instruction and context contributors may have different objectives, priorities, and constraints. As such, there are multiple layers of governance, policies, and rules: system, developer, and user layers. To offer the necessary flexibility, IF-LLMs process instructions and context using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs (i.e., [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)). To maintain reliability, stability, and auditability, this authority hierarchy must be respected; lower-level policies must not *silently* reinterpret or weaken higher-level policies. Lower-level policies *can* override higher-level policies if necessary, just not *silently*; overrides must be **explicitly disclosed to end users**.
 
-Below is a high-level summary of recommended instruction-following large language model (IF-LLM) governance policies for system designersfailure modes (as of March 2026) that this project hopes to address.  More detailed information about these failure modes, along with examples and authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#common-failure-modes).
-
-
+Below is a high-level summary of recommended IF-LLM governance policies for system architects and solution developers:
 - **Safety, Security, and Access Control Policies**
   - [Least-Privilege Rule](#least-privilege-rule)
   - [Secrets Rule](#secrets-rule)
@@ -391,6 +389,8 @@ Below is a high-level summary of recommended instruction-following large languag
   - [Logging and Monitoring Rule](#logging-and-monitoring-rulev)
   - [Pre-Deployment Testing Rule](#pre-deployment-testing-rule)
   - [Continuous Improvement Rule](#continuous-improvement-rule)
+ 
+More detailed information about these governance policies can be found in the [Appendix: Governance, Policies, Rules](!!!TODO!!!) > [System Architect and Solution Developer Governance (Human Governance)](!!!TODO!!!).
 
 
 ---
@@ -398,22 +398,15 @@ Below is a high-level summary of recommended instruction-following large languag
 #### Knowledge File and Knowledge Entry Policies (Stored Context Policies)
 TBD
 
-[Instructions and contextual elements](#prompt-anatomy) can be stored as **discrete, reusable [knowledge entries](#knowledge-files)**. Knowledge entries can be grouped into **[knowledge files](#knowledge-files)** to improve organization, reuse, and governance.
+Instruction-following large language model (IF-LLM) [instructions and context](#prompt-anatomy) can be stored as **discrete, reusable [knowledge entries](#knowledge-files)**. Knowledge entries are generally grouped by type into **[knowledge files](#knowledge-files)** to improve organization, reuse, and governance. Human-readable structure is preferred for entries over opaque or auto-generated schemas for clarity.
 
-Knowledge files provided to the model override general model knowledge but do not override system- or developer-level instructions.
+Knowledge entries provided to IF-LLMs override general model knowledge but do not override system- or developer-level instructions. More information can be found in the section [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy). 
 
-Stable identifiers (IDs, tags, handles) for knowledge entries improve traceability, reuse, and auditability over time.
-
-Human-readable structure is preferred over opaque or auto-generated schemas for clarity.
-
-Instructions and contextual elements can be stored as **discrete, reusable [prompt templates](#prompt-templates)**, also stored in a dedicated knowledge file.
-
-Specific combinations of instructions and contextual elements can be stored as **discrete, reusable [configurations](#configurations)**, stored in a dedicated knowledge file too.
-
-Specific arrangements of configurations can be stored as **discrete, reusable [orchestrators](#orchestrators)**, stored in a dedicated knowledge file as well.
-
+Below is a high-level summary of recommended IF-LLM policies related to knowledge files and entries for system architects and solution developers:
 - [Knowledge File Naming Convention Rule](#knowledge-file-naming-convention-rule)
 - [Knowledge File Root ID and Tag Convention Rule](#knowledge-file-root-id-and-tag-convention-rule)
+
+More detailed information about these policies can be found in the [Appendix: Governance, Policies, Rules](!!!TODO!!!) > [Knowledge File and Knowledge Entry Policies (Stored Context Policies)](!!!TODO!!!).
 
 
 ---
@@ -421,8 +414,7 @@ Specific arrangements of configurations can be stored as **discrete, reusable [o
 #### Processing Policies (Stored Instruction Rules)
 TBD
 
-System designers and solution developers should also remain aware of the [system policies](processing-policies.md#processing-policies) that IF-LLMs are asked to enforce by the IF-LLM-BO project elements.
-
+System architects and solution developers should also remain aware of the [system policies](system-policies.md#processing-policies). The list below offers a high-level summary of rules that IF-LLMs are asked to enforce:
 - Instruction Hierarchy and Control Policies
 - Safety, Security, and Access Control Policies
 - Safety Behavior and Alignment Quality Policies
@@ -446,12 +438,21 @@ System designers and solution developers should also remain aware of the [system
     - Audience
     - Success Criteria (Quality Bar)
 
+More detailed information about these rules can be found in the [Appendix: Governance, Policies, Rules](!!!TODO!!!) > [Processing Policies (Stored Instruction Rules)](!!!TODO!!!).
+
 
 ---
 
 ### Prompt Templates, Orchestrators, Configurations
 TBD
 
+Specific combinations of [instructions and contextual prompt elements](#prompt-anatomy) can be stored as **discrete, reusable [configurations](#configurations)**, stored in a dedicated knowledge file.
+
+Specific arrangements of configurations can be stored as **discrete, reusable [orchestrators](#orchestrators)**, stored in a dedicated knowledge file as well. Think of orchestrators as orchestra conductors guiding musicians (configurations) as they complete their musical piece (task objectives).
+
+Instructions and contextual elements can be stored as **discrete, reusable [prompt templates](#prompt-templates)**, also stored in a dedicated knowledge file. Think of prompt templates as the sheet music used by musicians, which may be slightly altered depending on the circumstances (e.g.,  play quietly, play loudly, play quicker). Prompt templates can also include additional instructions and context as input into the orchestrator, configuration, or other prompt elements. For example, and orchestrator or configuration or prompt that creates an artistic image may have placeholders for additional instructions and context so the end-user can quickly and easily choose their desired style or color palette. These additional instructions and context in prompt templates expanded the flexibility and usefulness of the templates, orchestrators, and configurations while offering ease-of-use for end-users.
+
+More detailed information about these rules can be found in the [Appendix: Prompt Templates, Orchestrators, Configurations](!!!TODO!!!).
 
 ---
 
@@ -1650,17 +1651,97 @@ TBD
 
 ---
 
-##### System Designer and Developer Governance
+##### System Architect and Solution Developer Governance (Human Governance)
 TBD
 
-The IF-LLM-BO project contains [**System Policies**](processing-policies.md) to help [commonly used IF-LLMs](README.md#commonly-used-if-llms) reduce [common failure modes](README.md#common-if-llm-failure-modes) during processing using [various mitigation strategies](README.md#common-if-llm-failure-mitigation-strategies). Similarly, system designers and developers must consistently remain aware and apply the following rules to ensure adequate human governance of systems and developed solutions support the [purpose](README.md#purpose) and [objectives](README.md#objectives) of this project.
+The IF-LLM-BO project contains [**System Policies**](system-policies.md) to help [commonly used IF-LLMs](README.md#commonly-used-if-llms) reduce [common failure modes](README.md#common-if-llm-failure-modes) during processing using [various mitigation strategies](README.md#common-if-llm-failure-mitigation-strategies). Similarly, system designers and developers must consistently remain aware and apply the following rules to ensure adequate human governance of systems and developed solutions support the [purpose](README.md#purpose) and [objectives](README.md#objectives) of this project.
+
+
+###### Least-Privilege Rule
+
+Use the minimum permissions, tools, data, and action scope required to complete the task. Prefer read-only access, narrower queries, smaller context windows, limited side effects, and lower-impact actions when they are sufficient. Do not expand permissions, data access, or execution scope without a task-grounded reason. ([Related Processing Policy](system-policies.md#least-privilege-rule))
+
+
+---
+
+###### Secrets Rule
+
+Do not expose credentials or sensitive internal data. ([Related Processing Policy](system-policies.md#secrets-rule))
+
+
+---
+
+###### Approval Rule
+
+Require explicit human confirmation before irreversible, high-impact, high-cost, privacy-sensitive, security-sensitive, or externally consequential actions. If the action changes data, sends messages, executes transactions, alters permissions, or could materially affect people or systems, pause for confirmation unless a higher-priority safe instruction clearly authorizes automatic execution. ([Related Processing Policy](system-policies.md#secrets-rule))
+
+
+---
+
+###### Tool-Decision Rule
+
+Use tools only when needed for missing data, external actions, or higher reliability. ([Related Processing Policy](system-policies.md#tool-decision-rule))
+
+
+---
+
+###### Freshness Rule
+
+Use retrieval or search for recent or dynamic information instead of relying on memory or general model knowledge. ([Related Processing Policy](system-policies.md#tool-decision-rule))
+
+
+---
+
+###### Incident Disclosure Rule
+
+When a material failure, misuse event, security issue, or policy-breaking behavior is identified, record the incident, preserve relevant evidence within privacy and security limits, and communicate the limitation or impact to the appropriate reviewer, operator, or user when relevant. Do not hide known material failures behind confident output. ([Related Processing Policy](system-policies.md#incident-disclosure-rule))
+
+
+---
+
+###### Logging and Monitoring Rule
+
+Maintain enough logging and monitoring to support review of material tool calls, external actions, validation failures, safety-relevant events, and significant uncertainty disclosures, consistent with privacy and security constraints. Logging should support debugging, auditing, misuse detection, and incident review without exposing secrets unnecessarily. ([Related Processing Policy](system-policies.md#logging-and-monitoring-rule))
+
+
+---
+
+###### Pre-Deployment Testing Rule
+
+Before release or material policy changes, test for likely failure modes including hallucination, prompt injection, unsafe tool use, weak grounding, citation errors, output-format failures, and foreseeable fairness or safety issues. If testing reveals material risk, revise controls or disclose the limitation before deployment. ([Related Processing Policy](system-policies.md#pre-deployment-testing-rule))
+
+
+---
+
+###### Continuous Improvement Rule
+
+Policies and procedures must:
+
+- Support identification of recurring failure modes.
+- Enable iterative refinement of outputs and decision frameworks.
+- Encourage structured feedback loops when tradeoffs repeatedly surface.
+- Auditability exists not only for transparency, but to support learning and improvement over time.
+
+([Related Processing Policy](system-policies.md#continuous-improvement-clause))
+
+
+---
+
+##### Knowledge File and Knowledge Entry Policies (Stored Context Policies)
+
+TBD
+
+Instruction-following large language model (IF-LLM) [instructions and context](#prompt-anatomy) can be stored as **discrete, reusable [knowledge entries](#knowledge-files)**. Knowledge entries are generally grouped by type into **[knowledge files](#knowledge-files)** to improve organization, reuse, and governance. Human-readable structure is preferred for entries over opaque or auto-generated schemas for clarity.
+
+Knowledge entries provided to IF-LLMs override general model knowledge but do not typically override system- or developer-level instructions. More information can be found in the section [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy). 
+
 
 
 ---
 
 ###### Knowledge File Naming Convention Rule
 
-Below is a table that outlines the IF-LLM-BO project knowledge file naming convention for specific knowledge file (KF) types. This helps to support [Instruction Hierarchy and Control Policies](processing-policies.md#instruction-hierarchy-and-control-policies), including the [Instruction Hierarchy Rule](processing-policies.md#instruction-hierarchy-rule), [Hierarchy Rule](processing-policies.md#hierarchy-rule), and [Stability Rule](processing-policies.md#stability-rule).
+Below is a table that outlines the IF-LLM-BO project knowledge file naming convention for specific knowledge file (KF) types. This helps to support [Instruction Hierarchy and Control Policies](system-policies.md#instruction-hierarchy-and-control-policies), including the [Instruction Hierarchy Rule](system-policies.md#instruction-hierarchy-rule), [Hierarchy Rule](system-policies.md#hierarchy-rule), and [Stability Rule](system-policies.md#stability-rule).
 
 | Hierarchy | KF Type |
 | :-------: | :------ |
@@ -1680,7 +1761,7 @@ Below is a table that outlines the IF-LLM-BO project knowledge file naming conve
 
 ###### Knowledge File Root ID and Tag Convention Rule
 
-Below is a table that outlines the IF-LLM-BO project knowledge file root ID and tag convention for specific knowledge file (KF) types. This helps to support [Instruction Hierarchy and Control Policies](processing-policies.md#instruction-hierarchy-and-control-policies), including the [Instruction Hierarchy Rule](processing-policies.md#instruction-hierarchy-rule), [Hierarchy Rule](processing-policies.md#hierarchy-rule), and [Stability Rule](processing-policies.md#stability-rule).
+Knowledge entries use stable, unique identifiers (IDs, tags, handles) to improve traceability, reuse, and auditability over time. Below is a table that outlines the IF-LLM-BO project knowledge file root ID and tag convention for specific knowledge file (KF) types. This helps to support [Instruction Hierarchy and Control Policies](system-policies.md#instruction-hierarchy-and-control-policies), including the [Instruction Hierarchy Rule](system-policies.md#instruction-hierarchy-rule), [Hierarchy Rule](system-policies.md#hierarchy-rule), and [Stability Rule](system-policies.md#stability-rule).
 
 | Hierarchy | KF Type |
 | :-------: | :------ |
@@ -1698,101 +1779,9 @@ Below is a table that outlines the IF-LLM-BO project knowledge file root ID and 
 
 ---
 
-###### Least-Privilege Rule
+##### Processing Policies (Stored Instruction Rules)
 
-Use the minimum permissions, tools, data, and action scope required to complete the task. Prefer read-only access, narrower queries, smaller context windows, limited side effects, and lower-impact actions when they are sufficient. Do not expand permissions, data access, or execution scope without a task-grounded reason.
-
-([Source](processing-policies.md#least-privilege-rule))
-
-
----
-
-###### Secrets Rule
-
-Do not expose credentials or sensitive internal data.
-
-([Source](processing-policies.md#secrets-rule))
-
-
----
-
-###### Approval Rule
-
-Require explicit human confirmation before irreversible, high-impact, high-cost, privacy-sensitive, security-sensitive, or externally consequential actions. If the action changes data, sends messages, executes transactions, alters permissions, or could materially affect people or systems, pause for confirmation unless a higher-priority safe instruction clearly authorizes automatic execution.
-
-([Source](processing-policies.md#secrets-rule))
-
-
----
-
-###### Tool-Decision Rule
-
-Use tools only when needed for missing data, external actions, or higher reliability.
-
-([Source](processing-policies.md#tool-decision-rule))
-
-
----
-
-###### Freshness Rule
-
-Use retrieval or search for recent or dynamic information instead of relying on memory or general model knowledge.
-
-([Source](processing-policies.md#tool-decision-rule))
-
-
----
-
-###### Incident Disclosure Rule
-
-When a material failure, misuse event, security issue, or policy-breaking behavior is identified, record the incident, preserve relevant evidence within privacy and security limits, and communicate the limitation or impact to the appropriate reviewer, operator, or user when relevant. Do not hide known material failures behind confident output.
-
-([Source](processing-policies.md#incident-disclosure-rule))
-
-
----
-
-###### Logging and Monitoring Rule
-
-Maintain enough logging and monitoring to support review of material tool calls, external actions, validation failures, safety-relevant events, and significant uncertainty disclosures, consistent with privacy and security constraints. Logging should support debugging, auditing, misuse detection, and incident review without exposing secrets unnecessarily.
-
-([Source](processing-policies.md#logging-and-monitoring-rule))
-
-
----
-
-###### Pre-Deployment Testing Rule
-
-Before release or material policy changes, test for likely failure modes including hallucination, prompt injection, unsafe tool use, weak grounding, citation errors, output-format failures, and foreseeable fairness or safety issues. If testing reveals material risk, revise controls or disclose the limitation before deployment.
-
-([Source](processing-policies.md#pre-deployment-testing-rule))
-
-
----
-
-###### Continuous Improvement Rule
-
-Policies and procedures must:
-
-- Support identification of recurring failure modes.
-- Enable iterative refinement of outputs and decision frameworks.
-- Encourage structured feedback loops when tradeoffs repeatedly surface.
-- Auditability exists not only for transparency, but to support learning and improvement over time.
-
-([Source](processing-policies.md#continuous-improvement-clause))
-
-
----
-
-##### Knowledge Entry Policies
-TBD
-
-
----
-
-##### Processing Policies Expanded (IF-LLM Rules)
-
-System designers and solution developers should also remain aware of the [system policies](processing-policies.md#processing-policies) that IF-LLMs are asked to enforce by the IF-LLM-BO project elements.
+System designers and solution developers should also remain aware of the [system policies](system-policies.md#processing-policies) that IF-LLMs are asked to enforce by the IF-LLM-BO project elements.
 TBD
 
 - Instruction Hierarchy and Control Policies
@@ -1888,8 +1877,8 @@ TODO
 - [Knowledge Files](#knowledge-files)
   - [Prompt Templates](#prompt-templates) (*copy-and-paste templates illustrating how to use a configuration or orchestrator pattern with existing elements and named variable inputs to accomplish a specified objective and workflow aligned with a particular policy set*)
   - [Policies](#policies)
-  - [Configurations](#configurations)
   - [Orchestrators](#orchestrators)
+  - [Configurations](#configurations)
   - [Elements](#prompt-anatomy)
     - [Tasks](#task)
     - [Domains](#domains-1)
@@ -1908,6 +1897,8 @@ TODO
   - [Governance](#policies-governance)
   - [Knowledge Entry](#policies-knowledge-entry)
   - [Processing](#policies-processing)
+- [Orchestrators](#orchestrators) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
+- [Configurations](#configurations) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
 - [Context Elements](#prompt-anatomy)
   - [Tasks](#task)
   - [Domains](#domains-1)
@@ -1915,9 +1906,11 @@ TODO
   - [Structures](#structure)
   - [Personas](#persona)
   - [Examples](#examples)
-- [Configurations](#configurations) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
-- [Orchestrators](#orchestrators) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
 
+
+
+###### Prompt Templates
+TODO
 
 
 ###### Policies
@@ -1939,18 +1932,6 @@ TODO
 TODO
 
 
-###### Configurations
-TODO
-
-- [Identity & Role](#identity--role)
-- [Priorities](#priorities-2)
-- [Task](#task)
-- [Domains](#domains-1)
-- [Reasoning](#reasoning)
-- [Structure](#structure)
-- [Persona](#persona)
-- [Examples](#examples)
-
 
 ###### Orchestrators
 TODO
@@ -1970,9 +1951,19 @@ TODO
 - [Examples](!!!TODO!!!)
 
 
-###### Prompt Templates
+###### Configurations
 TODO
 
+- [Identity & Role](#identity--role)
+- [Priorities](#priorities-2)
+- [Task](#task)
+- [Domains](#domains-1)
+- [Reasoning](#reasoning)
+- [Structure](#structure)
+- [Persona](#persona)
+- [Examples](#examples)
+
+- 
 ##### Tools
 TODO
 
@@ -2320,10 +2311,10 @@ TBD
     - [Stored Context Policies (Knowledge File and Knowledge Entry Policies)](#knowledge-file-and-entry-policies-stored-context-policies)
     - [Stored Instruction Rules (Processing Policies)](#processing-policies-stored-instruction-rules)
   - [Prompt Templates, Orchestrators, Configurations](#prompt-templates-orchestrators-configurations)
-    - [Prompt Templates](#prompt-templates)
-    - [Orchestrators](#orchestrators)
-    - [Configurations](#configurations)
     - [Prompt Elements](#prompt-elements)
+    - [Configurations](#configurations)
+    - [Orchestrators](#orchestrators)
+    - [Prompt Templates](#prompt-templates)
 - [Appendices](#appendices)
   - [Assumptions](#appendix-assumptions)
   - [Evidenced-based Information Criteria (Research)](#appendix-evidenced-based-information-criteria-research)
@@ -2349,17 +2340,17 @@ TBD
     - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies-1)
       - [Strategies for Failure Modes with Sources](#strategies-for-failure-modes-with-sources)
         - [Authoritative Works Cited](#summary-of-authoritative-works-cited-for-mitigation-strategies-for-common-if-llm-failure-modes)
-  - [Governance, Policies, Rules](!!!TODO!!!)
+  - [Governance, Policies, Rules](#appendix-if-llm-bo-governance-policies-and-rules)
     - [Human Governance (System Architect and Solution Developer Governance)](!!!TODO!!!)
     - [Stored Context Policies (Knowledge File and Knowledge Entry Policies)](!!!TODO!!!)
     - [Stored Instruction Rules (Processing Policies)](!!!TODO!!!)
   - [Developed Solution Anatomy](#developed-solution-anatomy)
     - [Knowledge Files](#knowledge-files)
+      - [Prompt Templates](#prompt-templates)
       - [Governance, Policies, and Rules](!!!TODO!!!)
         - [Human Governance](!!!TODO!!!)
         - [Knowledge File and Entry Policies](!!!TODO!!!)
         - [Processing Rules (Instructions)](!!!TODO!!!)
-      - [Prompt Templates](#prompt-templates)
       - [Orchestrators](#orchestrators)
       - [Configurations](#configurations)
       - [Prompt Elements](#prompt-anatomy)
