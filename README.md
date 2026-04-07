@@ -5,7 +5,7 @@
 
 ## **Table of Contents**
 
-- TO DO: [Unorganized Content](!!!TODO!!!)
+- TO DO: [Unorganized Content](#not-yet-organized-1)
 - [Features](#features)
 - [Background](#background)
   - [What is an Instruction-Following Large Language Model (IF-LLM)?](#what-is-an-instruction-following-large-language-model-if-llm)
@@ -32,6 +32,7 @@
 - [Authors](#authors)
 - [License](#license)
 - [Index](#document-index)
+- [File Header](#file-header)
 
 
 
@@ -142,13 +143,13 @@ Even though IF-LLMs are powerful:
 
  ### Current Challenges and Proposed Solutions
 
-Currently, [popular instruction-following large language models (IF-LLMs)](#commonly-used-if-llms) have demonstrated [various vulnerabilities](#common-if-llm-failure-modes), especially related to producing results that satisfy [commonly-accepted decision-making information quality criteria](#decision-making-information-quality-criteria-priorities).
+Currently, [popular instruction-following large language models (IF-LLMs)](#common-if-llms) have demonstrated [various vulnerabilities](#common-if-llm-failure-modes), especially when producing results intended to satisfy [commonly-accepted decision-making information quality criteria](#decision-making-information-quality-criteria-priorities).
 
-After [exploring the circumstances and challenges](#assumptions), it seems that more intentionally and consistently using governance, information policies, processing rules, plus reusable instructions and context (information) for commonly needed requests could reduce the likelihood of undesirable results.
+After [exploring the circumstances and challenges](#assumptions), it seems that more intentionally and consistently using governance, information policies, processing rules, plus reusable instructions and context (information) for common objectives could reduce the likelihood of undesirable results.
 
-Therefore, the **goal of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is to build a lightweight semantic scaffolding system for organizing instructions and context in structured data files to better guide IF-LLMs toward responses that satisfy common decision-making information quality criteria. The scaffolding should build from [foundational IF-LLM elements](!!!TODO!!!). The scaffolding must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology.
+Therefore, the **goal of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is to build a lightweight semantic scaffolding system for organizing instructions and context in structured data files to guide IF-LLMs toward responses that satisfy common decision-making information quality criteria. The scaffolding should build from [foundational IF-LLM elements](#common-if-llm-elements-instructions-context-and-tools). The scaffolding must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology.
 
-Failure modes will very likely evolve over time, requiring instructions and context to be routinely tested, their results evaluated, instructions and context subsequently refined periodically. Also, this scaffolding enables system architects and solution developers to organize instructions and context for more complex objectives to empower greater efficiency, consistency, and auditability.
+Failure modes will evolve over time as IF-LLMs continue to evolve. This requires routine testing, evaluation, and periodic updates to instructions and context. Also, system architects, solution developers, and power users are able to organize policies, instructions, and context (relevant background information) in data files to more efficiently and consistently accomplish more complex objectives while also improving auditability.
 
 
 ---
@@ -156,7 +157,7 @@ Failure modes will very likely evolve over time, requiring instructions and cont
 
 ## **Known Issues**
 
-TODO
+NONE — There are no know issues at this time.
 
 
 ---
@@ -164,42 +165,58 @@ TODO
 
 ## **Requirements**
 
-TODO
-
-1. Familiarity and access to instruction-following LLM like [ChatGPT](https://chatgpt.com/)
-1. Familiarity and access to [GitHub](https://github.com/)
+1. Familiarity using and access to [an instruction-following large language model (IF-LLM)](#common-if-llms)
+1. Familiarity using and access to [GitHub](https://github.com/)
 1. Agree to the [Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0)](LICENSE.txt)
-1. Review [README](README.md)
+1. Review [README's Table of Contents](README.md) plus [Challenges and Solutions](#current-challenges-and-proposed-solutions) sections
 
 
 ---
-
 
 ## **Installation**
 
-TODO
+1. Perform the necessary actions to satisfy the [minimum requirements](#requirements).
+1. From your local projects directory, copy [the entire IF-LLM-BO project's remote GitHub repository](https://github.com/LHHegland/if-llm-behavior-ontology/tree/main) into your local project directory.
+1. Upload the following files to a new conversation in [your favorite instruction-following large language model (IF-LLM)](#common-if-llms) to give the model access to the stored instructions and context (relevant background information) for that conversation.
+   - ~~system-knowledge-policies.md~~ — *NOT YET AVAILABLE*
+   - system-processing-policies.md
+   - ~~system-tasks.md~~ — *NOT YET AVAILABLE*
+   - ~~system-domains.md~~ — *NOT YET AVAILABLE*
+   - ~~system-reasonings.md~~ — *NOT YET AVAILABLE*
+   - ~~system-structures.md~~ — *NOT YET AVAILABLE*
+   - ~~system-personas.md~~ — *NOT YET AVAILABLE*
+   - ~~system-examples.md~~ — *NOT YET AVAILABLE*
+   - system-configurations.md
+   - system-orchestrators.md
+1. Copy the following prompt and paste it into the IF-LLM prompt field (or perform the necessary steps if you are using an API).
+   ```
+# Configuration
 
-1. Review [README](README.md).
-1. Perform the necessary actions to satisfy [minimum requirements](#requirements).
-1. From your local projects directory, copy the entire remote GitHub repository into your local project directory.
-
-
+Please use the following uploaded files for purposes indicated below during this conversation:
+- `system-processing-policies.md` contains **System-Level Processing Policies**
+- `system-configurations.md` contains **System-Level Behavior Configurations**
+- `system-orchestrators.md` contains **System-Level Behavior Orchestrators**   
+   ```
+   
 ---
-
 
 ## **Configuration**
 
-TODO
+NONE — no configuration is required.
 
 
 ---
 
-
 ## **Usage**
 
-TODO
-
 1. Perform the necessary actions to complete the [installation](#installation).
+1. Submit your task prompt or question to the IF-LLM using basic, intermediate, or advanced prompting techniques (or necessary alternate steps if you are using the IF-LLM's API).
+   1. Optional:
+      1. Review [`system-prompt-templates.md`](system-prompt-templates.md) to find a prompt to achieve your desired objective.
+      1. Copy and paste the prompt into the IF-LLM prompt field.
+      1. Overwrite the variable input placeholders with your input data (i.e., `<variable input placeholder>`) (e.g., `<full name>` → `Pat Smith`, `<topic>` → `entomology`, `<objective>` → `better understand the risks to human health from flying insects`, `<audience>` → `average people from the many, widespread, and diverse communities throughout the United States of America today`).
+      1. Submit your prompt to the IF-LLM.
+
 
 **TIPS:** Refer to the following documentation and tools to efficiently develop prompts delivering accurate, reliable, relevant, specific, clear, practical, fair, and efficient results for your users:
 - [ChatGPT Prompt Engineering Best Practices](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt)
