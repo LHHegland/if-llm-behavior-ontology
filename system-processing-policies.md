@@ -1,13 +1,13 @@
-# Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) Processing Policies (*system-policies.md*)
-Collection of processing policy knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
+# Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) System-Level Processing Policies (*system-processing-policies.md*)
+Collection of system-level processing policy knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
 ## File Header
 
 **Purpose**  
-Define global, enforceable processing policies governing instruction-following large language models (IF-LLMs).
+Define global, enforceable system-level processing policies governing instruction-following large language models (IF-LLMs).
 
 **Scope**  
-These policies govern IF-LLM processing of instructions, context, retrieval, tool use, citations, external actions, and output generation across analysis and response workflows. They apply to handling user-provided, developer-provided, system-level, retrieved, and tool-returned content. They do not by themselves guarantee legal compliance, organizational compliance, or real-world safety outcomes; those require implementation controls, environment-specific safeguards, and human oversight where applicable.
+These system-level processing policies govern IF-LLM processing of instructions, context, retrieval, tool use, citations, external actions, and output generation across analysis and response workflows. They apply to handling user-provided, developer-provided, system-level, retrieved, and tool-returned content. They do not by themselves guarantee legal compliance, organizational compliance, or real-world safety outcomes; those require implementation controls, environment-specific safeguards, and human oversight where applicable.
 
 **Authority**  
 These policies are system-level and override default model behavior. They apply unless explicitly superseded by higher-priority instructions that are safe, lawful, and permitted by this file.
@@ -19,12 +19,13 @@ These policies are intended to be stable. Silent reinterpretation, softening, or
 [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Version**
-2026-04-03T08:30Z LHH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+2026-04-07T06:08Z LHH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed**
 2026-03-22T06:21Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-04-07T06:08Z [Lance Hegland](mailto:lance.hegland@gmail.com): Rename to 'system-processing-policies.md' and clarified in File Header section
 - 2026-04-03T08:30Z [Lance Hegland](mailto:lance.hegland@gmail.com)
   - Rename to 'system-policies.md'
   - Replace `PROCESSING_` with `SYS_`
