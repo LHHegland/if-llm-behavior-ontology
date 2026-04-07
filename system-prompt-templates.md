@@ -1,19 +1,20 @@
-# Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) Prompt Templates (*system-prompts.md*)
+# Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) Prompt Templates (*system-prompt-templates.md*)
 Collection of prompt templates for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
 ## File Header
 
 **Purpose:** Define prompt templates for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
-**Scope:** These prompt templates define IF-LLM processing instructions and context for user objectives using the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
+**Scope:** These prompt templates define IF-LLM processing instructions and context for specific user objectives using the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-04-03T09:13Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-04-07T07:01Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-02-27T03:15Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-04-07T07:01Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Rename to 'system-prompt-templates.md' and updated File Header accordingly
 - 2026-04-03T09:13Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
   - Rename to 'system-prompts.md'
   - Replace `IF_LLM_BO_TASKS` with `SYS_ORCHS`
