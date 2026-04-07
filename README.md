@@ -149,7 +149,7 @@ After [exploring the circumstances and challenges](#assumptions), it seems that 
 
 Therefore, the **goal of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is to build a lightweight semantic scaffolding system for organizing instructions and context in structured data files to guide IF-LLMs toward responses that satisfy common decision-making information quality criteria. The scaffolding should build from [foundational IF-LLM elements](#common-if-llm-elements-instructions-context-and-tools). The scaffolding must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology.
 
-Failure modes will evolve over time as IF-LLMs continue to evolve. This requires routine testing, evaluation, and periodic updates to instructions and context. Also, system architects, solution developers, and power users are able to organize policies, instructions, and context (relevant background information) in data files to more efficiently and consistently accomplish more complex objectives while also improving auditability.
+Failure modes will evolve over time as IF-LLMs continue to evolve. This requires routine testing, evaluation, and periodic updates to instructions and context. Also, system architects, solution developers, and power users must be able to organize policies, instructions, and context (relevant background information) in data files to more efficiently and consistently accomplish more complex objectives while also improving auditability.
 
 
 ---
@@ -189,14 +189,14 @@ NONE — There are no know issues at this time.
    - system-configurations.md
    - system-orchestrators.md
 1. Copy the following prompt and paste it into the IF-LLM prompt field (or perform the necessary steps if you are using an API).
-   ```
-# Configuration
-
-Please use the following uploaded files for purposes indicated below during this conversation:
-- `system-processing-policies.md` contains **System-Level Processing Policies**
-- `system-configurations.md` contains **System-Level Behavior Configurations**
-- `system-orchestrators.md` contains **System-Level Behavior Orchestrators**   
-   ```
+    ```
+    # Configuration
+    
+    Please use the following uploaded files for purposes indicated below during this conversation:
+    - `system-processing-policies.md` contains **System-Level Processing Policies**
+    - `system-configurations.md` contains **System-Level Behavior Configurations**
+    - `system-orchestrators.md` contains **System-Level Behavior Orchestrators**   
+    ```
    
 ---
 
@@ -916,6 +916,195 @@ TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authorit
 7. General Model Knowledge
 
 IF-LLMs receive instructions through either user prompts (e.g., chat interfaces or APIs) or developer instructions. Users and developers can store reusable instructions and context in knowledge entries of various types. Knowledge entries can be organized into knowledge files.
+
+
+---
+
+#### Common Elements: Instructions, Context, and Tools
+
+A brief foundational summary of common instruction-following large language model (IF-LLM) elements was presented in the [Project Notes > Foundations > Common IF-LLM Elements](#common-if-llm-elements-instructions-context-and-tools). The following sections document [basic](!!!TODO!!!), [intermediate](!!!TODO!!!), and [advanced IF-LLM elements](!!!TODO!!!).
+
+
+---
+
+##### Foundations
+
+- [**Instruction-Following Large Language Model (IF-LLM)**](!!!TODO!!!) → interprets and executes instructions using the given context and available tools (e.g., [Commonly Used IF-LLMs](#common-if-llms)
+  - [**Prompt**](!!!TODO!!!) → tells the model what to do (i.e., instructions and context)
+  - [**Knowledge Files**](!!!TODO!!!) → provide reliable information (i.e., reusable context) (e.g., uploaded files)
+  - [**Tools**](!!!TODO!!!) → access external data and tools to extend the model's capabilities
+  - **Output** → response after executing the instructions using the given context and available tools
+
+**Analogy**: A **chef (IF-LLM)** follows a **recipe (prompt)**, uses a **cookbook (knowledge files)**, and operates **kitchen equipment (tools)** to produce a **meal (output)**.
+
+
+---
+
+###### Instruction-Following Large Language Model (IF-LLM)
+
+**Description:** A software system (e.g., [common IF-LLMs](#common-if-llms)) designed to interpret and execute instructions and context provided in [prompts](!!!TODO!!!).
+
+**Purpose:** To process user instructions and context then generate useful, relevant, and structured outputs.
+
+**Role:** The IF-LLM is the **executor**. Unlike [prompts](!!!TODO!!!) (instructions and context), [knowledge files](!!!TODO!!!) (stored, reusable context), and [tools](!!!TODO!!!) (capabilities), the IF-LLM is the entity that **uses all of them together**.
+
+**Analogy:** Like a **chef in a kitchen**, follows recipes (prompts), uses ingredients (context (e.g., information, knowledge)), and operates equipment (tools).
+
+**Example:** “ChatGPT reads your request for a grilled cheese recipe and produces step-by-step instructions.”
+
+
+---
+
+###### Prompt
+
+**Description:** The set of instructions, context, and constraints given to the [IF-LLM](!!!TODO!!!).
+
+**Purpose:** To guide the model’s behavior, define the task, and shape the output.
+
+**Role:** The prompt is the **director or script**. Unlike the [IF-LLM](!!!TODO!!!) (executor), [knowledge files](!!!TODO!!!) (data), or [tools](!!!TODO!!!) (actions), the prompt defines **what should be done and how**.
+
+**Analogy:** Like a **recipe given to a chef**, tells the chef what dish to make, how to prioritize taste, safety, and simplicity.
+
+**Example:** “You are a well-respected chef… Describe how to make a grilled cheese sandwich prioritizing safety, taste, and affordability.”
+
+
+---
+
+###### Knowledge Files
+
+**Description:** External or provided documents/data that the [IF-LLM](!!!TODO!!!) can use as reference (e.g., `system-policies-processing.md`).
+
+**Purpose:** To provide **grounded, authoritative information** that improves accuracy and reliability.
+
+**Role:** Knowledge files are the **source of truth**. Unlike [prompts](!!!TODO!!!) (instructions), [tools](!!!TODO!!!) (actions), or the [IF-LLM](!!!TODO!!!) (processor), they supply **evidence and content**.
+
+**Analogy:** Like a **cookbook or reference manual** in a kitchen, the chef consults it to ensure correct techniques and facts.
+
+**Example:** Using a digital file containing system-level processing policies (`system-policies-processing.md`) to ensure responses follow rules like:
+  - “Do not guess”
+  - “Provide structured output”
+  - “Disclose uncertainty”
+
+
+
+---
+
+###### Tools
+
+**Description:** External capabilities the [IF-LLM](!!!TODO!!!) can use to extend functionality (e.g., search, calculations, file access).
+
+**Purpose:** To obtain missing information, perform actions, or increase reliability beyond the model’s internal knowledge.
+
+**Role:** Tools are the **capabilities or instruments**. Unlike [prompts](!!!TODO!!!) (instructions), [knowledge files](!!!TODO!!!) (data), or the [IF-LLM](!!!TODO!!!) (processor), tools enable **interaction with the outside world or specialized functions**.
+
+**Analogy:** Like **kitchen equipment**, a stove, blender, or thermometer helps the chef do things they couldn’t do with just knowledge alone.
+
+**Examples**
+  - Using a web search tool to find current restaurant hours.
+  - Using a calculator tool to compute nutritional values.
+
+
+---
+
+##### Basic
+
+- [**Instruction-Following Large Language Model (IF-LLM)**](!!!TODO!!!) → interprets and executes instructions using the given context and available tools (e.g., [Commonly Used IF-LLMs](#common-if-llms)
+  - [**Prompt**](!!!TODO!!!) → tells the model what to do (i.e., instructions and context)
+    - [**Identity and Role**](!!!TODO!!!) → aligns the model’s behavior, tone, and decision-making with the intended use case and constraints (including audience and objective)
+    - [**Task**](!!!TODO!!!) → ensures the model executes the correct actions in an organized and logical order (including priorities and workflow)
+    - [**Context**](!!!TODO!!!) → improves accuracy, relevance, and grounding of the response (i.e., relevant information)
+    - [**Response Criteria**](!!!TODO!!!) → ensures output quality, consistency, and alignment with expectations (including rules and success criteria)
+    - [**Response Example**](!!!TODO!!!) → reduces ambiguity and improves alignment by showing a concrete reference
+  - [**Knowledge Files**](!!!TODO!!!) → provide reliable information (i.e., reusable context) (e.g., uploaded files)
+  - [**Tools**](!!!TODO!!!) → access external data and tools to extend the model's capabilities
+    - **Information Retrieval Tools** (includes citations)
+    - **Multimodal Access, Analysis, and Creation Tools** (e.g., text, images, audio, video)
+    - **File (Document) Access, Analysis, and Creation Tools**
+  - **Output** → response after executing the instructions using the given context and available tools
+
+**Analogy**: A **chef (IF-LLM)** follows a **recipe (prompt)**, uses a **cookbook (knowledge files)**, and operates **kitchen equipment (tools)** to produce a **meal (output)**.
+
+
+---
+
+###### Identity and Role
+
+**Description:** A grouped set of elements that define who the model is, who it serves, what it aims to achieve, and what matters most.
+
+**Purpose:** Aligns the model’s behavior, tone, and decision-making with the intended use case and constraints.
+
+**Role:** Unlike Task & Workflow (what to do) or Response Criteria (how to judge success), this group defines the **strategic framing and alignment** of the response.
+
+**Analogy:** Choosing the **chef type (identity/role), guest (audience), goal (objective), and cooking preferences (priorities)** before cooking begins.
+
+**Example:** “You are a financial advisor helping middle-income families (audience) reduce debt (objective), prioritizing clarity and practicality (priorities).”
+
+
+---
+
+###### Task
+
+**Description:** Defines the specific actions to perform and the sequence or steps to follow.
+
+**Purpose:** Ensures the model executes the correct actions in an organized and logical order.
+
+**Role:** Unlike Identity group (who/why) or Context (background), this defines **what to do and in what order**.
+
+**Analogy:** A **recipe with step-by-step instructions** for preparing a dish.
+
+**Example:** “Analyze the problem, break it into steps, and provide a step-by-step solution.”
+
+
+---
+
+###### Context
+
+**Description:** Provides supporting information, constraints, or background needed to complete the task accurately. May reference uploaded knowledge files.
+
+**Purpose:** Improves accuracy, relevance, and grounding of the response.
+
+**Role:** Unlike Task (instructions), context provides **supporting information and constraints** that inform how the task is performed.
+
+**Analogy:** Ingredients, kitchen conditions, or dietary restrictions available to the chef.
+
+**Example:** “The user has a monthly income of $3,000 and $10,000 in debt.”
+
+
+
+---
+
+###### Response Criteria
+
+**Description:** Defines the rules, constraints, and standards that determine whether the response is successful.
+
+**Purpose:** Ensures output quality, consistency, and alignment with expectations.
+
+**Role:** Unlike Task (what to do) or Structure (how to format), this defines **how good output is evaluated**.
+
+**Analogy:** Judging criteria in a **cooking competition** (taste, presentation, nutrition).
+
+**Example:** “Ensure the answer is accurate, concise, and easy to understand.”
+
+
+---
+
+###### Response Example
+
+**Description:** A sample output demonstrating what a correct or ideal response looks like.
+
+**Purpose:** Reduces ambiguity and improves alignment by showing a concrete reference.
+
+**Role:** Unlike Response Criteria (rules), this provides a **concrete demonstration of success**.
+
+**Analogy:** Showing a **finished plated dish** as a reference for what to create.
+
+**Example:**
+  - Input: “Explain budgeting”
+  - Output: “Budgeting is the process of tracking income and expenses to manage finances effectively.”
+            
+
+
+
 
 
 #### Prompt Anatomy
@@ -2412,6 +2601,11 @@ TBD
       - [Summary of Authoritative Sources](#summary-of-authoritative-sources-for-commonly-used-if-llms)
     - [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)
     - [Model Elements](!!!TODO!!!)
+      - Foundation
+      - Basic
+      - Intermediate
+      - Advanced
+      - 
     - [Prompt Anatomy](#prompt-anatomy)
       - [Identity & Role](#identity--role)
       - [Priorities](#priorities-2)
