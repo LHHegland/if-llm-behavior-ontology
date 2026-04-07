@@ -5,10 +5,11 @@
 
 ## **Table of Contents**
 
+- TO DO: [Unorganized Content](!!!TODO!!!)
 - [Features](#features)
 - [Background](#background)
-  - [What is an Instruction-Following Large Language Model (IF-LLM)?](!!!TODO!!!)
-  - [Challenges and Proposed Solution](!!!TODO!!!)
+  - [What is an Instruction-Following Large Language Model (IF-LLM)?](#what-is-an-instruction-following-large-language-model-if-llm)
+  - [Challenges and Proposed Solution](#current-challenges-and-proposed-solutions)
 - [Known Issues](#known-issues)
 - [Requirements](#requirements)
 - [Installation](#installation)
@@ -18,8 +19,8 @@
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
     - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
-    - [Common IF-LLMs](!!!TODO!!!)
-    - [Common IF-LLM Elements: Instructions and Context](!!!TODO!!!)
+    - [Common IF-LLMs](#common-if-llms)
+    - [Common IF-LLM Elements: Instructions and Context](#common-if-llm-elements-instructions-context-and-tools)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
     - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
   - [Purpose](#purpose)
@@ -34,136 +35,14 @@
 
 
 
+## NOT YET ORGANIZED
 
-
-NOT YET ORGANIZED
-TODO: Review then integrate or eliminate
-
----
-
-
-### Instruction Elements (Scaffolding)
-
-The scaffolding so far is as follows:
-- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
-  - **meta:** *provides cross-cutting rules and scaffolding about the ontology itself.* Meta captures naming rules, modeling conventions, global decision policies, ontology versioning, glossaries of meta-terms, and core primitives reused across domains.
-  - **tasks:** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
-  - **domains:** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
-  - **experts:** *shape how the model reasons about the task.* Experts encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
-  - **structures:** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
-  - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
-  - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
-  - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
-
-
----
-
-
-### Knowledge Entry Anatomy
-
-- Common Human Reference
-- Canonical Handles
-  - IDs
-  - Namespaced Tags
-- Alias Tags
-- Definition Summary / Purpose
-- Content Specific Fields
-
-### Knowledge File Anatomy
-
-#### File Header
-
-#### Indexes
-- Canonical Handles Index
-- Aliases Index
-
-#### Knowledge Header
-
-##### Knowledge Entries
-
-
-
-### Knowledge Entry Types
-
-#### Meta Entries
-
-## Processing Policies
-### Enforcement & Degradation Handling
-### Instruction Precedence
-### Safety, Privacy, and Refusals
-### Context
-#### Context & Ambiguity Handling
-#### Knowledge & Information Hierarchy
-### Hallucination & Fabrication
-### Defaults
-#### Tasks
-##### Priorities
-##### Identity
-##### Audience
-##### Success Criteria (Quality Bar)
-#### Domains
-##### Deterministic Defaults (US)
-#### Experts
-##### Reasoning & Uncertainty
-#### Tools
-##### Tool Usage
-##### Tool Constraints (Negative Rules)
-#### Structures
-##### Output Structure Sections
-##### Output Structure Flexibility
-
-### Priorities
-TODO: Outline priorities
-
-### Knowledge
-TODO: Outline knowledge, especially types and significance toward objectives and priorities.
-
-### Work in Progress
-this IF-LLM Behavior Ontology (IFLLMBO) is intended to be a lightweight, LLM-legible semantic scaffolding system for organizing knowledge files and entries that ensure tools are more likely to offer results that are more accurate, reliable, relevant, specific, clear, practical, fair, and efficient.
-
-It prioritizes human-readable structure, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent reasoning and behavior across AI-assisted workflows.
-
-Ideation and Exploration
-
-Clarify Prompt Parameter Breakdown
-it's
-Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
-
-
-
-The scaffolding so far is as follows:
-- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
-  - **[knowledge files](#knowledge-files)**
-    - **[policies](#policies):** *provides cross-cutting rules and scaffolding about the ontology itself.*
-      - **[governance](#policies-governance):** other policies requiring human responsibility.
-      - **[knowledge entry](#policies-knowledge-entry):** naming rules, modeling conventions, versioning, and core primitives.
-      - **[processing](#policies-processing):** global decision policies.
-    - **[prompt templates](#prompt-templates):** *offer reusable, copyable prompt pattern templates ensuring more consistent use and improved results.*
-      - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
-      - **[domains](#domains-1):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
-      - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
-      - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
-      - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
-      - **[examples](#examples):** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
-    - **[configurations](#configurations):** *compose a complete behavioral profile.* Configurations bind tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
-    - **[orchestrators](#orchestrators):** TODO *orchestrates activity across multiple configurations.* Orchestrators coordinate tasks among multiple configurations with unique tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts. Orchestrators validate results between each configuration to improve results.
-
-
-## END NOT YET ORGANIZED
-
-
----
-
-
----
+TODO: Review then integrate or eliminate [content that is not yet organized](!!!TODO!!!)
 
 
 ## **Features**
 
 TODO
-
-
----
 
 
 ## **Background**
@@ -172,6 +51,7 @@ TODO: Verify hyperlinks
 
 
 ### What is an Instruction-Following Large Language Model (IF-LLM)?
+
 
 #### A Well-Trained Assistant
 
@@ -257,6 +137,8 @@ Even though IF-LLMs are powerful:
 * They can sometimes give **incorrect or outdated information**
 * They work best when **your instructions are clear**
 
+
+---
 
  ### Current Challenges and Proposed Solutions
 
@@ -2473,9 +2355,12 @@ Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0
 
 TBD
 
+- TO DO: [Unorganized Content](!!!TODO!!!)
 - [File Header Metadata](#file-header-1)
 - [Features](#features)
 - [Background](#background)
+  - [What is an Instruction-Following Large Language Model (IF-LLM)?](#what-is-an-instruction-following-large-language-model-if-llm)
+  - [Challenges and Proposed Solution](#current-challenges-and-proposed-solutions)
 - [Known Issues](#known-issues)
 - [Requirements](#requirements)
 - [Installation](#installation)
@@ -2485,7 +2370,8 @@ TBD
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
     - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
-    - [Commonly Used IF-LLMs](#commonly-used-if-llms)
+    - [Common IF-LLMs](#common-if-llms)
+    - [Common IF-LLM Elements: Instructions and Context](#common-if-llm-elements-instructions-context-and-tools)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
     - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
   - [Purpose](#purpose)
@@ -2606,3 +2492,124 @@ TBD
 - 2026-02-15T08:49Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated Roadmap section
 - 2026-02-13T20:24Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Renamed repository and scaffolding
 - 2026-02-01T06:50Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Created repository and README.md from [IF-LLM Development Repository Template](https://github.com/LHHegland/if-llm-dev-repo-template)
+
+
+
+
+
+
+
+
+
+
+
+## NOT YET ORGANIZED
+
+### Instruction Elements (Scaffolding)
+
+The scaffolding so far is as follows:
+- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
+  - **meta:** *provides cross-cutting rules and scaffolding about the ontology itself.* Meta captures naming rules, modeling conventions, global decision policies, ontology versioning, glossaries of meta-terms, and core primitives reused across domains.
+  - **tasks:** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+  - **domains:** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+  - **experts:** *shape how the model reasons about the task.* Experts encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+  - **structures:** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+  - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+  - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+  - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+
+
+---
+
+
+### Knowledge Entry Anatomy
+
+- Common Human Reference
+- Canonical Handles
+  - IDs
+  - Namespaced Tags
+- Alias Tags
+- Definition Summary / Purpose
+- Content Specific Fields
+
+### Knowledge File Anatomy
+
+#### File Header
+
+#### Indexes
+- Canonical Handles Index
+- Aliases Index
+
+#### Knowledge Header
+
+##### Knowledge Entries
+
+
+
+### Knowledge Entry Types
+
+#### Meta Entries
+
+## Processing Policies
+### Enforcement & Degradation Handling
+### Instruction Precedence
+### Safety, Privacy, and Refusals
+### Context
+#### Context & Ambiguity Handling
+#### Knowledge & Information Hierarchy
+### Hallucination & Fabrication
+### Defaults
+#### Tasks
+##### Priorities
+##### Identity
+##### Audience
+##### Success Criteria (Quality Bar)
+#### Domains
+##### Deterministic Defaults (US)
+#### Experts
+##### Reasoning & Uncertainty
+#### Tools
+##### Tool Usage
+##### Tool Constraints (Negative Rules)
+#### Structures
+##### Output Structure Sections
+##### Output Structure Flexibility
+
+### Priorities
+TODO: Outline priorities
+
+### Knowledge
+TODO: Outline knowledge, especially types and significance toward objectives and priorities.
+
+### Work in Progress
+this IF-LLM Behavior Ontology (IFLLMBO) is intended to be a lightweight, LLM-legible semantic scaffolding system for organizing knowledge files and entries that ensure tools are more likely to offer results that are more accurate, reliable, relevant, specific, clear, practical, fair, and efficient.
+
+It prioritizes human-readable structure, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent reasoning and behavior across AI-assisted workflows.
+
+Ideation and Exploration
+
+Clarify Prompt Parameter Breakdown
+it's
+Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
+
+
+
+The scaffolding so far is as follows:
+- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
+  - **[knowledge files](#knowledge-files)**
+    - **[policies](#policies):** *provides cross-cutting rules and scaffolding about the ontology itself.*
+      - **[governance](#policies-governance):** other policies requiring human responsibility.
+      - **[knowledge entry](#policies-knowledge-entry):** naming rules, modeling conventions, versioning, and core primitives.
+      - **[processing](#policies-processing):** global decision policies.
+    - **[prompt templates](#prompt-templates):** *offer reusable, copyable prompt pattern templates ensuring more consistent use and improved results.*
+      - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+      - **[domains](#domains-1):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+      - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+      - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+      - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+      - **[examples](#examples):** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+    - **[configurations](#configurations):** *compose a complete behavioral profile.* Configurations bind tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+    - **[orchestrators](#orchestrators):** TODO *orchestrates activity across multiple configurations.* Orchestrators coordinate tasks among multiple configurations with unique tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts. Orchestrators validate results between each configuration to improve results.
+
+
+## END NOT YET ORGANIZED
