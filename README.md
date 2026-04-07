@@ -7,6 +7,8 @@
 
 - [Features](#features)
 - [Background](#background)
+  - [What is an Instruction-Following Large Language Model (IF-LLM)?](!!!TODO!!!)
+  - [Challenges and Proposed Solution](!!!TODO!!!)
 - [Known Issues](#known-issues)
 - [Requirements](#requirements)
 - [Installation](#installation)
@@ -16,7 +18,8 @@
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
     - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
-    - [Commonly Used IF-LLMs](#commonly-used-if-llms)
+    - [Common IF-LLMs](!!!TODO!!!)
+    - [Common IF-LLM Elements: Instructions and Context](!!!TODO!!!)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
     - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
   - [Purpose](#purpose)
@@ -126,6 +129,26 @@ Clarify Prompt Parameter Breakdown
 it's
 Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
 
+
+
+The scaffolding so far is as follows:
+- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
+  - **[knowledge files](#knowledge-files)**
+    - **[policies](#policies):** *provides cross-cutting rules and scaffolding about the ontology itself.*
+      - **[governance](#policies-governance):** other policies requiring human responsibility.
+      - **[knowledge entry](#policies-knowledge-entry):** naming rules, modeling conventions, versioning, and core primitives.
+      - **[processing](#policies-processing):** global decision policies.
+    - **[prompt templates](#prompt-templates):** *offer reusable, copyable prompt pattern templates ensuring more consistent use and improved results.*
+      - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+      - **[domains](#domains-1):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+      - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+      - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+      - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+      - **[examples](#examples):** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+    - **[configurations](#configurations):** *compose a complete behavioral profile.* Configurations bind tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+    - **[orchestrators](#orchestrators):** TODO *orchestrates activity across multiple configurations.* Orchestrators coordinate tasks among multiple configurations with unique tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts. Orchestrators validate results between each configuration to improve results.
+
+
 ## END NOT YET ORGANIZED
 
 
@@ -147,22 +170,103 @@ TODO
 
 TODO: Verify hyperlinks
 
-The goal is to build a lightweight semantic scaffolding system for organizing instructions and context in structured knowledge files; instructions and context guiding instruction-following large language models (IF-LLMs) toward [high-priority results](#decision-making-information-quality-criteria-priorities). The scaffolding helping organize instructions and context must also align with these priorities. It must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology. The scaffolding so far is as follows:
-- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
-  - **[knowledge files](#knowledge-files)**
-    - **[policies](#policies):** *provides cross-cutting rules and scaffolding about the ontology itself.*
-      - **[governance](#policies-governance):** other policies requiring human responsibility.
-      - **[knowledge entry](#policies-knowledge-entry):** naming rules, modeling conventions, versioning, and core primitives.
-      - **[processing](#policies-processing):** global decision policies.
-    - **[prompt templates](#prompt-templates):** *offer reusable, copyable prompt pattern templates ensuring more consistent use and improved results.*
-      - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
-      - **[domains](#domains-1):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
-      - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
-      - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
-      - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
-      - **[examples](#examples):** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
-    - **[configurations](#configurations):** *compose a complete behavioral profile.* Configurations bind tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
-    - **[orchestrators](#orchestrators):** TODO *orchestrates activity across multiple configurations.* Orchestrators coordinate tasks among multiple configurations with unique tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts. Orchestrators validate results between each configuration to improve results.
+
+### What is an Instruction-Following Large Language Model (IF-LLM)?
+
+#### A Well-Trained Assistant
+
+Imagine you’re working with a really attentive assistant:
+
+* You say: *“Write a polite email asking for a refund.”*
+* Or: *“Explain photosynthesis like I’m in 5th grade.”*
+* Or even: *“Give me a grocery list for a healthy week on a budget.”*
+
+A good assistant listens carefully, understands what you mean, and responds in a way that matches your request.
+
+An **instruction-following large language model (IF-LLM) does something very similar**, but using artificial intelligence.
+
+
+---
+
+#### A Simple Analogy
+
+Think of an IF-LLM like:
+
+> A giant library + a helpful librarian
+> who listens to your question and quickly pulls together an answer in your preferred style.
+
+
+---
+
+#### **“Language Model” = A Pattern Learner for Words**
+
+An IF-LLM is trained on massive amounts of text—books, websites, conversations—so it learns:
+
+* How people use language
+* How ideas are explained
+* What answers typically look like
+
+It doesn’t “think” like a human, but it’s very good at recognizing patterns in language.
+
+
+---
+
+#### **“Instruction-Following” = It Listens to What You Ask**
+
+What makes this type of model special is that it’s trained to:
+
+* Understand **instructions or requests**
+* Adjust its response based on **your goal, tone, and context**
+
+So instead of just predicting text, it tries to **do what you asked it to do**.
+
+
+---
+
+#### Real-Life Examples
+
+Here’s how people across different communities might use an IF-LLM:
+
+* **Job seekers:** “Help me rewrite my resume for a warehouse job.”
+* **Parents:** “Explain algebra homework in simple terms.”
+* **Small business owners:** “Write a social media post promoting my food truck.”
+* **Healthcare workers:** “Summarize this patient info in plain language.”
+
+In each case, the model adapts to the instruction.
+
+
+---
+
+#### Why It Matters
+
+From an education and workforce perspective, IF-LLMs can:
+
+* Support **learning at any age or level**
+* Help people **communicate more effectively**
+* Save time on everyday tasks (writing, planning, explaining)
+* Act like an **on-demand tutor or assistant**
+
+
+---
+
+#### Important to Know
+
+Even though IF-LLMs are powerful:
+
+* They **don’t truly understand** things like humans do
+* They can sometimes give **incorrect or outdated information**
+* They work best when **your instructions are clear**
+
+
+ ### Current Challenges and Proposed Solutions
+
+Currently, [popular instruction-following large language models (IF-LLMs)](#commonly-used-if-llms) have demonstrated [various vulnerabilities](#common-if-llm-failure-modes), especially related to producing results that satisfy [commonly-accepted decision-making information quality criteria](#decision-making-information-quality-criteria-priorities).
+
+After [exploring the circumstances and challenges](#assumptions), it seems that more intentionally and consistently using governance, information policies, processing rules, plus reusable instructions and context (information) for commonly needed requests could reduce the likelihood of undesirable results.
+
+Therefore, the **goal of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is to build a lightweight semantic scaffolding system for organizing instructions and context in structured data files to better guide IF-LLMs toward responses that satisfy common decision-making information quality criteria. The scaffolding should build from [foundational IF-LLM elements](!!!TODO!!!). The scaffolding must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology.
+
+Failure modes will very likely evolve over time, requiring instructions and context to be routinely tested, their results evaluated, instructions and context subsequently refined periodically. Also, this scaffolding enables system architects and solution developers to organize instructions and context for more complex objectives to empower greater efficiency, consistency, and auditability.
 
 
 ---
@@ -284,9 +388,9 @@ More detailed information about these criteria, along with authoritative sources
 
 ---
 
-#### Commonly Used IF-LLMs
+#### Common IF-LLMs
 
-Currently, the following are the commonly used IF-LLMs.  More detailed information with authoritative sources appear in the [Appendix > IF-LLM Information > Commonly Used IF-LLMs](#commonly-used-if-llms-1).
+Currently, the following are commonly used information-following large language models (IF-LLMs).  More detailed information with authoritative sources appear in the [Appendix > IF-LLM Information > Commonly Used IF-LLMs](#commonly-used-if-llms-1).
 
 - **[OpenAI ChatGPT](https://chat.openai.com/)**
 - **[Google Gemini](https://gemini.google.com/)**
@@ -295,6 +399,86 @@ Currently, the following are the commonly used IF-LLMs.  More detailed informati
 - **[Claude (Anthropic)](https://claude.ai/)**
 - **[Meta AI (Meta Platforms)](https://www.meta.ai/)**
 - **[Grok (xAI)](https://grok.x.ai/)**
+
+
+---
+
+#### Common IF-LLM Elements: Instructions, Context, and Tools
+
+- [**Instruction-Following Large Language Model (IF-LLM)**](!!!TODO!!!) → interprets and executes instructions using the given context and available tools (e.g., [Commonly Used IF-LLMs](!!!TODO!!!)
+  - [**Prompt**](!!!TODO!!!) → tells the model what to do (i.e., instructions and context)
+  - [**Knowledge Files**](!!!TODO!!!) → provide reliable information (i.e., reusable context)
+  - [**Tools**](!!!TODO!!!) → access external data and tools to extend the model's capabilities
+- **Output** → response after executing the instructions using the given context and available tools
+
+**Analogy**: A **chef (IF-LLM)** follows a **recipe (prompt)**, uses a **cookbook (knowledge files)**, and operates **kitchen equipment (tools)** to produce a **meal (output)**.
+
+More detailed information is available in the [Appendices](#appendices) > [IF-LLM Information](#appendix-if-llm-information) > [Common Model Elements](!!!TODO!!!).
+
+
+---
+
+##### Instruction-Following Large Language Model (IF-LLM)
+
+**Description:** A software system (like ChatGPT) designed to interpret and execute instructions provided in prompts.
+
+**Purpose:** To process user instructions and generate useful, relevant, and structured outputs.
+
+**Role:** The IF-LLM is the **executor**. Unlike prompts (instructions), knowledge files (information), and tools (capabilities), the IF-LLM is the entity that **uses all of them together**.
+
+**Analogy:** Like a **chef in a kitchen**, follows recipes (prompts), uses ingredients (knowledge), and operates equipment (tools).
+
+**Example:** “ChatGPT reads your request for a grilled cheese recipe and produces step-by-step instructions.”
+
+
+---
+
+##### **Prompt**
+
+**Description:** The set of instructions, context, and constraints given to the IF-LLM.
+
+**Purpose:** To guide the model’s behavior, define the task, and shape the output.
+
+**Role:** The prompt is the **director or script**. Unlike the IF-LLM (executor), knowledge files (data), or tools (actions), the prompt defines **what should be done and how**.
+
+**Analogy:** Like a **recipe given to a chef**, tells the chef what dish to make, how to prioritize taste, safety, and simplicity.
+
+**Example:** “You are a well-respected chef… Describe how to make a grilled cheese sandwich prioritizing safety, taste, and affordability.”
+
+
+---
+
+##### **Knowledge Files**
+
+**Description:** External or provided documents/data that the IF-LLM can use as reference (e.g., your uploaded `system-policies.md`).
+
+**Purpose:** To provide **grounded, authoritative information** that improves accuracy and reliability.
+
+**Role:** Knowledge files are the **source of truth**. Unlike prompts (instructions), tools (actions), or the IF-LLM (processor), they supply **evidence and content**.
+
+**Analogy:** Like a **cookbook or reference manual** in a kitchen, the chef consults it to ensure correct techniques and facts.
+
+**Example:** Using a digital file containing system-level policies (``system-policies.md`) to ensure responses follow rules like:
+  - “Do not guess”
+  - “Provide structured output”
+  - “Disclose uncertainty”
+
+
+---
+
+##### **Tools**
+
+**Description:** External capabilities the IF-LLM can use to extend functionality (e.g., search, calculations, file access).
+
+**Purpose:** To obtain missing information, perform actions, or increase reliability beyond the model’s internal knowledge.
+
+**Role:** Tools are the **capabilities or instruments**. Unlike prompts (instructions), knowledge files (data), or the IF-LLM (processor), tools enable **interaction with the outside world or specialized functions**.
+
+**Analogy:** Like **kitchen equipment**, a stove, blender, or thermometer helps the chef do things they couldn’t do with just knowledge alone.
+
+**Examples**
+  - Using a web search tool to find current restaurant hours.
+  - Using a calculator tool to compute nutritional values.
 
 
 ---
@@ -2324,6 +2508,7 @@ TBD
     - [Commonly Used IF-LLMs](#commonly-used-if-llms-1)
       - [Summary of Authoritative Sources](#summary-of-authoritative-sources-for-commonly-used-if-llms)
     - [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)
+    - [Model Elements](!!!TODO!!!)
     - [Prompt Anatomy](#prompt-anatomy)
       - [Identity & Role](#identity--role)
       - [Priorities](#priorities-2)
