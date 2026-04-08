@@ -321,6 +321,11 @@ This and the following sections briefly describe the most important elements of 
 
 The following sections will briefly expand on these foundational IF-LLM elements.
 
+**Note**
+- IF-LLMs typically separate and process system, developer, and user instructions per the [Instruction and Context Authority Hierarchy](#instruction-and-context-authority-hierarchy). This is more evident when using IF-LLMs via Application Programming Interface (APIs) versus web or chat interfaces. Meaning, instructions have three layers: system, developer, and user.
+- Instructions and context may come from prompt input, knowledge files (from system architects, solution developers, or users), tool results (including retrieved and generated content), conversation history, and stored memories from other conversations. Meaning, user input, knowledge files, and examples are simply three of many important channels for context/grounding, which also include tool results, retrieved and generated content, conversation history, plus stored memories.
+- Examples are critical prompt elements, often called "few-shot examples", that help guide IF-LLMs toward desirable responses.
+
 More detailed information is available in the [Appendices > IF-LLM Information > Common Model Elements](#common-elements-instructions-context-and-tools).
 
 
@@ -927,93 +932,53 @@ IF-LLMs receive instructions through either user prompts (e.g., chat interfaces 
 
 #### Common Elements: Instructions, Context, and Tools
 
-A brief foundational summary of common instruction-following large language model (IF-LLM) elements was presented in the [Project Notes > Foundations > Common IF-LLM Elements](#common-if-llm-elements-instructions-context-and-tools). The following sections document [basic](!!!TODO!!!), [intermediate](!!!TODO!!!), and [advanced IF-LLM elements](!!!TODO!!!).
+A brief foundational summary of common instruction-following large language model (IF-LLM) elements was presented in the [Project Notes](#if-llm-bo-project-notes) > [Foundations](#foundations) > [Common IF-LLM Elements: Instructions and Context](#common-if-llm-elements-instructions-context-and-tools). The following sections expand the foundational elements into [basic](!!!TODO!!!), [intermediate](!!!TODO!!!), and [advanced IF-LLM elements](!!!TODO!!!).
 
-
----
-
-##### Foundations
-
-- [**Instruction-Following Large Language Model (IF-LLM)**](!!!TODO!!!) → interprets and executes instructions using the given context and available tools (e.g., [Commonly Used IF-LLMs](#common-if-llms)
-  - [**Prompt**](!!!TODO!!!) → tells the model what to do (i.e., instructions and context)
-  - [**Knowledge Files**](!!!TODO!!!) → provide reliable information (i.e., reusable context) (e.g., uploaded files)
-  - [**Tools**](!!!TODO!!!) → access external data and tools to extend the model's capabilities
+As stated in the previous section, the foundational IF-LLM elements are as follows:
+- [**Instruction-Following Large Language Model (IF-LLM)**](#instruction-following-large-language-model-if-llm) → interprets and executes instructions using the given context and available tools (e.g., [Common IF-LLMs](#common-if-llms))
+  - [**Prompt**](#prompt) → tells the model what to do (i.e., instructions and context)
+  - [**Knowledge Files**](#knowledge-files) → provide reliable information (i.e., saved, reusable instructions and context)
+  - [**Tools**](#tools) → access external data and tools to extend the model's capabilities
   - **Output** → response after executing the instructions using the given context and available tools
 
 **Analogy**: A **chef (IF-LLM)** follows a **recipe (prompt)**, uses a **cookbook (knowledge files)**, and operates **kitchen equipment (tools)** to produce a **meal (output)**.
 
+**Note**
+- Models typically separate and process system, developer, and user instructions per the [Instruction and Context Authority Hierarchy](#instruction-and-context-authority-hierarchy). This is more evident when using IF-LLM via APIs versus web interfaces. Meaning, instructions have three layers: system, developer, and user.
+- Instructions and context may come from prompt input, knowledge files (from system architects, solution developers, or users), tool results (including retrieved and generated content), conversation history, and stored memories from other conversations. Meaning, user input, knowledge files, and examples are simply three of many important channels for context/grounding, which also include tool results, retrieved and generated content, conversation history, plus stored memories.
+- Examples are critical prompt elements, often called "few-shot examples", that help guide  models toward desirable responses.
 
----
-
-###### Instruction-Following Large Language Model (IF-LLM)
-
-**Description:** A software system (e.g., [common IF-LLMs](#common-if-llms)) designed to interpret and execute instructions and context provided in [prompts](!!!TODO!!!).
-
-**Purpose:** To process user instructions and context then generate useful, relevant, and structured outputs.
-
-**Role:** The IF-LLM is the **executor**. Unlike [prompts](!!!TODO!!!) (instructions and context), [knowledge files](!!!TODO!!!) (stored, reusable context), and [tools](!!!TODO!!!) (capabilities), the IF-LLM is the entity that **uses all of them together**.
-
-**Analogy:** Like a **chef in a kitchen**, follows recipes (prompts), uses ingredients (context (e.g., information, knowledge)), and operates equipment (tools).
-
-**Example:** “ChatGPT reads your request for a grilled cheese recipe and produces step-by-step instructions.”
-
-
----
-
-###### Prompt
-
-**Description:** The set of instructions, context, and constraints given to the [IF-LLM](!!!TODO!!!).
-
-**Purpose:** To guide the model’s behavior, define the task, and shape the output.
-
-**Role:** The prompt is the **director or script**. Unlike the [IF-LLM](!!!TODO!!!) (executor), [knowledge files](!!!TODO!!!) (data), or [tools](!!!TODO!!!) (actions), the prompt defines **what should be done and how**.
-
-**Analogy:** Like a **recipe given to a chef**, tells the chef what dish to make, how to prioritize taste, safety, and simplicity.
-
-**Example:** “You are a well-respected chef… Describe how to make a grilled cheese sandwich prioritizing safety, taste, and affordability.”
-
-
----
-
-###### Knowledge Files
-
-**Description:** External or provided documents/data that the [IF-LLM](!!!TODO!!!) can use as reference (e.g., `system-policies-processing.md`).
-
-**Purpose:** To provide **grounded, authoritative information** that improves accuracy and reliability.
-
-**Role:** Knowledge files are the **source of truth**. Unlike [prompts](!!!TODO!!!) (instructions), [tools](!!!TODO!!!) (actions), or the [IF-LLM](!!!TODO!!!) (processor), they supply **evidence and content**.
-
-**Analogy:** Like a **cookbook or reference manual** in a kitchen, the chef consults it to ensure correct techniques and facts.
-
-**Example:** Using a digital file containing system-level processing policies (`system-policies-processing.md`) to ensure responses follow rules like:
-  - “Do not guess”
-  - “Provide structured output”
-  - “Disclose uncertainty”
-
-
-
----
-
-###### Tools
-
-**Description:** External capabilities the [IF-LLM](!!!TODO!!!) can use to extend functionality (e.g., search, calculations, file access).
-
-**Purpose:** To obtain missing information, perform actions, or increase reliability beyond the model’s internal knowledge.
-
-**Role:** Tools are the **capabilities or instruments**. Unlike [prompts](!!!TODO!!!) (instructions), [knowledge files](!!!TODO!!!) (data), or the [IF-LLM](!!!TODO!!!) (processor), tools enable **interaction with the outside world or specialized functions**.
-
-**Analogy:** Like **kitchen equipment**, a stove, blender, or thermometer helps the chef do things they couldn’t do with just knowledge alone.
-
-**Examples**
-  - Using a web search tool to find current restaurant hours.
-  - Using a calculator tool to compute nutritional values.
-
-
----
 
 ##### Basic
 
 - [**Instruction-Following Large Language Model (IF-LLM)**](!!!TODO!!!) → interprets and executes instructions using the given context and available tools (e.g., [Commonly Used IF-LLMs](#common-if-llms)
+  - Instructions (Sources Listed in Order of Authority)
+    - System
+    - Developer
+    - User
+  - Context and Grounding Evidence (Listed in Order of Authority)
+    - System
+    - Developer
+    - User
+    - Knowledge Files
+    - User-Uploaded Files
+    - Tool Inputs and Returns (including retrieved and generated content)
+    - User Conversation History
+    - User Stored Model Memories 
+    - General Model Knowledge
+
+TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authority as outlined below, including how instructions are granted authority, critical phrases used to grant/assign authority, plus 3 to 5 examplesto help users understand the value of this hierarchy.
+1. System Instructions and Context (Global Policies and Context) (e.g., knowledge entries with the highest authority (i.e., meta knowledge entries))
+2. Developer Instructions and Context (e.g., knowledge entries with the second-highest authority, developer implemented knowledge entries)
+3. User Instructions and Context (i.e., the current conversation via chat or API, which could reference existing knowledge entries)
+4. Knowledge Files (and their collection of entries)
+5. User-Uploaded Files (e.g., user-uploaded files, which are considered user knowledge files containing user knowledge injuries)
+6. Tool Outputs
+7. General Model Knowledge
+
+IF-LLMs receive instructions through either user prompts (e.g., chat interfaces or APIs) or developer instructions. Users and developers can store reusable instructions and context in knowledge entries of various types. Knowledge entries can be organized into knowledge files.
+
+
   - [**Prompt**](!!!TODO!!!) → tells the model what to do (i.e., instructions and context)
     - [**Identity and Role**](!!!TODO!!!) → aligns the model’s behavior, tone, and decision-making with the intended use case and constraints (including audience and objective)
     - [**Task**](!!!TODO!!!) → ensures the model executes the correct actions in an organized and logical order (including priorities and workflow)
