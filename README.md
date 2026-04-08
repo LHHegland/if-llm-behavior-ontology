@@ -1,6 +1,6 @@
 # Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) (*README.md*)
 
-**PURPOSE:** **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
+**PURPOSE:** The **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for organizing [instruction-following large language model (IF-LLM) elements](#common-if-llm-elements-instructions-context-and-tools) to guide [IF-LLMs](#common-if-llms) toward [higher-quality responses](#decision-making-information-quality-criteria-priorities). IF-LLM-BO emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across objectives, workflows, contexts, and audiences.
 
 
 ## **Table of Contents**
@@ -38,7 +38,7 @@
 
 ## NOT YET ORGANIZED
 
-TODO: Review then integrate or eliminate [content that is not yet organized](!!!TODO!!!)
+TODO: Review then integrate or eliminate [content that is not yet organized](#not-yet-organized-1)
 
 
 ## **Features**
@@ -143,7 +143,7 @@ Even though IF-LLMs are powerful:
 
  ### Current Challenges and Proposed Solutions
 
-Currently, [popular instruction-following large language models (IF-LLMs)](#common-if-llms) have demonstrated [various vulnerabilities](#common-if-llm-failure-modes), especially when producing results intended to satisfy [commonly-accepted decision-making information quality criteria](#decision-making-information-quality-criteria-priorities).
+As of March 2026, [popular instruction-following large language models (IF-LLMs)](#common-if-llms) have demonstrated [various vulnerabilities](#common-if-llm-failure-modes), especially when producing results intended to satisfy [commonly-accepted decision-making information quality criteria](#decision-making-information-quality-criteria-priorities).
 
 After [exploring the circumstances and challenges](#assumptions), it seems that more intentionally and consistently using governance, information policies, processing rules, plus reusable instructions and context (information) for common objectives could reduce the likelihood of undesirable results.
 
@@ -217,34 +217,39 @@ NONE — no configuration is required.
       1. Overwrite the variable input placeholders with your input data (i.e., `<variable input placeholder>`) (e.g., `<full name>` → `Pat Smith`, `<topic>` → `entomology`, `<objective>` → `better understand the risks to human health from flying insects`, `<audience>` → `average people from the many, widespread, and diverse communities throughout the United States of America today`).
       1. Submit your prompt to the IF-LLM.
 
-
-**TIPS:** Refer to the following documentation and tools to efficiently develop prompts delivering accurate, reliable, relevant, specific, clear, practical, fair, and efficient results for your users:
-- [ChatGPT Prompt Engineering Best Practices](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt)
-- [How do I create a good prompt for an AI model?](https://help.openai.com/en/articles/4936848-how-do-i-create-a-good-prompt-for-an-ai-model)
-- [OpenAI Prompting Guide](https://platform.openai.com/docs/guides/prompting)
-- [OpenAI Prompt Examples)](https://platform.openai.com/docs/examples)
-- [OpenAI Prompt Optimizer Tool](https://platform.openai.com/chat/edit?optimize=true)
-- [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
-- [OpenAI Reasoning Best Practices](https://platform.openai.com/docs/guides/reasoning-best-practices)
-- [OpenAI GPT-5 Prompting Guide](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
-
-
 ---
 
 
 ## **IF-LLM-BO Project Notes**
-The following sections contain notes related to the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.
+
+The following sections contain notes related to the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project:
+- [Foundations](#foundations)
+  - [Assumptions](#assumptions)
+  - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
+  - [Common IF-LLMs](#common-if-llms)
+  - [Common IF-LLM Elements: Instructions and Context](#common-if-llm-elements-instructions-context-and-tools)
+  - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
+  - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
+- [Purpose](#purpose)
+- [Objectives](#objectives)
+- [Governance, Policies, Rules](#governance-policies-and-rules)
+- [Prompt Templates, Orchestrators, Configurations](#prompt-templates-orchestrators-configurations)
 
 
 ---
-
 
 ### Foundations
-The following sections describe the foundations grounding the IF-LLM-BO project.
+
+The following sections describe the foundations grounding the IF-LLM-BO project:
+- [Assumptions](#assumptions)
+- [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
+- [Common IF-LLMs](#common-if-llms)
+- [Common IF-LLM Elements: Instructions and Context](#common-if-llm-elements-instructions-context-and-tools)
+- [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
+- [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
 
 
 ---
-
 
 #### Assumptions
 
@@ -262,9 +267,9 @@ IF-LLMs produce results that are likely considered when making future decisions.
 
 #### Decision-Making Information Quality Criteria (Priorities)
 
-Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. Therefore, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. Meaning, the instructions and context guiding IF-LLMs — especially the system-level policies — should reflect and reinforce these priorities.
+[Instruction-following large language models (IF-LLMs)](#common-if-llms) are often used to generate information that can influence decisions impacting people and other systems. Because of this, the responses they produce should meet clear and well-defined quality standards. Therefore, IF-LLMs should prioritize these quality standards according to their ranked importance. Any trade-offs should be disclosed to users. Meaning, the [instructions and context guiding IF-LLMs](#common-if-llm-elements-instructions-context-and-tools) — especially the system-level policies — should reflect and reinforce these priorities.
 
-The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making. Each definition is written to answer a practical question: *"What does this mean for everyday decision-making?"*
+The priorities listed below identify the key criteria that information should have in order to reliably support decision-making. Each definition answers a practical question: *"What does this mean for everyday decision-making?"*
 
  1. **Auditability:** source of information, how information was changed, and who handled information can be identified.
  2. **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
@@ -289,7 +294,7 @@ More detailed information about these criteria, along with authoritative sources
 
 #### Common IF-LLMs
 
-Currently, the following are commonly used information-following large language models (IF-LLMs).  More detailed information with authoritative sources appear in the [Appendix > IF-LLM Information > Commonly Used IF-LLMs](#commonly-used-if-llms-1).
+As of March 2026, the following are commonly used information-following large language models (IF-LLMs).  More detailed information with authoritative sources appear in the [Appendix > IF-LLM Information > Commonly Used IF-LLMs](#commonly-used-if-llms).
 
 - **[OpenAI ChatGPT](https://chat.openai.com/)**
 - **[Google Gemini](https://gemini.google.com/)**
@@ -304,22 +309,26 @@ Currently, the following are commonly used information-following large language 
 
 #### Common IF-LLM Elements: Instructions, Context, and Tools
 
-- [**Instruction-Following Large Language Model (IF-LLM)**](!!!TODO!!!) → interprets and executes instructions using the given context and available tools (e.g., [Commonly Used IF-LLMs](!!!TODO!!!)
-  - [**Prompt**](!!!TODO!!!) → tells the model what to do (i.e., instructions and context)
-  - [**Knowledge Files**](!!!TODO!!!) → provide reliable information (i.e., reusable context)
-  - [**Tools**](!!!TODO!!!) → access external data and tools to extend the model's capabilities
-- **Output** → response after executing the instructions using the given context and available tools
+This and the following sections briefly describe the most important elements of instruction-following large language models (IF-LLMs).
+
+- [**Instruction-Following Large Language Model (IF-LLM)**](#instruction-following-large-language-model-if-llm) → interprets and executes instructions using the given context and available tools (e.g., [Common IF-LLMs](#common-if-llms))
+  - [**Prompt**](#prompt) → tells the model what to do (i.e., instructions and context)
+  - [**Knowledge Files**](#knowledge-files) → provide reliable information (i.e., saved, reusable instructions and context)
+  - [**Tools**](#tools) → access external data and tools to extend the model's capabilities
+  - **Output** → response after executing the instructions using the given context and available tools
 
 **Analogy**: A **chef (IF-LLM)** follows a **recipe (prompt)**, uses a **cookbook (knowledge files)**, and operates **kitchen equipment (tools)** to produce a **meal (output)**.
 
-More detailed information is available in the [Appendices](#appendices) > [IF-LLM Information](#appendix-if-llm-information) > [Common Model Elements](!!!TODO!!!).
+The following sections will briefly expand on these foundational IF-LLM elements.
+
+More detailed information is available in the [Appendices > IF-LLM Information > Common Model Elements](#common-elements-instructions-context-and-tools).
 
 
 ---
 
 ##### Instruction-Following Large Language Model (IF-LLM)
 
-**Description:** A software system (like ChatGPT) designed to interpret and execute instructions provided in prompts.
+**Description:** A software system (e.g., [common IF-LLMs](#common-if-llms)) designed to interpret and execute instructions provided in prompts.
 
 **Purpose:** To process user instructions and generate useful, relevant, and structured outputs.
 
@@ -327,7 +336,7 @@ More detailed information is available in the [Appendices](#appendices) > [IF-LL
 
 **Analogy:** Like a **chef in a kitchen**, follows recipes (prompts), uses ingredients (knowledge), and operates equipment (tools).
 
-**Example:** “ChatGPT reads your request for a grilled cheese recipe and produces step-by-step instructions.”
+**Example:** “Your favorite IF-LLM reads your request for a grilled cheese recipe and produces step-by-step instructions.”
 
 
 ---
@@ -338,7 +347,7 @@ More detailed information is available in the [Appendices](#appendices) > [IF-LL
 
 **Purpose:** To guide the model’s behavior, define the task, and shape the output.
 
-**Role:** The prompt is the **director or script**. Unlike the IF-LLM (executor), knowledge files (data), or tools (actions), the prompt defines **what should be done and how**.
+**Role:** The prompt is the **director or script**. Unlike the IF-LLM (executor), knowledge files (stored, reusable instructions and context data provided by system architects, solution developers, or users), or tools (actions), the prompt includes user-entered instructions and context to define **what should be done and how**.
 
 **Analogy:** Like a **recipe given to a chef**, tells the chef what dish to make, how to prioritize taste, safety, and simplicity.
 
@@ -349,15 +358,15 @@ More detailed information is available in the [Appendices](#appendices) > [IF-LL
 
 ##### **Knowledge Files**
 
-**Description:** External or provided documents/data that the IF-LLM can use as reference (e.g., your uploaded `system-policies.md`).
+**Description:** External or provided documents/data that the IF-LLM can use as instructions or context (e.g., an uploaded `system-policies-processing.md` with instructions and context related to system-level processing policies provided by the system architect).
 
 **Purpose:** To provide **grounded, authoritative information** that improves accuracy and reliability.
 
-**Role:** Knowledge files are the **source of truth**. Unlike prompts (instructions), tools (actions), or the IF-LLM (processor), they supply **evidence and content**.
+**Role:** Knowledge files are the **source of truth**. Unlike prompts (user-entered instructions and context), tools (actions), or the IF-LLM (processor), knowledge files supply **reusable and verified instructions and context**.
 
 **Analogy:** Like a **cookbook or reference manual** in a kitchen, the chef consults it to ensure correct techniques and facts.
 
-**Example:** Using a digital file containing system-level policies (``system-policies.md`) to ensure responses follow rules like:
+**Example:** Using a digital file containing system-level processing policies (`system-policies-processing.md`) provided by the system architect to ensure responses follow rules like:
   - “Do not guess”
   - “Provide structured output”
   - “Disclose uncertainty”
@@ -369,11 +378,11 @@ More detailed information is available in the [Appendices](#appendices) > [IF-LL
 
 **Description:** External capabilities the IF-LLM can use to extend functionality (e.g., search, calculations, file access).
 
-**Purpose:** To obtain missing information, perform actions, or increase reliability beyond the model’s internal knowledge.
+**Purpose:** To obtain missing information, perform actions, or increase reliability beyond the model’s internal knowledge and included knowledge files.
 
-**Role:** Tools are the **capabilities or instruments**. Unlike prompts (instructions), knowledge files (data), or the IF-LLM (processor), tools enable **interaction with the outside world or specialized functions**.
+**Role:** Tools are the **capabilities or instruments**. Unlike prompts (user-provided instructions and context), knowledge files (stored, reusable instructions and context), or the IF-LLM (processor), tools enable **interaction with the outside world or specialized functions**.
 
-**Analogy:** Like **kitchen equipment**, a stove, blender, or thermometer helps the chef do things they couldn’t do with just knowledge alone.
+**Analogy:** Like **kitchen equipment**, a stove, blender, or thermometer helps the chef do things they couldn’t do with just a coordinator using instructions and context alone.
 
 **Examples**
   - Using a web search tool to find current restaurant hours.
@@ -384,7 +393,7 @@ More detailed information is available in the [Appendices](#appendices) > [IF-LL
 
 #### Common IF-LLM Failure Modes
 
-Below is a high-level summary of the common instruction-following large language model (IF-LLM) failure modes (as of March 2026) that this project hopes to address.  More detailed information about these failure modes, along with examples and authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#common-failure-modes).
+Below is a high-level summary of the common instruction-following large language model (IF-LLM) failure modes (as of March 2026).  More detailed information about these failure modes, along with examples and authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#common-failure-modes).
 
 - Truthfulness & Knowledge Failures
 - Reasoning & Analytical Failures
@@ -410,19 +419,19 @@ TODO (Governance, Instructions, and Context)
 
 ### Purpose
 
-The **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward results that reasonably satisfy the [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities). IF-LLM-BO's emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
+The **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for organizing [instruction-following large language model (IF-LLM) elements](#common-if-llm-elements-instructions-context-and-tools) to guide [IF-LLMs](#common-if-llms) toward [higher-quality responses](#decision-making-information-quality-criteria-priorities). IF-LLM-BO emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across objectives, workflows, contexts, and audiences. It includes [Governance, Policies, and Rules](#governance-policies-and-rules) plus [Prompt Templates, Orchestrators, and Configurations](#prompt-templates-orchestrators-configurations) to most efficiently fulfill its purpose.
 
 
 ---
 
-
 ### Objectives
 
-IF-LLM-BO intends to build a lightweight semantic scaffolding system for structuring instructions and context for instruction-following large language models (IF-LLMs) that accomplishes the following: 
-  - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology
-  - stores reusable prompt elements, configurations, and orchestrators in organized knowledge entries and files
-  - reduces IF-LLM failure risks through reusable IF-LLM policies
-  - empowers greater user efficiency through reusable IF-LLM elements (e.g., prompt templates, knowledge entries, configurations, orchestrators)
+First, the IF-LLM-BO project intends to build a lightweight semantic scaffolding system for structuring instructions and context for instruction-following large language models (IF-LLMs) that accomplishes the following: 
+  - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across objectives, workflows, contexts, and audiences; a practical, yet not perfect, ontology
+  - empowers [human governance](#system-architect-and-solution-developer-governance-human-governance) (i.e., for system architects and solution developers)
+  - reduces IF-LLM failure risks through validated, stored, and reusable IF-LLM [knowledge policies (i.e., validated, stored, and reusable instructions and context](#knowledge-file-and-knowledge-entry-policies-stored-context-policies) and [processing rules (i.e., validated, stored, and reusable instructions](#processing-policies-stored-instruction-rules).
+  - stores validated, reusable prompt elements, configurations, and orchestrators in structured knowledge entries and files
+  - empowers greater user efficiency through easily reusable templates combining relevant user inputs with various validated, stored, and reusable IF-LLM elements (e.g., prompt templates, configurations, orchestrators)
   - uses the process below:
     1. **Identify Foundations**
     2. **Identify Assumptions**
@@ -444,19 +453,18 @@ TBD
 
 The following sections outline the **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) Governance, Policies, and Rules**.
 
-The likelihood for IF-LLM behavioral correctness can be improved — risks of encountering [common IF-LLM failure modes](#common-if-llm-failure-modes) can be reduced — by using [common IF-LLM failure mitigation strategies](#common-if-llm-failure-mitigation-strategies). These strategies generally rely on humans consistently practicing [human governance](#system-architect-and-solution-developer-governance-human-governance), including using explicit IF-LLM instructions such as [stored context policies](#knowledge-file-and-knowledge-entry-policies-stored-context-policies) and [stored instruction rules](#processing-policies-stored-instruction-rules)).
+The likelihood for IF-LLM behavioral correctness can be improved — risks of encountering [common IF-LLM failure modes](#common-if-llm-failure-modes) can be reduced — by using [common IF-LLM failure mitigation strategies](#common-if-llm-failure-mitigation-strategies). These strategies generally rely on humans consistently practicing [human governance](#system-architect-and-solution-developer-governance-human-governance), including using explicit IF-LLM instructions such as [stored knowledge (context) policies](#knowledge-file-and-knowledge-entry-policies-stored-context-policies) and [stored instruction rules](#processing-policies-stored-instruction-rules)).
 
 
 ---
 
 #### System Architect and Solution Developer Governance (Human Governance)
-TBD
 
 Humans are ultimately responsible for creating, reviewing, updating/maintaining, and deleting/retiring instructions and context for instruction-following large language models (IF-LLMs). Meaning, humans must actively govern the overall system and developed solutions.
 
 Instructions and context may be provided by system architects, solution developers, and end users. End users may not have the experience, knowledge, skills, or tools to effectively use [common IF-LLM failure mitigation strategies](#common-if-llm-failure-mitigation-strategies) consistently. Therefore, the vast majority of responsibility must be assumed by system architects and solution developers.
 
-Instruction and context contributors may have different objectives, priorities, and constraints. As such, there are multiple layers of governance, policies, and rules: system, developer, and user layers. To offer the necessary flexibility, IF-LLMs process instructions and context using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs (i.e., [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)). To maintain reliability, stability, and auditability, this authority hierarchy must be respected; lower-level policies must not *silently* reinterpret or weaken higher-level policies. Lower-level policies *can* override higher-level policies if necessary, just not *silently*; overrides must be **explicitly disclosed to end users**.
+Instruction and context contributors often have different objectives, priorities, and constraints. As such, there are multiple layers of governance, policies, and rules: system, developer, and user layers. To offer the necessary flexibility, IF-LLMs process instructions and context using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs (i.e., [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)). To maintain reliability, stability, and auditability, this authority hierarchy must be respected; lower-level policies must not *silently* reinterpret or weaken higher-level policies. Lower-level policies *can* override higher-level policies if necessary, just not *silently*; overrides must be **explicitly disclosed to end users**.
 
 Below is a high-level summary of recommended IF-LLM governance policies for system architects and solution developers:
 - **Safety, Security, and Access Control Policies**
@@ -473,31 +481,30 @@ Below is a high-level summary of recommended IF-LLM governance policies for syst
   - [Pre-Deployment Testing Rule](#pre-deployment-testing-rule)
   - [Continuous Improvement Rule](#continuous-improvement-rule)
  
-More detailed information about these governance policies can be found in the [Appendix: Governance, Policies, Rules](!!!TODO!!!) > [System Architect and Solution Developer Governance (Human Governance)](!!!TODO!!!).
+More detailed information about these governance policies can be found in the [Appendix: Governance, Policies, Rules](#appendix-if-llm-bo-governance-policies-and-rules) > [System Architect and Solution Developer Governance (Human Governance)](#system-architect-and-solution-developer-governance-human-governance-1).
 
 
 ---
 
-#### Knowledge File and Knowledge Entry Policies (Stored Context Policies)
+#### Knowledge File and Knowledge Entry Policies (Stored Context (Knowledge) Policies)
 TBD
 
-Instruction-following large language model (IF-LLM) [instructions and context](#prompt-anatomy) can be stored as **discrete, reusable [knowledge entries](#knowledge-files)**. Knowledge entries are generally grouped by type into **[knowledge files](#knowledge-files)** to improve organization, reuse, and governance. Human-readable structure is preferred for entries over opaque or auto-generated schemas for clarity.
+Instruction-following large language model (IF-LLM) [instructions and context](#prompt) can be stored as **discrete, reusable [knowledge entries](#knowledge-files-1)**. Knowledge entries are generally grouped by type into **[knowledge files](#knowledge-files)** to improve organization, reuse, and governance. Human-readable structure is preferred for entries over opaque or auto-generated schemas for clarity.
 
-Knowledge entries provided to IF-LLMs override general model knowledge but do not override system- or developer-level instructions. More information can be found in the section [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy). 
+Knowledge entries provided by the users to IF-LLMs override general model knowledge but do not override system- or developer-level instructions. More information can be found in the section [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy). 
 
 Below is a high-level summary of recommended IF-LLM policies related to knowledge files and entries for system architects and solution developers:
 - [Knowledge File Naming Convention Rule](#knowledge-file-naming-convention-rule)
 - [Knowledge File Root ID and Tag Convention Rule](#knowledge-file-root-id-and-tag-convention-rule)
 
-More detailed information about these policies can be found in the [Appendix: Governance, Policies, Rules](!!!TODO!!!) > [Knowledge File and Knowledge Entry Policies (Stored Context Policies)](!!!TODO!!!).
+More detailed information about these policies can be found in the [Appendix: Governance, Policies, Rules](#appendix-if-llm-bo-governance-policies-and-rules) > [Knowledge File and Knowledge Entry Policies (Stored Context Policies)](#knowledge-file-and-knowledge-entry-policies-stored-context-policies-1).
 
 
 ---
 
 #### Processing Policies (Stored Instruction Rules)
-TBD
 
-System architects and solution developers should also remain aware of the [system policies](system-policies.md#processing-policies). The list below offers a high-level summary of rules that IF-LLMs are asked to enforce:
+System architects and solution developers should also remain aware of the [system-level processing policies](system-policies-processing.md#processing-policies). The list below offers a high-level summary of rules that IF-LLMs are asked to enforce as part of the IF-LLM-BO project:
 - Instruction Hierarchy and Control Policies
 - Safety, Security, and Access Control Policies
 - Safety Behavior and Alignment Quality Policies
@@ -521,7 +528,7 @@ System architects and solution developers should also remain aware of the [syste
     - Audience
     - Success Criteria (Quality Bar)
 
-More detailed information about these rules can be found in the [Appendix: Governance, Policies, Rules](!!!TODO!!!) > [Processing Policies (Stored Instruction Rules)](!!!TODO!!!).
+More detailed information about these rules can be found in the [Appendix: Governance, Policies, Rules](#appendix-if-llm-bo-governance-policies-and-rules) > [Processing Policies (Stored Instruction Rules)](#processing-policies-stored-instruction-rules-1).
 
 
 ---
@@ -529,13 +536,15 @@ More detailed information about these rules can be found in the [Appendix: Gover
 ### Prompt Templates, Orchestrators, Configurations
 TBD
 
-Specific combinations of [instructions and contextual prompt elements](#prompt-anatomy) can be stored as **discrete, reusable [configurations](#configurations)**, stored in a dedicated knowledge file.
+Specific combinations of [instructions and contextual prompt elements](#prompt-1) can be written as **discrete, reusable [behavior configurations](!!!TODO!!!)** (i.e., [specific knowledge entries](#knowledge-files-1) that define [behavior configurations](!!!TODO!!!), which are stored in a dedicated knowledge file for easy reuse). Think of a behavior configuration as a specialized chef responsible for a specific course of a multi-course meal with a particular theme for a given audience. The behavior configuration has a single objective, specific priorities, plus fairly common parameters defining the task (e.g., workflow), domains (i.e., knowledge), reasoning, structure, persona, and example elements. In this case, the executive chef is assigning the specialized chef to prepare the Aperitivo course for an Italian/American-fusion-themed meal for Italian diplomats.
 
-Specific arrangements of configurations can be stored as **discrete, reusable [orchestrators](#orchestrators)**, stored in a dedicated knowledge file as well. Think of orchestrators as orchestra conductors guiding musicians (configurations) as they complete their musical piece (task objectives).
+Specific arrangements of [behavior configurations](!!!TODO!!!) can be stored as **discrete, reusable [orchestrators](#orchestrators)** (i.e., [specific knowledge entries](#knowledge-files-1) that define [orchestrators](!!!TODO!!!), which are also stored in a dedicated knowledge file for easy reuse). Think of orchestrators as an executive chef guiding a team of specialized chefs, each responsible for a specific course of a multi-course Italian meal (e.g., Aperitivo, Antipasto, Primo, etc.). The objective of the orchestrator is to prepare a multi-course meal based on the request of the event host (the end-user). Once the orchestrator receives the host's request, the orchestrator distributes the work among the necessary configurations of specialized chefs. The host might request an Italian, Chinese, or Ethiopian theme for a five course meal for national leaders, tourists, or cultural event attendees. Different requests require different knowledge, techniques, supplies, equipment, and presentation. Orchestrators can easily handle assigning then validating the results of each behavior configuration before providing a response to the end-user.
 
-Instructions and contextual elements can be stored as **discrete, reusable [prompt templates](#prompt-templates)**, also stored in a dedicated knowledge file. Think of prompt templates as the sheet music used by musicians, which may be slightly altered depending on the circumstances (e.g.,  play quietly, play loudly, play quicker). Prompt templates can also include additional instructions and context as input into the orchestrator, configuration, or other prompt elements. For example, and orchestrator or configuration or prompt that creates an artistic image may have placeholders for additional instructions and context so the end-user can quickly and easily choose their desired style or color palette. These additional instructions and context in prompt templates expanded the flexibility and usefulness of the templates, orchestrators, and configurations while offering ease-of-use for end-users.
+Instructions and contextual elements can be stored as **discrete, reusable [prompt templates](#prompt-templates)**, also stored in a dedicated knowledge file. Think of prompt templates as a event hosting manual used by executive chefs (orchestrator) or a meal course plan used by a specialized chef (behavior configuration). Instructions and context within templates can often be tailored depending on the circumstances (e.g., Italian, Chinese, Ethiopian, etc. theme; five- or seven-course meal; for national leaders, tourists, or charity event participants) then assigned to the necessary orchestrator(s), behavioral configuration(s), or directly to the model. 
 
-More detailed information about these rules can be found in the [Appendix: Prompt Templates, Orchestrators, Configurations](!!!TODO!!!).
+By leveraging prompt templates, orchestrators, behavioral configurations, along with foundational, basic, intermediate, or advanced IF-LLM elements, users are able to quickly and easily submit requests to consistently accomplish complex objectives given specific priorities requiring multiple tasks, each with unique specifications (e.g. workflows, domains, reasoning, structures, personas, examples). System architects and solution developers can configure, test, refine, and validate prompt templates, orchestrators, behavioral configurations, and other elements based on their scope of interest and expertise, thereby quickly scaling the opportunities available for end-users. By sharing their unique scaffolding elements, architects and developers across our many, widespread, and diverse communities can contribute to a universal, scalable, and maintainable system offering quick and easy prompts that offer safe and reliable responses for users to address a wide variety of needs.
+
+More detailed information about these rules can be found in the [Appendix: IF-LLM  Information](#appendix-if-llm-information) > [Common Elements: Instructions, Context, and Tools](#common-elements-instructions-context-and-tools).
 
 ---
 
@@ -706,11 +715,9 @@ TODO
 
 This appendix describes the decision-making information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. This appendix expands on the [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities). The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities).
 
-Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making.
+Instruction-following large language models (IF-LLMs) are often used to generate information that influence decisions impacting people and other systems. Because of this, the responses they produce should meet clear and well-defined quality standards. The quality standards listed below identify the key criteria that information should have in order to reliably support decision-making. To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities. The criteria listed below are shown in their order of importance; their priorities.
 
 The criteria and definitions presented here are **synthesized from the cited authoritative sources**. Each definition is written to answer a practical question: *“What does this mean for everyday decision-making?”*
-
-To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
 
 - **Auditability:** source of information, how information was changed, and who handled information can be identified.
   - *Sources*
@@ -789,7 +796,6 @@ To produce information that meaningfully supports decisions, IF-LLMs should prio
 
 ---
 
-
 ##### Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)
 
 A summary of the authoritative sources for these information quality criteria appears below:
@@ -801,7 +807,6 @@ A summary of the authoritative sources for these information quality criteria ap
 
 
 ---
-
 
 ### Appendix: IF-LLM Information
 TODO
@@ -2597,7 +2602,7 @@ TBD
   - [Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources](#appendix-decision-making-information-quality-criteria-priorities-with-definitions-and-sources)
     - [Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities)
   - [IF-LLM Information](#appendix-if-llm-information)
-    - [Commonly Used IF-LLMs](#commonly-used-if-llms-1)
+    - [Commonly Used IF-LLMs](#commonly-used-if-llms)
       - [Summary of Authoritative Sources](#summary-of-authoritative-sources-for-commonly-used-if-llms)
     - [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)
     - [Model Elements](!!!TODO!!!)
