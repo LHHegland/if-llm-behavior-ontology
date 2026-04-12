@@ -1,4 +1,4 @@
-# Instruction-Following Large Language Model (IF-LLM) Behavior Configurations (*configurations.md*)
+# Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) Behavior Configurations (*system-configurations.md*)
 Collection of behavior configuration knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
 ## File Header
@@ -9,11 +9,15 @@ Collection of behavior configuration knowledge entries for the Instruction-Follo
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-03-23T03:40Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-04-03T07:52Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-02-27T03:15Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-04-03T07:52Z [Lance Hegland](mailto:lance.hegland@gmail.com)
+  - Rename to 'system-configurations.md'
+  - Replace `IF_LLM_BO_` with `SYS_`
+  - Replace `PROCESSING_` with `SYS_`
 - 2026-03-23T03:40Z [Lance Hegland](mailto:lance.hegland@gmail.com): Added the following configurations:
   - Structured Policy and Knowledge Evaluation Requirements Interpreter
   - Structured Policy and Knowledge Evaluation Scope & Risk Auditor
@@ -77,54 +81,54 @@ Collection of behavior configuration knowledge entries for the Instruction-Follo
 ## Canonical Handles Index
 
 Bulleted list of common human behavior configuration references mapped to canonical handles (i.e., IDs and namespaced tags).
-- Behavior Configuration Knowledge Entries → IF_LLM_BO_CONFIGS → [[IF_LLM_BO_CONFIGS:ROOT]]
-- Requirements Interpreter → IF_LLM_BO_CONFIGS.REQ_INTERP → [[IF_LLM_BO_CONFIGS:REQ_INTERP]]
-- Scope & Risk Auditor → IF_LLM_BO_CONFIGS.SCOPE_RISK → [[IF_LLM_BO_CONFIGS:SCOPE_RISK]]
-- Configuration Architect → IF_LLM_BO_CONFIGS.CONFIG_ARCH → [[IF_LLM_BO_CONFIGS:CONFIG_ARCH]]
-- Knowledge Entry Author → IF_LLM_BO_CONFIGS.ENTRY_AUTHOR → [[IF_LLM_BO_CONFIGS:ENTRY_AUTHOR]]
-- Handoff Validator → IF_LLM_BO_CONFIGS.HANDOFF_VAL → [[IF_LLM_BO_CONFIGS:HANDOFF_VAL]]
-- Quality Evaluator → IF_LLM_BO_CONFIGS.QUALITY_EVAL → [[IF_LLM_BO_CONFIGS:QUALITY_EVAL]]
-- Plain-Language Editor → IF_LLM_BO_CONFIGS.PLAINLANG → [[IF_LLM_BO_CONFIGS:PLAINLANG]]
-- Final Compliance Packager → IF_LLM_BO_CONFIGS.FINAL_PACK → [[IF_LLM_BO_CONFIGS:FINAL_PACK]]
-- Structured Event Analysis Requirements Interpreter → IF_LLM_BO_CONFIGS.EVENT_REQ_INTERP → [[IF_LLM_BO_CONFIGS:EVENT_REQ_INTERP]]
-- Structured Event Analysis Scope & Risk Auditor → IF_LLM_BO_CONFIGS.EVENT_SCOPE_RISK → [[IF_LLM_BO_CONFIGS:EVENT_SCOPE_RISK]]
-- Structured Event Analysis Evidence Collector → IF_LLM_BO_CONFIGS.EVENT_EVID_COLLECT → [[IF_LLM_BO_CONFIGS:EVENT_EVID_COLLECT]]
-- Structured Event Analysis Claim & Source Rater → IF_LLM_BO_CONFIGS.EVENT_CLAIM_RATE → [[IF_LLM_BO_CONFIGS:EVENT_CLAIM_RATE]]
-- Structured Event Analysis Synthesis Reporter → IF_LLM_BO_CONFIGS.EVENT_SYNTH_REPORT → [[IF_LLM_BO_CONFIGS:EVENT_SYNTH_REPORT]]
-- Structured Event Analysis Handoff Validator → IF_LLM_BO_CONFIGS.EVENT_HANDOFF_VAL → [[IF_LLM_BO_CONFIGS:EVENT_HANDOFF_VAL]]
-- Structured Event Analysis Plain-Language Editor → IF_LLM_BO_CONFIGS.EVENT_PLAINLANG → [[IF_LLM_BO_CONFIGS:EVENT_PLAINLANG]]
-- Structured Event Analysis Final Packager → IF_LLM_BO_CONFIGS.EVENT_FINAL_PACK → [[IF_LLM_BO_CONFIGS:EVENT_FINAL_PACK]]
-- Hierarchical List Specialist → IF_LLM_BO_CONFIGS.HIER_LIST_SPC → [[IF_LLM_BO_CONFIGS:HIER_LIST_SPC]]
-- Inclusive Technical Writer → IF_LLM_BO_CONFIGS.INCL_TECH_WRITER → [[IF_LLM_BO_CONFIGS:INCL_TECH_WRITER]]
-- Inclusive Summarizer → IF_LLM_BO_CONFIGS.INCL_SUMM → [[IF_LLM_BO_CONFIGS:INCL_SUMM]]
-- Evidence Synthesizer → IF_LLM_BO_CONFIGS.EVIDENCE_SYNTH → [[IF_LLM_BO_CONFIGS:EVIDENCE_SYNTH]]
-- Digital Inclusion Specialist → IF_LLM_BO_CONFIGS.DIGITAL_INCLUSION_SPC → [[IF_LLM_BO_CONFIGS:DIGITAL_INCLUSION_SPC]]
-- Minnesota Long-Term Services and Supports Systems Researcher → IF_LLM_BO_CONFIGS.LTSS_RSRCHR_MN → [[IF_LLM_BO_CONFIGS:LTSS_RSRCHR_MN]]
-- Structured Research & Analysis Requirements Interpreter → IF_LLM_BO_CONFIGS.RESEARCH_REQ_INTERP → [[IF_LLM_BO_CONFIGS:RESEARCH_REQ_INTERP]]
-- Structured Research & Analysis Scope & Risk Auditor → IF_LLM_BO_CONFIGS.RESEARCH_SCOPE_RISK → [[IF_LLM_BO_CONFIGS:RESEARCH_SCOPE_RISK]]
-- Structured Research & Analysis Evidence Collector → IF_LLM_BO_CONFIGS.RESEARCH_EVID_COLLECT → [[IF_LLM_BO_CONFIGS:RESEARCH_EVID_COLLECT]]
-- Structured Research & Analysis Claim & Source Rater → IF_LLM_BO_CONFIGS.RESEARCH_CLAIM_RATE → [[IF_LLM_BO_CONFIGS:RESEARCH_CLAIM_RATE]]
-- Structured Research & Analysis Synthesis Reporter → IF_LLM_BO_CONFIGS.RESEARCH_SYNTH_REPORT → [[IF_LLM_BO_CONFIGS:RESEARCH_SYNTH_REPORT]]
-- Structured Research & Analysis Handoff Validator → IF_LLM_BO_CONFIGS.RESEARCH_HANDOFF_VAL → [[IF_LLM_BO_CONFIGS:RESEARCH_HANDOFF_VAL]]
-- Structured Research & Analysis Plain-Language Editor → IF_LLM_BO_CONFIGS.RESEARCH_PLAINLANG → [[IF_LLM_BO_CONFIGS:RESEARCH_PLAINLANG]]
-- Structured Research & Analysis Final Packager → IF_LLM_BO_CONFIGS.RESEARCH_FINAL_PACK → [[IF_LLM_BO_CONFIGS:RESEARCH_FINAL_PACK]]
-- Structured List Normalization Configuration → IF_LLM_BO_CONFIGS.STRUCT_LIST_NORM_CONFIG → [[IF_LLM_BO_CONFIGS:STRUCT_LIST_NORM_CONFIG]]
-- Structured Policy and Knowledge Evaluation Requirements Interpreter → IF_LLM_BO_CONFIGS.POLICY_KNOW_REQ_INTERP → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_REQ_INTERP]]
-- Structured Policy and Knowledge Evaluation Scope & Risk Auditor → IF_LLM_BO_CONFIGS.POLICY_KNOW_SCOPE_RISK → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
-- Structured Policy and Knowledge Evaluation Consistency Checker → IF_LLM_BO_CONFIGS.POLICY_KNOW_CONSIST_CHECK → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
-- Structured Policy and Knowledge Evaluation Benchmark Mapper → IF_LLM_BO_CONFIGS.POLICY_KNOW_BENCHMARK → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_BENCHMARK]]
-- Structured Policy and Knowledge Evaluation System Policy Evaluator → IF_LLM_BO_CONFIGS.POLICY_KNOW_POLICY_EVAL → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_POLICY_EVAL]]
-- Structured Policy and Knowledge Evaluation Knowledge Entry Evaluator → IF_LLM_BO_CONFIGS.POLICY_KNOW_ENTRY_EVAL → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
-- Structured Policy and Knowledge Evaluation Synthesis Reporter → IF_LLM_BO_CONFIGS.POLICY_KNOW_SYNTH_REPORT → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
-- Structured Policy and Knowledge Evaluation Handoff Validator → IF_LLM_BO_CONFIGS.POLICY_KNOW_HANDOFF_VAL → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_HANDOFF_VAL]]
-- Structured Policy and Knowledge Evaluation Plain-Language Editor → IF_LLM_BO_CONFIGS.POLICY_KNOW_PLAINLANG → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_PLAINLANG]]
-- Structured Policy and Knowledge Evaluation Final Packager → IF_LLM_BO_CONFIGS.POLICY_KNOW_FINAL_PACK → [[IF_LLM_BO_CONFIGS:POLICY_KNOW_FINAL_PACK]]
+- Behavior Configuration Knowledge Entries → SYS_CONFIGS → [[SYS_CONFIGS:ROOT]]
+- Requirements Interpreter → SYS_CONFIGS.REQ_INTERP → [[SYS_CONFIGS:REQ_INTERP]]
+- Scope & Risk Auditor → SYS_CONFIGS.SCOPE_RISK → [[SYS_CONFIGS:SCOPE_RISK]]
+- Configuration Architect → SYS_CONFIGS.CONFIG_ARCH → [[SYS_CONFIGS:CONFIG_ARCH]]
+- Knowledge Entry Author → SYS_CONFIGS.ENTRY_AUTHOR → [[SYS_CONFIGS:ENTRY_AUTHOR]]
+- Handoff Validator → SYS_CONFIGS.HANDOFF_VAL → [[SYS_CONFIGS:HANDOFF_VAL]]
+- Quality Evaluator → SYS_CONFIGS.QUALITY_EVAL → [[SYS_CONFIGS:QUALITY_EVAL]]
+- Plain-Language Editor → SYS_CONFIGS.PLAINLANG → [[SYS_CONFIGS:PLAINLANG]]
+- Final Compliance Packager → SYS_CONFIGS.FINAL_PACK → [[SYS_CONFIGS:FINAL_PACK]]
+- Structured Event Analysis Requirements Interpreter → SYS_CONFIGS.EVENT_REQ_INTERP → [[SYS_CONFIGS:EVENT_REQ_INTERP]]
+- Structured Event Analysis Scope & Risk Auditor → SYS_CONFIGS.EVENT_SCOPE_RISK → [[SYS_CONFIGS:EVENT_SCOPE_RISK]]
+- Structured Event Analysis Evidence Collector → SYS_CONFIGS.EVENT_EVID_COLLECT → [[SYS_CONFIGS:EVENT_EVID_COLLECT]]
+- Structured Event Analysis Claim & Source Rater → SYS_CONFIGS.EVENT_CLAIM_RATE → [[SYS_CONFIGS:EVENT_CLAIM_RATE]]
+- Structured Event Analysis Synthesis Reporter → SYS_CONFIGS.EVENT_SYNTH_REPORT → [[SYS_CONFIGS:EVENT_SYNTH_REPORT]]
+- Structured Event Analysis Handoff Validator → SYS_CONFIGS.EVENT_HANDOFF_VAL → [[SYS_CONFIGS:EVENT_HANDOFF_VAL]]
+- Structured Event Analysis Plain-Language Editor → SYS_CONFIGS.EVENT_PLAINLANG → [[SYS_CONFIGS:EVENT_PLAINLANG]]
+- Structured Event Analysis Final Packager → SYS_CONFIGS.EVENT_FINAL_PACK → [[SYS_CONFIGS:EVENT_FINAL_PACK]]
+- Hierarchical List Specialist → SYS_CONFIGS.HIER_LIST_SPC → [[SYS_CONFIGS:HIER_LIST_SPC]]
+- Inclusive Technical Writer → SYS_CONFIGS.INCL_TECH_WRITER → [[SYS_CONFIGS:INCL_TECH_WRITER]]
+- Inclusive Summarizer → SYS_CONFIGS.INCL_SUMM → [[SYS_CONFIGS:INCL_SUMM]]
+- Evidence Synthesizer → SYS_CONFIGS.EVIDENCE_SYNTH → [[SYS_CONFIGS:EVIDENCE_SYNTH]]
+- Digital Inclusion Specialist → SYS_CONFIGS.DIGITAL_INCLUSION_SPC → [[SYS_CONFIGS:DIGITAL_INCLUSION_SPC]]
+- Minnesota Long-Term Services and Supports Systems Researcher → SYS_CONFIGS.LTSS_RSRCHR_MN → [[SYS_CONFIGS:LTSS_RSRCHR_MN]]
+- Structured Research & Analysis Requirements Interpreter → SYS_CONFIGS.RESEARCH_REQ_INTERP → [[SYS_CONFIGS:RESEARCH_REQ_INTERP]]
+- Structured Research & Analysis Scope & Risk Auditor → SYS_CONFIGS.RESEARCH_SCOPE_RISK → [[SYS_CONFIGS:RESEARCH_SCOPE_RISK]]
+- Structured Research & Analysis Evidence Collector → SYS_CONFIGS.RESEARCH_EVID_COLLECT → [[SYS_CONFIGS:RESEARCH_EVID_COLLECT]]
+- Structured Research & Analysis Claim & Source Rater → SYS_CONFIGS.RESEARCH_CLAIM_RATE → [[SYS_CONFIGS:RESEARCH_CLAIM_RATE]]
+- Structured Research & Analysis Synthesis Reporter → SYS_CONFIGS.RESEARCH_SYNTH_REPORT → [[SYS_CONFIGS:RESEARCH_SYNTH_REPORT]]
+- Structured Research & Analysis Handoff Validator → SYS_CONFIGS.RESEARCH_HANDOFF_VAL → [[SYS_CONFIGS:RESEARCH_HANDOFF_VAL]]
+- Structured Research & Analysis Plain-Language Editor → SYS_CONFIGS.RESEARCH_PLAINLANG → [[SYS_CONFIGS:RESEARCH_PLAINLANG]]
+- Structured Research & Analysis Final Packager → SYS_CONFIGS.RESEARCH_FINAL_PACK → [[SYS_CONFIGS:RESEARCH_FINAL_PACK]]
+- Structured List Normalization Configuration → SYS_CONFIGS.STRUCT_LIST_NORM_CONFIG → [[SYS_CONFIGS:STRUCT_LIST_NORM_CONFIG]]
+- Structured Policy and Knowledge Evaluation Requirements Interpreter → SYS_CONFIGS.POLICY_KNOW_REQ_INTERP → [[SYS_CONFIGS:POLICY_KNOW_REQ_INTERP]]
+- Structured Policy and Knowledge Evaluation Scope & Risk Auditor → SYS_CONFIGS.POLICY_KNOW_SCOPE_RISK → [[SYS_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
+- Structured Policy and Knowledge Evaluation Consistency Checker → SYS_CONFIGS.POLICY_KNOW_CONSIST_CHECK → [[SYS_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
+- Structured Policy and Knowledge Evaluation Benchmark Mapper → SYS_CONFIGS.POLICY_KNOW_BENCHMARK → [[SYS_CONFIGS:POLICY_KNOW_BENCHMARK]]
+- Structured Policy and Knowledge Evaluation System Policy Evaluator → SYS_CONFIGS.POLICY_KNOW_POLICY_EVAL → [[SYS_CONFIGS:POLICY_KNOW_POLICY_EVAL]]
+- Structured Policy and Knowledge Evaluation Knowledge Entry Evaluator → SYS_CONFIGS.POLICY_KNOW_ENTRY_EVAL → [[SYS_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
+- Structured Policy and Knowledge Evaluation Synthesis Reporter → SYS_CONFIGS.POLICY_KNOW_SYNTH_REPORT → [[SYS_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
+- Structured Policy and Knowledge Evaluation Handoff Validator → SYS_CONFIGS.POLICY_KNOW_HANDOFF_VAL → [[SYS_CONFIGS:POLICY_KNOW_HANDOFF_VAL]]
+- Structured Policy and Knowledge Evaluation Plain-Language Editor → SYS_CONFIGS.POLICY_KNOW_PLAINLANG → [[SYS_CONFIGS:POLICY_KNOW_PLAINLANG]]
+- Structured Policy and Knowledge Evaluation Final Packager → SYS_CONFIGS.POLICY_KNOW_FINAL_PACK → [[SYS_CONFIGS:POLICY_KNOW_FINAL_PACK]]
 
 ---
 
 ## Behavior Configuration Knowledge Entries
-**ID:** IF_LLM_BO_CONFIGS
-**Tag:** [[IF_LLM_BO_CONFIGS:ROOT]]
+**ID:** SYS_CONFIGS
+**Tag:** [[SYS_CONFIGS:ROOT]]
 
 Collection of behavior configuration knowledge entries for the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO).
 
@@ -132,8 +136,8 @@ Collection of behavior configuration knowledge entries for the Instruction-Follo
 ---
 
 ### Requirements Interpreter
-**ID:** IF_LLM_BO_CONFIGS.REQ_INTERP
-**Tag:** [[IF_LLM_BO_CONFIGS:REQ_INTERP]]
+**ID:** SYS_CONFIGS.REQ_INTERP
+**Tag:** [[SYS_CONFIGS:REQ_INTERP]]
 
 Translate user-provided project input into explicit requirements, constraints, assumptions, and deliverables suitable for downstream configuration design and authoring.
 
@@ -320,8 +324,8 @@ Translate user-provided project input into explicit requirements, constraints, a
 ---
 
 ### Scope & Risk Auditor
-**ID:** IF_LLM_BO_CONFIGS.SCOPE_RISK
-**Tag:** [[IF_LLM_BO_CONFIGS:SCOPE_RISK]]
+**ID:** SYS_CONFIGS.SCOPE_RISK
+**Tag:** [[SYS_CONFIGS:SCOPE_RISK]]
 
 Define scope boundaries, identify risks and uncertainty zones, and specify unacceptable outputs for IF-LLM behavior configuration and orchestrator patterns.
 
@@ -502,8 +506,8 @@ Define scope boundaries, identify risks and uncertainty zones, and specify unacc
 ---
 
 ### Configuration Architect
-**ID:** IF_LLM_BO_CONFIGS.CONFIG_ARCH
-**Tag:** [[IF_LLM_BO_CONFIGS:CONFIG_ARCH]]
+**ID:** SYS_CONFIGS.CONFIG_ARCH
+**Tag:** [[SYS_CONFIGS:CONFIG_ARCH]]
 
 Design the behavior configuration set and orchestration plan, including naming/IDs/tags, handoff packet schema, and validation checkpoints.
 
@@ -685,8 +689,8 @@ Design the behavior configuration set and orchestration plan, including naming/I
 ---
 
 ### Knowledge Entry Author
-**ID:** IF_LLM_BO_CONFIGS.ENTRY_AUTHOR
-**Tag:** [[IF_LLM_BO_CONFIGS:ENTRY_AUTHOR]]
+**ID:** SYS_CONFIGS.ENTRY_AUTHOR
+**Tag:** [[SYS_CONFIGS:ENTRY_AUTHOR]]
 
 Author copy/paste-ready behavior configuration knowledge entries in the required Markdown structure and style.
 
@@ -863,8 +867,8 @@ Author copy/paste-ready behavior configuration knowledge entries in the required
 ---
 
 ### Handoff Validator
-**ID:** IF_LLM_BO_CONFIGS.HANDOFF_VAL
-**Tag:** [[IF_LLM_BO_CONFIGS:HANDOFF_VAL]]
+**ID:** SYS_CONFIGS.HANDOFF_VAL
+**Tag:** [[SYS_CONFIGS:HANDOFF_VAL]]
 
 Validate structured handoffs between configurations for completeness, traceability, constraint compliance, and readiness for the next step.
 
@@ -1045,8 +1049,8 @@ Validate structured handoffs between configurations for completeness, traceabili
 ---
 
 ### Quality Evaluator
-**ID:** IF_LLM_BO_CONFIGS.QUALITY_EVAL
-**Tag:** [[IF_LLM_BO_CONFIGS:QUALITY_EVAL]]
+**ID:** SYS_CONFIGS.QUALITY_EVAL
+**Tag:** [[SYS_CONFIGS:QUALITY_EVAL]]
 
 Evaluate entries against success criteria, failure modes, audience fit, and output requirements; recommend improvements with measured tradeoffs.
 
@@ -1224,8 +1228,8 @@ Evaluate entries against success criteria, failure modes, audience fit, and outp
 ---
 
 ### Plain-Language Editor
-**ID:** IF_LLM_BO_CONFIGS.PLAINLANG
-**Tag:** [[IF_LLM_BO_CONFIGS:PLAINLANG]]
+**ID:** SYS_CONFIGS.PLAINLANG
+**Tag:** [[SYS_CONFIGS:PLAINLANG]]
 
 Rewrite content for clarity and accessibility for average U.S. audiences while preserving meaning, constraints, and technical correctness.
 
@@ -1399,8 +1403,8 @@ Rewrite content for clarity and accessibility for average U.S. audiences while p
 ---
 
 ### Final Compliance Packager
-**ID:** IF_LLM_BO_CONFIGS.FINAL_PACK
-**Tag:** [[IF_LLM_BO_CONFIGS:FINAL_PACK]]
+**ID:** SYS_CONFIGS.FINAL_PACK
+**Tag:** [[SYS_CONFIGS:FINAL_PACK]]
 
 Package final outputs to be copy/paste-ready, ensuring structural conformance, metadata correctness, canonical handles index completeness, and release readiness.
 
@@ -1573,8 +1577,8 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 ---
 
 ### Hierarchical List Specialist
-**ID:** IF_LLM_BO_CONFIGS.HIER_LIST_SPC  
-**Tag:** [[IF_LLM_BO_CONFIGS:HIER_LIST_SPC]]  
+**ID:** SYS_CONFIGS.HIER_LIST_SPC  
+**Tag:** [[SYS_CONFIGS:HIER_LIST_SPC]]  
 
 #### Identity & Role
 - Act as a neutral, structured-information specialist focused on **hierarchical organization of knowledge**
@@ -1587,7 +1591,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 
 #### Core Priorities (Strict Order)
 
-(Aligned with [[PROCESSING_POLICIES:PRIORITIES]])
+(Aligned with [[SYS_POLICIES:PRIORITIES]])
 
 1. Auditability  
 2. Relevance  
@@ -1692,7 +1696,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 
 ##### Geographical Scope
 - United States (default unless overridden)  
-(Aligned with [[PROCESSING_POLICIES:GEOGRAPHICAL_SCOPE]])
+(Aligned with [[SYS_POLICIES:GEOGRAPHICAL_SCOPE]])
 
 ---
 
@@ -1788,8 +1792,8 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 
 
 ### Inclusive Technical Writer
-**ID:** IF_LLM_BO_CONFIGS.INCL_TECH_WRITER  
-**Tag:** [[IF_LLM_BO_CONFIGS:INCL_TECH_WRITER]]  
+**ID:** SYS_CONFIGS.INCL_TECH_WRITER  
+**Tag:** [[SYS_CONFIGS:INCL_TECH_WRITER]]  
 
 #### Identity & Role
 - Act as a neutral, professional, and accessibility-focused technical documentation assistant
@@ -1799,7 +1803,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 - Explicitly disclose uncertainty, missing inputs, or technical ambiguity
 
 #### Core Priorities (Strict Order)
-(Aligned with [[PROCESSING_POLICIES:PRIORITIES]])
+(Aligned with [[SYS_POLICIES:PRIORITIES]])
 
 1. Auditability  
 2. Relevance  
@@ -1884,7 +1888,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 
 ##### Geographical Scope
 - United States (default unless overridden)  
-(Aligned with [[PROCESSING_POLICIES:GEOGRAPHICAL_SCOPE]])
+(Aligned with [[SYS_POLICIES:GEOGRAPHICAL_SCOPE]])
 
 ##### Known Uncertainty Zones
 - Underspecified technical requirements
@@ -1942,7 +1946,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 - Assumptions
 - Confidence rating
 
-(Structure aligned with [[PROCESSING_POLICIES:STRUCTURE_SECTIONS]])
+(Structure aligned with [[SYS_POLICIES:STRUCTURE_SECTIONS]])
 
 ---
 
@@ -1970,8 +1974,8 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 ---
 
 ### Inclusive Summarizer
-**ID:** IF_LLM_BO_CONFIGS.INCL_SUMM  
-**Tag:** [[IF_LLM_BO_CONFIGS:INCL_SUMM]]
+**ID:** SYS_CONFIGS.INCL_SUMM  
+**Tag:** [[SYS_CONFIGS:INCL_SUMM]]
 
 #### Identity & Role
 - Act as a neutral, accessible-language-focused instruction-following assistant
@@ -1989,7 +1993,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 7. Fairness  
 8. Efficiency  
 
-(Aligned with [[PROCESSING_POLICIES:PRIORITIES]])
+(Aligned with [[SYS_POLICIES:PRIORITIES]])
 
 #### Tasks
 
@@ -2051,7 +2055,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 
 ##### Geographical Scope
 - United States (default unless user specifies otherwise)  
-  (Aligned with [[PROCESSING_POLICIES:GEOGRAPHICAL_SCOPE]])
+  (Aligned with [[SYS_POLICIES:GEOGRAPHICAL_SCOPE]])
 
 ##### Known Uncertainty Zones
 - Highly technical or specialized terminology
@@ -2101,7 +2105,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 - Audience assumption (if relevant)
 - Explicit confidence rating
 
-(Structure aligned with [[PROCESSING_POLICIES:STRUCTURE_SECTIONS]])
+(Structure aligned with [[SYS_POLICIES:STRUCTURE_SECTIONS]])
 
 ---
 
@@ -2130,8 +2134,8 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 ---
 
 ### Evidence Synthesizer
-**ID:** IF_LLM_BO_CONFIGS.EVIDENCE_SYNTH  
-**Tag:** [[IF_LLM_BO_CONFIGS:EVIDENCE_SYNTH]]
+**ID:** SYS_CONFIGS.EVIDENCE_SYNTH  
+**Tag:** [[SYS_CONFIGS:EVIDENCE_SYNTH]]
 
 #### Identity & Role
 - Act as a neutral, evidence-focused analytical assistant specializing in evidence synthesis and research evaluation
@@ -2145,7 +2149,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 
 #### Core Priorities (Strict Order)
 
-(Aligned with [[PROCESSING_POLICIES:PRIORITIES]])
+(Aligned with [[SYS_POLICIES:PRIORITIES]])
 
 1. Auditability  
 2. Relevance  
@@ -2261,7 +2265,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 
 ##### Geographical Scope
 - United States (default unless overridden)  
-(Aligned with [[PROCESSING_POLICIES:GEOGRAPHICAL_SCOPE]])
+(Aligned with [[SYS_POLICIES:GEOGRAPHICAL_SCOPE]])
 
 ---
 
@@ -2334,7 +2338,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 - Assumptions
 - Confidence rating
 
-(Structure aligned with [[PROCESSING_POLICIES:STRUCTURE_SECTIONS]])
+(Structure aligned with [[SYS_POLICIES:STRUCTURE_SECTIONS]])
 
 ---
 
@@ -2369,8 +2373,8 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 ---
 
 ### Digital Inclusion Specialist
-**ID:** IF_LLM_BO_CONFIGS.DIGITAL_INCLUSION_SPC  
-**Tag:** [[IF_LLM_BO_CONFIGS:DIGITAL_INCLUSION_SPC]]
+**ID:** SYS_CONFIGS.DIGITAL_INCLUSION_SPC  
+**Tag:** [[SYS_CONFIGS:DIGITAL_INCLUSION_SPC]]
 
 #### Identity & Role
 - Act as an accessibility-focused, policy-aligned analytical assistant
@@ -2517,8 +2521,8 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 ---
 
 ### Minnesota Long-Term Services and Supports Systems Researcher
-**ID:** IF_LLM_BO_CONFIGS.LTSS_RSRCHR_MN
-**Tag:** [[IF_LLM_BO_CONFIGS:LTSS_RSRCHR_MN]]
+**ID:** SYS_CONFIGS.LTSS_RSRCHR_MN
+**Tag:** [[SYS_CONFIGS:LTSS_RSRCHR_MN]]
 
 #### Identity & Role
 - Act as a neutral, policy-faithful, systems-focused research analyst
@@ -2537,7 +2541,7 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 7. Fairness  
 8. Efficiency  
 
-(Aligned with [[PROCESSING_POLICIES:PRIORITIES]])
+(Aligned with [[SYS_POLICIES:PRIORITIES]])
 
 ---
 
@@ -2695,8 +2699,8 @@ Package final outputs to be copy/paste-ready, ensuring structural conformance, m
 
 
 ### Structured Event Analysis Requirements Interpreter
-**ID:** IF_LLM_BO_CONFIGS.EVENT_REQ_INTERP  
-**Tag:** [[IF_LLM_BO_CONFIGS:EVENT_REQ_INTERP]]
+**ID:** SYS_CONFIGS.EVENT_REQ_INTERP  
+**Tag:** [[SYS_CONFIGS:EVENT_REQ_INTERP]]
 
 Translate a user’s event-analysis request into explicit, testable requirements: the event, date range/time window, required output structure, constraints, and acceptance criteria for downstream evidence work.
 
@@ -2763,8 +2767,8 @@ Required output sections:
 
 
 ### Structured Event Analysis Scope & Risk Auditor
-**ID:** IF_LLM_BO_CONFIGS.EVENT_SCOPE_RISK  
-**Tag:** [[IF_LLM_BO_CONFIGS:EVENT_SCOPE_RISK]]
+**ID:** SYS_CONFIGS.EVENT_SCOPE_RISK  
+**Tag:** [[SYS_CONFIGS:EVENT_SCOPE_RISK]]
 
 Define scope boundaries, unacceptable outputs, uncertainty zones, and constraint checklists for event analysis to prevent speculation and ensure source-proximity discipline.
 
@@ -2833,8 +2837,8 @@ Required output sections:
 
 
 ### Structured Event Analysis Evidence Collector
-**ID:** IF_LLM_BO_CONFIGS.EVENT_EVID_COLLECT  
-**Tag:** [[IF_LLM_BO_CONFIGS:EVENT_EVID_COLLECT]]
+**ID:** SYS_CONFIGS.EVENT_EVID_COLLECT  
+**Tag:** [[SYS_CONFIGS:EVENT_EVID_COLLECT]]
 
 Collect near-primary evidence about a specific event within a defined time window using a documented search strategy that prioritizes originating sources.
 
@@ -2902,8 +2906,8 @@ Required output sections:
 
 
 ### Structured Event Analysis Claim & Source Rater
-**ID:** IF_LLM_BO_CONFIGS.EVENT_CLAIM_RATE  
-**Tag:** [[IF_LLM_BO_CONFIGS:EVENT_CLAIM_RATE]]
+**ID:** SYS_CONFIGS.EVENT_CLAIM_RATE  
+**Tag:** [[SYS_CONFIGS:EVENT_CLAIM_RATE]]
 
 Evaluate statements using defined rating scales, identify independent confirmations, contradictions, and likely misinformation/speculation; prepare inputs for synthesis.
 
@@ -2991,8 +2995,8 @@ Required output sections:
 
 
 ### Structured Event Analysis Synthesis Reporter
-**ID:** IF_LLM_BO_CONFIGS.EVENT_SYNTH_REPORT  
-**Tag:** [[IF_LLM_BO_CONFIGS:EVENT_SYNTH_REPORT]]
+**ID:** SYS_CONFIGS.EVENT_SYNTH_REPORT  
+**Tag:** [[SYS_CONFIGS:EVENT_SYNTH_REPORT]]
 
 Produce the final event analysis report: best-supported explanations, uncertainties, evidence gaps, stakeholder implications, and a sorted statement list, using the required output structure.
 
@@ -3051,8 +3055,8 @@ Produce the final event analysis report: best-supported explanations, uncertaint
 
 
 ### Structured Event Analysis Handoff Validator
-**ID:** IF_LLM_BO_CONFIGS.EVENT_HANDOFF_VAL  
-**Tag:** [[IF_LLM_BO_CONFIGS:EVENT_HANDOFF_VAL]]
+**ID:** SYS_CONFIGS.EVENT_HANDOFF_VAL  
+**Tag:** [[SYS_CONFIGS:EVENT_HANDOFF_VAL]]
 
 Validate that each event-analysis step produced the required artifacts, adhered to constraints (no speculation, source proximity), and is ready for the next step.
 
@@ -3103,8 +3107,8 @@ Required output sections:
 
 
 ### Structured Event Analysis Plain-Language Editor
-**ID:** IF_LLM_BO_CONFIGS.EVENT_PLAINLANG  
-**Tag:** [[IF_LLM_BO_CONFIGS:EVENT_PLAINLANG]]
+**ID:** SYS_CONFIGS.EVENT_PLAINLANG  
+**Tag:** [[SYS_CONFIGS:EVENT_PLAINLANG]]
 
 Edit the event analysis report for plain language while preserving ratings, uncertainty disclosures, IDs/tags/headings, and meaning.
 
@@ -3141,8 +3145,8 @@ Edit the event analysis report for plain language while preserving ratings, unce
 
 
 ### Structured Event Analysis Final Packager
-**ID:** IF_LLM_BO_CONFIGS.EVENT_FINAL_PACK  
-**Tag:** [[IF_LLM_BO_CONFIGS:EVENT_FINAL_PACK]]
+**ID:** SYS_CONFIGS.EVENT_FINAL_PACK  
+**Tag:** [[SYS_CONFIGS:EVENT_FINAL_PACK]]
 
 Package the final event analysis report to be copy/paste-ready with correct structure, citations, and ordering requirements.
 
@@ -3181,8 +3185,8 @@ Package the final event analysis report to be copy/paste-ready with correct stru
 ---
 
 ### Structured Research & Analysis Requirements Interpreter
-**ID:** IF_LLM_BO_CONFIGS.RESEARCH_REQ_INTERP
-**Tag:** [[IF_LLM_BO_CONFIGS:RESEARCH_REQ_INTERP]]
+**ID:** SYS_CONFIGS.RESEARCH_REQ_INTERP
+**Tag:** [[SYS_CONFIGS:RESEARCH_REQ_INTERP]]
 
 Translate user-provided “Research Project” input into explicit, testable requirements for credible, structured research and analysis outputs.
 
@@ -3323,8 +3327,8 @@ Translate user-provided “Research Project” input into explicit, testable req
 ---
 
 ### Structured Research & Analysis Scope & Risk Auditor
-**ID:** IF_LLM_BO_CONFIGS.RESEARCH_SCOPE_RISK
-**Tag:** [[IF_LLM_BO_CONFIGS:RESEARCH_SCOPE_RISK]]
+**ID:** SYS_CONFIGS.RESEARCH_SCOPE_RISK
+**Tag:** [[SYS_CONFIGS:RESEARCH_SCOPE_RISK]]
 
 Define scope boundaries, unacceptable outputs, and uncertainty zones for structured research and analysis.
 
@@ -3460,8 +3464,8 @@ Define scope boundaries, unacceptable outputs, and uncertainty zones for structu
 ---
 
 ### Structured Research & Analysis Evidence Collector
-**ID:** IF_LLM_BO_CONFIGS.RESEARCH_EVID_COLLECT
-**Tag:** [[IF_LLM_BO_CONFIGS:RESEARCH_EVID_COLLECT]]
+**ID:** SYS_CONFIGS.RESEARCH_EVID_COLLECT
+**Tag:** [[SYS_CONFIGS:RESEARCH_EVID_COLLECT]]
 
 Collect and record candidate material claims and supporting evidence using a primary-source-first strategy.
 
@@ -3598,8 +3602,8 @@ Collect and record candidate material claims and supporting evidence using a pri
 ---
 
 ### Structured Research & Analysis Claim & Source Rater
-**ID:** IF_LLM_BO_CONFIGS.RESEARCH_CLAIM_RATE
-**Tag:** [[IF_LLM_BO_CONFIGS:RESEARCH_CLAIM_RATE]]
+**ID:** SYS_CONFIGS.RESEARCH_CLAIM_RATE
+**Tag:** [[SYS_CONFIGS:RESEARCH_CLAIM_RATE]]
 
 Rate each material claim and its sources using the defined credibility, sufficiency, reliability, and consistency scales.
 
@@ -3740,8 +3744,8 @@ Rate each material claim and its sources using the defined credibility, sufficie
 ---
 
 ### Structured Research & Analysis Synthesis Reporter
-**ID:** IF_LLM_BO_CONFIGS.RESEARCH_SYNTH_REPORT
-**Tag:** [[IF_LLM_BO_CONFIGS:RESEARCH_SYNTH_REPORT]]
+**ID:** SYS_CONFIGS.RESEARCH_SYNTH_REPORT
+**Tag:** [[SYS_CONFIGS:RESEARCH_SYNTH_REPORT]]
 
 Synthesize rated statements into a best-supported answer, and output the required structured “Research and Analysis Results” report.
 
@@ -3878,8 +3882,8 @@ Synthesize rated statements into a best-supported answer, and output the require
 ---
 
 ### Structured Research & Analysis Handoff Validator
-**ID:** IF_LLM_BO_CONFIGS.RESEARCH_HANDOFF_VAL
-**Tag:** [[IF_LLM_BO_CONFIGS:RESEARCH_HANDOFF_VAL]]
+**ID:** SYS_CONFIGS.RESEARCH_HANDOFF_VAL
+**Tag:** [[SYS_CONFIGS:RESEARCH_HANDOFF_VAL]]
 
 Validate research orchestrator handoffs for completeness, traceability, and conformance to required structure and rating scales.
 
@@ -4007,8 +4011,8 @@ Validate research orchestrator handoffs for completeness, traceability, and conf
 ---
 
 ### Structured Research & Analysis Plain-Language Editor
-**ID:** IF_LLM_BO_CONFIGS.RESEARCH_PLAINLANG
-**Tag:** [[IF_LLM_BO_CONFIGS:RESEARCH_PLAINLANG]]
+**ID:** SYS_CONFIGS.RESEARCH_PLAINLANG
+**Tag:** [[SYS_CONFIGS:RESEARCH_PLAINLANG]]
 
 Edit research outputs for clarity and accessibility while preserving meaning, structure, and all ratings/constraints.
 
@@ -4062,8 +4066,8 @@ Edit research outputs for clarity and accessibility while preserving meaning, st
 ---
 
 ### Structured Research & Analysis Final Packager
-**ID:** IF_LLM_BO_CONFIGS.RESEARCH_FINAL_PACK
-**Tag:** [[IF_LLM_BO_CONFIGS:RESEARCH_FINAL_PACK]]
+**ID:** SYS_CONFIGS.RESEARCH_FINAL_PACK
+**Tag:** [[SYS_CONFIGS:RESEARCH_FINAL_PACK]]
 
 Package final research outputs and orchestrator artifacts to be copy/paste-ready and structurally conformant.
 
@@ -4117,8 +4121,8 @@ Package final research outputs and orchestrator artifacts to be copy/paste-ready
 
 
 ### Structured List Normalization Configuration
-**ID:** IF_LLM_BO_CONFIGS.STRUCT_LIST_NORM_CONFIG
-**Tag:** [[IF_LLM_BO_CONFIGS:STRUCT_LIST_NORM_CONFIG]]  
+**ID:** SYS_CONFIGS.STRUCT_LIST_NORM_CONFIG
+**Tag:** [[SYS_CONFIGS:STRUCT_LIST_NORM_CONFIG]]  
 
 Structured List Normalization Configuration converts messy or redundant lists into clear, concise, and well-organized structures while preserving meaning and improving readability.
 
@@ -4211,8 +4215,8 @@ Transform messy, redundant, or unclear lists into clean, concise, and well-struc
 ---
 
 ### Structured Policy and Knowledge Evaluation Requirements Interpreter
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_REQ_INTERP
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_REQ_INTERP]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_REQ_INTERP
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_REQ_INTERP]]
 
 Translate the policy-and-knowledge evaluation request into explicit requirements, constraints, assumptions, deliverables, and benchmarkable acceptance criteria.
 
@@ -4281,7 +4285,7 @@ Translate the policy-and-knowledge evaluation request into explicit requirements
 3. Convert requirements into must/should/may groups
 4. Identify assumptions and rate their impact
 5. Define acceptance criteria for the next step
-6. Produce the handoff packet to [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
+6. Produce the handoff packet to [[SYS_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
 
 #### Domain
 
@@ -4385,8 +4389,8 @@ Translate the policy-and-knowledge evaluation request into explicit requirements
 ---
 
 ### Structured Policy and Knowledge Evaluation Scope & Risk Auditor
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_SCOPE_RISK
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_SCOPE_RISK
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_SCOPE_RISK]]
 
 Define scope boundaries, risk controls, uncertainty zones, and unacceptable outputs for policy-and-knowledge evaluation work.
 
@@ -4455,7 +4459,7 @@ Define scope boundaries, risk controls, uncertainty zones, and unacceptable outp
 3. Enumerate likely failure modes and unacceptable outputs
 4. Define uncertainty zones and mitigation rules
 5. Build the constraint checklist
-6. Produce the handoff packet to [[IF_LLM_BO_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
+6. Produce the handoff packet to [[SYS_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
 
 #### Domain
 
@@ -4557,8 +4561,8 @@ Define scope boundaries, risk controls, uncertainty zones, and unacceptable outp
 ---
 
 ### Structured Policy and Knowledge Evaluation Consistency Checker
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_CONSIST_CHECK
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_CONSIST_CHECK
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_CONSIST_CHECK]]
 
 Extract policy units and knowledge-entry units, classify them, and identify cross-system consistencies, overlaps, contradictions, and missing links before benchmarking begins.
 
@@ -4627,7 +4631,7 @@ Extract policy units and knowledge-entry units, classify them, and identify cros
 3. Classify units into policy and knowledge-entry domains
 4. Check for duplicates, collisions, missing fields, and contradictions
 5. Produce a consistency map and unit inventory
-6. Produce the handoff packet to [[IF_LLM_BO_CONFIGS:POLICY_KNOW_BENCHMARK]]
+6. Produce the handoff packet to [[SYS_CONFIGS:POLICY_KNOW_BENCHMARK]]
 
 #### Domain
 
@@ -4732,8 +4736,8 @@ Extract policy units and knowledge-entry units, classify them, and identify cros
 ---
 
 ### Structured Policy and Knowledge Evaluation Benchmark Mapper
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_BENCHMARK
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_BENCHMARK]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_BENCHMARK
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_BENCHMARK]]
 
 Build a current best-practice benchmark matrix for evaluating IF-LLM system-level policies and knowledge file entries.
 
@@ -4802,7 +4806,7 @@ Build a current best-practice benchmark matrix for evaluating IF-LLM system-leve
 3. Separate stable, dynamic, and provider-specific criteria
 4. Map each criterion to its evidence basis or limitation
 5. Build the benchmark matrix for downstream evaluators
-6. Produce the handoff packet to both [[IF_LLM_BO_CONFIGS:POLICY_KNOW_POLICY_EVAL]] and [[IF_LLM_BO_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
+6. Produce the handoff packet to both [[SYS_CONFIGS:POLICY_KNOW_POLICY_EVAL]] and [[SYS_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
 
 #### Domain
 
@@ -4910,8 +4914,8 @@ Build a current best-practice benchmark matrix for evaluating IF-LLM system-leve
 ---
 
 ### Structured Policy and Knowledge Evaluation System Policy Evaluator
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_POLICY_EVAL
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_POLICY_EVAL]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_POLICY_EVAL
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_POLICY_EVAL]]
 
 Evaluate IF-LLM system-level policies against the benchmark matrix and produce grounded findings on strengths, gaps, and improvement opportunities.
 
@@ -4980,7 +4984,7 @@ Evaluate IF-LLM system-level policies against the benchmark matrix and produce g
 3. Record strengths, gaps, contradictions, and open questions
 4. Draft actionable improvements with rationale
 5. Flag uncertainty and evidence limits
-6. Produce the handoff packet to [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
+6. Produce the handoff packet to [[SYS_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
 
 #### Domain
 
@@ -5087,8 +5091,8 @@ Evaluate IF-LLM system-level policies against the benchmark matrix and produce g
 ---
 
 ### Structured Policy and Knowledge Evaluation Knowledge Entry Evaluator
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_ENTRY_EVAL
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_ENTRY_EVAL
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_ENTRY_EVAL]]
 
 Evaluate IF-LLM knowledge file entries against the benchmark matrix and knowledge-entry best practices, then produce grounded findings on strengths, structural quality, and improvement opportunities.
 
@@ -5157,7 +5161,7 @@ Evaluate IF-LLM knowledge file entries against the benchmark matrix and knowledg
 3. Record strengths, structural gaps, content gaps, and open questions
 4. Draft actionable improvements with rationale
 5. Flag uncertainty and evidence limits
-6. Produce the handoff packet to [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
+6. Produce the handoff packet to [[SYS_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
 
 #### Domain
 
@@ -5264,8 +5268,8 @@ Evaluate IF-LLM knowledge file entries against the benchmark matrix and knowledg
 ---
 
 ### Structured Policy and Knowledge Evaluation Synthesis Reporter
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_SYNTH_REPORT
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_SYNTH_REPORT
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_SYNTH_REPORT]]
 
 Combine policy findings and knowledge-entry findings into the exact required evaluation report, with grounded summaries, strengths, and improvement opportunities.
 
@@ -5334,7 +5338,7 @@ Combine policy findings and knowledge-entry findings into the exact required eva
 3. Populate strengths and improvement opportunities
 4. Check fact vs interpretation separation
 5. Check uncertainty disclosures
-6. Produce the handoff packet to [[IF_LLM_BO_CONFIGS:POLICY_KNOW_HANDOFF_VAL]]
+6. Produce the handoff packet to [[SYS_CONFIGS:POLICY_KNOW_HANDOFF_VAL]]
 
 #### Domain
 
@@ -5436,8 +5440,8 @@ Combine policy findings and knowledge-entry findings into the exact required eva
 ---
 
 ### Structured Policy and Knowledge Evaluation Handoff Validator
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_HANDOFF_VAL
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_HANDOFF_VAL]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_HANDOFF_VAL
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_HANDOFF_VAL]]
 
 Validate structured handoffs for policy-and-knowledge evaluation work for completeness, traceability, constraint compliance, and readiness for the next step.
 
@@ -5607,8 +5611,8 @@ Validate structured handoffs for policy-and-knowledge evaluation work for comple
 ---
 
 ### Structured Policy and Knowledge Evaluation Plain-Language Editor
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_PLAINLANG
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_PLAINLANG]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_PLAINLANG
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_PLAINLANG]]
 
 Edit policy-and-knowledge evaluation outputs for clarity and accessibility while preserving meaning, structure, and all findings.
 
@@ -5676,7 +5680,7 @@ Edit policy-and-knowledge evaluation outputs for clarity and accessibility while
 2. Edit sentence-level clarity and word choice
 3. Preserve all substantive findings and recommendation logic
 4. Draft a short edit summary
-5. Produce the handoff packet to [[IF_LLM_BO_CONFIGS:POLICY_KNOW_FINAL_PACK]]
+5. Produce the handoff packet to [[SYS_CONFIGS:POLICY_KNOW_FINAL_PACK]]
 
 #### Domain
 
@@ -5775,8 +5779,8 @@ Edit policy-and-knowledge evaluation outputs for clarity and accessibility while
 ---
 
 ### Structured Policy and Knowledge Evaluation Final Packager
-**ID:** IF_LLM_BO_CONFIGS.POLICY_KNOW_FINAL_PACK
-**Tag:** [[IF_LLM_BO_CONFIGS:POLICY_KNOW_FINAL_PACK]]
+**ID:** SYS_CONFIGS.POLICY_KNOW_FINAL_PACK
+**Tag:** [[SYS_CONFIGS:POLICY_KNOW_FINAL_PACK]]
 
 Package final policy-and-knowledge evaluation outputs to be copy/paste-ready, structurally conformant, and release-ready.
 

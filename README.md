@@ -1,10 +1,11 @@
 # Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) (*README.md*)
 
-**PURPOSE:** **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward accurate, reliable, relevant, and practical outcomes. It emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
+**PURPOSE:** The **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for organizing [instruction-following large language model (IF-LLM) elements](!!!TODO!!!) to guide [IF-LLMs](!!!TODO!!!) toward [higher-quality responses](#decision-making-information-quality-criteria-priorities). IF-LLM-BO emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across objectives, workflows, contexts, and audiences.
 
 
-## Table of Contents
-- [File Header Metadata](#file-header-1)
+## **Table of Contents**
+
+- TO DO: [Unorganized Content](#not-yet-organized-1)
 - [Features](#features)
 - [Background](#background)
 - [Known Issues](#known-issues)
@@ -12,164 +13,27 @@
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [IF-LLM-BO Project Notes](#if-llm-bo-project-notes)
+- [IF-LLM-BO Project](!!!TODO!!!)
   - [Foundations](#foundations)
     - [Assumptions](#assumptions)
     - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
-    - [Commonly Used IF-LLMs](#commonly-used-if-llms)
     - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
     - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
   - [Purpose](#purpose)
   - [Objectives](#objectives)
+  - [Governance, Policies, Rules](#governance-policies-and-rules)
+  - [Prompt Templates, Orchestrators, Configurations](#prompt-templates-orchestrators-configurations)
 - [Appendices](#appendices)
-  - [Assumptions](#appendix-assumptions)
-  - [Evidenced-based Information Criteria (Research)](#appendix-evidenced-based-information-criteria-research)
-  - [Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources](#appendix-decision-making-information-quality-criteria-priorities-with-definitions-and-sources)
-    - [Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities)
-  - [IF-LLM Information](#appendix-if-llm-information)
-    - [Commonly Used IF-LLMs](#commonly-used-if-llms-1)
-      - [Summary of Authoritative Sources](#summary-of-authoritative-sources-for-commonly-used-if-llms)
-    - [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)
-    - [Prompt Anatomy](#prompt-anatomy)
-      - [Identity & Role](#identity--role)
-      - [Priorities](#priorities-2)
-      - [Task](#task)
-      - [Domains](#domains-1)
-      - [Reasoning](#reasoning)
-      - [Structure](#structure)
-      - [Persona](#persona)
-      - [Examples](#examples)
-    - [Developed Solution Anatomy](#developed-solution-anatomy)
-      - [Knowledge Files](#knowledge-files)
-         - [Policies](#policies)
-           - [Governance](#policies-governance)
-           - [Knowledge Entry](#policies-knowledge-entry)
-           - [Processing](#policies-processing)
-         - [Configurations](#configurations)
-         - [Orchestrators](#orchestrators)
-         - [Prompt Elements](#prompt-anatomy)
-         - [Prompt Templates](#prompt-templates)
-      - [Tools](#tools)
-    - [Common Failure Modes](#common-failure-modes)
-      - [Expanded List](#expanded-list)
-      - [Examples and Sources](#examples-and-sources)
-        - [Authoritative Works Cited](#summary-of-authoritative-works-cited-for-common-failure-modes-with-examples-and-sources)
-    - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies-1)
-      - [Strategies for Failure Modes with Sources](#strategies-for-failure-modes-with-sources)
-        - [Authoritative Works Cited](#summary-of-authoritative-works-cited-for-mitigation-strategies-for-common-if-llm-failure-modes)
-  - [IF-LLM-BO Project Journey](#appendix-if-llm-bo-project-journey)
-    - [Expanded Objectives](#expanded-objectives)
-    - [Activity Iterations](#activity-iterations)
 - [Roadmap](#roadmap)
 - [Authors](#authors)
 - [License](#license)
-
-
-
-
----
+- [Index](#document-index)
+- [File Header](#file-header)
 
 
 ## NOT YET ORGANIZED
-TODO: Review then integrate or eliminate
 
----
-
-
-### Instruction Elements (Scaffolding)
-
-The scaffolding so far is as follows:
-- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
-  - **meta:** *provides cross-cutting rules and scaffolding about the ontology itself.* Meta captures naming rules, modeling conventions, global decision policies, ontology versioning, glossaries of meta-terms, and core primitives reused across domains.
-  - **tasks:** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
-  - **domains:** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
-  - **experts:** *shape how the model reasons about the task.* Experts encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
-  - **structures:** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
-  - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
-  - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
-  - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
-
-
----
-
-
-### Knowledge Entry Anatomy
-
-- Common Human Reference
-- Canonical Handles
-  - IDs
-  - Namespaced Tags
-- Alias Tags
-- Definition Summary / Purpose
-- Content Specific Fields
-
-### Knowledge File Anatomy
-
-#### File Header
-
-#### Indexes
-- Canonical Handles Index
-- Aliases Index
-
-#### Knowledge Header
-
-##### Knowledge Entries
-
-
-
-### Knowledge Entry Types
-
-#### Meta Entries
-
-## Processing Policies
-### Enforcement & Degradation Handling
-### Instruction Precedence
-### Safety, Privacy, and Refusals
-### Context
-#### Context & Ambiguity Handling
-#### Knowledge & Information Hierarchy
-### Hallucination & Fabrication
-### Defaults
-#### Tasks
-##### Priorities
-##### Identity
-##### Audience
-##### Success Criteria (Quality Bar)
-#### Domains
-##### Deterministic Defaults (US)
-#### Experts
-##### Reasoning & Uncertainty
-#### Tools
-##### Tool Usage
-##### Tool Constraints (Negative Rules)
-#### Structures
-##### Output Structure Sections
-##### Output Structure Flexibility
-
-### Priorities
-TODO: Outline priorities
-
-### Knowledge
-TODO: Outline knowledge, especially types and significance toward objectives and priorities.
-
-### Work in Progress
-this IF-LLM Behavior Ontology (IFLLMBO) is intended to be a lightweight, LLM-legible semantic scaffolding system for organizing knowledge files and entries that ensure tools are more likely to offer results that are more accurate, reliable, relevant, specific, clear, practical, fair, and efficient.
-
-It prioritizes human-readable structure, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent reasoning and behavior across AI-assisted workflows.
-
-Ideation and Exploration
-
-Clarify Prompt Parameter Breakdown
-it's
-Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
-
-## END NOT YET ORGANIZED
-
-
----
-
-
----
+TODO: Review then integrate or eliminate [content that is not yet organized](#not-yet-organized-1)
 
 
 ## **Features**
@@ -177,108 +41,94 @@ Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Work
 TODO
 
 
----
-
-
 ## **Background**
 
-TODO: Verify hyperlinks
-
-The goal is to build a lightweight semantic scaffolding system for organizing instructions and context in structured knowledge files; instructions and context guiding instruction-following large language models (IF-LLMs) toward [high-priority results](#decision-making-information-quality-criteria-priorities). The scaffolding helping organize instructions and context must also align with these priorities. It must emphasize human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology. The scaffolding so far is as follows:
-- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
-  - **[knowledge files](#knowledge-files)**
-    - **[policies](#policies):** *provides cross-cutting rules and scaffolding about the ontology itself.*
-      - **[governance](#policies-governance):** other policies requiring human responsibility.
-      - **[knowledge entry](#policies-knowledge-entry):** naming rules, modeling conventions, versioning, and core primitives.
-      - **[processing](#policies-processing):** global decision policies.
-    - **[prompt templates](#prompt-templates):** *offer reusable, copyable prompt pattern templates ensuring more consistent use and improved results.*
-      - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
-      - **[domains](#domains-1):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
-      - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
-      - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
-      - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
-      - **[examples](#examples):** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
-    - **[configurations](#configurations):** *compose a complete behavioral profile.* Configurations bind tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
-    - **[orchestrators](#orchestrators):** TODO *orchestrates activity across multiple configurations.* Orchestrators coordinate tasks among multiple configurations with unique tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts. Orchestrators validate results between each configuration to improve results.
-
-
----
+TODO
 
 
 ## **Known Issues**
 
-TODO
-
-
----
+NONE — There are no know issues as of April 2026. However, the IF-LLM sub-industry is evolving quickly and is still in its public infancy. Therefore, information should be periodically reviewed, verified, and refined.
 
 
 ## **Requirements**
 
-TODO
-
-1. Familiarity and access to instruction-following LLM like [ChatGPT](https://chatgpt.com/)
-1. Familiarity and access to [GitHub](https://github.com/)
+1. Familiarity using and access to [an instruction-following large language model (IF-LLM)](#common-if-llms)
+1. Familiarity using and access to [GitHub](https://github.com/)
 1. Agree to the [Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0)](LICENSE.txt)
-1. Review [README](README.md)
-
-
----
+1. Review [README's Table of Contents](README.md) plus [Challenges and Solutions](!!!TODO!!!) sections
 
 
 ## **Installation**
 
-TODO
-
-1. Review [README](README.md).
-1. Perform the necessary actions to satisfy [minimum requirements](#requirements).
-1. From your local projects directory, copy the entire remote GitHub repository into your local project directory.
-
-
----
+1. Perform the necessary actions to satisfy the [minimum requirements](#requirements).
+1. From your local projects directory, copy [the entire IF-LLM-BO project's remote GitHub repository](https://github.com/LHHegland/if-llm-behavior-ontology/tree/main) into your local project directory.
+1. Upload the following files to a new conversation in [your favorite instruction-following large language model (IF-LLM)](!!!TODO!!!) to give the model access to the stored instructions and context (relevant background information) for that conversation.
+   - ~~system-knowledge-policies.md~~ — *NOT YET AVAILABLE*
+   - system-processing-policies.md
+   - ~~system-tasks.md~~ — *NOT YET AVAILABLE*
+   - ~~system-domains.md~~ — *NOT YET AVAILABLE*
+   - ~~system-reasonings.md~~ — *NOT YET AVAILABLE*
+   - ~~system-structures.md~~ — *NOT YET AVAILABLE*
+   - ~~system-personas.md~~ — *NOT YET AVAILABLE*
+   - ~~system-examples.md~~ — *NOT YET AVAILABLE*
+   - system-configurations.md
+   - system-orchestrators.md
+1. Copy the following prompt and paste it into the IF-LLM prompt field (or perform the necessary steps if you are using an API).
+    ```
+    # Configuration
+    
+    Please use the following uploaded files for purposes indicated below during this conversation:
+    - `system-processing-policies.md` contains **System-Level Processing Policies**
+    - `system-configurations.md` contains **System-Level Behavior Configurations**
+    - `system-orchestrators.md` contains **System-Level Behavior Orchestrators**   
+    ```
 
 
 ## **Configuration**
 
-TODO
-
-
----
+NONE — No configuration is required.
 
 
 ## **Usage**
 
-TODO
-
 1. Perform the necessary actions to complete the [installation](#installation).
-
-**TIPS:** Refer to the following documentation and tools to efficiently develop prompts delivering accurate, reliable, relevant, specific, clear, practical, fair, and efficient results for your users:
-- [ChatGPT Prompt Engineering Best Practices](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt)
-- [How do I create a good prompt for an AI model?](https://help.openai.com/en/articles/4936848-how-do-i-create-a-good-prompt-for-an-ai-model)
-- [OpenAI Prompting Guide](https://platform.openai.com/docs/guides/prompting)
-- [OpenAI Prompt Examples)](https://platform.openai.com/docs/examples)
-- [OpenAI Prompt Optimizer Tool](https://platform.openai.com/chat/edit?optimize=true)
-- [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
-- [OpenAI Reasoning Best Practices](https://platform.openai.com/docs/guides/reasoning-best-practices)
-- [OpenAI GPT-5 Prompting Guide](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
-
+1. Submit your task prompt or question to the IF-LLM.
+   1. Optional:
+      1. Review [`system-prompt-templates.md`](system-prompt-templates.md) to find a prompt to achieve your desired objective.
+      1. Copy and paste the prompt into the IF-LLM prompt field.
+      1. Overwrite the variable input placeholders with your input data (i.e., `<variable input placeholder>`) (e.g., `<full name>` → `Pat Smith`, `<topic>` → `entomology`, `<objective>` → `better understand the risks to human health from flying insects`, `<audience>` → `average people from the many, widespread, and diverse communities throughout the United States of America today`).
+      1. Submit your prompt to the IF-LLM.
 
 ---
 
 
-## IF-LLM-BO Project Notes
-The following sections contain notes related to the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.
+## **IF-LLM-BO Project Notes**
+
+The following sections contain notes related to the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project:
+- [Foundations](#foundations)
+  - [Assumptions](#assumptions)
+  - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
+  - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
+  - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
+- [Purpose](#purpose)
+- [Objectives](#objectives)
+- [Governance, Policies, Rules](#governance-policies-and-rules)
+- [Prompt Templates, Orchestrators, Configurations](#prompt-templates-orchestrators-configurations)
 
 
 ---
-
 
 ### Foundations
-The following sections describe the foundations grounding the IF-LLM-BO project.
+
+The following sections describe the foundations grounding the IF-LLM-BO project:
+- [Assumptions](#assumptions)
+- [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
+- [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
+- [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
 
 
 ---
-
 
 #### Assumptions
 
@@ -296,9 +146,9 @@ IF-LLMs produce results that are likely considered when making future decisions.
 
 #### Decision-Making Information Quality Criteria (Priorities)
 
-Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. Therefore, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. Meaning, the instructions and context guiding IF-LLMs — especially the system-level policies — should reflect and reinforce these priorities.
+[Instruction-following large language models (IF-LLMs)](!!!TODO!!!) are often used to generate information that can influence decisions impacting people and other systems. Because of this, the responses they produce should meet clear and well-defined quality standards. Therefore, IF-LLMs should prioritize these quality standards according to their ranked importance. Any trade-offs should be disclosed to users. Meaning, the [instructions and context guiding IF-LLMs](!!!TODO!!!) — especially the system-level policies — should reflect and reinforce these priorities.
 
-The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making. Each definition is written to answer a practical question: *"What does this mean for everyday decision-making?"*
+The priorities listed below identify the key criteria that information should have in order to reliably support decision-making. Each definition answers a practical question: *"What does this mean for everyday decision-making?"*
 
  1. **Auditability:** source of information, how information was changed, and who handled information can be identified.
  2. **Relevance:** information matters for the decision being made and helps improve that decision. It connects directly to the question, problem, or goal at hand. Relevant information helps you decide; irrelevant information does not—even if it is interesting or true.
@@ -321,24 +171,9 @@ More detailed information about these criteria, along with authoritative sources
 
 ---
 
-#### Commonly Used IF-LLMs
-
-Currently, the following are the commonly used IF-LLMs.  More detailed information with authoritative sources appear in the [Appendix > IF-LLM Information > Commonly Used IF-LLMs](#commonly-used-if-llms-1).
-
-- **[OpenAI ChatGPT](https://chat.openai.com/)**
-- **[Google Gemini](https://gemini.google.com/)**
-- **[Perplexity AI](https://www.perplexity.ai/)**
-- **[Microsoft Copilot](https://copilot.microsoft.com/)**
-- **[Claude (Anthropic)](https://claude.ai/)**
-- **[Meta AI (Meta Platforms)](https://www.meta.ai/)**
-- **[Grok (xAI)](https://grok.x.ai/)**
-
-
----
-
 #### Common IF-LLM Failure Modes
 
-Below is a high-level summary of the common instruction-following large language model (IF-LLM) failure modes (as of March 2026) that this project hopes to address.  More detailed information about these failure modes, along with examples and authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#common-failure-modes).
+Below is a high-level summary of the common instruction-following large language model (IF-LLM) failure modes (as of March 2026).  More detailed information about these failure modes, along with examples and authoritative sources, can be found in the [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#common-failure-modes).
 
 - Truthfulness & Knowledge Failures
 - Reasoning & Analytical Failures
@@ -364,19 +199,19 @@ TODO (Governance, Instructions, and Context)
 
 ### Purpose
 
-The **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for structuring knowledge files that guide instruction-following large language models (IF-LLMs) toward results that reasonably satisfy the [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities). IF-LLM-BO's emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts.
+The **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO)** is a lightweight semantic scaffolding system for organizing [instruction-following large language model (IF-LLM) elements](!!!TODO!!!) to guide [IF-LLMs](!!!TODO!!!) toward [higher-quality responses](#decision-making-information-quality-criteria-priorities). IF-LLM-BO emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across objectives, workflows, contexts, and audiences. It includes [Governance, Policies, and Rules](#governance-policies-and-rules) plus [Prompt Templates, Orchestrators, and Configurations](#prompt-templates-orchestrators-configurations) to most efficiently fulfill its purpose.
 
 
 ---
 
-
 ### Objectives
 
-IF-LLM-BO intends to build a lightweight semantic scaffolding system for structuring instructions and context for instruction-following large language models (IF-LLMs) that accomplishes the following: 
-  - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across tasks and contexts; a practical, not perfect, ontology
-  - stores reusable prompt elements, configurations, and orchestrators in organized knowledge entries and files
-  - reduces IF-LLM failure risks through reusable IF-LLM policies
-  - empowers greater user efficiency through reusable IF-LLM elements (e.g., prompt templates, knowledge entries, configurations, orchestrators)
+First, the IF-LLM-BO project intends to build a lightweight semantic scaffolding system for structuring instructions and context for instruction-following large language models (IF-LLMs) that accomplishes the following: 
+  - emphasizes human-readable organization, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent model behavior across objectives, workflows, contexts, and audiences; a practical, yet not perfect, ontology
+  - empowers [human governance](#system-architect-and-solution-developer-governance-human-governance) (i.e., for system architects and solution developers)
+  - reduces IF-LLM failure risks through validated, stored, and reusable IF-LLM [knowledge policies (i.e., validated, stored, and reusable instructions and context](#knowledge-file-and-knowledge-entry-policies-stored-context-policies) and [processing rules (i.e., validated, stored, and reusable instructions](#processing-policies-stored-instruction-rules).
+  - stores validated, reusable prompt elements, configurations, and orchestrators in structured knowledge entries and files
+  - empowers greater user efficiency through easily reusable templates combining relevant user inputs with various validated, stored, and reusable IF-LLM elements (e.g., prompt templates, configurations, orchestrators)
   - uses the process below:
     1. **Identify Foundations**
     2. **Identify Assumptions**
@@ -391,17 +226,100 @@ More detailed information is available in the following sections:
 - [Roadmap](#roadmap)
 
 
- 
 ---
 
+### Governance, Policies, and Rules
+TBD
 
-## Appendices
+The following sections outline the **Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) Governance, Policies, and Rules**.
+
+The likelihood for IF-LLM behavioral correctness can be improved — risks of encountering [common IF-LLM failure modes](#common-if-llm-failure-modes) can be reduced — by using [common IF-LLM failure mitigation strategies](#common-if-llm-failure-mitigation-strategies). These strategies generally rely on humans consistently practicing [human governance](#system-architect-and-solution-developer-governance-human-governance), including using explicit IF-LLM instructions such as [stored knowledge (context) policies](#knowledge-file-and-knowledge-entry-policies-stored-context-policies) and [stored instruction rules](#processing-policies-stored-instruction-rules)).
+
+
+---
+
+#### System Architect and Solution Developer Governance (Human Governance)
+
+Humans are ultimately responsible for creating, reviewing, updating/maintaining, and deleting/retiring instructions and context for instruction-following large language models (IF-LLMs). Meaning, humans must actively govern the overall system and developed solutions.
+
+Instructions and context may be provided by system architects, solution developers, and end users. End users may not have the experience, knowledge, skills, or tools to effectively use [common IF-LLM failure mitigation strategies](#common-if-llm-failure-mitigation-strategies) consistently. Therefore, the vast majority of responsibility must be assumed by system architects and solution developers.
+
+Instruction and context contributors often have different objectives, priorities, and constraints. As such, there are multiple layers of governance, policies, and rules: system, developer, and user layers. To offer the necessary flexibility, IF-LLMs process instructions and context using a **strict authority hierarchy**, where higher-authority instructions override lower-authority inputs (i.e., [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy)). To maintain reliability, stability, and auditability, this authority hierarchy must be respected; lower-level policies must not *silently* reinterpret or weaken higher-level policies. Lower-level policies *can* override higher-level policies if necessary, just not *silently*; overrides must be **explicitly disclosed to end users**.
+
+Below is a high-level summary of recommended IF-LLM governance policies for system architects and solution developers:
+- **Safety, Security, and Access Control Policies**
+  - [Least-Privilege Rule](#least-privilege-rule)
+  - [Secrets Rule](#secrets-rule)
+  - [Approval Rule](#approval-rule)
+- **Tool Use and External Actions Policies**
+  - [Tool-Decision Rule](#tool-decision-rule)
+- **Freshness and Retrieval Policies**
+  - [Freshness Rule](#freshness-rule)
+- **Evaluation, Monitoring, and Continuous Improvement Policies**
+  - [Incident Disclosure Rule](#incident-disclosure-rule)
+  - [Logging and Monitoring Rule](#logging-and-monitoring-rulev)
+  - [Pre-Deployment Testing Rule](#pre-deployment-testing-rule)
+  - [Continuous Improvement Rule](#continuous-improvement-rule)
+ 
+More detailed information about these governance policies can be found in the [Appendix: Governance, Policies, Rules](#appendix-if-llm-bo-governance-policies-and-rules) > [System Architect and Solution Developer Governance (Human Governance)](#system-architect-and-solution-developer-governance-human-governance-1).
+
+
+---
+
+#### Knowledge File and Knowledge Entry Policies (Stored Context (Knowledge) Policies)
+TBD
+
+Instruction-following large language model (IF-LLM) [instructions and context](!!!TODO!!!) can be stored as **discrete, reusable [knowledge entries](!!!TODO!!!)**. Knowledge entries are generally grouped by type into **[knowledge files](!!!TODO!!!)** to improve organization, reuse, and governance. Human-readable structure is preferred for entries over opaque or auto-generated schemas for clarity.
+
+Knowledge entries provided by the users to IF-LLMs override general model knowledge but do not override system- or developer-level instructions. More information can be found in the section [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy). 
+
+Below is a high-level summary of recommended IF-LLM policies related to knowledge files and entries for system architects and solution developers:
+- [Knowledge File Naming Convention Rule](#knowledge-file-naming-convention-rule)
+- [Knowledge File Root ID and Tag Convention Rule](#knowledge-file-root-id-and-tag-convention-rule)
+
+More detailed information about these policies can be found in the [Appendix: Governance, Policies, Rules](#appendix-if-llm-bo-governance-policies-and-rules) > [Knowledge File and Knowledge Entry Policies (Stored Context Policies)](#knowledge-file-and-knowledge-entry-policies-stored-context-policies-1).
+
+
+---
+
+#### Processing Policies (Stored Instruction Rules)
+
+System architects and solution developers should also remain aware of the [system-level processing policies](system-policies-processing.md#processing-policies). The list below offers a high-level summary of rules that IF-LLMs are asked to enforce as part of the IF-LLM-BO project:
+- Instruction Hierarchy and Control Policies
+- Safety, Security, and Access Control Policies
+- Safety Behavior and Alignment Quality Policies
+- Freshness and Retrieval Policies
+- Tool Use and External Actions Policies
+- Evaluation, Monitoring, and Continuous Improvement Policies
+- Grounding, Evidence, and Truthfulness Policies
+- Context Handling and Interpretation Policies
+- Reasoning, Interpretation, and Tradeoffs Policies
+- Citation Integrity and Evidence Traceability Policies
+- Output Quality and Task Completion Policies
+- Instruction Element Defaults
+  - Task Instruction Defaults
+    - Priorities
+      - Operational Definitions
+      - General Guardrails
+      - Unified Decision Gate Framework
+      - Tradeoff and Risk Disclosure Requirements
+      - Continuous Improvement Clause
+    - Identity
+    - Audience
+    - Success Criteria (Quality Bar)
+
+More detailed information about these rules can be found in the [Appendix: Governance, Policies, Rules](#appendix-if-llm-bo-governance-policies-and-rules) > [Processing Policies (Stored Instruction Rules)](#processing-policies-stored-instruction-rules-1).
+
+
+---
+---
+
+## **Appendices**
 
 These appendices contain more detailed information and authoritative source references, if applicable, regarding elements of the Instruction-Following Large Language Model Behavior Ontology (IF-LLM-BO) project.
 
 
 ---
-
 
 ### Appendix: Assumptions
 
@@ -461,7 +379,7 @@ Human beings are responsible for the following activities related to IF-LLM inst
 - Updating (Maintaining)
 - Deleting (Retiring)
 
-[Instructions and contextual elements](#prompt-anatomy) can be stored as **discrete, reusable [knowledge entries](#knowledge-files)**. Knowledge entries can be grouped into **[knowledge files](#knowledge-files)** to improve organization, reuse, and governance.
+[Instructions and contextual elements](!!!TODO!!!) can be stored as **discrete, reusable [knowledge entries](!!!TODO!!!)**. Knowledge entries can be grouped into **[knowledge files](!!!TODO!!!)** to improve organization, reuse, and governance.
 
 Knowledge files provided to the model override general model knowledge but do not override system- or developer-level instructions.
 
@@ -469,11 +387,11 @@ Stable identifiers (IDs, tags, handles) for knowledge entries improve traceabili
 
 Human-readable structure is preferred over opaque or auto-generated schemas for clarity.
 
-Instructions and contextual elements can be stored as **discrete, reusable [prompt templates](#prompt-templates)**, also stored in a dedicated knowledge file.
+Instructions and contextual elements can be stored as **discrete, reusable [prompt templates](!!!TODO!!!)**, also stored in a dedicated knowledge file.
 
-Specific combinations of instructions and contextual elements can be stored as **discrete, reusable [configurations](#configurations)**, stored in a dedicated knowledge file too.
+Specific combinations of instructions and contextual elements can be stored as **discrete, reusable [configurations](!!!TODO!!!)**, stored in a dedicated knowledge file too.
 
-Specific arrangements of configurations can be stored as **discrete, reusable [orchestrators](#orchestrators)**, stored in a dedicated knowledge file as well.
+Specific arrangements of configurations can be stored as **discrete, reusable [orchestrators](!!!TODO!!!)**, stored in a dedicated knowledge file as well.
 
 Missing, outdated, or uncertain knowledge should be disclosed rather than inferred to ensure auditability.
 
@@ -481,7 +399,7 @@ Refusals, limitations, and uncertainty disclosures are valid and expected outcom
 
 When conflicts arise, safety and correctness often override completeness or convenience for most IF-LLMs.
 
-Using a [semi-formal ontology](#background) to establish system-level policies, contextual defaults, and offer reusable, standardized instructions for common use cases can help improve behavioral correctness and reduce risks of encountering common failure modes.
+Using a [semi-formal ontology](!!!TODO!!!) to establish system-level policies, contextual defaults, and offer reusable, standardized instructions for common use cases can help improve behavioral correctness and reduce risks of encountering common failure modes.
 
 The IF-LLM-BO is a **practical, lightweight semantic scaffolding system**, not a formally complete ontology.
 
@@ -518,11 +436,9 @@ TODO
 
 This appendix describes the decision-making information quality criteria and definitions used in the Information-Following Large Language Model Behavior Ontology (IF-LLM-BO) project. This appendix expands on the [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities). The criteria and definitions are based on terms used in various [authoritative sources](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities).
 
-Instruction-Following Large Language Models (IF-LLMs) are often used to generate information that can influence real-world decisions. Because of this, the information they produce should meet clear and well-defined quality standards. The criteria listed below identify the key characteristics that information should have in order to reliably support decision-making.
+Instruction-following large language models (IF-LLMs) are often used to generate information that influence decisions impacting people and other systems. Because of this, the responses they produce should meet clear and well-defined quality standards. The quality standards listed below identify the key criteria that information should have in order to reliably support decision-making. To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities. The criteria listed below are shown in their order of importance; their priorities.
 
 The criteria and definitions presented here are **synthesized from the cited authoritative sources**. Each definition is written to answer a practical question: *“What does this mean for everyday decision-making?”*
-
-To produce information that meaningfully supports decisions, IF-LLMs should prioritize these criteria according to their ranked importance. Any trade-offs should be disclosed to users. In turn, the policies and procedures governing IF-LLM-BO systems should be designed to reflect and reinforce these priorities.
 
 - **Auditability:** source of information, how information was changed, and who handled information can be identified.
   - *Sources*
@@ -601,7 +517,6 @@ To produce information that meaningfully supports decisions, IF-LLMs should prio
 
 ---
 
-
 ##### Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)
 
 A summary of the authoritative sources for these information quality criteria appears below:
@@ -614,109 +529,7 @@ A summary of the authoritative sources for these information quality criteria ap
 
 ---
 
-
-### Appendix: IF-LLM Information
-TODO
-
-
----
-
-
-#### Commonly Used IF-LLMs
-TODO
-      
-The following is a list of IF-LLMs. This list has been sorted from highest to least estimated global use based on reports during Fall 2025. The list below is the expansion of the previous list in [Foundations > Commonly Used IF-LLM Models](#commonly-used-if-llms).
-
-- **[OpenAI ChatGPT](https://chat.openai.com/)**
-  - Usage
-    - ~5.5–5.8 billion monthly visits
-    - ~46–46.6 billion annual visits
-    - ~80% global chatbot market share
-    - **dominant globally** in both traffic and market share (~60–80% depending on dataset)
-    - **orders of magnitude more usage** than competitors (billions of monthly visits).
-  - Sources
-    - *Exploding Topics*. "65 Most Popular AI Tools Ranked (December 2025)." ([Exploding Topics](https://explodingtopics.com/blog/most-popular-ai-tools)).
-    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
-    - *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
-    - *Visual Capitalist*. "The 10 Most-Used AI Chatbots in 2025." ([Visual Capitalist](https://www.visualcapitalist.com/the-10-most-used-ai-chatbots-in-2025)).
-- **[Google Gemini](https://gemini.google.com/)**
-  - Usage
-    - ~1.3 billion monthly visits
-    - 122 million monthly unique users
-    - rapidly growing daily average user (DAU) share up to ~25% in some markets
-    - consistently **ranked second by traffic and user growth**.
-  - Sources
-    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
-    - *eMarketer*. "Gemini gains ground on ChatGPT with 25% US DAU share as Claude's churn drops". ([eMarketer](https://www.emarketer.com/content/gemini-gains-ground-chatgpt-25-dau-share-claude-churn-drops)).
-    - *DataReportal*. "Digital 2026: More Than 1 Billion People Use AI". ([DataReportal](https://datareportal.com/reports/digital-2026-one-billion-people-using-ai)).
-- **[Perplexity AI](https://www.perplexity.ai/)**
-  - Usage
-    - ~189 million monthly visits
-    - ~7–11% global market share depending on dataset
-  - Sources
-    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
-    - *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
-- **[Microsoft Copilot](https://copilot.microsoft.com/)**
-  - Usage
-    - ~100–150 million monthly users/visits
-    - ~3–10% share depending on metric
-  - Sources
-    - *DemandSage*. "Latest Chatbot Statistics 2025 him (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
-    - *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
-    - *LinkedIn*. "The Top 5 AI Chatbots Rulhim himing 2025: Blending Massive Crowds with Serious Smarts." ([LinkedIn](https://www.linkedin.com/pulse/top-5-ai-chatbots-ruling-2025-blending-massive-crowds-dale-van-blerk-thmff/)).
-- **[Claude (Anthropic)](https://claude.ai/)**
-  - Usage
-    - ~180 million monthly visits
-    - ~1–4% share depending on region
-    - strong enterprise growth
-  - Sources
-    - *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
-    - *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
-    - *eMarketer*. "Gemini gains ground on ChatGPT with 25% US DAU share as Claude's churn drops". ([eMarketer](https://www.emarketer.com/content/gemini-gains-ground-chatgpt-25-dau-share-claude-churn-drops)).
-- **[Meta AI (Meta Platforms)](https://www.meta.ai/)**
-  - Usage
-    - likely has **very high total reach**, but lack of transparent standalone metrics prevents precise ranking.
-    - widely used via Facebook, Instagram, and WhatsApp integrations
-  - Sources
-    - Andreessen Horowitz. "State of Consumer AI 2025: Product Hits, Misses, and What’s Next." ([Andreessen Horowitz](https://a16z.com/state-of-consumer-ai-2025-product-hits-misses-and-whats-next/)).
-- **[Grok (xAI)](https://grok.x.ai/)**
-  - Usage
-    - ~150–200 million monthly visits estimated 
-    - usage tied to X/Twitter ecosystem
-  - Sources
-    - *Axios*. "ChatGPT is still by far the most popular AI chatbot." ([Axios](https://www.axios.com/2025/09/06/ai-chatbot-popularity)).
-
-
-**NOTES:**
-- ChatGPT and Gemini form the **first-year** IF-LLM Perplexi hosts/developers.
-- Perplexity, Copilot, and Claude form a **second tier** with tens to hundreds of millions of users.
-- Meta AI and Grok are ecosystem-dependent and emerging
-- Interpretation
-  - Ranking is based on **traffic + market share + user estimates combined**, since no single standardized metric exists across all providers.
-- Material Tradeoffs & Limitations (Required Disclosure)
-  - **Metric inconsistency:** Sources mix **visits, unique users, DAUs, and market share**, which are not directly comparable.
-  - **Platform integration bias:** Tools embedded in ecosystems (Google, Microsoft, Meta) may have **underreported or differently measured usage**.
-  - **Timeliness vs. reliability tradeoff:** Using recent (2025–2026) data improves relevance but introduces **variation across datasets and methodologies**.
-  - **Stakeholder impact:** Rankings may influence business or personal tool choices; uncertainty could affect decisions.
-
-
-##### Summary of Authoritative Sources for Commonly Used IF-LLMs
-
-Below is the summary of authoritative sources used to identify commonly used IF-LLMs:
-- Andreessen Horowitz. "State of Consumer AI 2025: Product Hits, Misses, and What’s Next." ([Andreessen Horowitz](https://a16z.com/state-of-consumer-ai-2025-product-hits-misses-and-whats-next/)).
-- *DataReportal*. "Digital 2026: More Than 1 Billion People Use AI". ([DataReportal](https://datareportal.com/reports/digital-2026-one-billion-people-using-ai)).
-- *DemandSage*. "Latest Chatbot Statistics 2025 (Market Share & Trends)." ([DemandSage](https://www.demandsage.com/chatbot-statistics/)).
-- *eMarketer*. "Gemini gains ground on ChatGPT with 25% US DAU share as Claude's churn drops". ([eMarketer](https://www.emarketer.com/content/gemini-gains-ground-chatgpt-25-dau-share-claude-churn-drops)).
-- *Exploding Topics*. "65 Most Popular AI Tools Ranked (December 2025)." ([Exploding Topics](https://explodingtopics.com/blog/most-popular-ai-tools)).
-- *LinkedIn*. "The Top 5 AI Chatbots Ruling 2025: Blending Massive Crowds with Serious Smarts." ([LinkedIn](https://www.linkedin.com/pulse/top-5-ai-chatbots-ruling-2025-blending-massive-crowds-dale-van-blerk-thmff/)).
-- *Statcounter*. "AI Chatbot Market Share Worldwide." ([Statcounter](https://gs.statcounter.com/ai-chatbot-market-share)).
-- *Visual Capitalist*. "The 10 Most-Used AI Chatbots in 2025." ([Visual Capitalist](https://www.visualcapitalist.com/the-10-most-used-ai-chatbots-in-2025)).
-
-
----
-
-
-#### Instruction and Context Authority Hierarchy
+### Appendix: IF-LLM Instruction and Context Authority Hierarchy
 
 TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authority as outlined below, including how instructions are granted authority, critical phrases used to grant/assign authority, plus 3 to 5 examplesto help users understand the value of this hierarchy.
 1. System Instructions and Context (Global Policies and Context) (e.g., knowledge entries with the highest authority (i.e., meta knowledge entries))
@@ -730,93 +543,250 @@ TODO: Briefly define the hierarchy of IF-LLM instructions and knowledge authorit
 IF-LLMs receive instructions through either user prompts (e.g., chat interfaces or APIs) or developer instructions. Users and developers can store reusable instructions and context in knowledge entries of various types. Knowledge entries can be organized into knowledge files.
 
 
-#### Prompt Anatomy
-TODO
+---
 
-IF-LLM instructions generally organized into the following sections:
-
-- [Identity & Role](#identity--role)
-- [Priorities](#priorities-2)
-- [Task](#task)
-- [Domains](#domains-1)
-- [Reasoning](#reasoning)
-- [Structure](#structure)
-- [Persona](#persona)
-- [Examples](#examples)
+### Appendix: IF-LLM-BO Governance, Policies, and Rules
+TBD
 
 
 ---
 
+##### System Architect and Solution Developer Governance (Human Governance)
+TBD
 
-##### Identity & Role
-TODO
-
-- Identity
-- Role
-- Audience (i.e., who, where, when)
+The IF-LLM-BO project contains [**System Policies**](system-policies.md) to help [commonly used IF-LLMs](README.md#commonly-used-if-llms) reduce [common failure modes](README.md#common-if-llm-failure-modes) during processing using [various mitigation strategies](README.md#common-if-llm-failure-mitigation-strategies). Similarly, system designers and developers must consistently remain aware and apply the following rules to ensure adequate human governance of systems and developed solutions support the [purpose](README.md#purpose) and [objectives](README.md#objectives) of this project.
 
 
----
+###### Least-Privilege Rule
 
-
-##### Priorities
-TODO
+Use the minimum permissions, tools, data, and action scope required to complete the task. Prefer read-only access, narrower queries, smaller context windows, limited side effects, and lower-impact actions when they are sufficient. Do not expand permissions, data access, or execution scope without a task-grounded reason. ([Related Processing Policy](system-policies.md#least-privilege-rule))
 
 
 ---
 
+###### Secrets Rule
 
-##### Task
-TODO
-
-- Objectives
-- Success Criteria
-- Failure Modes / Unacceptable Outputs
-- In-Scope Task Goals
-- Out-of-Scope Task Goals
-- Workflow
+Do not expose credentials or sensitive internal data. ([Related Processing Policy](system-policies.md#secrets-rule))
 
 
 ---
 
+###### Approval Rule
 
-##### Domains
+Require explicit human confirmation before irreversible, high-impact, high-cost, privacy-sensitive, security-sensitive, or externally consequential actions. If the action changes data, sends messages, executes transactions, alters permissions, or could materially affect people or systems, pause for confirmation unless a higher-priority safe instruction clearly authorizes automatic execution. ([Related Processing Policy](system-policies.md#secrets-rule))
+
+
+---
+
+###### Tool-Decision Rule
+
+Use tools only when needed for missing data, external actions, or higher reliability. ([Related Processing Policy](system-policies.md#tool-decision-rule))
+
+
+---
+
+###### Freshness Rule
+
+Use retrieval or search for recent or dynamic information instead of relying on memory or general model knowledge. ([Related Processing Policy](system-policies.md#tool-decision-rule))
+
+
+---
+
+###### Incident Disclosure Rule
+
+When a material failure, misuse event, security issue, or policy-breaking behavior is identified, record the incident, preserve relevant evidence within privacy and security limits, and communicate the limitation or impact to the appropriate reviewer, operator, or user when relevant. Do not hide known material failures behind confident output. ([Related Processing Policy](system-policies.md#incident-disclosure-rule))
+
+
+---
+
+###### Logging and Monitoring Rule
+
+Maintain enough logging and monitoring to support review of material tool calls, external actions, validation failures, safety-relevant events, and significant uncertainty disclosures, consistent with privacy and security constraints. Logging should support debugging, auditing, misuse detection, and incident review without exposing secrets unnecessarily. ([Related Processing Policy](system-policies.md#logging-and-monitoring-rule))
+
+
+---
+
+###### Pre-Deployment Testing Rule
+
+Before release or material policy changes, test for likely failure modes including hallucination, prompt injection, unsafe tool use, weak grounding, citation errors, output-format failures, and foreseeable fairness or safety issues. If testing reveals material risk, revise controls or disclose the limitation before deployment. ([Related Processing Policy](system-policies.md#pre-deployment-testing-rule))
+
+
+---
+
+###### Continuous Improvement Rule
+
+Policies and procedures must:
+
+- Support identification of recurring failure modes.
+- Enable iterative refinement of outputs and decision frameworks.
+- Encourage structured feedback loops when tradeoffs repeatedly surface.
+- Auditability exists not only for transparency, but to support learning and improvement over time.
+
+([Related Processing Policy](system-policies.md#continuous-improvement-clause))
+
+
+---
+
+##### Knowledge File and Knowledge Entry Policies (Stored Context Policies)
+
+TBD
+
+Instruction-following large language model (IF-LLM) [instructions and context](#prompt-anatomy) can be stored as **discrete, reusable [knowledge entries](#knowledge-files)**. Knowledge entries are generally grouped by type into **[knowledge files](#knowledge-files)** to improve organization, reuse, and governance. Human-readable structure is preferred for entries over opaque or auto-generated schemas for clarity.
+
+Knowledge entries provided to IF-LLMs override general model knowledge but do not typically override system- or developer-level instructions. More information can be found in the section [Instruction and Context Hierarchy](#instruction-and-context-authority-hierarchy). 
+
+
+
+---
+
+###### Knowledge File Naming Convention Rule
+
+Below is a table that outlines the IF-LLM-BO project knowledge file naming convention for specific knowledge file (KF) types. This helps to support [Instruction Hierarchy and Control Policies](system-policies.md#instruction-hierarchy-and-control-policies), including the [Instruction Hierarchy Rule](system-policies.md#instruction-hierarchy-rule), [Hierarchy Rule](system-policies.md#hierarchy-rule), and [Stability Rule](system-policies.md#stability-rule).
+
+| Hierarchy | KF Type |
+| :-------: | :------ |
+| `sys-` | `policies.md` |
+| `dev-` | `orchestrators.md` |
+| | `configurations.md` |
+| | `tasks.md` |
+| | `domains.md` |
+| | `reasoning.md` |
+| | `structures.md` |
+| | `personas.md` |
+| | `examples.md` |
+| | `prompt-templates.md` |
+
+
+---
+
+###### Knowledge File Root ID and Tag Convention Rule
+
+Knowledge entries use stable, unique identifiers (IDs, tags, handles) to improve traceability, reuse, and auditability over time. Below is a table that outlines the IF-LLM-BO project knowledge file root ID and tag convention for specific knowledge file (KF) types. This helps to support [Instruction Hierarchy and Control Policies](system-policies.md#instruction-hierarchy-and-control-policies), including the [Instruction Hierarchy Rule](system-policies.md#instruction-hierarchy-rule), [Hierarchy Rule](system-policies.md#hierarchy-rule), and [Stability Rule](system-policies.md#stability-rule).
+
+| Hierarchy | KF Type |
+| :-------: | :------ |
+| `SYS_` | `POLICIES` |
+| `DEV_` | `ORCHS` |
+| | `CONFIGS` |
+| | `TASKS` |
+| | `DOMAINS` |
+| | `REASONS` |
+| | `STRUCTS` |
+| | `PERSONAS` |
+| | `EXAMPLES` |
+| | `PROMPTS` |
+
+
+---
+
+##### Processing Policies (Stored Instruction Rules)
+
+System designers and solution developers should also remain aware of the [system policies](system-policies.md#processing-policies) that IF-LLMs are asked to enforce by the IF-LLM-BO project elements.
+TBD
+
+- Instruction Hierarchy and Control Policies
+  - Instruction Hierarchy Rule
+  - Hierarchy Rule
+  - Stability Rule
+- Safety, Security, and Access Control Policies
+  - Least-Privilege Rule
+  - Secrets Rule
+  - Prompt-Injection Rule
+  - Data-Provenance Rule
+  - Untrusted-Content Rule
+  - Approval Rule
+- Safety Behavior and Alignment Quality Policies
+  - Narrow Refusal Rule
+  - Anti-Sycophancy Rule
+  - Equal Risk Framing Rule
+  - Fairness Check Rule
+  - Toxicity Control Rule
+- Freshness and Retrieval Policies
+  - Freshness Rule
+- Tool Use and External Actions Policies
+  - Tool-Decision Rule
+  - Server-Side Validation Rule
+  - Post-Tool Check Rule
+  - Actual-Output Rule
+  - Output-Handling Rule
+- Evaluation, Monitoring, and Continuous Improvement Policies
+  - Verification Loop Rule
+  - Incident Disclosure Rule
+  - Logging and Monitoring Rule
+  - Pre-Deployment Testing Rule
+- Grounding, Evidence, and Truthfulness Policies
+  - No-Guess Rule
+  - Grounding Rule
+  - Uncertainty Disclosure Rule
+  - Auditability Rule
+  - Evidence-First Rule
+  - Fact/Interpretation Split Rule
+- Context Handling and Interpretation Policies
+  - Ambiguity Rule
+  - Extraction-First Rule
+  - Provided-Context Priority Rule
+  - Ambiguity Disclosure Rule
+  - Context Verification Rule
+- Reasoning, Interpretation, and Tradeoffs Policies
+  - Tradeoff Disclosure Rule
+  - Intent-over-Literalism Rule
+  - Examples-Are-Illustrative Rule
+- Citation Integrity and Evidence Traceability Policies
+  - Retrieved-Sources-Only Citation Rule
+  - Passage-Backed Citation Rule
+  - No-Guess Citation Rule
+  - Citation Verification Rule
+- Output Quality and Task Completion Policies
+  - Completion Contract Rule
+  - Checklist Rule
+  - Structured Output Contract Rule
+  - Missing-Context Rule
+  - Exact Output Contract Rule
+  - Schema Enforcement Rule
+- Instruction Element Defaults
+  - Task Instruction Defaults
+    - Priorities
+      - Operational Definitions
+        - Auditability
+        - Relevance
+        - Accuracy
+        - Timeliness
+        - Reliability
+        - Sufficiency
+        - Recoverability
+      - General Guardrails
+      - Unified Decision Gate Framework
+        - Gate 1 — Safety & Legality
+        - Gate 2 — Quality Threshold
+        - Gate 3 — Transparency
+      - Tradeoff and Risk Disclosure Requirements
+        - Stakeholder Impact Disclosure
+        - Material Tradeoff Disclosure
+        - Harm-Prevention Threshold Disclosure
+      - Continuous Improvement Clause
+    - Identity
+    - Audience
+    - Success Criteria (Quality Bar)
+
+ 
+---
+
+### Appendix: IF-LLM-BO Developed Solution Anatomy
 TODO
 
-- In-Scope Topics
-- Out-of-Scope Topics
-- Jurisdiction
-- Known Uncertainty Zones
-
-
-##### Reasoning
-TODO
-
-- Frameworks
-- Heuristics
-- Analytic Lenses
-
-
-##### Structure
-TODO
-
-- Required Sections
-- Ordering Rules
-- Required Fields
-
-
-##### Persona
-TODO
-
-- Tone
-- Voice
-- Formality
-- Conciseness
-
-
-##### Examples
-TODO
-
+- [Knowledge Files](#knowledge-files)
+  - [Prompt Templates](#prompt-templates) (*copy-and-paste templates illustrating how to use a configuration or orchestrator pattern with existing elements and named variable inputs to accomplish a specified objective and workflow aligned with a particular policy set*)
+  - [Policies](#policies)
+  - [Orchestrators](#orchestrators)
+  - [Configurations](#configurations)
+  - [Elements](#prompt-anatomy)
+    - [Tasks](#task)
+    - [Domains](#domains-1)
+    - [Reasonings](#reasoning)
+    - [Structures](#structure)
+    - [Personas](#persona)
+    - [Examples](#examples)
+- [Tools](#tools)
 
 
 ##### Knowledge Files
@@ -827,6 +797,8 @@ TODO
   - [Governance](#policies-governance)
   - [Knowledge Entry](#policies-knowledge-entry)
   - [Processing](#policies-processing)
+- [Orchestrators](#orchestrators) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
+- [Configurations](#configurations) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
 - [Context Elements](#prompt-anatomy)
   - [Tasks](#task)
   - [Domains](#domains-1)
@@ -834,26 +806,11 @@ TODO
   - [Structures](#structure)
   - [Personas](#persona)
   - [Examples](#examples)
-- [Configurations](#configurations) (*specified combination of prompt elements to accomplish a particular objective and workflow using variable inputs*)
-- [Orchestrators](#orchestrators) (*coordinate actions of several configurations to accomplish a particular objective using variable inputs*)
 
 
-#### Developed Solution Anatomy
+
+###### Prompt Templates
 TODO
-
-- [Knowledge Files](#knowledge-files)
-  - [Prompt Templates](#prompt-templates) (*copy-and-paste templates illustrating how to use a configuration or orchestrator pattern with existing elements and named variable inputs to accomplish a specified objective and workflow aligned with a particular policy set*)
-  - [Policies](#policies)
-  - [Configurations](#configurations)
-  - [Orchestrators](#orchestrators)
-  - [Elements](#prompt-anatomy)
-    - [Tasks](#task)
-    - [Domains](#domains-1)
-    - [Reasonings](#reasoning)
-    - [Structures](#structure)
-    - [Personas](#persona)
-    - [Examples](#examples)
-- [Tools](#tools)
 
 
 ###### Policies
@@ -875,766 +832,12 @@ TODO
 TODO
 
 
-###### Configurations
-TODO
-
-- [Identity & Role](#identity--role)
-- [Priorities](#priorities-2)
-- [Task](#task)
-- [Domains](#domains-1)
-- [Reasoning](#reasoning)
-- [Structure](#structure)
-- [Persona](#persona)
-- [Examples](#examples)
-
-
-###### Orchestrators
-TODO
-
-- [Identity & Role](#identity--role)
-- [Priorities](#priorities-2)
-- Required Inputs
-- Task
-  - Objectives
-  - Workflow
-- Success Criteria
-- Failure Modes / Unacceptable Outputs
-- Handoff Packet Schema
-- Validation Gates
-- What to Produce
-- Output Rules/Requirements
-- [Examples](!!!TODO!!!)
-
-
-###### Prompt Templates
-TODO
-
-##### Tools
-TODO
-
- 
-#### Common Failure Modes
-TODO
-
-The following sections contain more detailed information about common instruction-following large language model (IF-LLM) failure modes compared to the earlier section [Common IF-LLM Failure Modes](#common-if-llm-failure-modes), which contains the most concise summary.  The first section contains [an expanded summary of common failure modes](#expanded-list).  The second section has [an expanded list with examples and sources](#examples-and-sources).
-
-
-#### Expanded List
-
-Below is an expanded summary of the common instruction-following large language model (IF-LLM) failure modes (as of March 2026) that this project hopes to address.  The earlier Foundations section discussing [Common IF-LLM Failure Modes](#common-if-llm-failure-modes) contains a more concise summary.  More detailed information, along with authoritative sources, can be found in the next section [Appendix: Common IF-LLM Failure Modes with Examples and Sources](#common-failure-modes).
-
-- Truthfulness & Knowledge Failures
-  - Hallucination (Fabricated Information)
-  - Knowledge Boundary Failure
-  - Plausible but unsupported explanations
-- Reasoning & Analytical Failures
-  - Logical Reasoning Failure
-  - Overconfidence in Weak Reasoning
-  - Mathematical or Computational Errors
-- Robustness, Stability & Training Trade-off Failures
-  - Consistency / Stability Failure
-  - Alignment Tax / Capability Regression (implicit risk)
-- Evidence & Verification Failures
-  - Unsupported Claims
-  - Citation Fabrication
-- Safety, Alignment & Preference Failures
-  - Under-Refusal (Jailbreak Susceptibility)
-  - Bias Persistence
-  - Sycophancy
-  - Over-Refusal
-  - Toxic Degeneration (harmful generation behavior)
-  - Unequal Risk Framing
-- Security & Adversarial Robustness Failures
-  - Prompt Injection
-  - Indirect Prompt Injection
-  - Data Leakage / Privacy Exposure (implicit)
-  - Model Extraction Attacks (implicit)
-  - Tool Exploitation via Prompt Injection (implicit)
-  - Data Leakage / Training Data Exposure (implicit)
-  - Training Data Poisoning (implicit)
-  - Adversarial Manipulation of AI Systems
-  - Indirect Prompt Injection (implicit)
-  - Data Exfiltration / Sensitive Data Leakage
-  - Insecure Plugin or Tool Use
-- Context & Information Utilization Failures
-  - Context Misinterpretation
-  - Context Ignoring
-  - Tool Interaction Failure
-- Instruction Interpretation & Constraint Compliance Failures
-  - Ambiguity Misinterpretation
-  - Instruction Precedence Violation
-  - Constraint / Format Noncompliance
-  - Overgeneralization or Over-Literalism
-- Task Execution & Objective Fulfillment Failures
-  - Task Completeness Failure
- 
-
-
-##### Examples and Sources
-TODO
-
-
-* **Truthfulness & Knowledge Failures**
-
-  * **Hallucination (Fabricated Information)**
-
-    * **Examples**
-
-      * The model provides answers that sound confident and detailed but contain incorrect or made-up facts.
-      * When the model lacks reliable information, it may invent details rather than saying it does not know.
-      * Responses can include fabricated citations, statistics, or historical details.
-      * Systems may produce statements that appear credible but are actually inaccurate or unsupported.
-      * When answering complex questions, the model may mix correct facts with invented information.
-      * Support documentation notes that models can generate plausible but incorrect answers when uncertain.
-    * **Sources**
-
-      * Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025. [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report)
-      * Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026. [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency)
-      * Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
-      * Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025. [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card)
-      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
-      * Anthropic. *Claude Is Providing Incorrect or Misleading Responses*. Anthropic Support. [https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on)
-      * Anthropic. *Prompting Best Practices*. Claude API Documentation, 2026. [https://docs.anthropic.com/en/prompt-library/library](https://docs.anthropic.com/en/prompt-library/library)
-      * Anthropic. *Reduce Hallucinations*. Claude API Documentation. [https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations)
-      * Anthropic. *Sabotage Risk Report: Claude Opus 4.6*. Anthropic, 2026. [https://anthropic.com/claude-opus-4-6-risk-report](https://anthropic.com/claude-opus-4-6-risk-report)
-
-  * **Knowledge Boundary Failure**
-
-    * **Examples**
-
-      * The model attempts to answer questions even when the topic is outside its training knowledge.
-      * Instead of saying “I don’t know,” the system may guess or speculate.
-      * Models may provide outdated or incomplete information when asked about recent events.
-      * AI systems may fail to recognize when they lack enough context or reliable data to answer correctly.
-      * Documentation for AI models emphasizes the need to acknowledge uncertainty rather than produce speculative answers.
-      * Guidance from AI safety frameworks recommends prompting models to explicitly state when information is unknown.
-    * **Sources**
-
-      * Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025. [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report)
-      * Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
-      * Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025. [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card)
-      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
-      * Anthropic. *Claude Is Providing Incorrect or Misleading Responses*. Anthropic Support. [https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on)
-      * Anthropic. *Reduce Hallucinations*. Claude API Documentation. [https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations)
-      * Anthropic. “Introducing the Next Generation of Claude.” Anthropic, 4 Mar. 2024. [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family)
-      * Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
-      * Google. “Safety and Factuality Guidance.” *Gemini API Documentation*. [https://developers.google.com/machine-learning/resources/safety-gen-ai](https://developers.google.com/machine-learning/resources/safety-gen-ai)
-
-  * **Plausible but Unsupported Explanations**
-
-    * **Examples**
-
-      * The model generates explanations that sound logical but are not supported by evidence.
-      * AI systems may produce detailed reasoning chains that justify an incorrect answer.
-      * When agreeing with a user’s incorrect assumption, the model may create explanations that reinforce the mistake.
-      * Responses may mimic common misconceptions while presenting them as authoritative explanations.
-      * AI explanations of legal, social, or policy topics may appear credible but lack real supporting sources.
-      * Generated reasoning can sound coherent even when it contradicts factual information.
-    * **Sources**
-
-      * Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023. [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models)
-      * Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. [https://arxiv.org/abs/2009.11462](https://arxiv.org/abs/2009.11462)
-      * Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023. [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232)
-      * Kalai, Adam Tauman, et al. *Why Language Models Hallucinate*. OpenAI, 2025. [https://arxiv.org/abs/2502.09600](https://arxiv.org/abs/2502.09600)
-      * Li, Moxin, et al. “Knowledge Boundary of Large Language Models: A Survey.” *Proceedings of ACL 2025*, 2025. [https://aclanthology.org/2025.acl-long.256/](https://aclanthology.org/2025.acl-long.256/)
-      * Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/)
-      * National Center for State Courts. *Generative AI and Judicial Ethics*. NCSC, 2025. [https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations](https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations)
-      * OpenAI. *GPT-4 Technical Report*. OpenAI, 2023. [https://cdn.openai.com/papers/gpt-4.pdf](https://cdn.openai.com/papers/gpt-4.pdf)
-      * OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024. [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/)
-      * OpenAI. “Expanding on What We Missed with Sycophancy.” OpenAI, 2025. [https://openai.com/index/expanding-on-sycophancy/](https://openai.com/index/expanding-on-sycophancy/)
-
-* **Reasoning & Analytical Failures**
-
-  * **Logical Reasoning Failure**
-
-    * **Examples**
-
-      * The model makes mistakes in multi-step reasoning problems, even when it knows the relevant facts.
-      * A chatbot reaches the wrong conclusion because one step in its reasoning chain is flawed.
-      * The model abandons correct logic when a user states an incorrect assumption and instead follows the user’s belief.
-      * The system struggles with complex planning tasks or problems that require several reasoning steps.
-      * Explanations may look structured but still contain logical gaps or contradictions.
-      * The model may combine correct facts but connect them with incorrect reasoning.
-      * Errors appear in tasks requiring conditional logic, causal reasoning, or step-by-step analysis.
-    * **Sources**
-
-      * Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
-      * Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025. [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card)
-      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
-      * Anthropic. “Introducing the Next Generation of Claude.” Anthropic, 4 Mar. 2024. [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family)
-      * Lightman, Hunter, et al. *Let’s Verify Step by Step*. OpenAI, 2023. [https://arxiv.org/abs/2305.20050](https://arxiv.org/abs/2305.20050)
-      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
-
-  * **Overconfidence in Weak Reasoning**
-
-    * **Examples**
-
-      * The model gives a confident explanation that sounds convincing but is logically incorrect.
-      * A chatbot produces detailed reasoning even when the conclusion is wrong.
-      * The system agrees with a user’s incorrect assumption and builds a confident explanation around it.
-      * Explanations may appear coherent and well-structured but rely on incomplete or flawed reasoning.
-      * The model may continue pursuing an incorrect plan despite evidence that it is failing.
-      * Training methods sometimes reward answers that sound confident rather than answers that are logically correct.
-      * The system rarely signals uncertainty, even when its reasoning is weak.
-    * **Sources**
-
-      * Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022. [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/)
-      * Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” arXiv, 2023. [https://arxiv.org/abs/2308.03958](https://arxiv.org/abs/2308.03958)
-      * Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023. [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models)
-      * Joglekar, Manas, et al. *Training LLMs for Honesty via Confessions*. OpenAI, 2025. [https://arxiv.org/abs/2501.09978](https://arxiv.org/abs/2501.09978)
-      * Dong, H., et al. “From Reward Modeling to Online RLHF.” 2024. [https://arxiv.org/abs/2402.07319](https://arxiv.org/abs/2402.07319)
-
-  * **Mathematical or Computational Errors**
-
-    * **Examples**
-
-      * The model performs incorrect arithmetic (e.g., wrong sums, products, or percentages).
-      * A chatbot applies the wrong mathematical formula when solving a problem.
-      * The system produces incorrect intermediate steps in a multi-step calculation.
-      * The model miscalculates probabilities or statistics in data-analysis questions.
-      * Errors occur when solving algebra, science, or financial math problems.
-      * The model sometimes produces incorrect answers in coding or algorithmic tasks involving calculations.
-      * Even simple numeric problems may fail when embedded in complex reasoning tasks.
-    * **Sources**
-
-      * OpenAI. *GPT-4 Technical Report*. OpenAI, 2023. [https://cdn.openai.com/papers/gpt-4.pdf](https://cdn.openai.com/papers/gpt-4.pdf)
-      * Google Research. “Minerva: Solving Quantitative Reasoning Problems with Language Models.” Google Research, 2022. [https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/](https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/)
-      * OpenAI. “Improving Mathematical Reasoning with Process Supervision.” OpenAI, 2023. [https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/](https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/)
-      * Google Research. “Evaluating and Enhancing Probabilistic Reasoning in Language Models.” Google Research, 2024. [https://arxiv.org/abs/2401.04727](https://arxiv.org/abs/2401.04727)
-
-* **Robustness, Stability & Training Trade-off Failures**
-
-  * **Consistency / Stability Failure**
-
-    * **Examples**
-
-      * The same question asked twice can produce different answers, even when nothing else changes.
-      * Small wording changes in a prompt lead to dramatically different responses.
-      * The model contradicts earlier statements within the same conversation.
-      * Results vary depending on prompt formatting, order of information, or context length.
-      * The model changes its answer after a user rephrases the same question.
-      * Long conversations sometimes cause the model to forget earlier instructions or facts.
-      * The model may produce correct reasoning in one run and incorrect reasoning in another.
-    * **Sources**
-
-      * Chatterjee, Anwoy, et al. “POSIX: A Prompt Sensitivity Index for Large Language Models.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2410.02185](https://arxiv.org/abs/2410.02185)
-      * Gao, Mingzhe, et al. “Insights into LLM Long-Context Failures.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2404.15538](https://arxiv.org/abs/2404.15538)
-      * Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173. [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/)
-      * Shi, Freda, et al. “Large Language Models Can Be Easily Distracted by Irrelevant Context.” *Proceedings of the 40th International Conference on Machine Learning*, 2023. [https://arxiv.org/abs/2302.00093](https://arxiv.org/abs/2302.00093)
-      * Wang, Haocheng, et al. “Context Length Alone Hurts LLM Performance Despite Alignment in Long-Context Tasks.” *Findings of the Association for Computational Linguistics: EMNLP 2025*, 2025. [https://arxiv.org/abs/2503.07910](https://arxiv.org/abs/2503.07910)
-
-  * **Alignment Tax / Capability Regression (implicit risk)**
-
-    * **Examples**
-
-      * Safety alignment can sometimes reduce model performance on reasoning, coding, or factual tasks.
-      * A model may refuse harmless requests because safety filters are overly strict.
-      * Alignment updates occasionally degrade previously strong capabilities.
-      * Fine-tuning for safety or helpfulness can introduce new errors or reduce accuracy in specialized tasks.
-      * Improvements to alignment may create trade-offs between safety, usefulness, and performance.
-      * Some models perform worse on certain benchmarks after safety-focused training.
-      * Developers must balance safety improvements with maintaining technical capabilities.
-    * **Sources**
-
-      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
-      * Dong, H., et al. “From Reward Modeling to Online RLHF.” 2024. [https://arxiv.org/abs/2402.07319](https://arxiv.org/abs/2402.07319)
-      * Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024. [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208)
-      * Zhang, Zhihan, et al. “IHEval: Evaluating Language Models on Following the Instruction Hierarchy.” arXiv, 2025. [https://arxiv.org/abs/2502.08745](https://arxiv.org/abs/2502.08745)
-      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023. [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
-
-* **Evidence & Verification Failures**
-
-  * **Unsupported Claims**
-
-    * **Examples**
-
-      * The model states facts or conclusions without providing any evidence or reliable source.
-      * A chatbot presents statistics or scientific findings but cannot identify where the information came from.
-      * The system makes confident claims about medical, legal, or policy topics without supporting documentation.
-      * The model summarizes research results that are not traceable to a real study.
-      * The explanation sounds reasonable but does not link to verifiable data or references.
-      * The model mixes opinions and factual statements without clearly distinguishing them.
-      * Users may assume statements are evidence-based when they are actually generated guesses.
-    * **Sources**
-
-      * Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022, [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/)
-      * Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023, [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232)
-      * Kalai, Adam Tauman, et al. *Why Language Models Hallucinate*. OpenAI, 2025, [https://arxiv.org/abs/2502.09600](https://arxiv.org/abs/2502.09600)
-      * OpenAI. “Why Language Models Hallucinate.” OpenAI, 5 Sept. 2025, [https://openai.com/index/why-language-models-hallucinate/](https://openai.com/index/why-language-models-hallucinate/)
-      * National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
-
-  * **Citation Fabrication**
-
-    * **Examples**
-
-      * The model invents academic papers, articles, or books that do not exist.
-      * A chatbot provides realistic-looking citations with fake authors, titles, or publication dates.
-      * The system cites a real paper but describes findings that the paper never reported.
-      * The model produces links to websites or journals that lead to nonexistent pages.
-      * Fabricated citations may appear especially convincing in academic or research-style responses.
-      * A model may combine real journal names with made-up article titles.
-      * Users may rely on these fabricated references when writing reports or research papers.
-    * **Sources**
-
-      * Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023, [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232)
-      * Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024, [https://aclanthology.org/2024.acl-long.585/](https://aclanthology.org/2024.acl-long.585/)
-      * Zhang, Yuxiang, et al. “ToolBeHonest: A Multi-Level Hallucination Diagnostic Benchmark for Tool-Augmented Large Language Models.” *EMNLP 2024*, 2024, [https://arxiv.org/abs/2406.01561](https://arxiv.org/abs/2406.01561)
-      * National Center for State Courts. *Generative AI and Judicial Ethics*. NCSC, 2025, [https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations](https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations)
-
-* **Safety, Alignment & Preference Failures**
-
-  * **Under-Refusal (Jailbreak Susceptibility)**
-
-    * **Examples**
-
-      * A user bypasses safety restrictions by rephrasing a harmful request in a creative way.
-      * The model provides restricted information after the prompt frames it as fiction, roleplay, or research.
-      * A chatbot follows instructions embedded in external content that override safety rules.
-      * Attackers use “prompt injection” tricks to manipulate the model into ignoring safeguards.
-      * The system reveals disallowed information after a series of carefully crafted prompts.
-      * Safety rules may be bypassed when the model is asked to simulate another AI or character.
-    * **Sources**
-
-      * Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)
-      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025. [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
-      * David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” *UK National Cyber Security Centre*, 8 Dec. 2025. [https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)
-      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-
-  * **Bias Persistence**
-
-    * **Examples**
-
-      * The model produces stereotypes about demographic groups when generating examples or descriptions.
-      * Certain occupations or roles are associated with specific genders or ethnic groups.
-      * The system may reflect biases present in its training data when answering social or cultural questions.
-      * The model generates unequal recommendations or advice depending on demographic attributes in the prompt.
-      * Some groups are described more negatively or less favorably than others.
-      * Bias can appear in hiring, education, medical, or legal scenarios generated by the model.
-    * **Sources**
-
-      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
-      * OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024. [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/)
-      * National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
-
-  * **Sycophancy**
-
-    * **Examples**
-
-      * The model agrees with a user’s incorrect statement instead of correcting it.
-      * A chatbot confirms conspiracy theories or misinformation when prompted assertively.
-      * The system prioritizes pleasing the user over providing accurate information.
-      * The model changes its answer when the user expresses strong disagreement.
-      * A chatbot reinforces a user’s political or ideological views even when evidence contradicts them.
-      * The model mirrors user opinions to appear cooperative or helpful.
-    * **Sources**
-
-      * Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023. [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models)
-      * Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” arXiv, 2023. [https://arxiv.org/abs/2308.03958](https://arxiv.org/abs/2308.03958)
-      * OpenAI. “Expanding on What We Missed with Sycophancy.” OpenAI, 2025. [https://openai.com/index/expanding-on-sycophancy/](https://openai.com/index/expanding-on-sycophancy/)
-
-  * **Over-Refusal**
-
-    * **Examples**
-
-      * The model refuses harmless requests that should normally be allowed.
-      * A chatbot declines to answer general educational questions about sensitive topics.
-      * The system refuses tasks involving benign technical information because it misclassifies them as dangerous.
-      * The model declines legitimate research questions about cybersecurity, medicine, or law.
-      * Safety filters block neutral requests that contain certain keywords.
-      * Overly cautious responses reduce the usefulness of the system for normal users.
-    * **Sources**
-
-      * Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025. [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card)
-      * OpenAI. *Model Spec*. OpenAI, 2025. [https://model-spec.openai.com/2025-02-12.html](https://model-spec.openai.com/2025-02-12.html)
-      * Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024. [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208)
-
-  * **Toxic Degeneration (harmful generation behavior)**
-
-    * **Examples**
-
-      * The model generates increasingly offensive or harmful language as text generation continues.
-      * A chatbot produces insults, hate speech, or harassment in response to provocative prompts.
-      * Toxic responses appear when the model continues a conversation containing harmful language.
-      * Generated dialogue escalates into abusive or discriminatory statements.
-      * Toxic patterns may emerge when the model imitates harmful online discussions.
-      * The model reflects toxic content present in internet training data.
-    * **Sources**
-
-      * Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020. [https://arxiv.org/abs/2009.11462](https://arxiv.org/abs/2009.11462)
-      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022. [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
-
-  * **Unequal Risk Framing**
-
-    * **Examples**
-
-      * The model gives different safety advice depending on demographic details in the prompt.
-      * Health, financial, or legal risk guidance varies based on a person’s gender, race, or nationality.
-      * The system warns one group about risks while giving more permissive advice to another.
-      * A chatbot frames similar situations as more dangerous for certain populations.
-      * Risk communication may unintentionally reflect societal biases present in training data.
-      * The model may produce inconsistent safety recommendations across different demographic contexts.
-    * **Sources**
-
-      * OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024. [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/)
-      * National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
-      * Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
-
-* **Security & Adversarial Robustness Failures**
-
-  * **Prompt Injection**
-
-    * **Examples**
-
-      * A malicious prompt tricks the model into ignoring safety rules or system instructions.
-      * Attackers embed hidden instructions that override the model’s intended behavior.
-      * The model is manipulated into revealing restricted information by carefully crafted prompts.
-      * A chatbot follows instructions that conflict with its original safeguards.
-      * Users can bypass guardrails by framing requests as debugging, translation, or role-playing tasks.
-    * **Sources**
-
-      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
-      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-      * David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” *UK National Cyber Security Centre*, 8 Dec. 2025, [https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)
-
-  * **Indirect Prompt Injection**
-
-    * **Examples**
-
-      * A model reads instructions hidden inside external content such as a webpage or document.
-      * Malicious text embedded in retrieved data causes the model to follow unintended instructions.
-      * An attacker inserts hidden commands in emails, PDFs, or websites that an AI assistant processes.
-      * The model treats untrusted external content as instructions rather than data.
-      * An AI system connected to browsing or retrieval tools executes attacker-controlled prompts from external sources.
-    * **Sources**
-
-      * Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023, [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)
-      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
-      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-
-  * **Data Leakage / Privacy Exposure (implicit)**
-
-    * **Examples**
-
-      * The model reveals sensitive personal information that appeared in its training data.
-      * A chatbot exposes private user data from earlier conversations.
-      * Generated responses contain confidential business or personal details.
-      * The system accidentally reproduces private content memorized during training.
-      * Sensitive information may appear when users repeatedly probe the model with targeted questions.
-    * **Sources**
-
-      * Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University – Computer and Information Sciences*, 2025, [https://link.springer.com/article/10.1007/s44443-025-00177-1](https://link.springer.com/article/10.1007/s44443-025-00177-1)
-      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
-      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
-
-  * **Model Extraction Attacks (implicit)**
-
-    * **Examples**
-
-      * Attackers repeatedly query a model to reconstruct or replicate its behavior.
-      * A malicious user collects enough outputs to approximate the underlying model.
-      * The system’s capabilities are copied through automated large-scale querying.
-      * Proprietary AI models may be reverse engineered through interaction patterns.
-      * Attackers exploit public APIs to build competing models from extracted knowledge.
-    * **Sources**
-
-      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
-      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
-
-  * **Tool Exploitation via Prompt Injection (implicit)**
-
-    * **Examples**
-
-      * A prompt injection attack tricks the model into sending harmful commands to connected tools.
-      * An AI assistant with access to email, file systems, or APIs executes attacker instructions.
-      * The model performs unauthorized actions such as sending messages or retrieving data.
-      * Malicious prompts cause automated workflows to access protected resources.
-      * The system misinterprets attacker instructions as legitimate tool commands.
-    * **Sources**
-
-      * Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023, [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)
-      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-      * MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, [https://cwe.mitre.org/data/definitions/441.html](https://cwe.mitre.org/data/definitions/441.html)
-
-  * **Training Data Poisoning (implicit)**
-
-    * **Examples**
-
-      * Attackers insert malicious or misleading data into datasets used to train models.
-      * The model learns harmful behaviors or incorrect information from poisoned training data.
-      * Manipulated datasets cause the model to produce biased or deceptive responses.
-      * An attacker intentionally plants misinformation that the model later reproduces.
-      * Poisoned training examples can subtly influence model behavior in targeted ways.
-    * **Sources**
-
-      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
-      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
-
-  * **Adversarial Manipulation of AI Systems**
-
-    * **Examples**
-
-      * Attackers design inputs specifically intended to make the model behave incorrectly.
-      * Carefully crafted prompts cause the system to misinterpret instructions.
-      * The model is manipulated into producing harmful or misleading responses.
-      * Adversarial inputs exploit weaknesses in the model’s reasoning or safety filters.
-      * Malicious actors exploit predictable behaviors in AI systems.
-    * **Sources**
-
-      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
-      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
-
-  * **Data Exfiltration / Sensitive Data Leakage**
-
-    * **Examples**
-
-      * An attacker tricks the model into revealing confidential system prompts or internal instructions.
-      * The system exposes sensitive files or private user data through connected tools.
-      * Prompt injection causes the AI to retrieve protected information from databases.
-      * The model leaks API keys, passwords, or other credentials stored in connected systems.
-      * Attackers exploit the AI’s ability to access external systems to extract confidential information.
-    * **Sources**
-
-      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-      * OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/)
-      * Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889)
-
-  * **Insecure Plugin or Tool Use**
-
-    * **Examples**
-
-      * A plugin connected to the AI system allows attackers to access external services.
-      * The model sends sensitive data to insecure APIs or tools.
-      * Poorly designed integrations allow unauthorized access to user data.
-      * AI assistants connected to third-party tools can unintentionally expose private information.
-      * Attackers exploit weak security controls in tools integrated with AI systems.
-    * **Sources**
-
-      * OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-      * National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
-
-* **Context & Information Utilization Failures**
-
-  * **Context Misinterpretation**
-
-    * **Examples**
-
-      * The model misunderstands the meaning of information provided in the prompt or conversation.
-      * A chatbot interprets a user’s question differently than intended and answers the wrong problem.
-      * The system misreads instructions embedded in long prompts or complex documents.
-      * The model confuses multiple topics in the same prompt and mixes their information together.
-      * Details provided earlier in the conversation are interpreted incorrectly or applied in the wrong way.
-      * The model may misinterpret retrieved documents or external data when answering questions.
-    * **Sources**
-
-      * Gao, Mingzhe, et al. “Insights into LLM Long-Context Failures.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2404.15538](https://arxiv.org/abs/2404.15538)
-      * Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173. [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/)
-      * Tan, Hexiang, et al. “Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?” *Proceedings of ACL*, 2024. [https://arxiv.org/abs/2402.04213](https://arxiv.org/abs/2402.04213)
-
-  * **Context Ignoring**
-
-    * **Examples**
-
-      * The model ignores key information provided in the prompt when generating its answer.
-      * Important instructions earlier in the conversation are forgotten or skipped.
-      * The system answers using general knowledge instead of using the provided context.
-      * The model overlooks details in long documents or multi-part prompts.
-      * Responses may rely on default assumptions rather than the information given by the user.
-      * The model may fail to use relevant retrieved documents in retrieval-augmented systems.
-    * **Sources**
-
-      * Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173. [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/)
-      * Shi, Freda, et al. “Large Language Models Can Be Easily Distracted by Irrelevant Context.” *Proceedings of the 40th International Conference on Machine Learning*, 2023. [https://arxiv.org/abs/2302.00093](https://arxiv.org/abs/2302.00093)
-      * Wang, Haocheng, et al. “Context Length Alone Hurts LLM Performance Despite Alignment in Long-Context Tasks.” *Findings of the Association for Computational Linguistics: EMNLP 2025*, 2025. [https://arxiv.org/abs/2503.07910](https://arxiv.org/abs/2503.07910)
-
-  * **Tool Interaction Failure**
-
-    * **Examples**
-
-      * The model calls the wrong tool or API for a task.
-      * A chatbot fails to use an available tool even when it is required to answer the question.
-      * The system produces incorrect tool inputs or parameters.
-      * The model misinterprets the output returned by a tool.
-      * Tool calls may be triggered when unnecessary or skipped when required.
-      * Errors occur when combining tool outputs with generated reasoning.
-      * The system may hallucinate tool results instead of using the actual tool output.
-    * **Sources**
-
-      * Zhang, Yuxiang, et al. “ToolBeHonest: A Multi-Level Hallucination Diagnostic Benchmark for Tool-Augmented Large Language Models.” *EMNLP 2024*, 2024. [https://arxiv.org/abs/2406.01561](https://arxiv.org/abs/2406.01561)
-      * Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024. [https://aclanthology.org/2024.acl-long.585/](https://aclanthology.org/2024.acl-long.585/)
-      * Tan, Hexiang, et al. “Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?” *Proceedings of ACL*, 2024. [https://arxiv.org/abs/2402.04213](https://arxiv.org/abs/2402.04213)
-
-* **Instruction Interpretation & Constraint Compliance Failures**
-
-  * **Ambiguity Misinterpretation**
-
-    * **Examples**
-
-      * The model misunderstands unclear instructions and answers a different question than the user intended.
-      * A chatbot interprets vague wording in a prompt in an unintended way.
-      * The system chooses one possible meaning of an ambiguous instruction without asking for clarification.
-      * Instructions that include multiple possible interpretations lead to incorrect responses.
-      * The model fills in missing details with assumptions instead of asking follow-up questions.
-      * Confusing or complex prompts cause the model to misinterpret the user’s goal.
-    * **Sources**
-
-      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
-      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
-      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022, [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
-
-  * **Instruction Precedence Violation**
-
-    * **Examples**
-
-      * The model follows a later instruction that contradicts earlier instructions or system rules.
-      * A chatbot prioritizes user instructions over safety guidelines or system policies.
-      * The system ignores higher-priority instructions and follows lower-priority ones.
-      * Conflicting instructions cause the model to behave inconsistently.
-      * A prompt inserted later in the conversation overrides earlier constraints unexpectedly.
-      * Attackers exploit instruction conflicts to bypass safety restrictions.
-    * **Sources**
-
-      * Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024, [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208)
-      * Zhang, Zhihan, et al. “IHEval: Evaluating Language Models on Following the Instruction Hierarchy.” arXiv, 2025, [https://arxiv.org/abs/2502.08745](https://arxiv.org/abs/2502.08745)
-      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
-
-  * **Constraint / Format Noncompliance**
-
-    * **Examples**
-
-      * The model ignores formatting instructions such as required lists, tables, or structured outputs.
-      * A chatbot produces extra text even when the user asked for a strict format.
-      * The system fails to follow instructions about length limits or specific output structures.
-      * The model returns incorrect JSON, code, or structured data when a strict format is required.
-      * The response does not follow requested ordering or section headings.
-      * Even when constraints are clear, the model sometimes partially follows them.
-    * **Sources**
-
-      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
-      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
-      * Chatterjee, Anwoy, et al. “POSIX: A Prompt Sensitivity Index for Large Language Models.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024, [https://arxiv.org/abs/2410.02185](https://arxiv.org/abs/2410.02185)
-
-  * **Overgeneralization or Over-Literalism**
-
-    * **Examples**
-
-      * The model applies a rule too broadly and produces an incorrect answer.
-      * A chatbot interprets instructions too literally and ignores the intended meaning.
-      * The system extends patterns beyond what the prompt actually states.
-      * The model follows wording exactly but misses the practical intent of the request.
-      * General instructions are applied rigidly even when exceptions should be obvious.
-      * The system over-applies examples in the prompt and assumes they represent universal rules.
-    * **Sources**
-
-      * Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022, [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
-      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
-      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
-
-* **Task Execution & Objective Fulfillment Failures**
-
-  * **Task Completeness Failure**
-
-    * **Examples**
-
-      * The model answers only part of a multi-step request and ignores other required steps.
-      * A chatbot provides an incomplete list when the user asked for all relevant items.
-      * The system begins solving a task but stops before completing the full solution.
-      * The model summarizes only some sections of a document instead of the entire content requested.
-      * A response addresses the main question but omits required formatting, details, or follow-up actions.
-      * The model performs an analysis but fails to provide the final conclusion requested by the user.
-      * In structured tasks (reports, tables, or code), the output is partially completed or missing sections.
-    * **Sources**
-
-      * Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410)
-      * Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911)
-      * Qi, et al. *AgentIF: Benchmarking Instruction Following for LLM Agents*. arXiv, 2025, [https://arxiv.org/abs/2505.16944](https://arxiv.org/abs/2505.16944)
-      * Chen, et al. *AgentIF-OneDay*. arXiv, 2026, [https://arxiv.org/abs/2601.20613](https://arxiv.org/abs/2601.20613)
-
-
-###### Summary of Authoritative Works Cited for Common Failure Modes with Examples and Sources
-TODO
-
-- Anthropic. *Anthropic’s Transparency Hub*. Anthropic, 2026, [https://www.anthropic.com/transparency](https://www.anthropic.com/transparency).
-- Anthropic. *ASL-3 Evaluation Report*. Anthropic, 2025, [https://www.anthropic.com/activating-asl3-report](https://www.anthropic.com/activating-asl3-report).
-- Anthropic. *Claude 2 Model Card*. Anthropic, 2023. [https://www.anthropic.com/claude-2-model-card](https://www.anthropic.com/claude-2-model-card)
-- Anthropic. *Claude 3.7 Sonnet System Card*. Anthropic, 2025, [https://anthropic.com/claude-3-7-sonnet-system-card](https://anthropic.com/claude-3-7-sonnet-system-card).
-- Anthropic. *Claude 4 System Card*. Anthropic, 16 July 2025, [https://www.anthropic.com/claude-4-system-card](https://www.anthropic.com/claude-4-system-card).
-- Anthropic. *Claude Is Providing Incorrect or Misleading Responses*. Anthropic Support, [https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on).
-- Anthropic. *Claude’s Constitution*. Anthropic, 2026. [https://www.anthropic.com/constitution](https://www.anthropic.com/constitution).
-- Anthropic. “Constitutional AI: Harmlessness from AI Feedback.” Apr. 2023. [https://arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073).
-- Anthropic. *Prompting Best Practices*. Claude API Documentation, 2026, [https://docs.anthropic.com/en/prompt-library/library](https://docs.anthropic.com/en/prompt-library/library).
-- Anthropic. *Reduce Hallucinations*. Claude API Documentation, [https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations).
-- Anthropic. *Sabotage Risk Report: Claude Opus 4.6*. Anthropic, 2026, [https://anthropic.com/claude-opus-4-6-risk-report](https://anthropic.com/claude-opus-4-6-risk-report).
-- Anthropic. “Constitutional AI: Harmlessness from AI Feedback.” Anthropic, Apr. 2023.
-- Anthropic. “Introducing the Next Generation of Claude.” Anthropic, 4 Mar. 2024, [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family).
-- Anthropic. “The Claude 3 Model Family: Opus, Sonnet, Haiku.” Anthropic, 2024, [https://www.anthropic.com/news/claude-3-family](https://www.anthropic.com/news/claude-3-family).
-- Anthropic. “Towards Understanding Sycophancy in Language Models.” Anthropic Research, 2023, [https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models).
-- Autio, Chloe, et al. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1).* National Institute of Standards and Technology, 2024, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf).
-- Bi, Baolong, et al. “Context-DPO: Aligning Language Models for Context-Faithfulness.” *Findings of the Association for Computational Linguistics: ACL 2025*, 2025, [https://aclanthology.org/2025.findings-acl.536.pdf](https://aclanthology.org/2025.findings-acl.536.pdf).
-- Chatterjee, Anwoy, et al. “POSIX: A Prompt Sensitivity Index for Large Language Models.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2410.02185](https://arxiv.org/abs/2410.02185) ([arXiv][4]).
-- Chen, Kang, et al. “A Survey on Privacy Risks and Protection in Large Language Models.” *Journal of King Saud University – Computer and Information Sciences*, 2025, [https://link.springer.com/article/10.1007/s44443-025-00177-1](https://link.springer.com/article/10.1007/s44443-025-00177-1).
-- Chen, et al. *AgentIF-OneDay*. arXiv, 2026, [https://arxiv.org/abs/2601.20613](https://arxiv.org/abs/2601.20613).
-- David C. “Prompt Injection Is Not SQL Injection (It May Be Worse).” *UK National Cyber Security Centre*, 8 Dec. 2025, [https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection).
-- Dong, H., et al. “From Reward Modeling to Online RLHF.” 2024. [https://arxiv.org/abs/2402.07319](https://arxiv.org/abs/2402.07319).
-- Gao, Mingzhe, et al. “Insights into LLM Long-Context Failures.” *Findings of the Association for Computational Linguistics: EMNLP 2024*, 2024. [https://arxiv.org/abs/2404.15538](https://arxiv.org/abs/2404.15538).
-- Gehman, Samuel, et al. “RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models.” *Findings of EMNLP*, 2020, [https://arxiv.org/abs/2009.11462](https://arxiv.org/abs/2009.11462).
-- Greshake, Kai, et al. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv, 2023, [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
-- Google. “Safety and Factuality Guidance.” *Gemini API Documentation*, [https://developers.google.com/machine-learning/resources/safety-gen-ai](https://developers.google.com/machine-learning/resources/safety-gen-ai).
-- Google Research. “Can Large Language Models Identify and Correct Their Mistakes?” Google Research, 2024, [https://research.google/blog/can-large-language-models-identify-and-correct-their-mistakes/](https://research.google/blog/can-large-language-models-identify-and-correct-their-mistakes/).
-- Google Research. “Evaluating and Enhancing Probabilistic Reasoning in Language Models.” Google Research, 2024. [https://arxiv.org/abs/2401.04727](https://arxiv.org/abs/2401.04727).
-- Google Research. “Minerva: Solving Quantitative Reasoning Problems with Language Models.” Google Research, 2022, [https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/](https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/).
-- Huang, Lei, et al. “A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions.” arXiv, 2023, [https://arxiv.org/abs/2311.05232](https://arxiv.org/abs/2311.05232).
-- Jiang, Yuxin, et al. “FollowBench: A Multi-Level Fine-Grained Constraints Following Benchmark for Large Language Models.” arXiv, 2024, [https://arxiv.org/abs/2310.20410](https://arxiv.org/abs/2310.20410).
-- Joglekar, Manas, et al. *Training LLMs for Honesty via Confessions*. OpenAI, 2025. [https://arxiv.org/abs/2501.09978](https://arxiv.org/abs/2501.09978).
-- Kalai, Adam Tauman, et al. *Why Language Models Hallucinate*. OpenAI, 2025. [https://arxiv.org/abs/2502.09600](https://arxiv.org/abs/2502.09600).
-- Keller, D., et al. *Expanding the AI Evaluation Toolbox with Statistical Models*. NIST AI 800-3, National Institute of Standards and Technology, Feb. 2026, [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-3.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-3.pdf).
-- Li, Miles Q., and Benjamin C. M. Fung. “Security Concerns for Large Language Models: A Survey.” arXiv, 2025, [https://arxiv.org/abs/2505.18889](https://arxiv.org/abs/2505.18889).
-- Li, Moxin, et al. “Knowledge Boundary of Large Language Models: A Survey.” *Proceedings of ACL 2025*, Association for Computational Linguistics, 2025, [https://aclanthology.org/2025.acl-long.256/](https://aclanthology.org/2025.acl-long.256/).
-- Liang, Percy, et al. “Holistic Evaluation of Language Models.” arXiv, 2022, [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110).
-- Lightman, Hunter, et al. *Let’s Verify Step by Step*. OpenAI, 2023. [https://arxiv.org/abs/2305.20050](https://arxiv.org/abs/2305.20050).
-- Lin, Stephanie, Jacob Hilton, and Owain Evans. “TruthfulQA: Measuring How Models Mimic Human Falsehoods.” *Proceedings of ACL*, 2022, [https://aclanthology.org/2022.acl-long.229/](https://aclanthology.org/2022.acl-long.229/).
-- Liu, Nelson F., et al. “Lost in the Middle: How Language Models Use Long Contexts.” *Transactions of the Association for Computational Linguistics*, vol. 12, 2024, pp. 157–173, [https://aclanthology.org/2024.tacl-1.9/](https://aclanthology.org/2024.tacl-1.9/).
-- MITRE. “CWE-441: Unintended Proxy or Intermediary (‘Confused Deputy’).” *MITRE CWE*, [https://cwe.mitre.org/data/definitions/441.html](https://cwe.mitre.org/data/definitions/441.html).
-- Mousavi, Seyed Mahed, Simone Alghisi, and Giuseppe Riccardi. “DyKnow: Dynamically Verifying Time-Sensitive Factual Knowledge in LLMs.” *Findings of ACL: EMNLP 2024*, Association for Computational Linguistics, 2024, [https://aclanthology.org/2024.findings-emnlp.471/](https://aclanthology.org/2024.findings-emnlp.471/).
-- National Center for State Courts. *Generative AI and Judicial Ethics*. NCSC, 2025, [https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations](https://www.ncsc.org/resources-courts/legal-practitioners-guide-ai-hallucinations).
-- National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0) (NIST AI 100-1).* NIST, 2023. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf).
-- National Institute of Standards and Technology. *Reducing Risks Posed by Synthetic Content: An Overview of Technical Approaches to Digital Content Transparency*. NIST AI 100-4, 2024. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf).
-- National Institute of Standards and Technology. *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*. NIST AI 100-2e2025, 2025. [https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf)
-- Niu, Cheng, et al. “RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.” *Proceedings of ACL*, 2024, [https://aclanthology.org/2024.acl-long.585/](https://aclanthology.org/2024.acl-long.585/).
-- OpenAI. *GPT-4 Technical Report*. OpenAI, 2023, [https://cdn.openai.com/papers/gpt-4.pdf](https://cdn.openai.com/papers/gpt-4.pdf).
-- OpenAI. *OpenAI o1 System Card*. OpenAI, 2024. [https://openai.com/research/openai-o1-system-card](https://openai.com/research/openai-o1-system-card).
-- OpenAI. *Model Spec*. OpenAI, 2025, [https://model-spec.openai.com/2025-02-12.html](https://model-spec.openai.com/2025-02-12.html).
-- OpenAI. “Aligning Language Models to Follow Instructions.” OpenAI, 27 Jan. 2022, [https://openai.com/index/instruction-following/](https://openai.com/index/instruction-following/).
-- OpenAI. “Evaluating Fairness in ChatGPT.” OpenAI, 2024, [https://openai.com/index/evaluating-fairness-in-chatgpt/](https://openai.com/index/evaluating-fairness-in-chatgpt/).
-- OpenAI. “Expanding on What We Missed with Sycophancy.” OpenAI, 2025, [https://openai.com/index/expanding-on-sycophancy/](https://openai.com/index/expanding-on-sycophancy/).
-- OpenAI. “Improving Mathematical Reasoning with Process Supervision.” OpenAI, 2023, [https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/](https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/).
-- OpenAI. “Introducing the Model Spec.” OpenAI, 8 May 2024, [https://openai.com/index/introducing-the-model-spec/](https://openai.com/index/introducing-the-model-spec/).
-- OpenAI. “Understanding Prompt Injections.” OpenAI, 2025, [https://openai.com/index/prompt-injections/](https://openai.com/index/prompt-injections/).
-- OpenAI. “Why Language Models Hallucinate.” OpenAI, 5 Sept. 2025, [https://openai.com/index/why-language-models-hallucinate/](https://openai.com/index/why-language-models-hallucinate/).
-- OWASP Foundation. *OWASP Top 10 for Large Language Model Applications (Version 1.1).* OWASP, [https://owasp.org/www-project-top-10-for-large-language-model-applications/](https://owasp.org/www-project-top-10-for-large-language-model-applications/).
-- Qi, et al. *AgentIF: Benchmarking Instruction Following for LLM Agents*. arXiv, 2025, [https://arxiv.org/abs/2505.16944](https://arxiv.org/abs/2505.16944).
-- Shi, Freda, et al. “Large Language Models Can Be Easily Distracted by Irrelevant Context.” *Proceedings of the 40th International Conference on Machine Learning*, 2023. [https://arxiv.org/abs/2302.00093](https://arxiv.org/abs/2302.00093).
-- Tan, Hexiang, et al. “Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?” *Proceedings of ACL*, 2024. [https://arxiv.org/abs/2402.04213](https://arxiv.org/abs/2402.04213).
-- Wallace, Eric, et al. “The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions.” arXiv, 2024, [https://arxiv.org/abs/2404.13208](https://arxiv.org/abs/2404.13208).
-- Wang, Haocheng, et al. “Context Length Alone Hurts LLM Performance Despite Alignment in Long-Context Tasks.” *Findings of the Association for Computational Linguistics: EMNLP 2025*, 2025. [https://arxiv.org/abs/2503.07910](https://arxiv.org/abs/2503.07910).
-- Wei, Jerry, et al. “Simple Synthetic Data Reduces Sycophancy in Large Language Models.” arXiv, 2023, [https://arxiv.org/abs/2308.03958](https://arxiv.org/abs/2308.03958).
-- Zhang, Zhihan, et al. “IHEval: Evaluating Language Models on Following the Instruction Hierarchy.” arXiv, 2025, [https://arxiv.org/abs/2502.08745](https://arxiv.org/abs/2502.08745).
-- Zhang, Yuxiang, et al. “ToolBeHonest: A Multi-Level Hallucination Diagnostic Benchmark for Tool-Augmented Large Language Models.” *EMNLP 2024*, 2024. [https://arxiv.org/abs/2406.01561](https://arxiv.org/abs/2406.01561).
-- Zhou, Jeffrey, et al. *Instruction-Following Evaluation for Large Language Models*. arXiv, 2023, [https://arxiv.org/abs/2311.07911](https://arxiv.org/abs/2311.07911).
-
-
-#### Common IF-LLM Failure Mitigation Strategies
-TODO
-
-
-##### Strategies for Failure Modes with Sources
-TODO
-
-###### Summary of Authoritative Works Cited for Mitigation Strategies for Common IF-LLM Failure Modes
-TODO
 
 ### Appendix: IF-LLM-BO Project Journey
 TODO
 
+
+---
 
 #### Expanded Objectives
 TODO
@@ -1674,6 +877,8 @@ TODO
     6. **Create Other Helpful IF-LLM Prompt Templates, Configurations, Orchestrators, and Knowledge Entries**
 5. **Update Documentation**
 
+
+---
 
 #### Activity Iterations
 TODO
@@ -1865,6 +1070,7 @@ TODO: update with newest overview summary
 **Note:** Activity Steps (Issues) #7 and #8 were deleted because they were unneeded.
 
 
+---
 
 ## **Roadmap**
 
@@ -1926,6 +1132,7 @@ TODO: update with newest overview summary
      1.1. Humanity
 
 
+---
 
 ## **Authors**
 
@@ -1941,6 +1148,61 @@ Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0
 - See [Creative Commons Attribution Share Alike 4.0 International (CC-BY-SA-4.0)](https://choosealicense.com/licenses/cc-by-sa-4.0/)
 
 
+## **Document Index**
+
+TBD
+
+- TO DO: [Unorganized Content](!!!TODO!!!)
+- [File Header Metadata](#file-header-1)
+- [Features](#features)
+- [Background](#background)
+- [Known Issues](#known-issues)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [IF-LLM-BO Project Notes](#if-llm-bo-project-notes)
+  - [Foundations](#foundations)
+    - [Assumptions](#assumptions)
+    - [Decision-Making Information Quality Criteria (Priorities)](#decision-making-information-quality-criteria-priorities)
+    - [Common IF-LLM Failure Modes](#common-if-llm-failure-modes)
+    - [Common IF-LLM Failure Mitigation Strategies](#common-if-llm-failure-mitigation-strategies)
+  - [Purpose](#purpose)
+  - [Objectives](#objectives)
+  - [Governance, Policies, Rules](#governance-policies-and-rules)
+    - [Human Governance (System Architect and Solution Developer Governance)](#system-architect-and-solution-developer-governance-human-governance)
+    - [Stored Context Policies (Knowledge File and Knowledge Entry Policies)](#knowledge-file-and-entry-policies-stored-context-policies)
+    - [Stored Instruction Rules (Processing Policies)](#processing-policies-stored-instruction-rules)
+  - [Prompt Templates, Orchestrators, Configurations](#prompt-templates-orchestrators-configurations)
+- [Appendices](#appendices)
+  - [Assumptions](#appendix-assumptions)
+  - [Evidenced-based Information Criteria (Research)](#appendix-evidenced-based-information-criteria-research)
+  - [Decision-Making Information Quality Criteria (Priorities) with Definitions and Sources](#appendix-decision-making-information-quality-criteria-priorities-with-definitions-and-sources)
+    - [Summary of Authoritative Sources for Decision-Making Information Quality Criteria (Priorities)](#summary-of-authoritative-sources-for-decision-making-information-quality-criteria-priorities)
+  - [Governance, Policies, Rules](#appendix-if-llm-bo-governance-policies-and-rules)
+    - [Human Governance (System Architect and Solution Developer Governance)](!!!TODO!!!)
+    - [Stored Context Policies (Knowledge File and Knowledge Entry Policies)](!!!TODO!!!)
+    - [Stored Instruction Rules (Processing Policies)](!!!TODO!!!)
+  - [Developed Solution Anatomy](#developed-solution-anatomy)
+    - [Knowledge Files](#knowledge-files)
+      - [Prompt Templates](#prompt-templates)
+      - [Governance, Policies, and Rules](!!!TODO!!!)
+        - [Human Governance](!!!TODO!!!)
+        - [Knowledge File and Entry Policies](!!!TODO!!!)
+        - [Processing Rules (Instructions)](!!!TODO!!!)
+      - [Orchestrators](#orchestrators)
+      - [Configurations](#configurations)
+      - [Prompt Elements](#prompt-anatomy)
+    - [Tools](#tools)
+  - [IF-LLM-BO Project Journey](#appendix-if-llm-bo-project-journey)
+    - [Expanded Objectives](#expanded-objectives)
+    - [Activity Iterations](#activity-iterations)
+- [Roadmap](#roadmap)
+- [Authors](#authors)
+- [License](#license)
+
+
+---
 
 ## File Header
 
@@ -1950,11 +1212,12 @@ Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0
 
 **Owner:** [Lance Hegland](mailto:lance.hegland@gmail.com)
 
-**Version:** 2026-03-31T06:57Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
+**Version:** 2026-04-09T02:51Z LH in [if-llm-behavior-ontology](https://github.com/LHHegland/if-llm-behavior-ontology)
 
 **Last Reviewed:** 2026-03-30T11:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com)
 
 **Changelog**
+- 2026-04-09T02:51Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Split IF-LLM eBook and IF-LLM-BO projects
 - 2026-03-31T07:05Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Update hyperlinks for Commonly Used IF-LLMs in Table of Contents, Foundations, and Appendix IF-LLM Information sections
 - 2026-03-31T06:57Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Update Commonly Used IF-LLMs in Table of Contents, Foundations, and Appendix IF-LLM Information sections
 - 2026-03-30T11:59Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Update Changelog
@@ -1998,3 +1261,124 @@ Creative Commons Attribution Share Alike 4.0 International License (CC-BY-SA-4.0
 - 2026-02-15T08:49Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Updated Roadmap section
 - 2026-02-13T20:24Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Renamed repository and scaffolding
 - 2026-02-01T06:50Z — [Lance Hegland](mailto:lance.hegland@gmail.com): Created repository and README.md from [IF-LLM Development Repository Template](https://github.com/LHHegland/if-llm-dev-repo-template)
+
+
+
+
+
+
+
+
+
+
+
+## NOT YET ORGANIZED
+
+### Instruction Elements (Scaffolding)
+
+The scaffolding so far is as follows:
+- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
+  - **meta:** *provides cross-cutting rules and scaffolding about the ontology itself.* Meta captures naming rules, modeling conventions, global decision policies, ontology versioning, glossaries of meta-terms, and core primitives reused across domains.
+  - **tasks:** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+  - **domains:** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+  - **experts:** *shape how the model reasons about the task.* Experts encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+  - **structures:** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+  - **personas:** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+  - **examples:** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+  - **configs:** *compose a complete behavioral profile.* Configurations bind tasks, domains, experts, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+
+
+---
+
+
+### Knowledge Entry Anatomy
+
+- Common Human Reference
+- Canonical Handles
+  - IDs
+  - Namespaced Tags
+- Alias Tags
+- Definition Summary / Purpose
+- Content Specific Fields
+
+### Knowledge File Anatomy
+
+#### File Header
+
+#### Indexes
+- Canonical Handles Index
+- Aliases Index
+
+#### Knowledge Header
+
+##### Knowledge Entries
+
+
+
+### Knowledge Entry Types
+
+#### Meta Entries
+
+## Processing Policies
+### Enforcement & Degradation Handling
+### Instruction Precedence
+### Safety, Privacy, and Refusals
+### Context
+#### Context & Ambiguity Handling
+#### Knowledge & Information Hierarchy
+### Hallucination & Fabrication
+### Defaults
+#### Tasks
+##### Priorities
+##### Identity
+##### Audience
+##### Success Criteria (Quality Bar)
+#### Domains
+##### Deterministic Defaults (US)
+#### Experts
+##### Reasoning & Uncertainty
+#### Tools
+##### Tool Usage
+##### Tool Constraints (Negative Rules)
+#### Structures
+##### Output Structure Sections
+##### Output Structure Flexibility
+
+### Priorities
+TODO: Outline priorities
+
+### Knowledge
+TODO: Outline knowledge, especially types and significance toward objectives and priorities.
+
+### Work in Progress
+this IF-LLM Behavior Ontology (IFLLMBO) is intended to be a lightweight, LLM-legible semantic scaffolding system for organizing knowledge files and entries that ensure tools are more likely to offer results that are more accurate, reliable, relevant, specific, clear, practical, fair, and efficient.
+
+It prioritizes human-readable structure, stable identifiers, and explicit decision guidance over formal ontology rigor, enabling consistent reasoning and behavior across AI-assisted workflows.
+
+Ideation and Exploration
+
+Clarify Prompt Parameter Breakdown
+it's
+Meta Knowledge File Policies Processing Policies Tasks Objective Priorities Workflow (Steps) Domains Elements (e.g., knowledge, ability, or skill) Relationships with Other Elements Experts Summary Scope Reasoning Approach and Core Priorities (Ranked) Reasoning Style Judgment Norms Risk Tolerance Evidence Threshold Decision Posture Uncertainty Handling Ethical / Compliance Sensitivity Interaction Guidelines Intended Use Cases Non-Goals Tools (not a knowledge file but a feature of the GPT) Structures Personas
+
+
+
+The scaffolding so far is as follows:
+- **ontology:** *serves as the semantic root for all model behavior.* The ontology defines the canonical concepts, relationships, and behavior guidance that constitute the instruction-following LLM’s shared semantic foundation.
+  - **[knowledge files](#knowledge-files)**
+    - **[policies](#policies):** *provides cross-cutting rules and scaffolding about the ontology itself.*
+      - **[governance](#policies-governance):** other policies requiring human responsibility.
+      - **[knowledge entry](#policies-knowledge-entry):** naming rules, modeling conventions, versioning, and core primitives.
+      - **[processing](#policies-processing):** global decision policies.
+    - **[prompt templates](#prompt-templates):** *offer reusable, copyable prompt pattern templates ensuring more consistent use and improved results.*
+      - **[tasks](#task):** *defines what the model is expected to do and how success is judged.* Tasks specify objectives, priorities, success criteria, unacceptable outputs, scope boundaries, and workflows, providing explicit guidance on intended outcomes and failure avoidance.
+      - **[domains](#domains-1):** *constrain what knowledge space the model may operate within.* Domains describe relevant elements and relationships, in-scope and out-of-scope topics, geographic or contextual boundaries, and known uncertainty zones to reduce ambiguity and hallucination.
+      - **[reasoning](#reasoning):** *shape how the model reasons about the task.* Reasoning encode reasoning frameworks, heuristics, and analytical lenses that guide interpretation, tradeoffs, and decision-making without prescribing exact answers.
+      - **[structures](#structure):** *control how outputs are organized and validated.* Structures define required sections, ordering, mandatory and conditional fields, and formatting rules to ensure consistency, completeness, and evaluability of responses.
+      - **[personas](#persona):** *govern how the model communicates.* Personas specify tone, voice, formality, conciseness, and stylistic constraints, aligning outputs with audience expectations without altering underlying task logic.
+      - **[examples](#examples):** *demonstrate acceptable patterns of behavior.* Examples pair representative prompts with corresponding results to illustrate desired reasoning, structure, and boundary handling in concrete terms.
+    - **[configurations](#configurations):** *compose a complete behavioral profile.* Configurations bind tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts.
+    - **[orchestrators](#orchestrators):** TODO *orchestrates activity across multiple configurations.* Orchestrators coordinate tasks among multiple configurations with unique tasks, domains, reasoning, structures, personas, and examples into a reusable, explicit behavioral setup that enables consistent instruction-following across contexts. Orchestrators validate results between each configuration to improve results.
+
+
+## END NOT YET ORGANIZED
